@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Malta & Sicily - Custom Itineraries & Local Guides</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-right: 2rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #d4a373;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5ede4 0%, #f9f5f0 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2a2a2a;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            background: #d4a373;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .hero-cta:hover {
+            background: #c29563;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background: linear-gradient(180deg, #faf8f5 0%, #f3ede5 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .trust-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #2a2a2a;
+        }
+
+        .trust-header {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Trust Stats */
+        .trust-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d4a373;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Reviews Container */
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Review - Featured */
+        .review-hero {
+            grid-column: 1 / -1;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0ebe5;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .review-hero .stars {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .review-hero p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #333;
+            font-style: italic;
+        }
+
+        .review-hero .author {
+            font-weight: 600;
+            color: #2a2a2a;
+            font-size: 1rem;
+        }
+
+        .review-hero .location {
+            color: #999;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Regular Reviews */
+        .review {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0ebe5;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .review:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .review .stars {
+            color: #d4a373;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.15rem;
+        }
+
+        .review p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .review .author {
+            font-weight: 600;
+            color: #2a2a2a;
+            font-size: 0.95rem;
+        }
+
+        .review .source {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Trust CTA Section */
+        .trust-cta {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .trust-cta h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2a2a2a;
+        }
+
+        .trust-cta p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            background: #d4a373;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #c29563;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .trust-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .trust-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .reviews-container {
+                grid-template-columns: 1fr;
+            }
+
+            .review-hero {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#trips">Trips</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Discover Malta & Sicily Your Way</h1>
+        <p>Personalized itineraries crafted by local guides who know every hidden corner</p>
+        <a href="#trips" class="hero-cta">Plan Your Trip</a>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="trust-header">
+            <h2>Trusted by Real Travelers</h2>
+            <p style="color: #666; font-size: 1.05rem; margin-top: 0.5rem;">Across Malta & Sicily</p>
+        </div>
+
+        <!-- Trust Stats -->
+        <div class="trust-stats">
+            <div class="stat">
+                <div class="stat-number">
+                    <span>⭐</span>
+                    <span>5.0</span>
+                </div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">
+                    <span>✓</span>
+                    <span>10+</span>
+                </div>
+                <div class="stat-label">Verified Reviews</div>
+            </div>
+        </div>
+
+        <!-- Hero Review -->
+        <div class="reviews-container">
+            <div class="review-hero">
+                <div class="stars">★★★★★</div>
+                <p>"This was one of the best trips I've ever had. Every moment was perfectly planned, but it still felt spontaneous and authentic. The local insights and hidden spots were incredible — we felt like true travelers, not tourists."</p>
+                <div class="author">Sarah & Michael</div>
+                <div class="location">USA</div>
+            </div>
+
+            <!-- Regular Reviews -->
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"Perfectly organized. Our guide knew everything about the local culture and made us feel safe and welcomed everywhere."</p>
+                <div class="author">Emma</div>
+                <div class="source">Google Reviews</div>
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"Not your typical tour. Real connections, real experiences, real Malta. Highly recommended!"</p>
+                <div class="author">David</div>
+                <div class="source">Facebook</div>
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"Best decision ever. The itinerary was flexible enough to follow our interests, but structured enough to hit all the must-sees."</p>
+                <div class="author">Lisa</div>
+                <div class="source">Google Reviews</div>
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"Worth every penny. Our guide went above and beyond to make our honeymoon unforgettable."</p>
+                <div class="author">James & Patricia</div>
+                <div class="source">Facebook</div>
+            </div>
+
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p>"Authentic, professional, and genuinely passionate about sharing Malta with visitors."</p>
+                <div class="author">Robert</div>
+                <div class="source">Google Reviews</div>
+            </div>
+
+            <!-- Trust CTA -->
+            <div style="grid-column: 1 / -1;">
+                <div class="trust-cta">
+                    <h3>Ready to Experience Malta & Sicily?</h3>
+                    <p>Get your custom itinerary tailored to your interests and travel style</p>
+                    <button class="cta-button">Get Your Custom Itinerary</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #f9f5f0; padding: 2rem; text-align: center; color: #999; margin-top: 4rem;">
+        <p>&copy; 2024 Travel Malta & Sicily. All rights reserved.</p>
+    </footer>
+</body>
+</html>
