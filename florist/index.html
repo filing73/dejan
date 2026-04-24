@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petals Malta — Luxury Floral Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #c9a96e;
+            --gold-light: #e8d5b0;
+            --gold-dark: #a8874c;
+            --green-deep: #1e3a2f;
+            --green-mid: #2d5a43;
+            --cream: #faf7f2;
+            --cream-warm: #f5ede0;
+            --cream-dark: #ede3d5;
+            --text: #2a2a2a;
+            --text-mid: #555;
+            --text-light: #999;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 200;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--green-deep);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-mid);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--green-deep);
+            color: white !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            transition: background 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--green-mid) !important;
+            color: white !important;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(160deg, var(--green-deep) 0%, #0f2419 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 20% 80%, rgba(201,169,110,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 60% at 80% 20%, rgba(201,169,110,0.08) 0%, transparent 70%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid rgba(201,169,110,0.5);
+            color: var(--gold-light);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .hero h1 em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.65);
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--green-deep);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            border: 1px solid rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.85);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: border-color 0.3s, color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.3);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        /* ── About Strip ── */
+        .about-strip {
+            background: var(--cream-warm);
+            padding: 5rem 2rem;
+        }
+
+        .about-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text .label {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            line-height: 1.25;
+            color: var(--green-deep);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-mid);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid var(--cream-dark);
+            padding: 1.8rem;
+            border-radius: 8px;
+        }
+
+        .stat-card .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .desc {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            font-weight: 400;
+        }
+
+        /* ── Packages ── */
+        .packages {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 580px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header .label {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--green-deep);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-mid);
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        .packages-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: white;
+            border: 1px solid var(--cream-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .package-card.featured {
+            border-color: var(--gold);
+            box-shadow: 0 4px 24px rgba(201,169,110,0.2);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            background: var(--gold);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        .card-visual {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+        }
+
+        .card-visual.garden {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+        }
+
+        .card-visual.romance {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+        }
+
+        .card-visual.luxe {
+            background: linear-gradient(135deg, #fff8e1, #ffe0b2);
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--green-deep);
+            margin-bottom: 0.4rem;
+        }
+
+        .card-tagline {
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-style: italic;
+            margin-bottom: 1.2rem;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 1.8rem;
+        }
+
+        .card-features li {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--cream-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .card-features li:last-child {
+            border-bottom: none;
+        }
+
+        .card-features li::before {
+            content: '✦';
+            color: var(--gold);
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+
+        .card-price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-from {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .price-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--green-deep);
+            font-weight: 600;
+        }
+
+        .price-currency {
+            font-size: 1.1rem;
+            color: var(--text-mid);
+        }
+
+        .btn-card {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.9rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-card-outline {
+            border: 1.5px solid var(--green-deep);
+            color: var(--green-deep);
+            background: transparent;
+        }
+
+        .btn-card-outline:hover {
+            background: var(--green-deep);
+            color: white;
+        }
+
+        .btn-card-filled {
+            background: var(--green-deep);
+            color: white;
+        }
+
+        .btn-card-filled:hover {
+            background: var(--green-mid);
+        }
+
+        /* ── Bespoke / Special Tier ── */
+        .bespoke-section {
+            background: linear-gradient(160deg, var(--green-deep) 0%, #0f2419 100%);
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bespoke-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,169,110,0.1) 0%, transparent 70%);
+        }
+
+        .bespoke-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+            position: relative;
+        }
+
+        .bespoke-left .tier-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid rgba(201,169,110,0.4);
+            color: var(--gold-light);
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            padding: 0.45rem 1.2rem;
+            border-radius: 40px;
+            margin-bottom: 1.8rem;
+        }
+
+        .bespoke-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .bespoke-left h2 em {
+            color: var(--gold);
+        }
+
+        .bespoke-left p {
+            color: rgba(255,255,255,0.6);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            font-size: 0.97rem;
+        }
+
+        .bespoke-perks {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .perk {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 1.2rem 1.4rem;
+            border-radius: 6px;
+        }
+
+        .perk-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .perk-text strong {
+            display: block;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .perk-text span {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.45);
+            font-weight: 300;
+        }
+
+        /* Order Form */
+        .order-form-wrap {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 2.5rem;
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--green-deep);
+            margin-bottom: 0.3rem;
+        }
+
+        .form-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 0.5rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid var(--cream-dark);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text);
+            background: white;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--gold);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-note {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            margin-top: 0.4rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--green-deep);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--green-mid);
+        }
+
+        .form-privacy {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        /* ── Process ── */
+        .process {
+            padding: 6rem 2rem;
+            background: var(--cream-warm);
+        }
+
+        .process-steps {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 12%;
+            right: 12%;
+            height: 1px;
+            background: var(--cream-dark);
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-num {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: white;
+            border: 1.5px solid var(--cream-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin: 0 auto 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--green-deep);
+            margin-bottom: 0.4rem;
+        }
+
+        .step p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* ── Testimonials ── */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: white;
+            border: 1px solid var(--cream-dark);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .testimonial .stars {
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 0.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial p {
+            font-size: 0.93rem;
+            color: var(--text-mid);
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .author-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--cream-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold-dark);
+            flex-shrink: 0;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .author-origin {
+            font-size: 0.78rem;
+            color: var(--text-light);
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--green-deep);
+            color: rgba(255,255,255,0.5);
+            padding: 3rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-brand .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: white;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-brand .logo span {
+            color: var(--gold);
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 280px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.45);
+            font-size: 0.85rem;
+            font-weight: 300;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .about-inner,
+            .bespoke-inner,
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.4rem; }
+            .bespoke-left h2 { font-size: 2.2rem; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Petals <span>Malta</span></a>
+            <ul class="nav-links">
+                <li><a href="#packages">Collections</a></li>
+                <li><a href="#bespoke">Bespoke</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#bespoke" class="nav-cta">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div>
+            <div class="hero-badge">✦ Luxury Floral Studio · Valletta, Malta</div>
+            <h1>Flowers Crafted<br>with <em>Intention</em></h1>
+            <p>Artisan bouquets and floral arrangements for those who believe beauty is in the details.</p>
+            <div class="hero-actions">
+                <a href="#packages" class="btn-primary">Explore Collections</a>
+                <a href="#bespoke" class="btn-ghost">Bespoke Order</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            Scroll
+        </div>
+    </section>
+
+    <!-- About Strip -->
+    <section class="about-strip" id="about">
+        <div class="about-inner">
+            <div class="about-text">
+                <div class="label">Our Story</div>
+                <h2>Malta's Most<br>Considered Florist</h2>
+                <p>Every arrangement we create is a conversation between nature and craft. We source from local Maltese growers and the finest European wholesalers — choosing stems the way a jeweller chooses stones.</p>
+                <p>From intimate table centrepieces to grand wedding installations, we bring the same obsessive care to every order, large or small.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <span class="number">12+</span>
+                    <span class="desc">Years crafting in Malta</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">4.9★</span>
+                    <span class="desc">Google rating</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">3h</span>
+                    <span class="desc">Same-day delivery</span>
+                </div>
+                <div class="stat-card">
+                    <span class="number">100%</span>
+                    <span class="desc">Fresh-cut, daily stock</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="packages" id="packages">
+        <div class="section-header">
+            <div class="label">Ready-Made Collections</div>
+            <h2>Curated Bouquets</h2>
+            <p>Handpicked arrangements ready to order — each one designed around a mood, not just a price point.</p>
+        </div>
+
+        <div class="packages-grid">
+            <!-- Garden -->
+            <div class="package-card">
+                <div class="card-visual garden">🌿</div>
+                <div class="card-body">
+                    <h3>Garden Fresh</h3>
+                    <div class="card-tagline">Wild, effortless, alive</div>
+                    <ul class="card-features">
+                        <li>Seasonal stems, locally grown</li>
+                        <li>Mixed greens & soft blooms</li>
+                        <li>Kraft paper wrap, natural twine</li>
+                        <li>Same-day delivery available</li>
+                    </ul>
+                    <div class="card-price">
+                        <span class="price-from">from</span>
+                        <span class="price-currency">€</span>
+                        <span class="price-amount">38</span>
+                    </div>
+                    <a href="#bespoke" class="btn-card btn-card-outline">Order This</a>
+                </div>
+            </div>
+
+            <!-- Romance — Featured -->
+            <div class="package-card featured">
+                <div class="package-badge">Most Loved</div>
+                <div class="card-visual romance">🌹</div>
+                <div class="card-body">
+                    <h3>Romance</h3>
+                    <div class="card-tagline">For moments that matter</div>
+                    <ul class="card-features">
+                        <li>Premium roses & peonies</li>
+                        <li>Rich tones — reds, blushes, creams</li>
+                        <li>Velvet ribbon, gift card included</li>
+                        <li>Evening delivery option</li>
+                    </ul>
+                    <div class="card-price">
+                        <span class="price-from">from</span>
+                        <span class="price-currency">€</span>
+                        <span class="price-amount">65</span>
+                    </div>
+                    <a href="#bespoke" class="btn-card btn-card-filled">Order This</a>
+                </div>
+            </div>
+
+            <!-- Luxe -->
+            <div class="package-card">
+                <div class="card-visual luxe">✨</div>
+                <div class="card-body">
+                    <h3>Grand Luxe</h3>
+                    <div class="card-tagline">When only extraordinary will do</div>
+                    <ul class="card-features">
+                        <li>Rare & statement blooms</li>
+                        <li>Custom colour palette</li>
+                        <li>Premium box presentation</li>
+                        <li>White-glove delivery</li>
+                    </ul>
+                    <div class="card-price">
+                        <span class="price-from">from</span>
+                        <span class="price-currency">€</span>
+                        <span class="price-amount">120</span>
+                    </div>
+                    <a href="#bespoke" class="btn-card btn-card-outline">Order This</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bespoke / Special Tier + Order Form -->
+    <section class="bespoke-section" id="bespoke">
+        <div class="bespoke-inner">
+            <div class="bespoke-left">
+                <div class="tier-label">✦ Special Arrangement Tariff</div>
+                <h2>Bespoke &<br><em>Event Florals</em></h2>
+                <p>Beyond the catalogue. Whether it's a proposal setup, wedding installation, corporate event or simply a gift that needs to feel truly one-of-a-kind — this is where we go further.</p>
+                <p>Every bespoke order begins with a conversation. We listen, design, and deliver something built around you.</p>
+
+                <div class="bespoke-perks">
+                    <div class="perk">
+                        <div class="perk-icon">🎨</div>
+                        <div class="perk-text">
+                            <strong>Personalised Design Consultation</strong>
+                            <span>1-on-1 with our lead florist, in studio or via call</span>
+                        </div>
+                    </div>
+                    <div class="perk">
+                        <div class="perk-icon">🌸</div>
+                        <div class="perk-text">
+                            <strong>Bespoke Stem Sourcing</strong>
+                            <span>We source specific flowers not held in standard stock</span>
+                        </div>
+                    </div>
+                    <div class="perk">
+                        <div class="perk-icon">📦</div>
+                        <div class="perk-text">
+                            <strong>Luxury Presentation</strong>
+                            <span>Bespoke box, ribbon, wax seal & handwritten card</span>
+                        </div>
+                    </div>
+                    <div class="perk">
+                        <div class="perk-icon">🚗</div>
+                        <div class="perk-text">
+                            <strong>White-Glove Delivery across Malta</strong>
+                            <span>Timed to the minute — Valletta, Sliema, Mdina & beyond</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Form -->
+            <div class="order-form-wrap">
+                <div class="form-title">Place Your Order</div>
+                <div class="form-subtitle">We'll confirm within 2 hours · No payment required now</div>
+
+                <form id="orderForm" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" placeholder="Elena" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" placeholder="Borg" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="elena@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone / WhatsApp</label>
+                        <input type="tel" id="phone" placeholder="+356 9999 0000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="arrangement">Arrangement Type</label>
+                        <select id="arrangement" required>
+                            <option value="" disabled selected>Select a collection</option>
+                            <option value="garden">Garden Fresh — from €38</option>
+                            <option value="romance">Romance — from €65</option>
+                            <option value="luxe">Grand Luxe — from €120</option>
+                            <option value="bespoke">Bespoke / Event Florals — custom quote</option>
+                            <option value="wedding">Wedding Package — let's talk</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="occasion">Occasion</label>
+                            <select id="occasion">
+                                <option value="" disabled selected>Occasion</option>
+                                <option>Birthday</option>
+                                <option>Anniversary</option>
+                                <option>Proposal</option>
+                                <option>Wedding</option>
+                                <option>Corporate</option>
+                                <option>Just Because</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Delivery Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Delivery Address, Malta</label>
+                        <input type="text" id="address" placeholder="Street, Town / City" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Special Requests or Message for Card</label>
+                        <textarea id="notes" placeholder="Colour palette, preferred flowers, a personal message to include..."></textarea>
+                        <div class="form-note">The more detail you share, the better we can tailor your arrangement.</div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send My Order Request →</button>
+                    <div class="form-privacy">🔒 Your details are never shared with third parties.</div>
+                </form>
+
+                <!-- Success state (hidden) -->
+                <div id="formSuccess" style="display:none; text-align:center; padding: 2rem 0;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌸</div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--green-deep); margin-bottom: 0.5rem;">Request Received</div>
+                    <p style="color: var(--text-mid); font-size: 0.9rem; line-height: 1.7;">Thank you. We'll be in touch within 2 hours to confirm your arrangement and discuss any details. Check your inbox for a summary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="how">
+        <div class="section-header">
+            <div class="label">How It Works</div>
+            <h2>From Request to<br>Your Door</h2>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-num">01</div>
+                <h4>Place Your Request</h4>
+                <p>Fill in the form above or send us a WhatsApp message.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <h4>We Confirm</h4>
+                <p>We reply within 2 hours with details, pricing and any questions.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <h4>We Design & Create</h4>
+                <p>Our florists hand-craft your arrangement from the freshest stems.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">04</div>
+                <h4>Delivered with Care</h4>
+                <p>Arrived beautifully packaged, exactly on time, anywhere in Malta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <div class="label">Reviews</div>
+            <h2>What Our Clients Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"The bouquet was absolutely stunning. More beautiful than anything I could have described — they just understood exactly what I wanted. Delivered to Valletta in under 3 hours."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SC</div>
+                    <div>
+                        <div class="author-name">Sophia C.</div>
+                        <div class="author-origin">Google Reviews · Valletta</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"We ordered the bespoke package for our anniversary dinner. The table arrangement was jaw-dropping. Guests kept asking who the florist was. Worth every cent."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div>
+                        <div class="author-name">Marco & Rachel</div>
+                        <div class="author-origin">Facebook · Sliema</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Used them for our entire wedding — ceremony, reception, bridal bouquet. Every piece was flawless. The team was professional, responsive, and genuinely passionate about what they do."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AV</div>
+                    <div>
+                        <div class="author-name">Anna V.</div>
+                        <div class="author-origin">Google Reviews · St. Julian's</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">Petals <span>Malta</span></div>
+                <p>A luxury floral studio in the heart of Valletta. Crafting arrangements that speak when words fall short.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#packages">Garden Fresh</a></li>
+                    <li><a href="#packages">Romance</a></li>
+                    <li><a href="#packages">Grand Luxe</a></li>
+                    <li><a href="#bespoke">Bespoke</a></li>
+                    <li><a href="#bespoke">Wedding Florals</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">hello@petalsmalta.com</a></li>
+                    <li><a href="#">+356 9900 0000</a></li>
+                    <li><a href="#">WhatsApp Us</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Valletta, Malta</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 Petals Malta. All rights reserved.</span>
+            <span>Crafted with care ✦</span>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('orderForm');
+            const success = document.getElementById('formSuccess');
+            form.style.display = 'none';
+            success.style.display = 'block';
+        }
+
+        // Set minimum date to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
