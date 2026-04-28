@@ -1,0 +1,252 @@
+[
+  {
+    "layer": "must",
+    "name": "Ona Garden Lago",
+    "category": "Accommodation",
+    "description": "Hotel base in Alcudia.",
+    "latitude": 39.840733,
+    "longitude": 3.118933,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.840733%2C3.118933",
+    "priority": "high"
+  },
+  {
+    "layer": "must",
+    "name": "Magic Bus Stop",
+    "category": "Transport",
+    "description": "Main bus stop for Palma and local routes.",
+    "latitude": 39.840133,
+    "longitude": 3.127811,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.840133%2C3.127811",
+    "priority": "high"
+  },
+  {
+    "layer": "must",
+    "name": "Port d’Alcudia Beach",
+    "category": "Beach",
+    "description": "Closest beach with shallow water.",
+    "latitude": 39.8405,
+    "longitude": 3.1315,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.840500%2C3.131500",
+    "priority": "high"
+  },
+  {
+    "layer": "must",
+    "name": "Playa de Muro",
+    "category": "Beach",
+    "description": "Best turquoise water and wooden piers.",
+    "latitude": 39.815,
+    "longitude": 3.118,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.815000%2C3.118000",
+    "priority": "high"
+  },
+  {
+    "layer": "must",
+    "name": "Alcudia Old Town",
+    "category": "Historic",
+    "description": "Medieval town center within the walls.",
+    "latitude": 39.8525,
+    "longitude": 3.1215,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.852500%2C3.121500",
+    "priority": "high"
+  },
+  {
+    "layer": "must",
+    "name": "Port d’Alcudia Marina",
+    "category": "Port",
+    "description": "Main promenade for evening walks.",
+    "latitude": 39.8415,
+    "longitude": 3.134,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.841500%2C3.134000",
+    "priority": "high"
+  },
+  {
+    "layer": "must",
+    "name": "Palma Cathedral (La Seu)",
+    "category": "Sightseeing",
+    "description": "Famous Gothic cathedral in Palma center.",
+    "latitude": 39.5675,
+    "longitude": 2.6482,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.567500%2C2.648200",
+    "priority": "medium"
+  },
+  {
+    "layer": "must",
+    "name": "Passeig del Born",
+    "category": "Shopping",
+    "description": "Main shopping street in Palma.",
+    "latitude": 39.5705,
+    "longitude": 2.6465,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.570500%2C2.646500",
+    "priority": "medium"
+  },
+  {
+    "layer": "food",
+    "name": "Osteria El Patio",
+    "category": "Pizza",
+    "description": "Excellent pizza from wood-fired oven.",
+    "latitude": 39.8402,
+    "longitude": 3.131,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.840200%2C3.131000",
+    "priority": "medium"
+  },
+  {
+    "layer": "food",
+    "name": "Como En Casa",
+    "category": "Pasta",
+    "description": "Homemade pasta and fresh seafood.",
+    "latitude": 39.842,
+    "longitude": 3.133,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.842000%2C3.133000",
+    "priority": "medium"
+  },
+  {
+    "layer": "food",
+    "name": "Me Gusta",
+    "category": "Healthy",
+    "description": "Fresh salads and light Mediterranean meals.",
+    "latitude": 39.8418,
+    "longitude": 3.1345,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.841800%2C3.134500",
+    "priority": "medium"
+  },
+  {
+    "layer": "food",
+    "name": "Gelateria Ca’n Miquel",
+    "category": "Ice Cream",
+    "description": "Artisanal ice cream in the port area.",
+    "latitude": 39.8412,
+    "longitude": 3.1348,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.841200%2C3.134800",
+    "priority": "medium"
+  },
+  {
+    "layer": "food",
+    "name": "Sa Portassa",
+    "category": "Wine Bar",
+    "description": "Wine and tapas in the Old Town.",
+    "latitude": 39.8528,
+    "longitude": 3.1218,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.852800%2C3.121800",
+    "priority": "medium"
+  },
+  {
+    "layer": "food",
+    "name": "S'Espiga",
+    "category": "Restaurant",
+    "description": "Casual spot for good value local food.",
+    "latitude": 39.841,
+    "longitude": 3.1325,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.841000%2C3.132500",
+    "priority": "low"
+  },
+  {
+    "layer": "food",
+    "name": "Restaurante Miramar",
+    "category": "Seafood",
+    "description": "Classic port restaurant with sea views.",
+    "latitude": 39.8419,
+    "longitude": 3.1352,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.841900%2C3.135200",
+    "priority": "low"
+  },
+  {
+    "layer": "extras",
+    "name": "Lidl Alcudia",
+    "category": "Supermarket",
+    "description": "Supermarket for water, snacks and essentials.",
+    "latitude": 39.8475,
+    "longitude": 3.1185,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.847500%2C3.118500",
+    "priority": "high"
+  },
+  {
+    "layer": "extras",
+    "name": "Mercadona",
+    "category": "Supermarket",
+    "description": "Large supermarket with fresh items.",
+    "latitude": 39.8455,
+    "longitude": 3.1165,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.845500%2C3.116500",
+    "priority": "medium"
+  },
+  {
+    "layer": "extras",
+    "name": "Farmacia Port d'Alcudia",
+    "category": "Pharmacy",
+    "description": "Pharmacy for basic medicine and essentials.",
+    "latitude": 39.8415,
+    "longitude": 3.1335,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.841500%2C3.133500",
+    "priority": "high"
+  },
+  {
+    "layer": "extras",
+    "name": "Taxi Stand Port",
+    "category": "Transport",
+    "description": "Main taxi rank in Port d'Alcudia.",
+    "latitude": 39.8422,
+    "longitude": 3.1355,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.842200%2C3.135500",
+    "priority": "high"
+  },
+  {
+    "layer": "extras",
+    "name": "Boat Trip Point",
+    "category": "Activity",
+    "description": "Departure point for coastal boat tours.",
+    "latitude": 39.8425,
+    "longitude": 3.136,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.842500%2C3.136000",
+    "priority": "medium"
+  },
+  {
+    "layer": "extras",
+    "name": "Festival Park Mallorca",
+    "category": "Shopping",
+    "description": "Outlet-style shopping near Palma.",
+    "latitude": 39.6375,
+    "longitude": 2.775,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.637500%2C2.775000",
+    "priority": "low"
+  },
+  {
+    "layer": "extras",
+    "name": "Ermita de la Victòria",
+    "category": "Viewpoint",
+    "description": "Quiet viewpoint with panoramic bay views.",
+    "latitude": 39.8755,
+    "longitude": 3.1705,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.875500%2C3.170500",
+    "priority": "low"
+  },
+  {
+    "layer": "extras",
+    "name": "Cap Formentor",
+    "category": "Viewpoint",
+    "description": "Scenic lighthouse area at the tip of the island.",
+    "latitude": 39.9615,
+    "longitude": 3.2125,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.961500%2C3.212500",
+    "priority": "medium"
+  },
+  {
+    "layer": "extras",
+    "name": "Valldemossa",
+    "category": "Village",
+    "description": "Picturesque mountain village worth a visit by car.",
+    "latitude": 39.7125,
+    "longitude": 2.6225,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.712500%2C2.622500",
+    "priority": "low"
+  },
+  {
+    "layer": "extras",
+    "name": "Deia",
+    "category": "Village",
+    "description": "Beautiful artist village in the mountains.",
+    "latitude": 39.7475,
+    "longitude": 2.6485,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=39.747500%2C2.648500",
+    "priority": "low"
+  }
+]
