@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saradnja sa Električarima i Vodoinstalaterima | ElectroProject56</title>
+    <meta name="description" content="ElectroProject56 traži saradnju sa električarima, vodoinstalaterima i instalaterskim timovima za projekte u Nemačkoj i Evropskoj Uniji.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Contractor",
+      "name": "ElectroProject56",
+      "areaServed": "Germany",
+      "description": "Saradnja sa instalaterskim timovima za projekte u Nemačkoj"
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0a1628;
+            --gold: #d4af37;
+            --cream: #faf8f3;
+            --slate: #64748b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.7;
+            background: var(--cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-switcher a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .lang-switcher a:hover,
+        .lang-switcher a.active {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide:nth-child(1) {
+            background-image: url('https://dlproject56.com/wp-content/uploads/2026/03/i41uwyzmwhm.jpg');
+        }
+
+        .hero-slide:nth-child(2) {
+            background-image: url('https://dlproject56.com/wp-content/uploads/2026/03/59unzhwybig.jpg');
+        }
+
+        .hero-slide:nth-child(3) {
+            background-image: url('https://dlproject56.com/wp-content/uploads/2026/03/68d6617b-8844-413b-9ee6-c36a683895e8-rotated.jpg');
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(165deg, 
+                rgba(30, 64, 175, 0.92) 0%, 
+                rgba(10, 22, 40, 0.88) 50%,
+                rgba(30, 64, 175, 0.90) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+            z-index: 2;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--cream);
+            z-index: 2;
+            padding: 3rem 2rem;
+            max-width: 1100px;
+            animation: fadeIn 1.2s ease-out;
+            position: relative;
+        }
+
+        .logo-container {
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            width: 220px;
+            height: auto;
+            margin: 0 auto;
+            filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.4));
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            margin-bottom: 4rem;
+            color: rgba(250, 248, 243, 0.85);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        .hero .divider {
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+            margin: 3rem auto;
+        }
+
+        .hero .services-list {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .service-badge {
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(250, 248, 243, 0.7);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .service-badge::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        .service-badge:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--gold);
+            padding: 1.1rem 3rem;
+            border: 1px solid var(--gold);
+            font-weight: 400;
+            font-size: 0.9rem;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.25);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background: var(--white);
+            border-bottom: 1px solid rgba(10, 22, 40, 0.08);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            color: var(--navy);
+            font-weight: 400;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--slate);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            background: var(--cream);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 5rem;
+            color: var(--navy);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 2rem auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 4rem 3rem;
+            box-shadow: 0 2px 24px rgba(10, 22, 40, 0.04);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(10, 22, 40, 0.08);
+            border-top-color: var(--gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            font-weight: 400;
+        }
+
+        .service-card p {
+            color: var(--slate);
+            line-height: 1.8;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Why Us Section */
+        .why-us {
+            padding: 8rem 2rem;
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .why-card {
+            background: var(--cream);
+            padding: 3rem 2.5rem;
+            box-shadow: 0 2px 16px rgba(10, 22, 40, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            box-shadow: 0 8px 32px rgba(10, 22, 40, 0.06);
+        }
+
+        .why-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .why-card p {
+            color: var(--slate);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Clients Section */
+        .clients {
+            padding: 8rem 2rem;
+            background: var(--cream);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .client-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--navy);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .client-card:hover {
+            background: var(--cream);
+            border-color: var(--gold);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 2rem;
+            background: linear-gradient(165deg, #f8f9fa 0%, var(--cream) 100%);
+        }
+
+        .contact-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-intro {
+            font-size: 1.15rem;
+            margin-bottom: 4rem;
+            color: var(--slate);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            box-shadow: 0 2px 16px rgba(10, 22, 40, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 8px 32px rgba(10, 22, 40, 0.06);
+        }
+
+        .contact-card h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            opacity: 0.7;
+        }
+
+        .contact-card p {
+            color: var(--slate);
+            font-weight: 300;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: #25D366;
+            color: white;
+            padding: 1.1rem 2.75rem;
+            font-weight: 400;
+            text-decoration: none;
+            margin-top: 4rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #e9ecef;
+            color: var(--navy);
+            padding: 4rem 2rem 2rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(10, 22, 40, 0.1);
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-contact p {
+            margin: 0.75rem 0;
+            color: var(--slate);
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-contact a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: var(--slate);
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin: 0.5rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .lang-switcher {
+                top: 1rem;
+                right: 1rem;
+                padding: 0.5rem 1rem;
+                gap: 0.75rem;
+            }
+
+            .hero {
+                min-height: 95vh;
+            }
+            
+            .logo {
+                width: 140px;
+            }
+
+            .services, .contact, .why-us, .clients {
+                padding: 5rem 1.5rem;
+            }
+
+            .about {
+                padding: 4rem 1.5rem;
+            }
+
+            .service-card {
+                padding: 3rem 2rem;
+            }
+
+            .hero .services-list {
+                gap: 1.5rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                margin-bottom: 3rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            
+            slides[0].classList.add('active');
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="en.html">EN</a>
+        <a href="de.html">DE</a>
+        <a href="yu.html" class="active">YU</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-carousel">
+            <div class="hero-slide" role="img" aria-label="Električne instalacije na gradilištima"></div>
+            <div class="hero-slide" role="img" aria-label="Instalacije u poslovnim zgradama"></div>
+            <div class="hero-slide" role="img" aria-label="Elektro orman i instalacije"></div>
+        </div>
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="https://dlproject56.com/wp-content/uploads/2026/03/12f2ef01-2110-4ae1-921c-5b3b3afcd616.png" alt="ElectroProject56 - Saradnja sa Električarima i Vodoinstalarerima" class="logo">
+            </div>
+            <h1>ElectroProject56</h1>
+            <div class="divider"></div>
+            <p class="tagline">Tražimo saradnju sa električarima i vodoinstalaterima za projekte u Nemačkoj</p>
+            <div class="services-list">
+                <span class="service-badge">Električne Instalacije</span>
+                <span class="service-badge">Vodoinstalaterski Radovi</span>
+            </div>
+            <a href="#contact" class="cta-button">Kontaktirajte Nas</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Saradnja sa Instalaterskim Timovima</h2>
+                <p>ElectroProject56 sarađuje sa električarima, vodoinstalaterima i instalaterskim timovima iz regije za rad na građevinskim projektima u Nemačkoj.</p>
+                <p>Tražimo pouzdane partnere za dugotrajnu saradnju na stambenim i poslovnim projektima. Naši projekti uključuju električne i vodoinstalaterske instalacije na gradilištima širom Nemačke.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Oblasti Saradnje</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Električne Instalacije</h3>
+                    <p>Radovi na električnim instalacijama u stambenim i poslovnim zgradama. Kabliranje, osvetljenje, elektro ormarići. Projekti u Nemačkoj zahtevaju pouzdan rad i poštovanje rokova.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Vodoinstalaterski Radovi</h3>
+                    <p>Vodoinstalaterski radovi na građevinskim projektima. Kupatila, kuhinje, grejni sistemi. Tražimo pouzdane majstore sa iskustvom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title">Zašto Sarađivati sa Nama</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Redovni Projekti</h3>
+                    <p>Stalna saradnja sa građevinskim firmama u Nemačkoj znači redovne projekte i stabilan posao.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Korektna Saradnja</h3>
+                    <p>Jasni dogovori, redovne isplate i profesionalni odnosi. Radimo sa timovima koji poštuju obaveze.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Mogućnost Rasta</h3>
+                    <p>Kvalitetni timovi dobijaju više projekata i mogućnost dugoročne saradnje.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Work With Section -->
+    <section class="clients">
+        <div class="container">
+            <h2 class="section-title">Tražimo Saradnju sa</h2>
+            <div class="clients-grid">
+                <div class="client-card">Električari</div>
+                <div class="client-card">Vodoinstalater</div>
+                <div class="client-card">Instalaterski Timovi</div>
+                <div class="client-card">Majstori sa Iskustvom</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Kontakt</h2>
+            <p class="contact-intro">Zainteresovani ste za saradnju? Javite se za više informacija o projektima i uslovima.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <h4>Email</h4>
+                    <a href="mailto:info@electroproject56.com">info@electroproject56.com</a>
+                </div>
+                <div class="contact-card">
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/35677922436?text=Pozdrav%2C%20zainteresovan%20sam%20za%20saradnju%20na%20projektima%20u%20Nema%C4%8Dkoj">+356 77 922 436</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Projekti</h4>
+                    <p>Nemačka</p>
+                </div>
+            </div>
+
+            <a href="https://wa.me/35677922436?text=Pozdrav%2C%20zainteresovan%20sam%20za%20saradnju%20na%20projektima%20u%20Nema%C4%8Dkoj" class="whatsapp-btn" target="_blank">
+                Kontakt preko WhatsApp-a
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="https://dlproject56.com/wp-content/uploads/2026/03/12f2ef01-2110-4ae1-921c-5b3b3afcd616.png" alt="ElectroProject56" class="footer-logo">
+                    <h3>ElectroProject56</h3>
+                </div>
+                <div class="footer-contact">
+                    <p><strong>Email:</strong> <a href="mailto:info@electroproject56.com">info@electroproject56.com</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/35677922436">+356 77 922 436</a></p>
+                    <p><strong>Projekti:</strong> Nemačka</p>
+                    <p style="margin-top: 1.5rem; font-style: italic;">Tražimo dugotrajnu saradnju sa pouzdanim električarima i vodoinstalaterima.</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privatnost</a>
+                <a href="terms.html">Uslovi</a>
+                <a href="faq.html">Pitanja</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ElectroProject56 — Profesionalne Instalacije</p>
+                <p>D&L Project56 EOOD | Bugarska</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem;">Web Dizajn: <a href="https://dlproject.io" style="color: #d4af37; text-decoration: none;">D&L Project56</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

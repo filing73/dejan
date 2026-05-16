@@ -1,0 +1,53 @@
+/* ===== GLOBAL NAVBAR ===== */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  padding: 20px 0;
+  background: transparent;
+}
+
+#navbar.scrolled {
+  background: #0f172a;
+  padding: 12px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+
+.nav-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+#navbar nav a {
+  text-decoration: none;
+  margin-left: 22px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  transition: opacity .2s ease;
+}
+
+#navbar nav a:hover {
+  opacity: .6;
+}
+
+/* da ne pokrije sadržaj */
+body {
+  margin: 0;
+  padding-top: 90px;
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hair Salon Website Design Demo | D&L Project56 Malta & EU</title>
+<meta name="description" content="Hair salon website design demo by D&L Project56. Win more bookings with a stylish salon website, fixed pricing from €850 and 5-day delivery across Malta and the EU.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dlproject.io/hair-salon/">
+<meta property="og:title" content="Hair Salon Website Design Demo | D&L Project56">
+<meta property="og:description" content="See a hair salon website demo designed to showcase services, gallery work and strong booking-focused calls to action.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dlproject.io/hair-salon/">
+<meta property="og:image" content="https://dlproject56.com/wp-content/uploads/2026/02/ptofbgku3ui.jpg">
+<meta property="og:image:alt" content="Hair salon website design demo by D&L Project56">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Hair Salon Website Design Demo",
+  "serviceType": "Hair salon website design",
+  "url": "https://dlproject.io/hair-salon/",
+  "areaServed": ["Malta", "EU"],
+  "provider": {
+    "@type": "Organization",
+    "name": "D&L Project56",
+    "url": "https://dlproject.io"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:#c8736a;--rose-light:#e8a49e;--rose-pale:#fdf0ee;
+  --dark:#1a1014;--cream:#faf6f4;--text:#2a1f1d;--muted:#8a7470;
+  --border:#ecddd9;--max:1140px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+
+#navbar{position:fixed;top:0;width:100%;z-index:9999;padding:20px 0;transition:all .35s ease;}
+#navbar.light-mode{background:rgba(250,246,244,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:13px 0;}
+#navbar.dark-mode{background:rgba(26,16,20,0.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(200,115,106,0.2);padding:13px 0;}
+.nav-wrap{max-width:var(--max);margin:auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;font-style:italic;text-decoration:none;transition:color .3s;}
+#navbar.light-mode .nav-logo{color:var(--text);}
+#navbar.dark-mode  .nav-logo{color:var(--rose-light);}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase;text-decoration:none;margin-left:28px;position:relative;transition:color .3s;}
+#navbar.light-mode .nav-links a{color:var(--muted);}
+#navbar.dark-mode  .nav-links a{color:rgba(250,246,244,0.6);}
+.nav-links a:hover{color:var(--rose)!important;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--rose);transition:width .3s;}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{padding:9px 20px;background:var(--rose);color:#fff!important;border-radius:2px;font-weight:500!important;transition:all .3s;}
+.nav-cta:hover{background:var(--rose-light);}
+.nav-cta::after{display:none!important;}
+
+/* HERO — split layout */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;data-nav="light";}
+.hero-left{background:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:140px 60px 80px 40px;position:relative;}
+.hero-left::after{content:'';position:absolute;right:0;top:10%;height:80%;width:1px;background:linear-gradient(to bottom,transparent,var(--border),transparent);}
+.hero-right{position:relative;overflow:hidden;}
+.hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hero-right-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(250,246,244,0.15),transparent);}
+
+.hero-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--rose);display:block;margin-bottom:32px;animation:fadeUp .7s ease both;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,80px);font-weight:400;line-height:1.05;margin-bottom:24px;animation:fadeUp .7s .1s ease both;}
+.hero h1 em{font-style:italic;color:var(--rose);}
+.hero-sub{font-size:16px;color:var(--muted);line-height:1.7;max-width:400px;margin-bottom:44px;font-weight:300;animation:fadeUp .7s .2s ease both;}
+.hero-btns{display:flex;gap:14px;animation:fadeUp .7s .3s ease both;}
+.btn-rose{display:inline-block;padding:15px 32px;background:var(--rose);color:#fff;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .3s;}
+.btn-rose:hover{background:var(--rose-light);transform:translateY(-2px);}
+.btn-outline-rose{display:inline-block;padding:14px 32px;border:1px solid var(--border);color:var(--muted);font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .3s;}
+.btn-outline-rose:hover{border-color:var(--rose);color:var(--rose);}
+.hero-proof{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:18px;line-height:1.8;}
+.hero-proof a{color:var(--rose);text-decoration:none;}
+.hero-proof a:hover{text-decoration:underline;}
+.hero-number{position:absolute;bottom:40px;left:40px;font-family:'Playfair Display',serif;font-size:120px;font-weight:700;color:rgba(200,115,106,0.06);line-height:1;pointer-events:none;}
+
+/* SERVICES — dark */
+.sec-dk{background:var(--dark);padding:100px 32px;}
+.sec-lt{background:#fff;padding:100px 32px;}
+.sec-pale{background:var(--rose-pale);padding:100px 32px;}
+.inner{max-width:var(--max);margin:auto;}
+.s-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--rose);display:block;margin-bottom:14px;}
+.s-title-dk{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,56px);font-weight:400;line-height:1.1;color:#fff;margin-bottom:52px;}
+.s-title-lt{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,56px);font-weight:400;line-height:1.1;color:var(--text);margin-bottom:52px;}
+.s-title-dk em,.s-title-lt em{font-style:italic;color:var(--rose);}
+
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,115,106,0.15);}
+.svc{background:var(--dark);padding:48px 36px;position:relative;overflow:hidden;transition:background .3s;}
+.svc::before{content:'';position:absolute;left:0;top:0;width:2px;height:0;background:var(--rose);transition:height .4s ease;}
+.svc:hover{background:#221618;}
+.svc:hover::before{height:100%;}
+.svc-icon{font-size:28px;margin-bottom:20px;display:block;opacity:0.7;}
+.svc h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:#fff;margin-bottom:10px;}
+.svc p{font-size:13px;color:rgba(250,246,244,0.45);line-height:1.7;font-weight:300;}
+
+/* GALLERY mosaic */
+.gallery-mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:300px 300px;gap:8px;}
+.gimg{overflow:hidden;border-radius:4px;}
+.gimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s;}
+.gimg:hover img{transform:scale(1.05);filter:brightness(1.05);}
+.gimg.wide{grid-column:span 2;}
+.gimg.tall{grid-row:span 2;}
+
+/* PRICING */
+.pricing-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.pcard{background:#fff;border:1px solid var(--border);border-radius:10px;padding:36px 28px;position:relative;transition:transform .3s,box-shadow .3s;}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(200,115,106,0.1);}
+.pcard.feat{border-color:var(--rose);background:var(--rose-pale);}
+.pcard.feat::before{content:'BEST VALUE';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--rose);color:#fff;font-size:9px;font-weight:500;letter-spacing:2px;padding:5px 16px;border-radius:0 0 6px 6px;}
+.pcard-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:16px;display:block;border-bottom:1px solid var(--border);padding-bottom:16px;}
+.pcard h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:400;margin-bottom:8px;}
+.pcard-price{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;line-height:1;margin-bottom:24px;}
+.pcard-price sup{font-size:22px;vertical-align:super;}
+.pcard-ul{list-style:none;margin-bottom:24px;}
+.pcard-ul li{font-size:13px;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+.pcard-ul li::before{content:'';width:5px;height:1px;background:var(--rose);flex-shrink:0;}
+.btn-r{display:block;text-align:center;padding:13px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .3s;}
+.btn-r.ol{border:1px solid var(--border);color:var(--text);}
+.btn-r.ol:hover{border-color:var(--rose);color:var(--rose);}
+.btn-r.sl{background:var(--rose);color:#fff;}
+.btn-r.sl:hover{background:var(--rose-light);}
+
+/* CTA */
+.cta{background:var(--dark);padding:110px 32px;text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(200,115,106,0.1) 0%,transparent 70%);pointer-events:none;}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,58px);font-weight:400;color:#fff;margin-bottom:16px;}
+.cta h2 em{font-style:italic;color:var(--rose);}
+.cta p{font-size:15px;color:rgba(250,246,244,0.4);max-width:440px;margin:0 auto 44px;line-height:1.8;}
+.cta-email{font-family:'Playfair Display',serif;font-size:16px;color:var(--rose);display:block;margin-top:24px;text-decoration:none;opacity:0.7;font-style:italic;transition:opacity .3s;}
+.cta-email:hover{opacity:1;}
+
+footer{background:var(--dark);border-top:1px solid rgba(200,115,106,0.1);padding:28px;text-align:center;}
+footer p{font-size:11px;letter-spacing:1px;color:rgba(250,246,244,0.2);}
+footer a{color:var(--rose);text-decoration:none;opacity:0.6;}
+footer a:hover{opacity:1;}
+
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--muted);margin-bottom:40px;transition:color .3s;}
+.back-link:hover{color:var(--rose);}
+.back-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right{height:50vh;}
+  .hero-left{padding:120px 24px 60px;}
+  .services-grid,.pricing-row{grid-template-columns:1fr;}
+  .gallery-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .gimg.wide,.gimg.tall{grid-column:span 1;grid-row:span 1;}
+  .gimg{height:220px;}
+}
+@media(max-width:600px){.nav-links .hm{display:none;}}
+
+.lang-sw-nav{display:flex;align-items:center;gap:2px;margin-left:20px;}
+.lang-sw-nav a{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:4px 7px;border-radius:2px;transition:all .2s;}
+#navbar.light-mode .lang-sw-nav a{color:rgba(42,31,29,0.35);}
+#navbar.dark-mode .lang-sw-nav a{color:rgba(245,240,232,0.35);}
+#navbar.light-mode .lang-sw-nav a:hover,#navbar.light-mode .lang-sw-nav a.active{color:var(--rose);}
+#navbar.dark-mode .lang-sw-nav a:hover,#navbar.dark-mode .lang-sw-nav a.active{color:var(--rose-light);}
+.lang-sw-nav .sep{color:rgba(200,115,106,0.25);font-size:9px;}
+</style>
+</head>
+<body>
+
+<header id="navbar" class="light-mode">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">D&L Project56</a>
+    <nav class="nav-links">
+      <a href="/" class="hm">← All Demos</a>
+      <a href="#services" class="hm">Services</a>
+      <a href="#pricing" class="hm">Pricing</a>
+      <a href="mailto:web@dlproject56.com?subject=Hair%20Salon%20Website" class="nav-cta">Get Your Website</a>
+    <div class="lang-sw-nav">
+        <a href="/hair-salon/" class="active">EN</a>
+        <span class="sep">|</span>
+        <a href="/de/hair-salon/">DE</a>
+        <span class="sep">|</span>
+        <a href="/fr/hair-salon/">FR</a>
+        <span class="sep">|</span>
+        <a href="/mt/hair-salon/">MT</a>
+      </div>
+  </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" data-nav="light">
+  <div class="hero-left">
+    <a href="/" class="back-link"><svg viewBox="0 0 24 24"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg> All Demos</a>
+    <span class="hero-tag">Hair Salon · Demo</span>
+    <h1>Where Style<br>Meets <em>Craft.</em></h1>
+    <p class="hero-sub">A clean, elegant website that showcases your work, communicates your services and turns visitors into loyal clients.</p>
+    <div class="hero-btns">
+      <a class="btn-rose" href="mailto:web@dlproject56.com?subject=Hair%20Salon%20Website">Start Your Project</a>
+      <a class="btn-outline-rose" href="#services">See What's Inside</a>
+    </div>
+    <p class="hero-proof">EU registered · Fixed pricing from €850 · 5-day delivery · <a href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20hair%20salon%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="mailto:web@dlproject56.com?subject=Hair%20Salon%20Website%20Inquiry">Contact Us</a></p>
+    <div class="hero-number">✂</div>
+  </div>
+  <div class="hero-right">
+    <img src="https://dlproject56.com/wp-content/uploads/2026/02/ptofbgku3ui.jpg" alt="Hair salon website demo hero image with stylist portrait" fetchpriority="high">
+    <div class="hero-right-ov"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec-dk" data-nav="dark" id="services">
+  <div class="inner">
+    <span class="s-tag reveal">Services</span>
+    <h2 class="s-title-dk reveal">Everything your<br>salon <em>offers.</em></h2>
+    <div class="services-grid">
+      <div class="svc reveal"><span class="svc-icon">✂️</span><h3>Haircuts</h3><p>Precision cuts for men, women and children. Tailored to face shape and personal style.</p></div>
+      <div class="svc reveal"><span class="svc-icon">🎨</span><h3>Coloring</h3><p>Balayage, highlights, full color and toning. Premium products, lasting results.</p></div>
+      <div class="svc reveal"><span class="svc-icon">💆</span><h3>Treatments</h3><p>Keratin smoothing, deep conditioning and scalp care. Visible from the first session.</p></div>
+      <div class="svc reveal"><span class="svc-icon">💍</span><h3>Bridal Styling</h3><p>Trial sessions and day-of looks. We make sure your hair is unforgettable.</p></div>
+      <div class="svc reveal"><span class="svc-icon">🪞</span><h3>Extensions</h3><p>Tape-in, micro-bead and clip-in. Natural look, natural movement, lasting wear.</p></div>
+      <div class="svc reveal"><span class="svc-icon">📞</span><h3>Consultation</h3><p>Free 15-minute discovery call. We match the look to you — not to a trend.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec-pale" data-nav="light" id="gallery">
+  <div class="inner">
+    <span class="s-tag reveal">Gallery</span>
+    <h2 class="s-title-lt reveal">Your work,<br><em>beautifully</em> shown.</h2>
+    <div class="gallery-mosaic reveal">
+      <div class="gimg tall"><img src="https://dlproject56.com/wp-content/uploads/2026/02/c-s7lqxhpw.jpg" alt="Hair salon gallery image with finished style result" loading="lazy"></div>
+      <div class="gimg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/fb65wx6tug0.jpg" alt="Hair salon styling gallery image" loading="lazy"></div>
+      <div class="gimg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/vjrpkgts55w.jpg" alt="Hair salon color treatment gallery image" loading="lazy"></div>
+      <div class="gimg wide"><img src="https://dlproject56.com/wp-content/uploads/2026/02/wjob8d3hnzc.jpg" alt="Hair salon interior gallery image" loading="lazy" style="object-position:top;"></div>
+      <div class="gimg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/smdza6nlwmg.jpg" alt="Hair salon client transformation gallery image" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec-lt" data-nav="light" id="pricing">
+  <div class="inner">
+    <span class="s-tag reveal">Pricing</span>
+    <h2 class="s-title-lt reveal">One investment.<br><em>Lasting</em> impression.</h2>
+    <div class="pricing-row">
+      <div class="pcard reveal"><span class="pcard-label">Starter</span><h3>Essential</h3><div class="pcard-price"><sup>€</sup>850</div><ul class="pcard-ul"><li>1-page website</li><li>Services + Gallery + Contact</li><li>Mobile-first design</li><li>5-day delivery</li></ul><a class="btn-r ol" href="mailto:web@dlproject56.com?subject=Order%20Essential%20-%20Hair%20Salon">Start Your Project</a></div>
+      <div class="pcard feat reveal"><span class="pcard-label">Most Popular</span><h3>Professional</h3><div class="pcard-price"><sup>€</sup>1050</div><ul class="pcard-ul"><li>Up to 5 pages</li><li>Services + Pricing + Gallery</li><li>Basic SEO setup</li><li>Google Maps embed</li><li>5-day delivery</li></ul><a class="btn-r sl" href="mailto:web@dlproject56.com?subject=Order%20Professional%20-%20Hair%20Salon">Start Your Project</a></div>
+      <div class="pcard reveal"><span class="pcard-label">Premium</span><h3>Complete</h3><div class="pcard-price"><sup>€</sup>1250</div><ul class="pcard-ul"><li>Up to 8 pages</li><li>Booking link integration</li><li>1 round of revisions</li><li>Priority delivery</li></ul><a class="btn-r ol" href="mailto:web@dlproject56.com?subject=Order%20Complete%20-%20Hair%20Salon">Start Your Project</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" data-nav="dark">
+  <div class="inner">
+    <h2 class="reveal">Want this design for<br>your <em>salon</em>?</h2>
+    <p class="reveal">Fixed pricing from €850, clear scope and a live salon website in 5 days. Send your logo, photos and services and we will build the rest.</p>
+    <a class="btn-rose reveal" href="mailto:web@dlproject56.com?subject=Hair%20Salon%20Website%20Order">Get Your Website</a>
+    <a class="cta-email reveal" href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20hair%20salon%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp: +356 77 922 436</a>
+    <a class="cta-email reveal" href="mailto:web@dlproject56.com">web@dlproject56.com</a>
+  </div>
+</section>
+
+<footer>
+  <p>Web Design by <a href="/">D&amp;L Project56</a> &nbsp;·&nbsp; Malta &amp; EU &nbsp;·&nbsp; © 2025</p>
+  <p style="margin-top:10px;"><a href="/massage/">Massage Demo</a> &nbsp;·&nbsp; <a href="/dentist/">Dentist Demo</a></p>
+</footer>
+
+<script>
+const nb=document.getElementById('navbar');
+const secs=document.querySelectorAll('[data-nav]');
+function upNav(){
+  const ty=window.scrollY+nb.offsetHeight+10;
+  let m='light';
+  secs.forEach(s=>{const t=s.offsetTop,b=t+s.offsetHeight;if(ty>=t&&ty<b)m=s.dataset.nav;});
+  nb.className=m+'-mode';
+}
+window.addEventListener('scroll',upNav,{passive:true});
+window.addEventListener('resize',upNav,{passive:true});
+upNav();
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

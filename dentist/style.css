@@ -1,0 +1,29 @@
+#navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  padding: 20px 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar.scrolled {
+  background: #0f172a;
+  padding: 12px 0;
+}
+
+#navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+}

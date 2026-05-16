@@ -1,0 +1,5 @@
+phpmailer/.git/
+vendor/
+*.zip
+web_extracted/
+web_dlproject_io/

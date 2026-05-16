@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D&amp;L Project56 – High-Conversion Websites for Service Businesses</title>
+<meta name="description" content="Custom, mobile-ready websites for service businesses in Malta and the EU. Delivered in 5 days. Fast, clear and built to convert.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dlproject.io/de/">
+<meta property="og:title" content="D&amp;L Project56 – High-Conversion Websites for Service Businesses">
+<meta property="og:description" content="Custom websites for salons, mechanics, restaurants, lawyers and other service businesses. Delivered in 5 days. Malta &amp; EU.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dlproject.io/">
+<meta property="og:image" content="https://dlproject56.com/wp-content/uploads/2026/02/ptofbgku3ui.jpg">
+<meta property="og:image:alt" content="D&amp;L Project56 web design demos for service businesses">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "D&L Project56",
+  "url": "https://dlproject.io",
+  "areaServed": ["Malta", "EU"],
+  "email": "web@dlproject56.com",
+  "telephone": "+35677922436",
+  "sameAs": [
+    "https://wa.me/35677922436",
+    "https://facebook.com/dlproject56",
+    "https://instagram.com/dlproject56",
+    "https://tiktok.com/@dlproject56"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --dark: #16161a;
+  --dark2: #1c1c21;
+  --cream: #f5f0e8;
+  --cream2: #faf8f4;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --border: #e5e0d8;
+  --max: 1160px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "Outfit", sans-serif; background: var(--dark); color: var(--cream); overflow-x: hidden; }
+
+#navbar { position: fixed; top: 0; width: 100%; z-index: 9999; padding: 22px 0; transition: all .35s ease; }
+#navbar.dark-mode { background: rgba(22,22,26,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,168,76,0.12); padding: 14px 0; }
+#navbar.light-mode { background: rgba(255,255,255,0.93); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.07); padding: 14px 0; }
+.nav-wrap { max-width: var(--max); margin: auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-family: "Cormorant Garamond", serif; font-size: 19px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; transition: color .3s; }
+#navbar.dark-mode .nav-logo { color: var(--gold); }
+#navbar.light-mode .nav-logo { color: var(--text); }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; position: relative; transition: color .3s; }
+#navbar.dark-mode .nav-links a { color: rgba(245,240,232,0.6); }
+#navbar.light-mode .nav-links a { color: rgba(26,26,26,0.6); }
+.nav-links a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width .3s; }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { color: var(--gold) !important; }
+.nav-cta { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 10px 22px; border-radius: 2px; background: var(--gold); color: var(--dark) !important; transition: all .3s; }
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
+
+.lang-switcher { display: flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+.lang-switcher button { background: none; border: none; color: rgba(245,240,232,0.4); font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: color .3s; font-family: "Outfit", sans-serif; padding: 4px 8px; }
+#navbar.light-mode .lang-switcher button { color: rgba(26,26,26,0.4); }
+.lang-switcher button.active { color: var(--gold); }
+.lang-switcher button:hover { color: var(--gold); }
+.lang-sep { width: 1px; height: 10px; background: rgba(201,168,76,0.2); }
+
+.mobile-menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 10000; }
+.mobile-menu-toggle svg { width: 24px; height: 24px; stroke: var(--cream); stroke-width: 2; }
+#navbar.light-mode .mobile-menu-toggle svg { stroke: var(--text); }
+.mobile-nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: var(--dark); padding: 100px 32px 32px; transition: right .4s ease; z-index: 9998; display: flex; flex-direction: column; gap: 24px; }
+.mobile-nav.active { right: 0; }
+.mobile-nav a { font-size: 14px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: rgba(245,240,232,0.7); transition: color .3s; }
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.7); opacity: 0; visibility: hidden; transition: all .4s ease; z-index: 9997; }
+.mobile-overlay.active { opacity: 1; visibility: visible; }
+
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 32px 100px; position: relative; overflow: hidden; background: var(--dark); }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(201,168,76,0.09) 0%, transparent 60%), radial-gradient(ellipse 50% 70% at 10% 80%, rgba(201,168,76,0.05) 0%, transparent 60%), var(--dark); }
+.hero-bg::after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.035) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%); }
+.hero-inner { max-width: var(--max); margin: auto; width: 100%; position: relative; z-index: 5; }
+.eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 44px; }
+.eyebrow-line { width: 40px; height: 1px; background: var(--gold); opacity: 0.6; }
+.eyebrow span { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
+.hero h1 { font-family: "Cormorant Garamond", serif; font-size: clamp(36px,8.5vw,118px); font-weight: 400; line-height: 0.95; }
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-ghost { font-family: "Cormorant Garamond", serif; font-size: clamp(36px,8.5vw,118px); font-weight: 300; line-height: 0.95; color: rgba(245,240,232,0.1); margin-bottom: 32px; }
+.hero-hook { display: inline-flex; align-items: center; gap: 20px; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 3px; padding: 12px 22px; margin-bottom: 32px; flex-wrap: wrap; }
+.hero-hook span { font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cream); }
+.hero-hook strong { color: var(--gold); font-weight: 600; }
+.hook-sep { width: 1px; height: 16px; background: rgba(201,168,76,0.25); }
+.hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.hero-desc { font-size: 16px; color: rgba(245,240,232,0.6); max-width: 440px; line-height: 1.8; font-weight: 400; }
+.hero-actions { display: flex; gap: 14px; align-items: center; flex-shrink: 0; }
+.btn-gold { display: inline-block; padding: 16px 36px; background: var(--gold); color: var(--dark); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all .3s; }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(201,168,76,0.3); }
+.btn-ghost { display: inline-block; padding: 15px 36px; border: 1px solid rgba(245,240,232,0.2); color: rgba(245,240,232,0.6); font-size: 11px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all .3s; }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.hero-stats { position: absolute; right: 32px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 32px; z-index: 2; }
+.stat { text-align: right; border-right: 1px solid rgba(201,168,76,0.25); padding-right: 20px; }
+.stat-num { font-family: "Cormorant Garamond", serif; font-size: 36px; font-weight: 300; color: var(--gold); display: block; line-height: 1; }
+.stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,240,232,0.4); }
+.trust-line { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,240,232,0.3); margin-bottom: 28px; }
+.scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(245,240,232,0.25); opacity: 0.25; }
+.scroll-hint span { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; }
+.scroll-bar { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s infinite; }
+.hero-proof { display: flex; align-items: center; margin-top: 48px; padding: 20px 28px; background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.12); border-radius: 4px; flex-wrap: wrap; gap: 0; }
+.proof-item { display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 120px; padding: 8px 16px; }
+.proof-num { font-family: "Cormorant Garamond", serif; font-size: 28px; font-weight: 400; color: var(--gold); line-height: 1; }
+.proof-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(245,240,232,0.4); margin-top: 4px; text-align: center; }
+.proof-sep { width: 1px; height: 40px; background: rgba(201,168,76,0.15); }
+
+.billboard-wrap { margin: 0 auto 36px; max-width: 560px; text-align: center; position: relative; z-index: 10; }
+.billboard { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; background: #0d0d10; border: 1px solid rgba(201,168,76,0.45); border-radius: 14px; padding: 28px 56px 24px; position: relative; overflow: hidden; box-shadow: 0 0 60px rgba(201,168,76,0.12), inset 0 0 40px rgba(0,0,0,0.6); width: 100%; max-width: 520px; }
+.billboard::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.07) 3px, rgba(0,0,0,0.07) 6px); pointer-events: none; z-index: 1; border-radius: 14px; }
+.billboard::after { content: ""; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(201,168,76,0.05), transparent); animation: sweep 5s ease-in-out infinite; z-index: 2; }
+@keyframes sweep { 0%{ left:-80%; } 100%{ left:160%; } }
+.bb-label { font-size: 9px; font-weight: 500; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(201,168,76,0.55); margin-bottom: 16px; position: relative; z-index: 3; }
+.bb-prices { display: flex; align-items: center; justify-content: center; gap: 28px; position: relative; z-index: 3; }
+.bb-old { font-size: 38px; font-weight: 300; color: rgba(245,240,232,0.6); line-height: 1; display: block; padding: 4px 6px; }
+.bb-divider { width: 1px; height: 50px; background: rgba(201,168,76,0.2); position: relative; z-index: 3; }
+.bb-new { font-family: "Cormorant Garamond", serif; font-size: 64px; font-weight: 600; color: var(--gold); line-height: 1; text-shadow: 0 0 30px rgba(201,168,76,0.5); position: relative; z-index: 3; }
+.bb-sub { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(245,240,232,0.35); margin-top: 18px; position: relative; z-index: 3; }
+.bb-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 12px 32px; background: var(--gold); color: #16161a; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 4px; position: relative; z-index: 3; transition: background .3s, box-shadow .3s; }
+.bb-cta:hover { background: var(--gold-light); box-shadow: 0 4px 20px rgba(201,168,76,0.4); }
+.bb-reply { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,240,232,0.25); margin-top: 10px; position: relative; z-index: 3; }
+
+.sec-dark { background: var(--dark2); padding: 110px 32px; }
+.sec-light { background: var(--cream2); padding: 110px 32px; }
+.sec-black { background: var(--dark); padding: 110px 32px; }
+.inner { max-width: var(--max); margin: auto; }
+.s-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
+.s-title { font-family: "Cormorant Garamond", serif; font-size: clamp(36px,5vw,62px); font-weight: 400; line-height: 1.08; margin-bottom: 60px; }
+.s-title.dk { color: var(--cream); }
+.s-title.lt { color: var(--text); }
+.s-title em { font-style: italic; color: var(--gold); }
+
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.1); }
+.step { background: var(--dark2); padding: 52px 36px; position: relative; overflow: hidden; transition: background .3s; }
+.step::before { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width .5s ease; }
+.step:hover { background: rgba(201,168,76,0.04); }
+.step:hover::before { width: 100%; }
+.step-num { font-family: "Cormorant Garamond", serif; font-size: 64px; font-weight: 300; color: rgba(201,168,76,0.12); line-height: 1; margin-bottom: 20px; display: block; }
+.step h3 { font-family: "Cormorant Garamond", serif; font-size: 26px; font-weight: 400; color: var(--cream); margin-bottom: 12px; }
+.step p { font-size: 14px; color: rgba(245,240,232,0.5); line-height: 1.7; font-weight: 400; }
+
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.08); }
+.why-item { background: var(--dark); padding: 52px 36px; position: relative; overflow: hidden; transition: background .3s; }
+.why-item::after { content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background: var(--gold); transition: height .5s ease; }
+.why-item:hover { background: rgba(201,168,76,0.03); }
+.why-item:hover::after { height: 100%; }
+.why-icon { color: var(--gold); margin-bottom: 24px; opacity: 0.7; }
+.why-item h3 { font-family: "Cormorant Garamond", serif; font-size: 24px; font-weight: 400; color: var(--cream); margin-bottom: 14px; }
+.why-item p { font-size: 14px; color: rgba(245,240,232,0.5); line-height: 1.8; font-weight: 400; }
+
+.demos-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 60px; }
+.demos-intro-text p { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 400; max-width: 460px; }
+.demos-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 3px; }
+.demos-row2 { display: grid; grid-template-columns: repeat(4,1fr); gap: 3px; margin: 3px auto 0; }
+.tile { position: relative; aspect-ratio: 3/4; overflow: hidden; text-decoration: none; display: block; }
+.tile-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .6s ease; }
+.tile:hover .tile-bg { transform: scale(1.06); }
+.tile-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(16,16,20,0.93) 0%, rgba(16,16,20,0.15) 55%, transparent 100%); z-index: 1; }
+.tile-cnt { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 22px; z-index: 2; }
+.tile-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 6px; }
+.tile-name { font-family: "Cormorant Garamond", serif; font-size: 22px; font-weight: 400; color: var(--cream); display: block; margin-bottom: 12px; }
+.tile-arrow { width: 32px; height: 32px; border: 1px solid rgba(201,168,76,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all .3s; }
+.tile:hover .tile-arrow { background: var(--gold); border-color: var(--gold); }
+.tile-arrow svg { width: 13px; height: 13px; stroke: var(--cream); fill: none; stroke-width: 2; transition: stroke .3s; }
+.tile:hover .tile-arrow svg { stroke: var(--dark); }
+
+.pricing-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 60px; }
+.pricing-header-left { flex: 1; }
+.pricing-header-left .s-tag { margin-bottom: 14px; }
+.pricing-header-left .s-title { margin-bottom: 0; }
+.pricing-header-right { flex-shrink: 0; text-align: right; padding: 24px 28px; background: #fff; border: 1px solid var(--border); border-radius: 12px; }
+.pm-label { display: block; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.pm-icons { display: flex; justify-content: flex-end; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.pm-icon { width: 52px; height: 34px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; transition: all .3s; overflow: hidden; color: #1a1a1a; font-size: 11px; font-weight: 600; letter-spacing: .2px; }
+.pm-icon:hover { border-color: var(--gold); box-shadow: 0 4px 12px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.pm-icon img { max-width: 40px; max-height: 22px; width: auto; height: auto; display: block; }
+.pm-note { display: block; font-size: 11px; color: var(--muted); font-weight: 400; }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.pc { border: 1px solid var(--border); border-radius: 12px; padding: 40px 32px; background: #fff; position: relative; transition: transform .3s, box-shadow .3s; }
+.pc:hover { transform: translateY(-5px); box-shadow: 0 24px 64px rgba(0,0,0,0.08); }
+.pc.feat { border-color: var(--gold); background: var(--cream2); }
+.pc.feat::before { content: attr(data-badge); position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--dark); font-size: 9px; font-weight: 600; letter-spacing: 2px; padding: 5px 18px; border-radius: 0 0 6px 6px; }
+.pc-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); padding: 4px 12px; border-radius: 2px; display: inline-block; margin-bottom: 20px; }
+.pc h3 { font-family: "Cormorant Garamond", serif; font-size: 30px; font-weight: 400; margin-bottom: 8px; color: var(--text); }
+.pc-amt { font-family: "Cormorant Garamond", serif; font-size: 58px; font-weight: 300; color: var(--text); line-height: 1; margin-bottom: 28px; }
+.pc-amt sup { font-size: 26px; vertical-align: super; font-family: "Outfit", sans-serif; font-weight: 300; }
+.pc-ul { list-style: none; margin-bottom: 28px; }
+.pc-ul li { font-size: 14px; color: var(--muted); font-weight: 400; padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.pc-ul li::before { content: ""; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+.btn-p { display: block; text-align: center; padding: 14px; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: all .3s; }
+.btn-p.ol { border: 1px solid var(--border); color: var(--text); }
+.btn-p.ol:hover { border-color: var(--gold); color: var(--gold); }
+.btn-p.sl { background: var(--gold); color: var(--dark); }
+.btn-p.sl:hover { background: var(--gold-light); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+.pricing-note { text-align: center; margin-top: 28px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+
+.cta-sec { background: var(--dark); padding: 130px 32px; text-align: center; position: relative; overflow: hidden; }
+.cta-sec::before { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 500px; background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 65%); pointer-events: none; }
+.cta-note { font-size: 15px; color: rgba(245,240,232,0.5); font-weight: 400; max-width: 480px; margin: 0 auto 48px; line-height: 1.8; }
+.cta-email { font-family: "Cormorant Garamond", serif; font-size: 17px; color: var(--gold); display: block; margin-top: 28px; text-decoration: none; letter-spacing: 1px; opacity: 0.7; transition: opacity .3s; }
+.cta-email:hover { opacity: 1; }
+
+footer { border-top: 1px solid rgba(201,168,76,0.08); padding: 32px; background: var(--dark); text-align: center; }
+footer p { font-size: 11px; letter-spacing: 1px; color: rgba(245,240,232,0.25); }
+footer a { color: var(--gold); text-decoration: none; opacity: 0.6; }
+footer a:hover { opacity: 1; }
+
+.footer-social { margin-top: 16px; display: flex; gap: 14px; justify-content: center; align-items: center; }
+.footer-social a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; opacity: 0.85; transition: opacity 0.3s, transform 0.3s; }
+.footer-social a:hover { opacity: 1; transform: scale(1.1); }
+.footer-social img { width: 32px; height: 32px; object-fit: contain; display: block; }
+.footer-fallback { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--gold); border: 1px solid rgba(201,168,76,0.25); border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; }
+
+#cookieConsent,
+#customizePanel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+  transform: translateY(100%);
+  transition: transform .35s ease;
+  box-shadow: 0 -6px 28px rgba(0,0,0,0.35);
+}
+#cookieConsent.show,
+#customizePanel.show { transform: translateY(0); }
+
+#cookieConsent {
+  bottom: 0;
+  background: var(--dark2);
+  border-top: 1px solid rgba(201,168,76,0.2);
+  padding: 24px 32px;
+}
+.consent-inner {
+  max-width: var(--max);
+  margin: auto;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.consent-text { flex: 1; min-width: 280px; }
+.consent-text h3 { font-size: 15px; font-weight: 600; color: var(--cream); margin-bottom: 8px; }
+.consent-text p { font-size: 13px; color: rgba(245,240,232,0.7); line-height: 1.6; }
+.consent-text a { color: var(--gold); text-decoration: underline; }
+.consent-actions { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+.consent-btn {
+  padding: 10px 22px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all .3s;
+  border: none;
+  font-family: "Outfit", sans-serif;
+}
+.consent-btn.accept { background: var(--gold); color: var(--dark); }
+.consent-btn.accept:hover { background: var(--gold-light); }
+.consent-btn.reject { background: transparent; color: rgba(245,240,232,0.6); border: 1px solid rgba(245,240,232,0.3); }
+.consent-btn.reject:hover { border-color: var(--gold); color: var(--gold); }
+.consent-btn.customize { background: transparent; color: rgba(245,240,232,0.7); border: 1px solid rgba(201,168,76,0.4); }
+.consent-btn.customize:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+
+#customizePanel {
+  bottom: 0;
+  background: var(--dark);
+  border-top: 1px solid rgba(201,168,76,0.3);
+  padding: 32px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.customize-inner { max-width: 640px; margin: auto; }
+.customize-header { margin-bottom: 20px; }
+.customize-header h3 { font-size: 20px; color: var(--cream); margin-bottom: 8px; }
+.customize-header p { font-size: 13px; color: rgba(245,240,232,0.65); line-height: 1.6; }
+.consent-category { padding: 18px 0; border-bottom: 1px solid rgba(201,168,76,0.15); }
+.consent-category:last-child { border-bottom: none; }
+.category-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.category-header h4 { font-size: 14px; color: var(--cream); text-transform: uppercase; letter-spacing: 1px; }
+.category-desc { font-size: 13px; color: rgba(245,240,232,0.5); line-height: 1.6; }
+.category-always { font-size: 12px; color: rgba(245,240,232,0.4); text-transform: uppercase; letter-spacing: 1px; }
+
+.toggle-switch { position: relative; display: inline-block; width: 48px; height: 24px; }
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.toggle-slider { position: absolute; inset: 0; cursor: pointer; background: rgba(245,240,232,0.2); transition: .3s; border-radius: 24px; }
+.toggle-slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background: #fff; transition: .3s; border-radius: 50%; }
+.toggle-switch input:checked + .toggle-slider { background: var(--gold); }
+.toggle-switch input:checked + .toggle-slider:before { transform: translateX(24px); }
+.toggle-switch input:disabled + .toggle-slider { opacity: .45; cursor: not-allowed; }
+
+.customize-footer { margin-top: 24px; display: flex; gap: 12px; justify-content: flex-end; }
+
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+.wa-floating-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  transition: all 0.3s ease, bottom 0.3s ease;
+  text-decoration: none;
+}
+.wa-floating-btn:hover {
+  background: #20ba5a;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+.wa-floating-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  display: block;
+}
+.wa-floating-btn.raise-for-consent { bottom: 118px; }
+
+@keyframes scrollPulse { 0%,100%{opacity:0.3;} 50%{opacity:0.8;} }
+
+@media (max-width:1000px) {
+  .nav-links .hide-mob { display: none; }
+  .mobile-menu-toggle { display: block; }
+  .demos-grid, .demos-row2 { grid-template-columns: repeat(2,1fr); }
+  .hero-stats, .demos-intro-text { display: none; }
+  .steps, .pricing-grid, .why-grid { grid-template-columns: 1fr; }
+  .demos-intro { grid-template-columns: 1fr; }
+  .pricing-header { flex-direction: column; gap: 24px; }
+  .pricing-header-right { width: 100%; text-align: center; }
+  .pm-icons { justify-content: center; }
+}
+@media (max-width:680px) {
+  .hero { padding: 120px 20px 80px; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; }
+  .hero-actions { flex-direction: column; align-items: flex-start; width: 100%; }
+  .btn-gold, .btn-ghost { width: 100%; text-align: center; }
+  .sec-dark, .sec-light, .sec-black, .cta-sec { padding: 72px 20px; }
+  .hook-sep, .proof-sep { display: none; }
+  .proof-item { min-width: 50%; padding: 10px; }
+  .bb-new { font-size: 46px; }
+  .bb-old { font-size: 28px; }
+  #cookieConsent { padding: 18px 16px; }
+  #customizePanel { padding: 24px 16px; }
+  .consent-actions, .customize-footer { width: 100%; }
+  .consent-btn { flex: 1; text-align: center; }
+  .wa-floating-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+  }
+  .wa-floating-btn svg { width: 26px; height: 26px; }
+  .wa-floating-btn.raise-for-consent { bottom: 108px; }
+}
+</style>
+</head>
+<body>
+<div id="cookieConsent" role="dialog" aria-modal="true" aria-labelledby="cookieConsentTitle" aria-describedby="cookieConsentDesc">
+  <div class="consent-inner">
+    <div class="consent-text">
+      <h3 id="cookieConsentTitle">Cookie Settings</h3>
+      <p id="cookieConsentDesc">We use cookies for analytics and marketing to improve your experience. <a href="/legal/privacy.html">Privacy Policy</a></p>
+    </div>
+    <div class="consent-actions">
+      <button class="consent-btn accept" id="acceptAll">Accept All</button>
+      <button class="consent-btn reject" id="rejectAll">Reject All</button>
+      <button class="consent-btn customize" id="customizeBtn">Customize</button>
+    </div>
+  </div>
+</div>
+
+<div id="customizePanel" role="dialog" aria-modal="true" aria-labelledby="customizePanelTitle">
+  <div class="customize-inner">
+    <div class="customize-header">
+      <h3 id="customizePanelTitle">Customize Cookie Preferences</h3>
+      <p>Choose which cookies you want to allow. You can change these settings at any time.</p>
+    </div>
+    <div class="consent-category">
+      <div class="category-header">
+        <h4>Necessary Cookies</h4>
+        <span class="category-always">Always Active</span>
+      </div>
+      <p class="category-desc">Essential cookies required for the website to function properly. These cannot be disabled.</p>
+    </div>
+    <div class="consent-category">
+      <div class="category-header">
+        <h4>Analytics Cookies</h4>
+        <label class="toggle-switch">
+          <input type="checkbox" id="analyticsToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <p class="category-desc">Help us understand how visitors interact with our website.</p>
+    </div>
+    <div class="consent-category">
+      <div class="category-header">
+        <h4>Marketing Cookies</h4>
+        <label class="toggle-switch">
+          <input type="checkbox" id="marketingToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <p class="category-desc">Used to track visitors for relevant ads and campaign measurement.</p>
+    </div>
+    <div class="customize-footer">
+      <button class="consent-btn reject" id="customizeReject">Reject All</button>
+      <button class="consent-btn accept" id="customizeSave">Save Preferences</button>
+    </div>
+  </div>
+</div>
+
+<header id="navbar" class="dark-mode">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/" aria-label="D&amp;L Project56 Home">D&amp;L Project56</a>
+    <nav class="nav-links">
+      <div class="lang-switcher" role="group" aria-label="Language selection">
+        <button data-lang="en" class="active" aria-pressed="true" aria-label="English">EN</button>
+        <div class="lang-sep" role="presentation"></div>
+        <button data-lang="de" aria-pressed="false" aria-label="Deutsch">DE</button>
+        <div class="lang-sep" role="presentation"></div>
+        <button data-lang="fr" aria-pressed="false" aria-label="Francais">FR</button>
+        <div class="lang-sep" role="presentation"></div>
+        <button data-lang="mt" aria-pressed="false" aria-label="Malti">MT</button>
+      </div>
+      <a href="#how" class="hide-mob" data-i18n="nav_how">How It Works</a>
+      <a href="#why" class="hide-mob" data-i18n="nav_why">Why Us</a>
+      <a href="#demos" class="hide-mob" data-i18n="nav_demos">Industries</a>
+      <a href="#pricing" class="hide-mob" data-i18n="nav_pricing">Pricing</a>
+      <a href="mailto:web@dlproject56.com" class="nav-cta" data-i18n="nav_cta">Get Your Website</a>
+    </nav>
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="#how" data-i18n="nav_how">How It Works</a>
+  <a href="#why" data-i18n="nav_why">Why Us</a>
+  <a href="#demos" data-i18n="nav_demos">Industries</a>
+  <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+  <a href="mailto:web@dlproject56.com" data-i18n="nav_cta">Get Your Website</a>
+</nav>
+
+<section class="hero" data-nav="dark">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="billboard-wrap">
+      <div class="billboard">
+        <div class="bb-label" data-i18n="bb_label">Premium Web Design · Malta &amp; EU</div>
+        <div class="bb-prices">
+          <span class="bb-old">€1250</span>
+          <div class="bb-divider"></div>
+          <span class="bb-new" data-i18n="bb_new">From €850</span>
+        </div>
+        <div class="bb-sub" data-i18n="bb_sub">Custom websites for service businesses</div>
+        <a class="bb-cta" href="https://wa.me/35677922436?text=Hello%2C%20I%20am%20interested%20in%20a%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer" aria-label="Start project on WhatsApp">
+          <span data-i18n="bb_cta">Start on WhatsApp</span>
+        </a>
+        <div class="bb-reply" data-i18n="bb_reply">Reply within minutes</div>
+      </div>
+    </div>
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span data-i18n="eyebrow">Web Design · Malta &amp; EU</span>
+    </div>
+    <div class="trust-line" data-i18n="trust_line">Based in Malta · Across the EU · For service businesses</div>
+    <h1>
+      <span data-i18n="h1_line1">Get a Website</span><br>
+      <span data-i18n="h1_line2">That Brings</span><br>
+      <em data-i18n="h1_line3">You</em> <span data-i18n="h1_line4">Clients.</span>
+    </h1>
+    <div class="hero-ghost" data-i18n="hero_ghost">Built to Convert.</div>
+    <div class="hero-hook">
+      <span data-i18n="hook_1">Projects from €850</span>
+      <div class="hook-sep"></div>
+      <span><span data-i18n="hook_2_before">Delivered in </span><strong data-i18n="hook_2_strong">5 Days</strong></span>
+      <div class="hook-sep"></div>
+      <span><span data-i18n="hook_3_before">Custom Design </span><strong data-i18n="hook_3_strong">Included</strong></span>
+      <div class="hook-sep"></div>
+      <span><a href="https://wa.me/35677922436?text=Hello%2C%20I%20am%20interested%20in%20a%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:none;font-weight:600;" data-i18n="hook_wa">WhatsApp Now →</a></span>
+    </div>
+    <div class="hero-bottom">
+      <p class="hero-desc" data-i18n="hero_desc">We build fast, custom websites for service businesses.</p>
+      <div class="hero-actions">
+        <a class="btn-gold" href="#demos" data-i18n="btn_work">See Live Demos</a>
+        <a class="btn-ghost" href="#pricing" data-i18n="btn_pricing">View Packages</a>
+      </div>
+    </div>
+    <div class="hero-proof reveal">
+      <div class="proof-item"><span class="proof-num">8+</span><span class="proof-label" data-i18n="proof_industries">Industries covered</span></div>
+      <div class="proof-sep"></div>
+      <div class="proof-item"><span class="proof-num">✓</span><span class="proof-label" data-i18n="proof_demos">Live demos available</span></div>
+      <div class="proof-sep"></div>
+      <div class="proof-item"><span class="proof-num">5</span><span class="proof-label" data-i18n="proof_days">Days to delivery</span></div>
+      <div class="proof-sep"></div>
+      <div class="proof-item"><span class="proof-num">EU</span><span class="proof-label" data-i18n="proof_vat">VAT registered · BG208418815</span></div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">5</span><span class="stat-label" data-i18n="stat_days">Days Delivery</span></div>
+    <div class="stat"><span class="stat-num">€850</span><span class="stat-label" data-i18n="stat_from">Starting From</span></div>
+    <div class="stat"><span class="stat-num">8+</span><span class="stat-label" data-i18n="stat_industries">Industries</span></div>
+  </div>
+  <div class="scroll-hint"><span data-i18n="scroll">Scroll</span><div class="scroll-bar"></div></div>
+</section>
+
+<section class="sec-dark" data-nav="dark" id="how">
+  <div class="inner">
+    <span class="s-tag reveal" data-i18n="how_tag">The Process</span>
+    <h2 class="s-title dk reveal"><span data-i18n="how_title1">Three steps.</span><br><em data-i18n="how_title2">Five days.</em> <span data-i18n="how_title3">Done.</span></h2>
+    <div class="steps">
+      <div class="step reveal"><span class="step-num">01</span><h3 data-i18n="step1_title">You Send the Basics</h3><p data-i18n="step1_desc">Your business name, logo, a few photos and a short description of your services.</p></div>
+      <div class="step reveal"><span class="step-num">02</span><h3 data-i18n="step2_title">We Build &amp; Customize</h3><p data-i18n="step2_desc">We select the right design for your industry, customize colors, content and contact details.</p></div>
+      <div class="step reveal"><span class="step-num">03</span><h3 data-i18n="step3_title">Your Site Goes Live</h3><p data-i18n="step3_desc">Professional, fast and ready to convert visitors into clients.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-black" data-nav="dark" id="why">
+  <div class="inner">
+    <span class="s-tag reveal" data-i18n="why_tag">Why Us</span>
+    <h2 class="s-title dk reveal"><span data-i18n="why_title1">No agencies.</span><br><em data-i18n="why_title2">No delays.</em> <span data-i18n="why_title3">Just results.</span></h2>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-icon">◆</div>
+        <h3 data-i18n="why1_title">Built for Service Businesses</h3>
+        <p data-i18n="why1_desc">We work exclusively with service businesses and know what converts.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">◷</div>
+        <h3 data-i18n="why2_title">5 Days. No Excuses.</h3>
+        <p data-i18n="why2_desc">Once you send us your content, we deliver in 5 working days.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">▣</div>
+        <h3 data-i18n="why3_title">Mobile-First. Lead-Focused.</h3>
+        <p data-i18n="why3_desc">Every site we build loads fast and pushes visitors to contact you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-black" data-nav="dark" id="demos">
+  <div class="inner">
+    <div class="demos-intro">
+      <div>
+        <span class="s-tag reveal" data-i18n="demos_tag">Live Demos</span>
+        <h2 class="s-title dk reveal"><span data-i18n="demos_title1">Pick your</span><br><em data-i18n="demos_title2">industry.</em></h2>
+      </div>
+      <div class="demos-intro-text"><p class="reveal" data-i18n="demos_desc">Click any industry to see the live design.</p></div>
+    </div>
+    <div class="demos-grid">
+      <a class="tile" href="/hair-salon/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/ptofbgku3ui.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_salon">Hair Salon</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+      <a class="tile" href="/bakery/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/go3dt3ppiw4.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_bakery">Bakery</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+      <a class="tile" href="/mechanic/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/onnjoff-oku.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_mechanic">Mechanic</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+      <a class="tile" href="/restaurant/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/o49urfalsii.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_restaurant">Restaurant</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+    </div>
+    <div class="demos-row2">
+      <a class="tile" href="/massage/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/lyicbm-7zfa.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_massage">Massage</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+      <a class="tile" href="/lawyer/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/9j8k3l9afkc.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_lawyer">Lawyer</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+      <a class="tile" href="/dentist/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/pc8lpkjwecm.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_dentist">Dentist</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+      <a class="tile" href="/electroproject/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/03/i41uwyzmwhm.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_electrical">Electrical &amp; Plumbing</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec-light" data-nav="light" id="pricing">
+  <div class="inner">
+    <div class="pricing-header reveal">
+      <div class="pricing-header-left">
+        <span class="s-tag" data-i18n="pricing_tag">Pricing</span>
+        <h2 class="s-title lt"><span data-i18n="pricing_title1">Fixed price.</span><br><span data-i18n="pricing_title2">Clear scope.</span><br><em data-i18n="pricing_title3">No surprises.</em></h2>
+      </div>
+      <div class="pricing-header-right">
+        <span class="pm-label" data-i18n="pm_label">Secure Payment Options</span>
+        <div class="pm-icons">
+          <div class="pm-icon" aria-label="PayPal">
+            <img src="https://dlproject56.com/images/Paypal-Streamline-Svg-Logos.svg" alt="PayPal" onerror="this.parentNode.textContent='PayPal';">
+          </div>
+          <div class="pm-icon" aria-label="Visa">
+            <img src="https://dlproject56.com/images/Visaelectron-Streamline-Svg-Logos.svg" alt="Visa" onerror="this.parentNode.textContent='VISA';">
+          </div>
+          <div class="pm-icon" aria-label="Mastercard">
+            <img src="https://dlproject56.com/images/Mastercard-Streamline-Svg-Logos.svg" alt="Mastercard" onerror="this.parentNode.textContent='MC';">
+          </div>
+          <div class="pm-icon" aria-label="Amex">
+            <img src="https://dlproject56.com/images/Amex-Streamline-Svg-Logos.svg" alt="Amex" onerror="this.parentNode.textContent='AMEX';">
+          </div>
+          <div class="pm-icon" aria-label="SEPA" title="SEPA Transfer" style="font-weight:600;font-size:11px;color:#c9a84c;">SEPA</div>
+          <div class="pm-icon" aria-label="Wise" title="Wise">WISE</div>
+          <div class="pm-icon" aria-label="Revolut">
+            <img src="https://dlproject56.com/images/Revolut-Icon-Logo.wine_.svg" alt="Revolut" onerror="this.parentNode.textContent='REV';">
+          </div>
+        </div>
+        <span class="pm-note" data-i18n="pm_note">50% deposit to start · 50% before launch</span>
+      </div>
+    </div>
+    <div class="pricing-grid">
+      <div class="pc reveal">
+        <span class="pc-label" data-i18n="pkg_starter">Starter</span>
+        <h3 data-i18n="pkg1_name">Essential</h3>
+        <div class="pc-amt"><sup>€</sup>850</div>
+        <ul class="pc-ul">
+          <li data-i18n="pkg1_f1">1-page custom website</li>
+          <li data-i18n="pkg1_f2">Services, gallery and contact section</li>
+          <li data-i18n="pkg1_f3">Mobile-first design</li>
+          <li data-i18n="pkg1_f4">Domain &amp; hosting for 12 months</li>
+          <li data-i18n="pkg1_f5">Delivery in 5 days</li>
+        </ul>
+        <a class="btn-p ol" href="mailto:web@dlproject56.com?subject=Essential%20Package%20Inquiry" data-i18n="btn_get_started">Start Your Project</a>
+      </div>
+      <div class="pc feat reveal" data-badge="MOST POPULAR">
+        <span class="pc-label" data-i18n="pkg_popular">Most Popular</span>
+        <h3 data-i18n="pkg2_name">Professional</h3>
+        <div class="pc-amt"><sup>€</sup>1050</div>
+        <ul class="pc-ul">
+          <li data-i18n="pkg2_f1">Up to 5 pages</li>
+          <li data-i18n="pkg2_f2">Services, pricing and gallery</li>
+          <li data-i18n="pkg2_f3">Basic SEO setup</li>
+          <li data-i18n="pkg2_f4">Google Maps integration</li>
+          <li data-i18n="pkg2_f5">Google Business Profile setup</li>
+          <li data-i18n="pkg2_f6">Domain &amp; hosting for 12 months</li>
+          <li data-i18n="pkg2_f7">Delivery in 5 days</li>
+        </ul>
+        <a class="btn-p sl" href="mailto:web@dlproject56.com?subject=Professional%20Package%20Inquiry" data-i18n="btn_get_started">Start Your Project</a>
+      </div>
+      <div class="pc reveal">
+        <span class="pc-label" data-i18n="pkg_premium">Premium</span>
+        <h3 data-i18n="pkg3_name">Complete</h3>
+        <div class="pc-amt"><sup>€</sup>1250</div>
+        <ul class="pc-ul">
+          <li data-i18n="pkg3_f1">Up to 8 pages</li>
+          <li data-i18n="pkg3_f2">Booking or inquiry flow integration</li>
+          <li data-i18n="pkg3_f3">Google Business Profile setup</li>
+          <li data-i18n="pkg3_f4">1 revision round included</li>
+          <li data-i18n="pkg3_f5">Domain &amp; hosting for 12 months</li>
+          <li data-i18n="pkg3_f6">Priority delivery</li>
+        </ul>
+        <a class="btn-p ol" href="mailto:web@dlproject56.com?subject=Complete%20Package%20Inquiry" data-i18n="btn_get_started">Start Your Project</a>
+      </div>
+    </div>
+    <div class="pricing-note reveal" data-i18n="pricing_note">One-time payment · No monthly fees · No hidden costs</div>
+  </div>
+</section>
+
+<section class="cta-sec" data-nav="dark">
+  <div class="inner">
+    <span class="s-tag reveal" style="text-align:center;display:block;margin-bottom:14px;" data-i18n="cta_tag">Let's Build Something That Works</span>
+    <h2 class="s-title dk reveal" style="text-align:center;margin-bottom:0;"><span data-i18n="cta_title1">Ready for a</span><br><span data-i18n="cta_title2">website that gets</span> <em data-i18n="cta_title3">results?</em></h2>
+    <p class="cta-note reveal" style="margin-top:20px;" data-i18n="cta_note">Send us your business name and industry — we'll show you the best direction for your website.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;" class="reveal">
+      <a class="btn-gold" href="https://wa.me/35677922436?text=Hello%2C%20I%20am%20interested%20in%20a%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer" data-i18n="cta_btn1">Start Your Project</a>
+      <a class="btn-ghost" href="mailto:web@dlproject56.com?subject=Website%20Project%20Inquiry" data-i18n="cta_btn2">Contact Us</a>
+    </div>
+    <a class="cta-email reveal" href="mailto:web@dlproject56.com">web@dlproject56.com</a>
+  </div>
+</section>
+
+<footer>
+  <p><span data-i18n="footer_by">Web Design by</span> <a href="/">D&amp;L Project56</a> · <span data-i18n="footer_location">Malta &amp; EU</span> · © 2026</p>
+  <!-- Publish and keep these legal pages live on the subdomain before large-scale outreach campaigns. -->
+  <p style="margin-top:12px;">
+    <a href="/legal/faq.html" data-i18n="footer_faq">FAQ</a> ·
+    <a href="/legal/terms.html" data-i18n="footer_terms">Terms &amp; Conditions</a> ·
+    <a href="/legal/refund.html" data-i18n="footer_refund">Refund Policy</a> ·
+    <a href="/legal/privacy.html" data-i18n="footer_privacy">Privacy Policy</a> ·
+    <a href="#" onclick="openCookieSettings(); return false;" data-i18n="footer_cookie">Cookie Settings</a>
+  </p>
+  <div class="footer-social">
+    <a href="https://facebook.com/dlproject56" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <img src="https://dlproject56.com/images/facebook.png" alt="Facebook" onerror="this.outerHTML='<span class=&quot;footer-fallback&quot;>f</span>';">
+    </a>
+    <a href="https://instagram.com/dlproject56" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="https://dlproject56.com/images/instagram.png" alt="Instagram" onerror="this.outerHTML='<span class=&quot;footer-fallback&quot;>ig</span>';">
+    </a>
+    <a href="https://tiktok.com/@dlproject56" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+      <img src="https://dlproject56.com/images/tiktok.png" alt="TikTok" onerror="this.outerHTML='<span class=&quot;footer-fallback&quot;>tt</span>';">
+    </a>
+  </div>
+  <p style="margin-top:10px;font-size:10px;color:rgba(245,240,232,0.15);">D&amp;L Project56 EOOD · VAT BG208418815 · Bulgaria, EU</p>
+  <p style="margin-top:10px;font-size:10px;color:rgba(245,240,232,0.1);">Powered by D&amp;L Project56 Group</p>
+</footer>
+
+<a href="https://wa.me/35677922436?text=Hello%2C%20I%20am%20interested%20in%20a%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="wa-floating-btn" id="waFloatingBtn" aria-label="Chat with D&amp;L Project56 on WhatsApp" title="Chat with D&amp;L Project56 on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.34c-.27-.14-1.58-.78-1.83-.87-.24-.09-.42-.14-.6.14-.18.27-.69.87-.85 1.05-.15.18-.31.2-.58.07-.27-.14-1.13-.42-2.16-1.33-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.99-.22-.52-.44-.45-.6-.46h-.51c-.18 0-.47.07-.71.34-.24.27-.93.91-.93 2.23 0 1.32.95 2.59 1.09 2.77.13.18 1.86 2.84 4.51 3.98.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.58-.64 1.8-1.26.22-.62.22-1.15.15-1.26-.06-.11-.24-.18-.51-.32z"></path>
+    <path d="M16.02 3.2C8.94 3.2 3.2 8.94 3.2 16.02c0 2.27.59 4.48 1.72 6.43L3 29l6.73-1.86c1.86 1.01 3.95 1.54 6.08 1.54h.01c7.08 0 12.82-5.74 12.82-12.82 0-3.43-1.34-6.66-3.77-9.08A12.77 12.77 0 0 0 16.02 3.2zm-.2 23.32h-.01c-1.92 0-3.8-.52-5.43-1.5l-.39-.23-3.99 1.1 1.07-3.89-.25-.4a10.56 10.56 0 0 1-1.64-5.59c0-5.86 4.77-10.63 10.64-10.63 2.83 0 5.49 1.1 7.49 3.1a10.52 10.52 0 0 1 3.12 7.5c0 5.86-4.78 10.64-10.61 10.64z"></path>
+  </svg>
+</a>
+
+<script>
+(function() {
+  var CONSENT_KEY = "dlp56_consent";
+  var consentBanner = document.getElementById("cookieConsent");
+  var customizePanel = document.getElementById("customizePanel");
+  var floatingButton = document.getElementById("waFloatingBtn");
+
+  var acceptAllBtn = document.getElementById("acceptAll");
+  var rejectAllBtn = document.getElementById("rejectAll");
+  var customizeBtn = document.getElementById("customizeBtn");
+  var customizeSaveBtn = document.getElementById("customizeSave");
+  var customizeRejectBtn = document.getElementById("customizeReject");
+
+  var analyticsToggle = document.getElementById("analyticsToggle");
+  var marketingToggle = document.getElementById("marketingToggle");
+
+  var currentPrefs = null;
+  var activeModal = null;
+  var lastFocusedEl = null;
+  var gaLoaded = false;
+  var pixelLoaded = false;
+  var trackingBound = false;
+
+  function updateFloatingButtonOffset() {
+    if (!floatingButton) return;
+    var bannerVisible = consentBanner.classList.contains("show");
+    var panelVisible = customizePanel.classList.contains("show");
+    floatingButton.classList.toggle("raise-for-consent", bannerVisible || panelVisible);
+  }
+
+  function getStoredConsent() {
+    try {
+      var localValue = localStorage.getItem(CONSENT_KEY);
+      if (localValue) return localValue;
+    } catch (e) {}
+
+    var cookieMatch = document.cookie.match(new RegExp("(?:^|; )" + CONSENT_KEY.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "=([^;]*)"));
+    return cookieMatch ? decodeURIComponent(cookieMatch[1]) : null;
+  }
+
+  function persistConsent(rawValue) {
+    try {
+      localStorage.setItem(CONSENT_KEY, rawValue);
+    } catch (e) {}
+
+    document.cookie = CONSENT_KEY + "=" + encodeURIComponent(rawValue) + "; path=/; max-age=" + (60 * 60 * 24 * 365) + "; SameSite=Lax";
+  }
+
+  function clearConsent() {
+    try {
+      localStorage.removeItem(CONSENT_KEY);
+    } catch (e) {}
+
+    document.cookie = CONSENT_KEY + "=; path=/; max-age=0; SameSite=Lax";
+  }
+
+  function parseConsent() {
+    try {
+      var raw = getStoredConsent();
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (typeof obj.analytics !== "boolean" || typeof obj.marketing !== "boolean") {
+        clearConsent();
+        return null;
+      }
+      return obj;
+    } catch (e) {
+      clearConsent();
+      return null;
+    }
+  }
+
+  function saveConsent(prefs) {
+    currentPrefs = { analytics: !!prefs.analytics, marketing: !!prefs.marketing };
+    persistConsent(JSON.stringify(currentPrefs));
+  }
+
+  function isAnyTrackingEnabled() {
+    return !!(currentPrefs && (currentPrefs.analytics || currentPrefs.marketing));
+  }
+
+  function loadGoogleAnalytics() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+
+    var gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-1ZND1PSC0V";
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", "G-1ZND1PSC0V");
+  }
+
+  function loadMetaPixel() {
+    if (pixelLoaded) return;
+    pixelLoaded = true;
+
+    (function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        if (n.callMethod) n.callMethod.apply(n, arguments);
+        else n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = true;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
+    window.fbq("init", "1639537617062408");
+    window.fbq("track", "PageView");
+  }
+
+  function applyConsent() {
+    if (!currentPrefs) return;
+    closeModal(consentBanner, false);
+    closeModal(customizePanel, false);
+    if (currentPrefs.analytics) loadGoogleAnalytics();
+    if (currentPrefs.marketing) loadMetaPixel();
+    bindTrackingHandlers();
+  }
+
+  function trackLeadEvent(contentName) {
+    if (!currentPrefs) return;
+    if (currentPrefs.marketing && typeof window.fbq === "function") {
+      window.fbq("track", "Lead", { content_name: contentName, content_category: "Contact" });
+    }
+    if (currentPrefs.analytics && typeof window.gtag === "function") {
+      window.gtag("event", contentName === "WhatsApp Click" ? "whatsapp_click" : "email_click", { event_category: "engagement" });
+    }
+  }
+
+  function trackPricingView() {
+    if (!currentPrefs) return;
+    if (currentPrefs.marketing && typeof window.fbq === "function") {
+      window.fbq("track", "ViewContent", { content_name: "Pricing Section" });
+    }
+    if (currentPrefs.analytics && typeof window.gtag === "function") {
+      window.gtag("event", "view_pricing", { event_category: "engagement" });
+    }
+  }
+
+  function trackInitiateCheckout() {
+    if (!currentPrefs) return;
+    if (currentPrefs.marketing && typeof window.fbq === "function") {
+      window.fbq("track", "InitiateCheckout", { content_name: "Get Started Click", value: 850, currency: "EUR" });
+    }
+    if (currentPrefs.analytics && typeof window.gtag === "function") {
+      window.gtag("event", "initiate_checkout", { event_category: "conversion", value: 850, currency: "EUR" });
+    }
+  }
+
+  function bindTrackingHandlers() {
+    if (trackingBound) return;
+    trackingBound = true;
+
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+      link.addEventListener("click", function() {
+        if (isAnyTrackingEnabled()) trackLeadEvent("WhatsApp Click");
+      });
+    });
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+      link.addEventListener("click", function() {
+        if (isAnyTrackingEnabled()) trackLeadEvent("Email Click");
+      });
+    });
+
+    var pricingSection = document.getElementById("pricing");
+    if (pricingSection) {
+      var pricingTracked = false;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !pricingTracked && isAnyTrackingEnabled()) {
+            pricingTracked = true;
+            trackPricingView();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(pricingSection);
+    }
+
+    document.querySelectorAll(".btn-p, .btn-gold, .nav-cta").forEach(function(btn) {
+      if (btn.href && btn.href.indexOf("mailto:") !== -1) {
+        btn.addEventListener("click", function() {
+          if (isAnyTrackingEnabled()) trackInitiateCheckout();
+        });
+      }
+    });
+  }
+
+  function getFocusableElements(container) {
+    var selector = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    return Array.prototype.slice.call(container.querySelectorAll(selector));
+  }
+
+  function openModal(modal, triggerEl) {
+    if (activeModal && activeModal !== modal) closeModal(activeModal, false);
+    lastFocusedEl = triggerEl || document.activeElement;
+    modal.classList.add("show");
+    activeModal = modal;
+    updateFloatingButtonOffset();
+    var focusables = getFocusableElements(modal);
+    if (focusables.length) focusables[0].focus();
+  }
+
+  function closeModal(modal, returnFocus) {
+    modal.classList.remove("show");
+    if (activeModal === modal) activeModal = null;
+    updateFloatingButtonOffset();
+    if (returnFocus && lastFocusedEl && typeof lastFocusedEl.focus === "function") {
+      lastFocusedEl.focus();
+    }
+  }
+
+  function syncCustomizeToggles() {
+    var prefs = currentPrefs || { analytics: false, marketing: false };
+    analyticsToggle.checked = !!prefs.analytics;
+    marketingToggle.checked = !!prefs.marketing;
+  }
+
+  function handleGlobalKeydown(e) {
+    if (!activeModal) return;
+
+    if (e.key === "Escape") {
+      e.preventDefault();
+      if (activeModal === customizePanel) closeModal(customizePanel, true);
+      else closeModal(consentBanner, true);
+      return;
+    }
+
+    if (e.key === "Tab") {
+      var focusables = getFocusableElements(activeModal);
+      if (!focusables.length) return;
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      var isShift = e.shiftKey;
+
+      if (isShift && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!isShift && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }
+
+  acceptAllBtn.addEventListener("click", function() {
+    saveConsent({ analytics: true, marketing: true });
+    applyConsent();
+    closeModal(consentBanner, true);
+  });
+
+  rejectAllBtn.addEventListener("click", function() {
+    saveConsent({ analytics: false, marketing: false });
+    applyConsent();
+    closeModal(consentBanner, true);
+  });
+
+  customizeBtn.addEventListener("click", function() {
+    syncCustomizeToggles();
+    openModal(customizePanel, customizeBtn);
+  });
+
+  customizeSaveBtn.addEventListener("click", function() {
+    saveConsent({
+      analytics: !!analyticsToggle.checked,
+      marketing: !!marketingToggle.checked
+    });
+    applyConsent();
+    closeModal(customizePanel, false);
+    closeModal(consentBanner, true);
+  });
+
+  customizeRejectBtn.addEventListener("click", function() {
+    analyticsToggle.checked = false;
+    marketingToggle.checked = false;
+    saveConsent({ analytics: false, marketing: false });
+    applyConsent();
+    closeModal(customizePanel, false);
+    closeModal(consentBanner, true);
+  });
+
+  window.openCookieSettings = function() {
+    syncCustomizeToggles();
+    openModal(customizePanel, document.activeElement);
+  };
+
+  document.addEventListener("keydown", handleGlobalKeydown);
+
+  currentPrefs = parseConsent();
+  if (currentPrefs) {
+    applyConsent();
+  } else {
+    closeModal(customizePanel, false);
+    setTimeout(function() { openModal(consentBanner, null); }, 600);
+  }
+  updateFloatingButtonOffset();
+})();
+</script>
+
+<script>
+(function() {
+  var navbar = document.getElementById("navbar");
+  var sections = document.querySelectorAll("[data-nav]");
+
+  function updateNav() {
+    var scrollY = window.scrollY + navbar.offsetHeight + 10;
+    var mode = "dark";
+    sections.forEach(function(section) {
+      var top = section.offsetTop;
+      var bottom = top + section.offsetHeight;
+      if (scrollY >= top && scrollY < bottom) mode = section.dataset.nav;
+    });
+    navbar.classList.remove("dark-mode", "light-mode");
+    navbar.classList.add(mode + "-mode");
+  }
+
+  window.addEventListener("scroll", updateNav, { passive: true });
+  window.addEventListener("resize", updateNav, { passive: true });
+  updateNav();
+})();
+</script>
+
+<script>
+(function() {
+  var toggle = document.getElementById("mobileMenuToggle");
+  var menu = document.getElementById("mobileNav");
+  var overlay = document.getElementById("mobileOverlay");
+
+  function openMenu() {
+    menu.classList.add("active");
+    overlay.classList.add("active");
+    toggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  toggle.addEventListener("click", function() {
+    if (menu.classList.contains("active")) closeMenu();
+    else openMenu();
+  });
+
+  overlay.addEventListener("click", closeMenu);
+  menu.querySelectorAll("a").forEach(function(link) {
+    link.addEventListener("click", closeMenu);
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll(".reveal").forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var translations = {
+    en: {
+      nav_how:"How It Works", nav_why:"Why Us", nav_demos:"Industries", nav_pricing:"Pricing", nav_cta:"Get Your Website",
+      bb_label:"Premium Web Design · Malta & EU", bb_sub:"Custom websites for service businesses", bb_cta:"Start on WhatsApp", bb_new:"From €850", bb_reply:"Reply within minutes",
+      eyebrow:"Web Design · Malta & EU", trust_line:"Based in Malta · Across the EU · For service businesses",
+      h1_line1:"Get a Website", h1_line2:"That Brings", h1_line3:"You", h1_line4:"Clients.",
+      hero_ghost:"Built to Convert.", hook_1:"Projects from €850", hook_2_before:"Delivered in ", hook_2_strong:"5 Days", hook_3_before:"Custom Design ", hook_3_strong:"Included", hook_wa:"WhatsApp Now →",
+      hero_desc:"We build fast, custom websites for service businesses — designed to convert.",
+      btn_work:"See Live Demos", btn_pricing:"View Packages",
+      stat_days:"Days Delivery", stat_from:"Starting From", stat_industries:"Industries", scroll:"Scroll",
+      proof_industries:"Industries covered", proof_demos:"Live demos available", proof_days:"Days to delivery", proof_vat:"VAT registered · BG208418815",
+      how_tag:"The Process", how_title1:"Three steps.", how_title2:"Five days.", how_title3:"Done.",
+      step1_title:"You Send the Basics", step1_desc:"Your business name, logo, photos and service summary.",
+      step2_title:"We Build & Customize", step2_desc:"We adapt design, content and contact flow to your business.",
+      step3_title:"Your Site Goes Live", step3_desc:"Fast delivery and conversion-focused final result.",
+      why_tag:"Why Us", why_title1:"No agencies.", why_title2:"No delays.", why_title3:"Just results.",
+      why1_title:"Built for Service Businesses", why1_desc:"We build for service businesses only.",
+      why2_title:"5 Days. No Excuses.", why2_desc:"You send content, we deliver quickly.",
+      why3_title:"Mobile-First. Lead-Focused.", why3_desc:"Fast mobile pages built for contact actions.",
+      demos_tag:"Live Demos", demos_title1:"Pick your", demos_title2:"industry.", demos_desc:"Click any demo to preview the style.",
+      demo_label:"Demo", demo_salon:"Hair Salon", demo_bakery:"Bakery", demo_mechanic:"Mechanic", demo_restaurant:"Restaurant", demo_massage:"Massage", demo_lawyer:"Lawyer", demo_dentist:"Dentist", demo_electrical:"Electrical & Plumbing",
+      pricing_tag:"Pricing", pricing_title1:"Fixed price.", pricing_title2:"Clear scope.", pricing_title3:"No surprises.",
+      pkg_starter:"Starter", pkg_popular:"Most Popular", pkg_premium:"Premium",
+      pkg1_name:"Essential", pkg1_f1:"1-page custom website", pkg1_f2:"Services, gallery and contact section", pkg1_f3:"Mobile-first design", pkg1_f4:"Domain & hosting for 12 months", pkg1_f5:"Delivery in 5 days",
+      pkg2_name:"Professional", pkg2_f1:"Up to 5 pages", pkg2_f2:"Services, pricing and gallery", pkg2_f3:"Basic SEO setup", pkg2_f4:"Google Maps integration", pkg2_f5:"Google Business Profile setup", pkg2_f6:"Domain & hosting for 12 months", pkg2_f7:"Delivery in 5 days",
+      pkg3_name:"Complete", pkg3_f1:"Up to 8 pages", pkg3_f2:"Booking or inquiry flow integration", pkg3_f3:"Google Business Profile setup", pkg3_f4:"1 revision round included", pkg3_f5:"Domain & hosting for 12 months", pkg3_f6:"Priority delivery",
+      btn_get_started:"Start Your Project", pricing_note:"One-time payment · No monthly fees · No hidden costs",
+      cta_tag:"Let's Build Something That Works", cta_title1:"Ready for a", cta_title2:"website that gets", cta_title3:"results?",
+      cta_note:"Send us your business name and industry — no obligation.", cta_btn1:"Start Your Project", cta_btn2:"Contact Us",
+      footer_by:"Web Design by", footer_location:"Malta & EU", footer_faq:"FAQ", footer_terms:"Terms & Conditions", footer_refund:"Refund Policy", footer_privacy:"Privacy Policy", footer_cookie:"Cookie Settings",
+      pm_label:"Secure Payment Options", pm_note:"50% deposit to start · 50% before launch"
+    },
+    de: {
+      nav_how:"So funktioniert's", nav_why:"Warum wir", nav_demos:"Branchen", nav_pricing:"Preise", nav_cta:"Website anfragen",
+      bb_label:"Premium-Webdesign · Malta & EU", bb_sub:"Individuelle Websites für Dienstleister", bb_cta:"Per WhatsApp starten", bb_new:"Ab €850", bb_reply:"Antwort in wenigen Minuten",
+      eyebrow:"Webdesign · Malta & EU", trust_line:"In Malta ansässig · In der EU tätig · Für Dienstleister",
+      h1_line1:"Websites, die", h1_line2:"mehr", h1_line3:"Anfragen", h1_line4:"bringen.",
+      hero_ghost:"Für Conversions gemacht.", hook_1:"Projekte ab €850", hook_2_before:"Lieferung in ", hook_2_strong:"5 Tagen", hook_3_before:"Individuelles Design ", hook_3_strong:"inklusive", hook_wa:"WhatsApp →",
+      hero_desc:"Wir bauen schnelle, individuelle Websites für Dienstleister — überzeugend gestaltet.",
+      btn_work:"Demos ansehen", btn_pricing:"Pakete ansehen",
+      stat_days:"Tage Lieferzeit", stat_from:"Ab", stat_industries:"Branchen", scroll:"Scrollen",
+      proof_industries:"Branchen abgedeckt", proof_demos:"Live-Demos verfügbar", proof_days:"Tage bis zur Lieferung", proof_vat:"Mehrwertsteuer registriert · BG208418815",
+      how_tag:"Der Prozess", how_title1:"Drei Schritte.", how_title2:"Fünf Tage.", how_title3:"Fertig.",
+      step1_title:"Sie senden die Grundlagen", step1_desc:"Ihr Firmenname, Logo, Fotos und eine Kurzbeschreibung Ihrer Leistungen.",
+      step2_title:"Wir bauen & passen an", step2_desc:"Wir passen Design, Inhalte und Kontaktabläufe an Ihr Unternehmen an.",
+      step3_title:"Ihre Website geht live", step3_desc:"Schnelle Lieferung und ein conversion-optimiertes Ergebnis.",
+      why_tag:"Warum wir", why_title1:"Keine Agenturen.", why_title2:"Keine Verzögerungen.", why_title3:"Nur Ergebnisse.",
+      why1_title:"Für Dienstleister gemacht", why1_desc:"Wir bauen ausschließlich für Dienstleister.",
+      why2_title:"5 Tage. Keine Ausreden.", why2_desc:"Sie senden die Inhalte, wir liefern schnell.",
+      why3_title:"Mobile-First. Lead-fokussiert.", why3_desc:"Schnelle mobile Seiten, die auf Kontaktaktionen ausgerichtet sind.",
+      demos_tag:"Live-Demos", demos_title1:"Wählen Sie Ihre", demos_title2:"Branche.", demos_desc:"Klicken Sie auf eine Demo, um das Design zu sehen.",
+      demo_label:"Demo", demo_salon:"Friseursalon", demo_bakery:"Bäckerei", demo_mechanic:"Kfz-Werkstatt", demo_restaurant:"Restaurant", demo_massage:"Massage", demo_lawyer:"Rechtsanwalt", demo_dentist:"Zahnarzt", demo_electrical:"Elektro & Sanitär",
+      pricing_tag:"Preise", pricing_title1:"Festpreis.", pricing_title2:"Klarer Umfang.", pricing_title3:"Keine Überraschungen.",
+      pkg_starter:"Starter", pkg_popular:"Beliebteste Wahl", pkg_premium:"Premium",
+      pkg1_name:"Essential", pkg1_f1:"1-seitige individuelle Website", pkg1_f2:"Leistungen, Galerie und Kontaktbereich", pkg1_f3:"Mobile-First-Design", pkg1_f4:"Domain & Hosting für 12 Monate", pkg1_f5:"Lieferung in 5 Tagen",
+      pkg2_name:"Professional", pkg2_f1:"Bis zu 5 Seiten", pkg2_f2:"Leistungen, Preise und Galerie", pkg2_f3:"Basis-SEO-Setup", pkg2_f4:"Google Maps Integration", pkg2_f5:"Google Unternehmensprofil einrichten", pkg2_f6:"Domain & Hosting für 12 Monate", pkg2_f7:"Lieferung in 5 Tagen",
+      pkg3_name:"Complete", pkg3_f1:"Bis zu 8 Seiten", pkg3_f2:"Buchungs- oder Anfrage-Integration", pkg3_f3:"Google Unternehmensprofil einrichten", pkg3_f4:"1 Überarbeitungsrunde inklusive", pkg3_f5:"Domain & Hosting für 12 Monate", pkg3_f6:"Prioritätslieferung",
+      btn_get_started:"Projekt starten", pricing_note:"Einmalige Zahlung · Keine monatlichen Gebühren · Keine versteckten Kosten",
+      cta_tag:"Lassen Sie uns etwas Wirksames aufbauen", cta_title1:"Bereit für eine", cta_title2:"Website, die", cta_title3:"Ergebnisse bringt?",
+      cta_note:"Senden Sie uns Ihren Firmennamen und Ihre Branche — unverbindlich.", cta_btn1:"Projekt starten", cta_btn2:"Kontakt aufnehmen",
+      footer_by:"Webdesign von", footer_location:"Malta & EU", footer_faq:"FAQ", footer_terms:"AGB", footer_refund:"Rückerstattungsrichtlinie", footer_privacy:"Datenschutzrichtlinie", footer_cookie:"Cookie-Einstellungen",
+      pm_label:"Sichere Zahlungsoptionen", pm_note:"50% Anzahlung zum Start · 50% vor dem Launch"
+    },
+    fr: {
+      nav_how:"Comment ça marche", nav_why:"Pourquoi nous", nav_demos:"Secteurs", nav_pricing:"Tarifs", nav_cta:"Demander un site",
+      bb_label:"Web Design Premium · Malte & UE", bb_sub:"Sites sur mesure pour les prestataires de services", bb_cta:"Démarrer sur WhatsApp", bb_new:"À partir de €850", bb_reply:"Réponse en quelques minutes",
+      eyebrow:"Web Design · Malte & UE", trust_line:"Basé à Malte · Actif dans toute l'UE · Pour les prestataires de services",
+      h1_line1:"Des sites qui", h1_line2:"vous apportent", h1_line3:"plus de", h1_line4:"clients.",
+      hero_ghost:"Conçu pour convertir.", hook_1:"Projets à partir de €850", hook_2_before:"Livré en ", hook_2_strong:"5 jours", hook_3_before:"Design personnalisé ", hook_3_strong:"inclus", hook_wa:"WhatsApp →",
+      hero_desc:"Nous créons des sites rapides et sur mesure pour les prestataires de services — conçus pour convertir.",
+      btn_work:"Voir les démos", btn_pricing:"Voir les forfaits",
+      stat_days:"Jours de livraison", stat_from:"À partir de", stat_industries:"Secteurs", scroll:"Défiler",
+      proof_industries:"Secteurs couverts", proof_demos:"Démos en direct disponibles", proof_days:"Jours de délai de livraison", proof_vat:"TVA enregistrée · BG208418815",
+      how_tag:"Le processus", how_title1:"Trois étapes.", how_title2:"Cinq jours.", how_title3:"C'est fait.",
+      step1_title:"Vous envoyez les bases", step1_desc:"Votre nom d'entreprise, logo, photos et description de vos services.",
+      step2_title:"Nous créons et personnalisons", step2_desc:"Nous adaptons le design, le contenu et les formulaires à votre activité.",
+      step3_title:"Votre site est en ligne", step3_desc:"Livraison rapide et résultat final axé sur la conversion.",
+      why_tag:"Pourquoi nous", why_title1:"Pas d'agences.", why_title2:"Pas de délais.", why_title3:"Que des résultats.",
+      why1_title:"Fait pour les prestataires", why1_desc:"Nous travaillons exclusivement avec des prestataires de services.",
+      why2_title:"5 jours. Sans excuse.", why2_desc:"Vous envoyez le contenu, nous livrons rapidement.",
+      why3_title:"Mobile d'abord. Orienté leads.", why3_desc:"Pages mobiles rapides conçues pour inciter au contact.",
+      demos_tag:"Démos en direct", demos_title1:"Choisissez votre", demos_title2:"secteur.", demos_desc:"Cliquez sur une démo pour voir le style.",
+      demo_label:"Démo", demo_salon:"Salon de coiffure", demo_bakery:"Boulangerie", demo_mechanic:"Garage", demo_restaurant:"Restaurant", demo_massage:"Massage", demo_lawyer:"Avocat", demo_dentist:"Dentiste", demo_electrical:"Électricité & Plomberie",
+      pricing_tag:"Tarifs", pricing_title1:"Prix fixe.", pricing_title2:"Périmètre clair.", pricing_title3:"Aucune surprise.",
+      pkg_starter:"Débutant", pkg_popular:"Le plus populaire", pkg_premium:"Premium",
+      pkg1_name:"Essentiel", pkg1_f1:"Site personnalisé 1 page", pkg1_f2:"Services, galerie et section contact", pkg1_f3:"Design mobile-first", pkg1_f4:"Domaine & hébergement 12 mois", pkg1_f5:"Livraison en 5 jours",
+      pkg2_name:"Professionnel", pkg2_f1:"Jusqu'à 5 pages", pkg2_f2:"Services, tarifs et galerie", pkg2_f3:"Configuration SEO de base", pkg2_f4:"Intégration Google Maps", pkg2_f5:"Création fiche Google Business", pkg2_f6:"Domaine & hébergement 12 mois", pkg2_f7:"Livraison en 5 jours",
+      pkg3_name:"Complet", pkg3_f1:"Jusqu'à 8 pages", pkg3_f2:"Intégration réservation ou formulaire", pkg3_f3:"Création fiche Google Business", pkg3_f4:"1 round de révision inclus", pkg3_f5:"Domaine & hébergement 12 mois", pkg3_f6:"Livraison prioritaire",
+      btn_get_started:"Lancer mon projet", pricing_note:"Paiement unique · Aucun frais mensuel · Aucun coût caché",
+      cta_tag:"Construisons quelque chose qui fonctionne", cta_title1:"Prêt pour un", cta_title2:"site qui génère des", cta_title3:"résultats ?",
+      cta_note:"Envoyez-nous le nom de votre entreprise et votre secteur — sans engagement.", cta_btn1:"Lancer mon projet", cta_btn2:"Nous contacter",
+      footer_by:"Web Design par", footer_location:"Malte & UE", footer_faq:"FAQ", footer_terms:"Conditions générales", footer_refund:"Politique de remboursement", footer_privacy:"Politique de confidentialité", footer_cookie:"Paramètres des cookies",
+      pm_label:"Options de paiement sécurisé", pm_note:"50% d'acompte pour démarrer · 50% avant le lancement"
+    },
+    mt: {
+      nav_how:"Kif taħdem", nav_why:"Għaliex aħna", nav_demos:"Industriji", nav_pricing:"Prezzijiet", nav_cta:"Ikseb is-sit tiegħek",
+      bb_label:"Web Design Premium · Malta & UE", bb_sub:"Siti apposta għan-negozji tas-servizzi", bb_cta:"Ibda fuq WhatsApp", bb_new:"Minn €850", bb_reply:"Tweġiba fi ftit minuti",
+      eyebrow:"Web Design · Malta & UE", trust_line:"Ibbażati f'Malta · Naħdmu madwar l-UE · Għan-negozji tas-servizzi",
+      h1_line1:"Sit li", h1_line2:"jġiblek", h1_line3:"aktar", h1_line4:"klijenti.",
+      hero_ghost:"Maħdum biex jikkonverti.", hook_1:"Proġetti minn €850", hook_2_before:"Konsenjat fi ", hook_2_strong:"5 ijiem", hook_3_before:"Disinn apposta ", hook_3_strong:"inkluż", hook_wa:"WhatsApp →",
+      hero_desc:"Nibnu siti veloċi u personalizzati għan-negozji tas-servizzi — imfassla biex jikkonvertu.",
+      btn_work:"Ara d-demos", btn_pricing:"Ara l-pakketti",
+      stat_days:"Ijiem ta' Kunsinna", stat_from:"Minn", stat_industries:"Industriji", scroll:"Skorra",
+      proof_industries:"Industriji koperti", proof_demos:"Demos ħajjin disponibbli", proof_days:"Ijiem sa kunsinna", proof_vat:"Irreġistrat għall-VAT · BG208418815",
+      how_tag:"Il-Proċess", how_title1:"Tliet passi.", how_title2:"Ħames ijiem.", how_title3:"Lest.",
+      step1_title:"Tibgħat il-Bażi", step1_desc:"Isem in-negozju tiegħek, logo, ritratti u sommarju tas-servizzi.",
+      step2_title:"Nibnu u Nikkustomizzaw", step2_desc:"Nadattaw id-disinn, il-kontenut u l-fluss tal-kuntatt għan-negozju tiegħek.",
+      step3_title:"Is-Sit Tiegħek Jidħol Ħaj", step3_desc:"Kunsinna rapida u riżultat finali ffukat fuq il-konverżjoni.",
+      why_tag:"Għaliex aħna", why_title1:"L-ebda aġenziji.", why_title2:"L-ebda dewmien.", why_title3:"Biss riżultati.",
+      why1_title:"Imbnija għan-Negozji tas-Servizzi", why1_desc:"Naħdmu esklussivament man-negozji tas-servizzi.",
+      why2_title:"5 Ijiem. Ebda Skuża.", why2_desc:"Tibgħat il-kontenut, aħna nkonsenjaw malajr.",
+      why3_title:"Mobile l-Ewwel. Ffukat fuq Leads.", why3_desc:"Paġni mobbli veloċi mibni għal azzjonijiet ta' kuntatt.",
+      demos_tag:"Demos Ħajjin", demos_title1:"Agħżel l-", demos_title2:"industrija tiegħek.", demos_desc:"Ikklikkja fuq kwalunkwe demo biex tara d-disinn.",
+      demo_label:"Demo", demo_salon:"Salon tax-Xagħar", demo_bakery:"Forn", demo_mechanic:"Mekkaniċi", demo_restaurant:"Ristorant", demo_massage:"Massaġġ", demo_lawyer:"Avukat", demo_dentist:"Dentist", demo_electrical:"Elettriku & Idrawliku",
+      pricing_tag:"Prezzijiet", pricing_title1:"Prezz fiss.", pricing_title2:"Skop ċar.", pricing_title3:"Ebda sorpriżi.",
+      pkg_starter:"Starter", pkg_popular:"L-Aktar Popolari", pkg_premium:"Premium",
+      pkg1_name:"Essenzjali", pkg1_f1:"Sit personalizzat ta' paġna 1", pkg1_f2:"Servizzi, gallerija u sezzjoni ta' kuntatt", pkg1_f3:"Disinn mobile-first", pkg1_f4:"Dominju & hosting għal 12-il xahar", pkg1_f5:"Kunsinna fi 5 ijiem",
+      pkg2_name:"Professjonali", pkg2_f1:"Sa 5 paġni", pkg2_f2:"Servizzi, prezzijiet u gallerija", pkg2_f3:"Setup bażiku tas-SEO", pkg2_f4:"Integrazzjoni ta' Google Maps", pkg2_f5:"Setup tal-Profil tan-Negozju ta' Google", pkg2_f6:"Dominju & hosting għal 12-il xahar", pkg2_f7:"Kunsinna fi 5 ijiem",
+      pkg3_name:"Komplut", pkg3_f1:"Sa 8 paġni", pkg3_f2:"Integrazzjoni ta' bookings jew inkjesti", pkg3_f3:"Setup tal-Profil tan-Negozju ta' Google", pkg3_f4:"1 rawnd ta' reviżjoni inkluż", pkg3_f5:"Dominju & hosting għal 12-il xahar", pkg3_f6:"Kunsinna ta' prijorità",
+      btn_get_started:"Ibda l-Proġett Tiegħek", pricing_note:"Ħlas darba biss · L-ebda tariffi fix-xahar · L-ebda spejjeż moħbija",
+      cta_tag:"Ejja Nibnu Xi Ħaġa li Taħdem", cta_title1:"Lest għal", cta_title2:"sit li jagħti", cta_title3:"riżultati?",
+      cta_note:"Ibgħatilna isem in-negozju tiegħek u l-industrija — mingħajr obbligu.", cta_btn1:"Ibda l-Proġett Tiegħek", cta_btn2:"Ikkuntattjana",
+      footer_by:"Web Design minn", footer_location:"Malta & UE", footer_faq:"FAQ", footer_terms:"Termini u Kondizzjonijiet", footer_refund:"Politika ta' Rimborż", footer_privacy:"Politika tal-Privatezza", footer_cookie:"Settings tal-Cookies",
+      pm_label:"Għażliet ta' Ħlas Sigur", pm_note:"50% depożitu biex tibda · 50% qabel il-launch"
+    }
+  };
+
+  var currentLang = "en";
+  try { currentLang = localStorage.getItem("lang") || "de"; } catch (e) {}
+  if (!translations[currentLang]) currentLang = "en";
+
+  function setLanguage(lang) {
+    if (!translations[lang]) lang = "en";
+    currentLang = lang;
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+
+    document.querySelectorAll(".lang-switcher button").forEach(function(btn) {
+      var isActive = btn.getAttribute("data-lang") === lang;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+
+    var t = translations[lang];
+    var fallback = translations.en;
+
+    document.querySelectorAll("[data-i18n]").forEach(function(el) {
+      var key = el.getAttribute("data-i18n");
+      var val = t[key] !== undefined ? t[key] : fallback[key];
+      if (val !== undefined) {
+        if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") el.placeholder = val;
+        else el.textContent = val;
+      }
+    });
+
+    var badge = document.querySelector(".pc.feat");
+    if (badge) {
+      var badgeText = (t.pkg_popular !== undefined ? t.pkg_popular : fallback.pkg_popular) || "MOST POPULAR";
+      badge.setAttribute("data-badge", badgeText);
+    }
+
+    document.documentElement.lang = lang;
+  }
+
+  document.querySelectorAll(".lang-switcher button").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      setLanguage(this.getAttribute("data-lang"));
+    });
+  });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function() { setLanguage(currentLang); });
+  } else {
+    setLanguage(currentLang);
+  }
+})();
+</script>
+</body>
+</html>

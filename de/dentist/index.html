@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dentist Website Design Demo | D&L Project56</title>
+<meta name="description" content="Dentist Website Demo von D&L Project56. Festpreis ab €850, Lieferung in 5 Tagen.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dlproject.io/de/dentist/">
+<meta property="og:title" content="Dentist Website Design Demo | D&L Project56">
+<meta property="og:description" content="See a dental clinic website demo designed to communicate trust, services and fast contact paths for new patients.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dlproject.io/dentist/">
+<meta property="og:image" content="https://dlproject56.com/wp-content/uploads/2026/02/m-4tymtlli.jpg">
+<meta property="og:image:alt" content="Dentist website design demo by D&L Project56">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Dentist Website Design Demo",
+  "serviceType": "Dentist website design",
+  "url": "https://dlproject.io/dentist/",
+  "areaServed": ["Malta", "EU"],
+  "provider": {
+    "@type": "Organization",
+    "name": "D&L Project56",
+    "url": "https://dlproject.io"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0a8a7a;--teal-light:#12b8a4;--teal-pale:#edf7f6;
+  --dark:#0a1a18;--dark2:#0e2422;
+  --white:#ffffff;--off:#f8fafb;--text:#0d2320;
+  --muted:#5a7370;--border:#dde8e6;--max:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+
+#navbar{position:fixed;top:0;width:100%;z-index:9999;padding:18px 0;transition:all .35s ease;}
+#navbar.light-mode{background:rgba(255,255,255,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:12px 0;}
+#navbar.dark-mode{background:rgba(10,26,24,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(10,138,122,0.2);padding:12px 0;}
+.nav-wrap{max-width:var(--max);margin:auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:19px;letter-spacing:0;text-decoration:none;transition:color .3s;}
+#navbar.light-mode .nav-logo{color:var(--teal);}
+#navbar.dark-mode  .nav-logo{color:var(--teal-light);}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase;text-decoration:none;margin-left:24px;transition:color .3s;position:relative;}
+#navbar.light-mode .nav-links a{color:var(--muted);}
+#navbar.dark-mode  .nav-links a{color:rgba(255,255,255,0.55);}
+.nav-links a:hover{color:var(--teal)!important;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--teal);transition:width .3s;}
+.nav-links a:hover::after{width:100%;}
+.nav-book{padding:9px 20px;background:var(--teal);color:#fff!important;border-radius:4px;font-weight:500!important;transition:background .3s;}
+.nav-book:hover{background:var(--teal-light);}
+.nav-book::after{display:none!important;}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:45% 55%;}
+.hero-left{background:var(--teal);display:flex;flex-direction:column;justify-content:center;padding:140px 48px 80px 40px;position:relative;overflow:hidden;}
+/* geometric circles */
+.hero-left::before{content:'';position:absolute;top:-120px;right:-120px;width:360px;height:360px;border:40px solid rgba(255,255,255,0.06);border-radius:50%;}
+.hero-left::after{content:'';position:absolute;bottom:-80px;left:-60px;width:250px;height:250px;border:30px solid rgba(255,255,255,0.04);border-radius:50%;}
+.hero-right{position:relative;overflow:hidden;background:var(--off);}
+.hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+
+.h-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:24px;padding:6px 16px;margin-bottom:28px;animation:fadeUp .7s ease both;}
+.h-badge span{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.85);}
+.h-badge-dot{width:6px;height:6px;background:rgba(255,255,255,0.8);border-radius:50;animation:pulse 2s infinite;}
+
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(40px,5.5vw,68px);font-weight:400;line-height:1.1;color:#fff;margin-bottom:20px;animation:fadeUp .7s .1s ease both;}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,0.75);}
+.hero-desc{font-size:15px;color:rgba(255,255,255,0.65);max-width:400px;line-height:1.8;font-weight:300;margin-bottom:40px;animation:fadeUp .7s .2s ease both;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .7s .3s ease both;}
+.btn-white{display:inline-block;padding:15px 32px;background:#fff;color:var(--teal);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .3s;}
+.btn-white:hover{background:rgba(255,255,255,0.9);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15);}
+.btn-wh-ol{display:inline-block;padding:14px 32px;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);font-size:11px;font-weight:300;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .3s;}
+.btn-wh-ol:hover{border-color:#fff;color:#fff;}
+.hero-proof{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-top:18px;line-height:1.8;}
+.hero-proof a{color:#fff;text-decoration:none;}
+.hero-proof a:hover{text-decoration:underline;}
+.hero-stats{display:flex;gap:32px;margin-top:52px;animation:fadeUp .7s .4s ease both;}
+.hs{border-left:1px solid rgba(255,255,255,0.2);padding-left:16px;}
+.hs-n{font-family:'DM Serif Display',serif;font-size:28px;color:#fff;line-height:1;}
+.hs-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+
+/* SERVICES */
+.sec-off{background:var(--off);padding:100px 40px;}
+.sec-white{background:var(--white);padding:100px 40px;}
+.sec-teal-dk{background:var(--dark2);padding:100px 40px;}
+.sec-pale{background:var(--teal-pale);padding:100px 40px;}
+.inner{max-width:var(--max);margin:auto;}
+.s-tag{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:14px;}
+.s-title{font-family:'DM Serif Display',serif;font-size:clamp(32px,4.5vw,54px);font-weight:400;line-height:1.1;margin-bottom:52px;}
+.s-title.lt{color:var(--text);}
+.s-title.dk{color:#fff;}
+
+/* services grid */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.svc{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:36px 28px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;}
+.svc:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(10,138,122,0.1);border-color:var(--teal);}
+.svc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal);transform:scaleX(0);transition:transform .4s ease;transform-origin:left;}
+.svc:hover::before{transform:scaleX(1);}
+.svc-num{font-family:'DM Serif Display',serif;font-size:40px;color:rgba(10,138,122,0.1);line-height:1;margin-bottom:16px;display:block;}
+.svc h3{font-family:'DM Serif Display',serif;font-size:21px;font-weight:400;margin-bottom:10px;}
+.svc p{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;}
+
+/* GALLERY — clinical clean */
+.dent-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
+.dg{overflow:hidden;border-radius:8px;}
+.dg img{width:100%;height:280px;object-fit:cover;transition:transform .5s ease,filter .4s;}
+.dg:hover img{transform:scale(1.03);filter:brightness(1.04);}
+.dg.tall{grid-row:span 2;}
+.dg.tall img{height:568px;}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.pcard{background:rgba(10,138,122,0.04);border:1px solid var(--border);border-radius:12px;padding:36px 28px;position:relative;transition:transform .3s,box-shadow .3s,border-color .3s;}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(10,138,122,0.1);border-color:rgba(10,138,122,0.3);}
+.pcard.feat{border-color:var(--teal);background:var(--teal-pale);}
+.pcard.feat::before{content:'MOST POPULAR';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--teal);color:#fff;font-size:9px;font-weight:500;letter-spacing:2px;padding:5px 16px;border-radius:0 0 6px 6px;}
+.pc-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:16px;}
+.pcard h3{font-family:'DM Serif Display',serif;font-size:24px;font-weight:400;margin-bottom:8px;}
+.pc-amt{font-family:'DM Serif Display',serif;font-size:52px;font-weight:400;line-height:1;margin-bottom:24px;color:var(--text);}
+.pc-amt sup{font-size:22px;vertical-align:super;}
+.pc-ul{list-style:none;margin-bottom:24px;}
+.pc-ul li{font-size:13px;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;font-weight:300;}
+.pc-ul li::before{content:'✓';color:var(--teal);font-size:12px;}
+.btn-d{display:block;text-align:center;padding:13px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:all .3s;}
+.btn-d.ol{border:1px solid var(--border);color:var(--text);}
+.btn-d.ol:hover{border-color:var(--teal);color:var(--teal);}
+.btn-d.sl{background:var(--teal);color:#fff;}
+.btn-d.sl:hover{background:var(--teal-light);}
+
+.cta{background:var(--teal);padding:110px 40px;text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border:60px solid rgba(255,255,255,0.05);border-radius:50%;}
+.cta h2{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,58px);font-weight:400;color:#fff;margin-bottom:16px;}
+.cta h2 em{font-style:italic;color:rgba(255,255,255,0.75);}
+.cta p{font-size:15px;color:rgba(255,255,255,0.65);max-width:440px;margin:0 auto 44px;line-height:1.8;font-weight:300;}
+.cta-email{font-family:'DM Serif Display',serif;font-size:16px;color:rgba(255,255,255,0.85);display:block;margin-top:24px;text-decoration:none;opacity:0.7;font-style:italic;}
+.cta-email:hover{opacity:1;}
+
+footer{background:var(--dark);padding:28px;text-align:center;}
+footer p{font-size:11px;letter-spacing:1px;color:rgba(255,255,255,0.2);}
+footer a{color:var(--teal-light);text-decoration:none;opacity:0.6;}
+footer a:hover{opacity:1;}
+
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:300;letter-spacing:3px;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,0.45);margin-bottom:36px;transition:color .3s;}
+.back-link:hover{color:#fff;}
+.back-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right{height:45vh;}
+  .hero-left{padding:120px 24px 60px;}
+  .svc-grid,.price-grid{grid-template-columns:1fr;}
+  .dent-gallery{grid-template-columns:1fr 1fr;}
+  .dg.tall img{height:280px;}
+  .dg.tall{grid-row:span 1;}
+  .hero-stats{flex-wrap:wrap;gap:20px;}
+}
+@media(max-width:600px){.nav-links .hm{display:none;}}
+
+.lang-sw-nav{display:flex;align-items:center;gap:2px;margin-left:20px;}
+.lang-sw-nav a{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:4px 7px;border-radius:2px;transition:all .2s;}
+#navbar.light-mode .lang-sw-nav a{color:rgba(42,31,29,0.35);}
+#navbar.dark-mode .lang-sw-nav a{color:rgba(245,240,232,0.35);}
+#navbar.light-mode .lang-sw-nav a:hover,#navbar.light-mode .lang-sw-nav a.active{color:var(--rose);}
+#navbar.dark-mode .lang-sw-nav a:hover,#navbar.dark-mode .lang-sw-nav a.active{color:var(--rose-light);}
+.lang-sw-nav .sep{color:rgba(200,115,106,0.25);font-size:9px;}
+</style>
+</head>
+<body>
+
+<header id="navbar" class="light-mode">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/de/">D&L Project56</a>
+    <nav class="nav-links">
+      <a href="/de/" class="hm">← Alle Demos</a>
+      <a href="#services" class="hm">Leistungen</a>
+      <a href="#pricing" class="hm">Preise</a>
+      <a href="mailto:web@dlproject56.com?subject=Dentist%20Website" class="nav-cta">Website anfragen</a>
+      <div class="lang-sw-nav">
+        <a href="/dentist/">EN</a>
+        <span class="sep">|</span>
+        <a href="/de/dentist/" class="active">DE</a>
+        <span class="sep">|</span>
+        <a href="/fr/dentist/">FR</a>
+        <span class="sep">|</span>
+        <a href="/mt/dentist/">MT</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" data-nav="dark">
+  <div class="hero-left">
+    <a href="/" class="back-link"><svg viewBox="0 0 24 24"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg> All Demos</a>
+    <div class="h-badge"><div class="h-badge-dot"></div><span>Dental Clinic · Demo</span></div>
+    <h1>Your Smile,<br>Our <em>Expertise.</em></h1>
+    <p class="hero-desc">A clean, modern dental website that builds patient trust, shows your services clearly and makes booking effortless.</p>
+    <div class="hero-btns">
+      <a class="btn-white" href="mailto:web@dlproject56.com?subject=Dentist%20Website">Start Your Project</a>
+      <a class="btn-wh-ol" href="#services">See What's Inside</a>
+    </div>
+    <p class="hero-proof">EU registered · Fixed pricing from €850 · 5-day delivery · <a href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20dentist%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="mailto:web@dlproject56.com?subject=Dentist%20Website%20Inquiry">Contact Us</a></p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-n">5</div><div class="hs-l">Day Delivery</div></div>
+      <div class="hs"><div class="hs-n">€850</div><div class="hs-l">Starting From</div></div>
+      <div class="hs"><div class="hs-n">100%</div><div class="hs-l">Mobile Ready</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://dlproject56.com/wp-content/uploads/2026/02/m-4tymtlli.jpg" alt="Dentist website demo hero image with modern clinic room" fetchpriority="high">
+  </div>
+</section>
+
+<section class="sec-off" data-nav="light" id="services">
+  <div class="inner">
+    <span class="s-tag reveal">Our Services</span>
+    <h2 class="s-title lt reveal">Comprehensive care<br>for every patient.</h2>
+    <div class="svc-grid">
+      <div class="svc reveal"><span class="svc-num">01</span><h3>General Dentistry</h3><p>Check-ups, cleanings, fillings and preventive care. The foundation of a healthy smile.</p></div>
+      <div class="svc reveal"><span class="svc-num">02</span><h3>Teeth Whitening</h3><p>Professional in-chair and take-home treatments. Visible results after one session.</p></div>
+      <div class="svc reveal"><span class="svc-num">03</span><h3>Orthodontics</h3><p>Traditional braces and clear aligners for children and adults. Straight teeth, confident smile.</p></div>
+      <div class="svc reveal"><span class="svc-num">04</span><h3>Implants</h3><p>Permanent, natural-looking replacements for missing teeth. Lifetime investment in your smile.</p></div>
+      <div class="svc reveal"><span class="svc-num">05</span><h3>Cosmetic Dentistry</h3><p>Veneers, bonding and smile design. We craft the smile you've always wanted.</p></div>
+      <div class="svc reveal"><span class="svc-num">06</span><h3>Emergency Care</h3><p>Same-day appointments for dental emergencies. We're here when you need us most.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-white" data-nav="light" id="gallery">
+  <div class="inner">
+    <span class="s-tag reveal">The Clinic</span>
+    <h2 class="s-title lt reveal">Modern equipment.<br>Comfortable environment.</h2>
+    <div class="dent-gallery reveal">
+      <div class="dg tall"><img src="https://dlproject56.com/wp-content/uploads/2026/02/kevkes1_rdu.jpg" alt="Dental clinic reception gallery image" loading="lazy"></div>
+      <div class="dg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/44jaetsvx2i.jpg" alt="Dental treatment room gallery image" loading="lazy"></div>
+      <div class="dg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/xjptus8nbhs.jpg" alt="Dental equipment gallery image" loading="lazy"></div>
+      <div class="dg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/pc8lpkjwecm.jpg" alt="Dental clinic team gallery image" loading="lazy"></div>
+      <div class="dg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/m-4tymtlli.jpg" alt="Dental consultation room gallery image" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pale" data-nav="light" id="pricing">
+  <div class="inner">
+    <span class="s-tag reveal">Pricing</span>
+    <h2 class="s-title lt reveal">Your clinic online<br>in 5 working days.</h2>
+    <div class="price-grid">
+      <div class="pcard reveal"><span class="pc-tag">Starter</span><h3>Essential</h3><div class="pc-amt"><sup>€</sup>850</div><ul class="pc-ul"><li>1-page website</li><li>Services + Gallery + Contact</li><li>Mobile-first design</li><li>5-day delivery</li></ul><a class="btn-d ol" href="mailto:web@dlproject56.com?subject=Essential%20-%20Dentist">Start Your Project</a></div>
+      <div class="pcard feat reveal"><span class="pc-tag">Most Popular</span><h3>Professional</h3><div class="pc-amt"><sup>€</sup>1050</div><ul class="pc-ul"><li>Up to 5 pages</li><li>Services + Pricing + Gallery</li><li>Basic SEO setup</li><li>Booking link integration</li><li>5-day delivery</li></ul><a class="btn-d sl" href="mailto:web@dlproject56.com?subject=Professional%20-%20Dentist">Start Your Project</a></div>
+      <div class="pcard reveal"><span class="pc-tag">Premium</span><h3>Complete</h3><div class="pc-amt"><sup>€</sup>1250</div><ul class="pc-ul"><li>Up to 8 pages</li><li>Patient contact form</li><li>1 round of revisions</li><li>Priority delivery</li></ul><a class="btn-d ol" href="mailto:web@dlproject56.com?subject=Complete%20-%20Dentist">Start Your Project</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" data-nav="dark">
+  <div class="inner">
+    <h2 class="reveal">Ready to bring more<br>patients to your <em>clinic</em>?</h2>
+    <p class="reveal">Festpreis ab €850, klarer Umfang, fertige Zahnarzt-Website in 5 Tagen.</p>
+    <a class="btn-white reveal" href="mailto:web@dlproject56.com?subject=Dentist%20Website%20Order">Get Your Website</a>
+    <a class="cta-email reveal" href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20dentist%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp: +356 77 922 436</a>
+    <a class="cta-email reveal" href="mailto:web@dlproject56.com">web@dlproject56.com</a>
+  </div>
+</section>
+
+<footer>
+  <p>Webdesign von <a href="/de/">D&amp;L Project56</a> &nbsp;·&nbsp; Malta &amp; EU &nbsp;·&nbsp; © 2026</p>
+  <p style="margin-top:10px;"><a href="/de/massage/">Massage Demo</a> &nbsp;·&nbsp; <a href="/de/dentist/">Zahnarzt Demo</a></p>
+</footer>
+
+<script>
+const nb=document.getElementById('navbar');
+const secs=document.querySelectorAll('[data-nav]');
+function upNav(){const ty=window.scrollY+nb.offsetHeight+10;let m='dark';secs.forEach(s=>{const t=s.offsetTop,b=t+s.offsetHeight;if(ty>=t&&ty<b)m=s.dataset.nav;});nb.className=m+'-mode';}
+window.addEventListener('scroll',upNav,{passive:true});window.addEventListener('resize',upNav,{passive:true});upNav();
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

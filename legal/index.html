@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D&L Project56 – Web Design for Local Businesses</title>
+<meta name="description" content="Professional websites for local businesses in Malta and the EU. Fixed price from €149. Delivered in 5 days. Domain and hosting included.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="D&L Project56 – Web Design for Local Businesses">
+<meta property="og:description" content="Professional websites from €149. Delivered in 5 days. Domain & hosting included. Malta & EU.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dlproject.io/">
+<meta property="og:image" content="https://dlproject56.com/wp-content/uploads/2026/02/ptofbgku3ui.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --dark: #16161a;
+    --dark2: #1c1c21;
+    --dark3: #222228;
+    --cream: #f5f0e8;
+    --cream2: #faf8f4;
+    --text: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e0d8;
+    --max: 1160px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--dark); color: var(--cream); overflow-x: hidden; }
+#navbar { position: fixed; top: 0; width: 100%; z-index: 9999; padding: 22px 0; transition: all .35s ease; }
+#navbar.dark-mode { background: rgba(22,22,26,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,168,76,0.12); padding: 14px 0; }
+#navbar.light-mode { background: rgba(255,255,255,0.93); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.07); padding: 14px 0; }
+.nav-wrap { max-width: var(--max); margin: auto; padding: 0 32px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; transition: color .3s; }
+#navbar.dark-mode .nav-logo { color: var(--gold); }
+#navbar.light-mode .nav-logo { color: var(--text); }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; position: relative; transition: color .3s; }
+#navbar.dark-mode .nav-links a { color: rgba(245,240,232,0.6); }
+#navbar.light-mode .nav-links a { color: rgba(26,26,26,0.6); }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width .3s; }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { color: var(--gold) !important; }
+.nav-cta { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 10px 22px; border-radius: 2px; background: var(--gold); color: var(--dark) !important; transition: all .3s; }
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
+.lang-switcher { display: flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+.lang-switcher button { background: none; border: none; color: rgba(245,240,232,0.4); font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: color .3s; font-family: 'Outfit', sans-serif; padding: 4px 8px; }
+#navbar.light-mode .lang-switcher button { color: rgba(26,26,26,0.4); }
+.lang-switcher button.active { color: var(--gold); }
+.lang-switcher button:hover { color: var(--gold); }
+.lang-sep { width: 1px; height: 10px; background: rgba(201,168,76,0.2); }
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 32px 100px; position: relative; overflow: hidden; background: var(--dark); }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(201,168,76,0.09) 0%, transparent 60%), radial-gradient(ellipse 50% 70% at 10% 80%, rgba(201,168,76,0.05) 0%, transparent 60%), var(--dark); }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.035) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%); }
+.hero-inner { max-width: var(--max); margin: auto; width: 100%; position: relative; z-index: 5; }
+.eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 44px; opacity: 1; }
+.eyebrow-line { width: 40px; height: 1px; background: var(--gold); opacity: 0.6; }
+.eyebrow span { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px,8.5vw,118px); font-weight: 400; line-height: 0.95; opacity: 1; }
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-ghost { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px,8.5vw,118px); font-weight: 300; line-height: 0.95; color: rgba(245,240,232,0.1); margin-bottom: 32px; opacity: 1; }
+.hero-hook { display: inline-flex; align-items: center; gap: 20px; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 3px; padding: 12px 22px; margin-bottom: 32px; opacity: 1; flex-wrap: wrap; }
+.hero-hook span { font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cream); }
+.hero-hook strong { color: var(--gold); font-weight: 600; }
+.hook-sep { width: 1px; height: 16px; background: rgba(201,168,76,0.25); }
+.hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; opacity: 1; }
+.hero-desc { font-size: 16px; color: rgba(245,240,232,0.55); max-width: 440px; line-height: 1.8; font-weight: 400; }
+.hero-actions { display: flex; gap: 14px; align-items: center; flex-shrink: 0; }
+.btn-gold { display: inline-block; padding: 16px 36px; background: var(--gold); color: var(--dark); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all .3s; }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(201,168,76,0.3); }
+.btn-ghost { display: inline-block; padding: 15px 36px; border: 1px solid rgba(245,240,232,0.2); color: rgba(245,240,232,0.6); font-size: 11px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all .3s; }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.hero-stats { position: absolute; right: 32px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 32px; z-index: 2; opacity: 1; }
+.stat { text-align: right; border-right: 1px solid rgba(201,168,76,0.25); padding-right: 20px; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--gold); display: block; line-height: 1; }
+.stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,240,232,0.3); }
+.scroll-hint { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(245,240,232,0.25); opacity: 0.25; }
+.scroll-hint span { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; }
+.scroll-bar { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s infinite; }
+.sec-dark { background: var(--dark2); padding: 110px 32px; }
+.sec-light { background: var(--cream2); padding: 110px 32px; }
+.sec-black { background: var(--dark); padding: 110px 32px; }
+.inner { max-width: var(--max); margin: auto; }
+.s-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
+.s-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px,5vw,62px); font-weight: 400; line-height: 1.08; margin-bottom: 60px; }
+.s-title.dk { color: var(--cream); }
+.s-title.lt { color: var(--text); }
+.s-title em { font-style: italic; color: var(--gold); }
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.1); }
+.step { background: var(--dark2); padding: 52px 36px; position: relative; overflow: hidden; transition: background .3s; }
+.step::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold); transition: width .5s ease; }
+.step:hover { background: rgba(201,168,76,0.04); }
+.step:hover::before { width: 100%; }
+.step-num { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: rgba(201,168,76,0.12); line-height: 1; margin-bottom: 20px; display: block; }
+.step h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--cream); margin-bottom: 12px; }
+.step p { font-size: 14px; color: rgba(245,240,232,0.5); line-height: 1.7; font-weight: 400; }
+.demos-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 60px; }
+.demos-intro-text p { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 400; max-width: 460px; }
+.demos-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 3px; }
+.demos-row2 { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; max-width: calc(75% + 2px); margin: 3px auto 0; }
+.tile { position: relative; aspect-ratio: 3/4; overflow: hidden; text-decoration: none; display: block; }
+.tile-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .6s ease; }
+.tile:hover .tile-bg { transform: scale(1.06); }
+.tile-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(16,16,20,0.93) 0%, rgba(16,16,20,0.15) 55%, transparent 100%); z-index: 1; }
+.tile-cnt { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 22px; z-index: 2; }
+.tile-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 6px; }
+.tile-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--cream); display: block; margin-bottom: 12px; }
+.tile-arrow { width: 32px; height: 32px; border: 1px solid rgba(201,168,76,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all .3s; }
+.tile:hover .tile-arrow { background: var(--gold); border-color: var(--gold); }
+.tile-arrow svg { width: 13px; height: 13px; stroke: var(--cream); fill: none; stroke-width: 2; transition: stroke .3s; }
+.tile:hover .tile-arrow svg { stroke: var(--dark); }
+.pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.pc { border: 1px solid var(--border); border-radius: 12px; padding: 40px 32px; background: #fff; position: relative; transition: transform .3s, box-shadow .3s; }
+.pc:hover { transform: translateY(-5px); box-shadow: 0 24px 64px rgba(0,0,0,0.08); }
+.pc.feat { border-color: var(--gold); background: var(--cream2); }
+.pc.feat::before { content: attr(data-badge); position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--dark); font-size: 9px; font-weight: 600; letter-spacing: 2px; padding: 5px 18px; border-radius: 0 0 6px 6px; }
+.pc-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); padding: 4px 12px; border-radius: 2px; display: inline-block; margin-bottom: 20px; }
+.pc h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; margin-bottom: 8px; color: var(--text); }
+.pc-amt { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 300; color: var(--text); line-height: 1; margin-bottom: 28px; }
+.pc-amt sup { font-size: 26px; vertical-align: super; font-family: 'Outfit', sans-serif; font-weight: 300; }
+.pc-ul { list-style: none; margin-bottom: 28px; }
+.pc-ul li { font-size: 14px; color: var(--muted); font-weight: 400; padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.pc-ul li::before { content: ''; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+.btn-p { display: block; text-align: center; padding: 14px; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 4px; transition: all .3s; }
+.btn-p.ol { border: 1px solid var(--border); color: var(--text); }
+.btn-p.ol:hover { border-color: var(--gold); color: var(--gold); }
+.btn-p.sl { background: var(--gold); color: var(--dark); }
+.btn-p.sl:hover { background: var(--gold-light); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+.cta-sec { background: var(--dark); padding: 130px 32px; text-align: center; position: relative; overflow: hidden; }
+.cta-sec::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 500px; background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 65%); pointer-events: none; }
+.cta-note { font-size: 15px; color: rgba(245,240,232,0.4); font-weight: 400; max-width: 480px; margin: 0 auto 48px; line-height: 1.8; }
+.cta-email { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--gold); display: block; margin-top: 28px; text-decoration: none; letter-spacing: 1px; opacity: 0.7; transition: opacity .3s; }
+.cta-email:hover { opacity: 1; }
+footer { border-top: 1px solid rgba(201,168,76,0.08); padding: 32px; background: var(--dark); text-align: center; }
+footer p { font-size: 11px; letter-spacing: 1px; color: rgba(245,240,232,0.2); }
+footer a { color: var(--gold); text-decoration: none; opacity: 0.6; }
+footer a:hover { opacity: 1; }
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes scrollPulse { 0%,100%{opacity:0.3;} 50%{opacity:0.8;} }
+.billboard-wrap { margin: 0 auto 36px; max-width: 560px; text-align: center; position: relative; z-index: 10; }
+.billboard { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; background: #0d0d10; border: 1px solid rgba(201,168,76,0.45); border-radius: 14px; padding: 28px 56px 24px; position: relative; overflow: hidden; box-shadow: 0 0 60px rgba(201,168,76,0.12), inset 0 0 40px rgba(0,0,0,0.6); width: 100%; max-width: 520px; }
+.billboard::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.07) 3px, rgba(0,0,0,0.07) 6px); pointer-events: none; z-index: 1; border-radius: 14px; }
+.billboard::after { content: ''; position: absolute; top: 0; left: -80%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(201,168,76,0.05), transparent); animation: sweep 5s ease-in-out infinite; z-index: 2; }
+@keyframes sweep { 0%{ left:-80%; } 100%{ left:160%; } }
+.bb-label { font-family: 'Outfit', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(201,168,76,0.55); margin-bottom: 16px; position: relative; z-index: 3; }
+.bb-prices { display: flex; align-items: center; justify-content: center; gap: 28px; position: relative; z-index: 3; }
+.bb-old-wrap { position: relative; display: inline-block; }
+#eraser-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 6; }
+.bb-old { font-family: 'Outfit', sans-serif; font-size: 38px; font-weight: 300; color: rgba(245,240,232,0.6); line-height: 1; display: block; padding: 4px 6px; }
+.bb-hand { position: absolute; top: -28px; left: -14px; width: 52px; pointer-events: none; z-index: 10; transform-origin: bottom center; display: none; }
+.bb-divider { width: 1px; height: 50px; background: rgba(201,168,76,0.2); position: relative; z-index: 3; }
+.bb-new { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 600; color: var(--gold); line-height: 1; text-shadow: 0 0 30px rgba(201,168,76,0.5); position: relative; z-index: 3; }
+.bb-sub { font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: rgba(245,240,232,0.35); margin-top: 18px; position: relative; z-index: 3; }
+.bb-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; padding: 12px 32px; background: var(--gold); color: #16161a; font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 4px; position: relative; z-index: 3; transition: background .3s, box-shadow .3s; }
+.bb-cta:hover { background: var(--gold-light); box-shadow: 0 4px 20px rgba(201,168,76,0.4); }
+@media(max-width:1000px) {
+  .demos-grid { grid-template-columns: repeat(2,1fr); }
+  .demos-row2 { grid-template-columns: repeat(2,1fr); max-width: 100%; }
+  .hero-stats, .demos-intro-text { display: none; }
+  .steps, .pricing-grid { grid-template-columns: 1fr; }
+  .demos-intro { grid-template-columns: 1fr; }
+}
+@media(max-width:680px) {
+  .hide-mob { display: none; }
+  .hero { padding: 120px 20px 80px; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; }
+  .hero-actions { flex-direction: column; align-items: flex-start; width: 100%; }
+  .btn-gold, .btn-ghost { width: 100%; text-align: center; }
+  .demos-grid, .demos-row2 { grid-template-columns: 1fr 1fr; }
+  .sec-dark, .sec-light, .sec-black, .cta-sec { padding: 72px 20px; }
+  .hero-hook { gap: 12px; padding: 10px 16px; }
+  .hook-sep { display: none; }
+  .hero-hook span { font-size: 11px; }
+  .billboard-wrap { margin: 0 20px 28px; }
+  .billboard { padding: 22px 20px 20px; }
+  .bb-new { font-size: 46px; }
+  .bb-old { font-size: 28px; }
+}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFBTB98CGR"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YFBTB98CGR',{'send_page_view':true});</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1639537617062408');fbq('track','PageView');</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(l){l.addEventListener('click',function(){fbq('track','Lead',{content_name:'WhatsApp Click',content_category:'Contact'});});});
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(l){l.addEventListener('click',function(){fbq('track','Lead',{content_name:'Email Click',content_category:'Contact'});});});
+  var ps=document.getElementById('pricing');
+  if(ps){var pt=false;window.addEventListener('scroll',function(){if(!pt&&isInVP(ps)){fbq('track','ViewContent',{content_name:'Pricing Section'});pt=true;}});}
+  document.querySelectorAll('a[href*="web@dlproject56.com"]').forEach(function(l){l.addEventListener('click',function(){fbq('track','InitiateCheckout',{content_name:'Get Started Click',value:299,currency:'EUR'});});});
+  function isInVP(el){var r=el.getBoundingClientRect();return(r.top>=0&&r.left>=0&&r.bottom<=(window.innerHeight||document.documentElement.clientHeight)&&r.right<=(window.innerWidth||document.documentElement.clientWidth));}
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1639537617062408&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+<header id="navbar" class="dark-mode">
+<div class="nav-wrap">
+<a class="nav-logo" href="/">D&L Project56</a>
+<nav class="nav-links">
+<div class="lang-switcher">
+<button data-lang="en" class="active">EN</button>
+<div class="lang-sep"></div>
+<button data-lang="de">DE</button>
+<div class="lang-sep"></div>
+<button data-lang="fr">FR</button>
+<div class="lang-sep"></div>
+<button data-lang="mt">MT</button>
+</div>
+<a href="#how" class="hide-mob" data-i18n="nav_how">How It Works</a>
+<a href="#demos" class="hide-mob" data-i18n="nav_demos">Industries</a>
+<a href="#pricing" class="hide-mob" data-i18n="nav_pricing">Pricing</a>
+<a href="/cdn-cgi/l/email-protection#ccaea3a3a7a5a2abbf8ca8a0bcbea3a6a9afb8f9fae2afa3a1" class="nav-cta" data-i18n="nav_cta">Get a Website</a>
+</nav>
+</div>
+</header>
+
+<section class="hero" data-nav="dark">
+<div class="hero-bg"></div>
+<div class="hero-inner">
+<div class="billboard-wrap">
+  <div class="billboard">
+    <div class="bb-label" data-i18n="bb_label">Launch Offer · Web Design · Malta &amp; EU</div>
+    <div class="bb-prices">
+      <div class="bb-old-wrap" id="oldPriceWrap">
+        <span class="bb-old" id="oldPrice">€299</span>
+        <svg class="bb-hand" id="eraserHand" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="18" y="0" width="24" height="16" rx="3" fill="#e8c97a"/>
+          <rect x="18" y="12" width="24" height="6" rx="1" fill="#c9a84c"/>
+          <rect x="18" y="16" width="24" height="4" rx="1" fill="#d4a8a8"/>
+          <path d="M22 20 C20 22 18 26 18 32 L18 58 C18 60 20 62 22 62 L38 62 C40 62 42 60 42 58 L42 32 C42 26 40 22 38 20 Z" fill="#f5d9b8"/>
+          <line x1="24" y1="28" x2="24" y2="55" stroke="#e8c4a0" stroke-width="1"/>
+          <line x1="30" y1="26" x2="30" y2="55" stroke="#e8c4a0" stroke-width="1"/>
+          <line x1="36" y1="28" x2="36" y2="55" stroke="#e8c4a0" stroke-width="1"/>
+        </svg>
+        <canvas id="eraser-canvas"></canvas>
+      </div>
+      <div class="bb-divider"></div>
+      <span class="bb-new">€149</span>
+    </div>
+    <div class="bb-sub" data-i18n="bb_sub">Only 5 Launch Clients Accepted</div>
+    <a class="bb-cta" href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20to%20claim%20the%20launch%20price%20for%20my%20website." target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.549 4.1 1.504 5.832L0 24l6.335-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.873.936-3.623-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+      <span data-i18n="bb_cta">Claim Launch Price</span>
+    </a>
+  </div>
+</div>
+<div class="eyebrow">
+<div class="eyebrow-line"></div>
+<span data-i18n="eyebrow">Web Design · Malta &amp; EU</span>
+</div>
+<h1>
+<span data-i18n="h1_line1">Your Business</span><br>
+<span data-i18n="h1_line2">Deserves a</span><br>
+<em data-i18n="h1_line3">Real</em> <span data-i18n="h1_line4">Website.</span>
+</h1>
+<div class="hero-ghost" data-i18n="hero_ghost">Not a Template.</div>
+<div class="hero-hook">
+<span data-i18n="hook_1">Launch Offer €149 · Regular €299</span>
+<div class="hook-sep"></div>
+<span data-i18n="hook_2">Delivered in <strong>5 Days</strong></span>
+<div class="hook-sep"></div>
+<span data-i18n="hook_3">Domain &amp; Hosting <strong>Included</strong></span>
+<div class="hook-sep"></div>
+<span><a href="https://wa.me/35677922436?text=Hello%2C%20I%20am%20interested%20in%20a%20website%20for%20my%20business." target="_blank" style="color:var(--gold);text-decoration:none;font-weight:600;" data-i18n="hook_wa">WhatsApp Now →</a></span>
+</div>
+<div class="hero-bottom">
+<p class="hero-desc" data-i18n="hero_desc">We build fast, professional websites for local businesses — customized for your industry, delivered in 5 days. Fixed price. No surprises.</p>
+<div class="hero-actions">
+<a class="btn-gold" href="#demos" data-i18n="btn_work">See Our Work</a>
+<a class="btn-ghost" href="#pricing" data-i18n="btn_pricing">View Pricing</a>
+<a class="btn-ghost" href="https://wa.me/35677922436?text=Hello%2C%20I%20am%20interested%20in%20a%20website%20for%20my%20business." target="_blank" style="display:flex;align-items:center;gap:8px;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.549 4.1 1.504 5.832L0 24l6.335-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.873.936-3.623-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+<span data-i18n="btn_wa">WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+<div class="hero-stats">
+<div class="stat"><span class="stat-num">5</span><span class="stat-label" data-i18n="stat_days">Days Delivery</span></div>
+<div class="stat"><span class="stat-num">€149</span><span class="stat-label" data-i18n="stat_from">Launch Price</span></div>
+<div class="stat"><span class="stat-num">7+</span><span class="stat-label" data-i18n="stat_industries">Industries</span></div>
+</div>
+<div class="scroll-hint"><span data-i18n="scroll">Scroll</span><div class="scroll-bar"></div></div>
+</section>
+
+<section class="sec-dark" data-nav="dark" id="how">
+<div class="inner">
+<span class="s-tag reveal" data-i18n="how_tag">The Process</span>
+<h2 class="s-title dk reveal"><span data-i18n="how_title1">Three steps.</span><br><em data-i18n="how_title2">Five days.</em> <span data-i18n="how_title3">Done.</span></h2>
+<div class="steps">
+<div class="step reveal"><span class="step-num">01</span><h3 data-i18n="step1_title">You Send the Basics</h3><p data-i18n="step1_desc">Your business name, logo, a few photos and a short description of your services. One message is enough to start.</p></div>
+<div class="step reveal"><span class="step-num">02</span><h3 data-i18n="step2_title">We Build &amp; Customize</h3><p data-i18n="step2_desc">We select the right design for your industry, customize colors, content and contact details. You review a live preview.</p></div>
+<div class="step reveal"><span class="step-num">03</span><h3 data-i18n="step3_title">Your Site Goes Live</h3><p data-i18n="step3_desc">We hand over the finished files or deploy the website directly. Professional, fast and ready to convert visitors into clients.</p></div>
+</div>
+</div>
+</section>
+
+<section class="sec-black" data-nav="dark" id="demos">
+<div class="inner">
+<div class="demos-intro">
+<div>
+<span class="s-tag reveal" data-i18n="demos_tag">Live Demos</span>
+<h2 class="s-title dk reveal"><span data-i18n="demos_title1">Pick your</span><br><em data-i18n="demos_title2">industry.</em></h2>
+</div>
+<div class="demos-intro-text"><p class="reveal" data-i18n="demos_desc">Every demo is a fully working example of what your website could look like. Click any industry to see the live design — then contact us to make it yours.</p></div>
+</div>
+<div class="demos-grid">
+<a class="tile" href="/hair-salon/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/ptofbgku3ui.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_salon">Hair Salon</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+<a class="tile" href="/bakery/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/go3dt3ppiw4.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_bakery">Bakery</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+<a class="tile" href="/mechanic/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/onnjoff-oku.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_mechanic">Mechanic</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+<a class="tile" href="/restaurant/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/o49urfalsii.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_restaurant">Restaurant</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+</div>
+<div class="demos-row2">
+<a class="tile" href="/massage/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/lyicbm-7zfa.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_massage">Massage</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+<a class="tile" href="/lawyer/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/9j8k3l9afkc.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_lawyer">Lawyer</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+<a class="tile" href="/dentist/"><div class="tile-bg" style="background-image:url('https://dlproject56.com/wp-content/uploads/2026/02/pc8lpkjwecm.jpg')"></div><div class="tile-ov"></div><div class="tile-cnt"><span class="tile-label" data-i18n="demo_label">Demo</span><span class="tile-name" data-i18n="demo_dentist">Dentist</span><div class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div></a>
+</div>
+</div>
+</section>
+
+<section class="sec-light" data-nav="light" id="pricing">
+<div class="inner">
+<span class="s-tag reveal" data-i18n="pricing_tag">Pricing</span>
+<h2 class="s-title lt reveal"><span data-i18n="pricing_title1">Fixed price.</span><br><span data-i18n="pricing_title2">Clear scope.</span><br><em data-i18n="pricing_title3">No surprises.</em></h2>
+<div class="pricing-grid">
+<div class="pc reveal"><span class="pc-label" data-i18n="pkg_starter">Starter</span><h3 data-i18n="pkg1_name">Essential</h3><div class="pc-amt"><sup>€</sup>299</div><ul class="pc-ul"><li data-i18n="pkg1_f1">1-page website</li><li data-i18n="pkg1_f2">Services+Gallery+Contact</li><li data-i18n="pkg1_f3">Mobile-first design</li><li data-i18n="pkg1_f4">Domain &amp; hosting 12 months</li><li data-i18n="pkg1_f5">Delivery in 5 days</li></ul><a class="btn-p ol" href="/cdn-cgi/l/email-protection#45272a2a2e2c2b223605212935372a2f20263170736b262a287a3630272f20263178122027362c3120607775002b34302c373c60777568607775003636202b312c2429" data-i18n="btn_get_started">Get started</a></div>
+<div class="pc feat reveal" data-badge="MOST POPULAR"><span class="pc-label" data-i18n="pkg_popular">Most Popular</span><h3 data-i18n="pkg2_name">Professional</h3><div class="pc-amt"><sup>€</sup>399</div><ul class="pc-ul"><li data-i18n="pkg2_f1">Up to 5 pages</li><li data-i18n="pkg2_f2">Services+Pricing+Gallery</li><li data-i18n="pkg2_f3">Basic SEO setup</li><li data-i18n="pkg2_f4">Google Maps embed</li><li data-i18n="pkg2_f5">Google Business Profile setup</li><li data-i18n="pkg2_f6">Domain &amp; hosting 12 months</li><li data-i18n="pkg2_f7">Delivery in 5 days</li></ul><a class="btn-p sl" href="/cdn-cgi/l/email-protection#ef8d8080848681889caf8b839f9d80858a8c9bdad9c18c8082d09c9a8d858a8c9bd2b88a8d9c869b8acadddfaa819e9a869d96cadddfc2cadddfbf9d80898a9c9c8680818e83" data-i18n="btn_get_started">Get started</a></div>
+<div class="pc reveal"><span class="pc-label" data-i18n="pkg_premium">Premium</span><h3 data-i18n="pkg3_name">Complete</h3><div class="pc-amt"><sup>€</sup>499</div><ul class="pc-ul"><li data-i18n="pkg3_f1">Up to 8 pages</li><li data-i18n="pkg3_f2">Booking link integration</li><li data-i18n="pkg3_f3">Google Business Profile setup</li><li data-i18n="pkg3_f4">1 round of revisions included</li><li data-i18n="pkg3_f5">Domain &amp; hosting 12 months</li><li data-i18n="pkg3_f6">Priority delivery</li></ul><a class="btn-p ol" href="/cdn-cgi/l/email-protection#fd9f92929694939a8ebd99918d8f9297989e89c8cbd39e9290c28e889f97989e89c0aa989f8e948998d8cfcdb8938c88948f84d8cfcdd0d8cfcdbe92908d91988998" data-i18n="btn_get_started">Get started</a></div>
+</div>
+</div>
+</section>
+
+<section class="cta-sec" data-nav="dark">
+<div class="inner">
+<span class="s-tag reveal" style="text-align:center;display:block;margin-bottom:14px;" data-i18n="cta_tag">Let's Work Together</span>
+<h2 class="s-title dk reveal" style="text-align:center;margin-bottom:0;"><span data-i18n="cta_title1">Ready for a</span><br><span data-i18n="cta_title2">website that</span> <em data-i18n="cta_title3">works</em>?</h2>
+<p class="cta-note reveal" style="margin-top:20px;" data-i18n="cta_note">Send us your business name and industry — we'll show you a demo that fits. No commitment required.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;" class="reveal">
+<a class="btn-gold" href="/cdn-cgi/l/email-protection#0f6d6060646661687c4f6b637f7d60656a6c7b3a39216c6062" data-i18n="cta_btn1">Start with One Message</a>
+<a class="btn-ghost" href="https://wa.me/35677922436?text=Hello%2C%20I%20am%20interested%20in%20a%20website%20for%20my%20business." target="_blank" style="display:flex;align-items:center;gap:8px;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.549 4.1 1.504 5.832L0 24l6.335-1.483A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.732.873.936-3.623-.235-.373A9.818 9.818 0 1112 21.818z"/></svg>
+<span data-i18n="btn_wa">WhatsApp</span>
+</a>
+</div>
+<a class="cta-email reveal" href="/cdn-cgi/l/email-protection#593b36363230373e2a193d35292b36333c3a2d6c6f773a3634"><span class="__cf_email__" data-cfemail="1a7875757173747d695a7e766a6875707f796e2f2c34797577">[email&#160;protected]</span></a>
+</div>
+</section>
+
+<footer>
+<p><span data-i18n="footer_by">Web Design by</span> <a href="/">D&amp;L Project56</a>&nbsp;·&nbsp;<span data-i18n="footer_location">Malta &amp; EU</span>&nbsp;·&nbsp;© 2026</p>
+<p style="margin-top:12px;"><a href="/legal/faq.html" data-i18n="footer_faq">FAQ</a>&nbsp;·&nbsp;<a href="/legal/terms.html" data-i18n="footer_terms">Terms &amp; Conditions</a>&nbsp;·&nbsp;<a href="/legal/refund.html" data-i18n="footer_refund">Refund Policy</a>&nbsp;·&nbsp;<a href="/legal/privacy.html">Privacy Policy</a></p>
+<p style="margin-top:10px;font-size:10px;color:rgba(245,240,232,0.15);">D&amp;L Project56 EOOD&nbsp;·&nbsp;VAT BG208418815&nbsp;·&nbsp;Bulgaria, EU</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  function initEraser(){
+    var wrap=document.getElementById('oldPriceWrap');
+    var priceEl=document.getElementById('oldPrice');
+    var hand=document.getElementById('eraserHand');
+    var canvas=document.getElementById('eraser-canvas');
+    if(!wrap||!priceEl||!hand||!canvas)return;
+    var w=wrap.offsetWidth,h=wrap.offsetHeight;
+    canvas.width=w;canvas.height=h;
+    var ctx=canvas.getContext('2d');
+    var CYCLE=8000,ERASE_START=0.15,ERASE_END=0.55,SHOW_START=0.80;
+    var startTime=null;
+    function lerp(a,b,t){return a+(b-a)*t;}
+    function clamp(v,mn,mx){return Math.max(mn,Math.min(mx,v));}
+    function easeInOut(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;}
+    function draw(ts){
+      if(!startTime)startTime=ts;
+      var elapsed=(ts-startTime)%CYCLE,f=elapsed/CYCLE;
+      if(f<ERASE_START){ctx.clearRect(0,0,w,h);priceEl.style.opacity='1';hand.style.display='none';}
+      if(f>=ERASE_START&&f<=ERASE_END){
+        var ef=clamp((f-ERASE_START)/(ERASE_END-ERASE_START),0,1);
+        var easedEf=easeInOut(ef);
+        var hx=lerp(-14,w-24,easedEf);
+        var shake=Math.sin(ef*Math.PI*14)*3;
+        hand.style.display='block';hand.style.left=hx+'px';hand.style.top=(-28+shake)+'px';
+        ctx.fillStyle='rgba(13,13,16,1)';ctx.fillRect(0,0,w*easedEf,h);
+      }
+      if(f>ERASE_END&&f<SHOW_START){hand.style.display='none';ctx.fillStyle='rgba(13,13,16,1)';ctx.fillRect(0,0,w,h);priceEl.style.opacity='0';}
+      if(f>=SHOW_START){var rf=clamp((f-SHOW_START)/(1-SHOW_START),0,1);ctx.clearRect(0,0,w,h);priceEl.style.opacity=String(rf);hand.style.display='none';}
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  }
+  function reinitEraser(){
+    var wrap=document.getElementById('oldPriceWrap');
+    var canvas=document.getElementById('eraser-canvas');
+    if(wrap&&canvas){canvas.width=wrap.offsetWidth;canvas.height=wrap.offsetHeight;}
+  }
+  window.addEventListener('resize',reinitEraser);
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initEraser);}else{initEraser();}
+})();
+</script>
+
+<script>
+(function(){
+  var translations={
+    en:{
+      nav_how:"How It Works",nav_demos:"Industries",nav_pricing:"Pricing",nav_cta:"Get a Website",
+      bb_label:"Launch Offer · Web Design · Malta & EU",bb_sub:"Only 5 Launch Clients Accepted",bb_cta:"Claim Launch Price",
+      eyebrow:"Web Design · Malta & EU",h1_line1:"Your Business",h1_line2:"Deserves a",h1_line3:"Real",h1_line4:"Website.",
+      hero_ghost:"Not a Template.",hook_1:"Launch Offer €149 · Regular €299",hook_2:"Delivered in <strong>5 Days</strong>",
+      hook_3:"Domain & Hosting <strong>Included</strong>",hook_wa:"WhatsApp Now →",
+      hero_desc:"We build fast, professional websites for local businesses — customized for your industry, delivered in 5 days. Fixed price. No surprises.",
+      btn_work:"See Our Work",btn_pricing:"View Pricing",btn_wa:"WhatsApp",
+      stat_days:"Days Delivery",stat_from:"Launch Price",stat_industries:"Industries",scroll:"Scroll",
+      how_tag:"The Process",how_title1:"Three steps.",how_title2:"Five days.",how_title3:"Done.",
+      step1_title:"You Send the Basics",step1_desc:"Your business name, logo, a few photos and a short description of your services. One message is enough to start.",
+      step2_title:"We Build & Customize",step2_desc:"We select the right design for your industry, customize colors, content and contact details. You review a live preview.",
+      step3_title:"Your Site Goes Live",step3_desc:"We hand over the finished files or deploy the website directly. Professional, fast and ready to convert visitors into clients.",
+      demos_tag:"Live Demos",demos_title1:"Pick your",demos_title2:"industry.",
+      demos_desc:"Every demo is a fully working example of what your website could look like. Click any industry to see the live design — then contact us to make it yours.",
+      demo_label:"Demo",demo_salon:"Hair Salon",demo_bakery:"Bakery",demo_mechanic:"Mechanic",demo_restaurant:"Restaurant",demo_massage:"Massage",demo_lawyer:"Lawyer",demo_dentist:"Dentist",
+      pricing_tag:"Pricing",pricing_title1:"Fixed price.",pricing_title2:"Clear scope.",pricing_title3:"No surprises.",
+      pkg_starter:"Starter",pkg_popular:"Most Popular",pkg_premium:"Premium",
+      pkg1_name:"Essential",pkg1_f1:"1-page website",pkg1_f2:"Services+Gallery+Contact",pkg1_f3:"Mobile-first design",pkg1_f4:"Domain & hosting 12 months",pkg1_f5:"Delivery in 5 days",
+      pkg2_name:"Professional",pkg2_f1:"Up to 5 pages",pkg2_f2:"Services+Pricing+Gallery",pkg2_f3:"Basic SEO setup",pkg2_f4:"Google Maps embed",pkg2_f5:"Google Business Profile setup",pkg2_f6:"Domain & hosting 12 months",pkg2_f7:"Delivery in 5 days",
+      pkg3_name:"Complete",pkg3_f1:"Up to 8 pages",pkg3_f2:"Booking link integration",pkg3_f3:"Google Business Profile setup",pkg3_f4:"1 round of revisions included",pkg3_f5:"Domain & hosting 12 months",pkg3_f6:"Priority delivery",
+      btn_get_started:"Get started",cta_tag:"Let's Work Together",cta_title1:"Ready for a",cta_title2:"website that",cta_title3:"works",
+      cta_note:"Send us your business name and industry — we'll show you a demo that fits. No commitment required.",cta_btn1:"Start with One Message",
+      footer_by:"Web Design by",footer_location:"Malta & EU",footer_faq:"FAQ",footer_terms:"Terms & Conditions",footer_refund:"Refund Policy",badge_popular:"MOST POPULAR"
+    },
+    de:{
+      nav_how:"So funktioniert's",nav_demos:"Branchen",nav_pricing:"Preise",nav_cta:"Website anfragen",
+      bb_label:"Launch-Angebot · Webdesign · Malta & EU",bb_sub:"Nur 5 Startplätze verfügbar",bb_cta:"Launch-Preis sichern",
+      eyebrow:"Webdesign · Malta & EU",h1_line1:"Ihr Unternehmen",h1_line2:"verdient eine",h1_line3:"starke",h1_line4:"Website.",
+      hero_ghost:"Keine Vorlage.",hook_1:"Launch-Angebot €149 · Regulär €299",hook_2:"Lieferung in <strong>5 Tagen</strong>",
+      hook_3:"Domain & Hosting <strong>Inklusive</strong>",hook_wa:"WhatsApp Jetzt →",
+      hero_desc:"Wir erstellen schnelle, professionelle Websites für lokale Unternehmen — maßgeschneidert für Ihre Branche, geliefert in 5 Tagen. Festpreis. Keine Überraschungen.",
+      btn_work:"Unsere Arbeiten",btn_pricing:"Pakete ansehen",btn_wa:"WhatsApp",
+      stat_days:"Tage Lieferung",stat_from:"Launch-Preis",stat_industries:"Branchen",scroll:"Scrollen",
+      how_tag:"Der Prozess",how_title1:"Drei Schritte.",how_title2:"Fünf Tage.",how_title3:"Fertig.",
+      step1_title:"Sie Senden die Grundlagen",step1_desc:"Ihr Firmenname, Logo, einige Fotos und eine kurze Beschreibung Ihrer Dienstleistungen. Eine Nachricht reicht zum Starten.",
+      step2_title:"Wir Erstellen & Personalisieren",step2_desc:"Wir wählen das passende Design für Ihre Branche, passen Farben, Inhalte und Kontaktdaten an. Sie überprüfen eine Live-Vorschau.",
+      step3_title:"Ihre Website geht online",step3_desc:"Wir übergeben die fertigen Dateien oder deployen direkt. Professionell, schnell und bereit, Besucher in Kunden zu verwandeln.",
+      demos_tag:"Live-Demos",demos_title1:"Wählen Sie Ihre",demos_title2:"Branche.",
+      demos_desc:"Jede Demo ist ein voll funktionierendes Beispiel, wie Ihre Website aussehen könnte. Klicken Sie auf eine Branche, um das Live-Design zu sehen — dann kontaktieren Sie uns.",
+      demo_label:"Demo",demo_salon:"Friseursalon",demo_bakery:"Bäckerei",demo_mechanic:"Mechaniker",demo_restaurant:"Restaurant",demo_massage:"Massage",demo_lawyer:"Anwalt",demo_dentist:"Zahnarzt",
+      pricing_tag:"Preise",pricing_title1:"Festpreis.",pricing_title2:"Klarer Umfang.",pricing_title3:"Keine Überraschungen.",
+      pkg_starter:"Einsteiger",pkg_popular:"Am Beliebtesten",pkg_premium:"Premium",
+      pkg1_name:"Essential",pkg1_f1:"1-seitige Website",pkg1_f2:"Services+Galerie+Kontakt",pkg1_f3:"Mobile-First-Design",pkg1_f4:"Domain & Hosting 12 Monate",pkg1_f5:"Lieferung in 5 Tagen",
+      pkg2_name:"Professional",pkg2_f1:"Bis zu 5 Seiten",pkg2_f2:"Services+Preise+Galerie",pkg2_f3:"Basis-SEO-Setup",pkg2_f4:"Google Maps Einbettung",pkg2_f5:"Google Business Profile Einrichtung",pkg2_f6:"Domain & Hosting 12 Monate",pkg2_f7:"Lieferung in 5 Tagen",
+      pkg3_name:"Complete",pkg3_f1:"Bis zu 8 Seiten",pkg3_f2:"Buchungslink-Integration",pkg3_f3:"Google Business Profile Einrichtung",pkg3_f4:"1 Überarbeitungsrunde inklusive",pkg3_f5:"Domain & Hosting 12 Monate",pkg3_f6:"Prioritätslieferung",
+      btn_get_started:"Loslegen",cta_tag:"Lassen Sie uns zusammenarbeiten",cta_title1:"Bereit für eine",cta_title2:"Website, die",cta_title3:"funktioniert",
+      cta_note:"Senden Sie uns Ihren Firmennamen und Ihre Branche — wir zeigen Ihnen eine passende Demo. Keine Verpflichtung.",cta_btn1:"Mit einer Nachricht starten",
+      footer_by:"Webdesign von",footer_location:"Malta & EU",footer_faq:"FAQ",footer_terms:"AGB",footer_refund:"Rückerstattungsrichtlinie",badge_popular:"AM BELIEBTESTEN"
+    },
+    fr:{
+      nav_how:"Comment Ça Marche",nav_demos:"Secteurs",nav_pricing:"Tarifs",nav_cta:"Obtenir un Site",
+      bb_label:"Offre de Lancement · Web Design · Malte & UE",bb_sub:"Seulement 5 Clients de Lancement Acceptés",bb_cta:"Réclamer le Prix de Lancement",
+      eyebrow:"Web Design · Malte & UE",h1_line1:"Votre Entreprise",h1_line2:"Mérite un",h1_line3:"Vrai",h1_line4:"Site Web.",
+      hero_ghost:"Pas un Template.",hook_1:"Offre de lancement €149 · Régulier €299",hook_2:"Livré en <strong>5 Jours</strong>",
+      hook_3:"Domaine & Hébergement <strong>Inclus</strong>",hook_wa:"WhatsApp Maintenant →",
+      hero_desc:"Nous créons des sites web rapides et professionnels pour les entreprises locales — personnalisés pour votre secteur, livrés en 5 jours. Prix fixe. Aucune surprise.",
+      btn_work:"Voir Notre Travail",btn_pricing:"Voir les Tarifs",btn_wa:"WhatsApp",
+      stat_days:"Jours de Livraison",stat_from:"Prix de lancement",stat_industries:"Secteurs",scroll:"Défiler",
+      how_tag:"Le Processus",how_title1:"Trois étapes.",how_title2:"Cinq jours.",how_title3:"Terminé.",
+      step1_title:"Vous Envoyez les Bases",step1_desc:"Le nom de votre entreprise, votre logo, quelques photos et une brève description de vos services. Un message suffit.",
+      step2_title:"Nous Créons & Personnalisons",step2_desc:"Nous sélectionnons le design adapté à votre secteur, personnalisons les couleurs, le contenu et les coordonnées. Vous examinez un aperçu en direct.",
+      step3_title:"Votre Site est Mis en Ligne",step3_desc:"Nous remettons les fichiers finaux ou déployons directement. Professionnel, rapide et prêt à convertir les visiteurs en clients.",
+      demos_tag:"Démos en direct",demos_title1:"Choisissez votre",demos_title2:"secteur.",
+      demos_desc:"Chaque démo est un exemple entièrement fonctionnel de ce à quoi votre site web pourrait ressembler. Cliquez sur un secteur pour voir le design en direct.",
+      demo_label:"Démo",demo_salon:"Salon de Coiffure",demo_bakery:"Boulangerie",demo_mechanic:"Mécanicien",demo_restaurant:"Restaurant",demo_massage:"Massage",demo_lawyer:"Avocat",demo_dentist:"Dentiste",
+      pricing_tag:"Tarifs",pricing_title1:"Prix fixe.",pricing_title2:"Portée claire.",pricing_title3:"Aucune surprise.",
+      pkg_starter:"Débutant",pkg_popular:"Le Plus Populaire",pkg_premium:"Premium",
+      pkg1_name:"Essential",pkg1_f1:"Site web d'1 page",pkg1_f2:"Services+Galerie+Contact",pkg1_f3:"Design mobile-first",pkg1_f4:"Domaine & hébergement 12 mois",pkg1_f5:"Livraison en 5 jours",
+      pkg2_name:"Professional",pkg2_f1:"Jusqu'à 5 pages",pkg2_f2:"Services+Tarifs+Galerie",pkg2_f3:"Configuration SEO de base",pkg2_f4:"Intégration Google Maps",pkg2_f5:"Configuration Google Business Profile",pkg2_f6:"Domaine & hébergement 12 mois",pkg2_f7:"Livraison en 5 jours",
+      pkg3_name:"Complete",pkg3_f1:"Jusqu'à 8 pages",pkg3_f2:"Intégration lien de réservation",pkg3_f3:"Configuration Google Business Profile",pkg3_f4:"1 tour de révisions inclus",pkg3_f5:"Domaine & hébergement 12 mois",pkg3_f6:"Livraison prioritaire",
+      btn_get_started:"Commencer",cta_tag:"Travaillons Ensemble",cta_title1:"Prêt pour un",cta_title2:"site web qui",cta_title3:"fonctionne",
+      cta_note:"Envoyez-nous le nom de votre entreprise et votre secteur — nous vous montrerons une démo adaptée. Aucun engagement requis.",cta_btn1:"Commencer en 1 Message",
+      footer_by:"Web Design par",footer_location:"Malte & UE",footer_faq:"FAQ",footer_terms:"Conditions Générales",footer_refund:"Politique de Remboursement",badge_popular:"LE PLUS POPULAIRE"
+    },
+    mt:{
+      nav_how:"Kif taħdem",nav_demos:"Industriji",nav_pricing:"Prezzijiet",nav_cta:"Ikseb is-sit tiegħek",
+      bb_label:"Offerta ta' Tnedija · Web Design · Malta & UE",bb_sub:"Biss 5 postijiet għat-tnedija",bb_cta:"Ibbukkja l-prezz tat-tnedija",
+      eyebrow:"Web Design · Malta & UE",h1_line1:"In-negozju tiegħek",h1_line2:"jixraqlu",h1_line3:"sit",h1_line4:"professjonali.",
+      hero_ghost:"Mhux template.",hook_1:"Offerta tat-tnedija €149 · Normalment €299",hook_2:"Konsenjat fi <strong>5 ijiem</strong>",
+      hook_3:"Dominju & Hosting <strong>Inkluż</strong>",hook_wa:"WhatsApp Issa →",
+      hero_desc:"Nibnu siti veloċi u professjonali għan-negozji lokali — apposta għall-qasam tiegħek, lesti fi 5 ijiem. Prezz fiss. L-ebda sorpriża.",
+      btn_work:"Ara x-xogħol tagħna",btn_pricing:"Ara l-prezzijiet",btn_wa:"WhatsApp",
+      stat_days:"Ijiem ta' Konsenja",stat_from:"Prezz ta' Tnedija",stat_industries:"Industriji",scroll:"Skorra",
+      how_tag:"Il-Proċess",how_title1:"Tliet passi.",how_title2:"Ħamest ijiem.",how_title3:"Lest.",
+      step1_title:"Tibgħat il-Bażiċi",step1_desc:"Isem in-negozju tiegħek, logo, ftit ritratti u deskrizzjoni qasira tas-servizzi tiegħek. Messaġġ wieħed biżżejjed biex tibda.",
+      step2_title:"Nibnu & Nippersonalizzaw",step2_desc:"Nagħżlu d-disinn it-tajjeb għall-industrija tiegħek, nippersonalizzaw il-kuluri, il-kontenut u d-dettalji ta' kuntatt. Inti tirrevedi preview ħajji.",
+      step3_title:"Is-Sit Tiegħek Imur Ħajji",step3_desc:"Nikkonsenjaw il-fajls lesti jew niddeployjaw direttament. Professjonali, veloċi u lest biex jikkonverti viżitaturi fi klijenti.",
+      demos_tag:"Demos Ħajjin",demos_title1:"Agħżel",demos_title2:"l-industrija tiegħek.",
+      demos_desc:"Kull demo huwa eżempju li jaħdem bis-sħiħ ta' kif jista' jidher is-sit web tiegħek. Ikklikkja fuq kwalunkwe industrija biex tara d-disinn ħajji — imbagħad ikkuntattjana.",
+      demo_label:"Demo",demo_salon:"Salon tal-Xagħar",demo_bakery:"Forn",demo_mechanic:"Mekkaniċi",demo_restaurant:"Ristorant",demo_massage:"Massaġġ",demo_lawyer:"Avukat",demo_dentist:"Dentist",
+      pricing_tag:"Prezzijiet",pricing_title1:"Prezz fiss.",pricing_title2:"Skop ċar.",pricing_title3:"L-ebda sorpriżi.",
+      pkg_starter:"Starter",pkg_popular:"L-Aktar Popolari",pkg_premium:"Premium",
+      pkg1_name:"Essential",pkg1_f1:"Website ta' paġna waħda",pkg1_f2:"Servizzi+Gallerija+Kuntatt",pkg1_f3:"Disinn mobile-first",pkg1_f4:"Dominju & hosting 12-il xahar",pkg1_f5:"Konsenja fi 5 ijiem",
+      pkg2_name:"Professional",pkg2_f1:"Sa 5 paġni",pkg2_f2:"Servizzi+Prezzijiet+Gallerija",pkg2_f3:"Setup bażiku SEO",pkg2_f4:"Google Maps integrat",pkg2_f5:"Setup Google Business Profile",pkg2_f6:"Dominju & hosting 12-il xahar",pkg2_f7:"Konsenja fi 5 ijiem",
+      pkg3_name:"Complete",pkg3_f1:"Sa 8 paġni",pkg3_f2:"Integrazzjoni ta' link ta' booking",pkg3_f3:"Setup Google Business Profile",pkg3_f4:"1 rawnd ta' reviżjonijiet inkluż",pkg3_f5:"Dominju & hosting 12-il xahar",pkg3_f6:"Konsenja prioritarja",
+      btn_get_started:"Ibda",cta_tag:"Ejja naħdmu flimkien",cta_title1:"Lest għal",cta_title2:"sit li",cta_title3:"jaħdem",
+      cta_note:"Ibgħatilna l-isem tan-negozju tiegħek u l-qasam tiegħek — nuruk demo li jaqbel. L-ebda impenn meħtieġ.",cta_btn1:"Ibda b'messaġġ wieħed",
+      footer_by:"Web Design minn",footer_location:"Malta & UE",footer_faq:"FAQ",footer_terms:"Termini & Kondizzjonijiet",footer_refund:"Politika ta' Rimborż",badge_popular:"L-AKTAR POPOLARI"
+    }
+  };
+
+  var currentLang='en';
+  try { currentLang=localStorage.getItem('lang')||'en'; } catch(e) {}
+
+  function setLanguage(lang){
+    currentLang=lang;
+    try { localStorage.setItem('lang',lang); } catch(e) {}
+    document.querySelectorAll('.lang-switcher button').forEach(function(btn){
+      btn.classList.toggle('active',btn.getAttribute('data-lang')===lang);
+    });
+    var t=translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key=el.getAttribute('data-i18n');
+      if(t[key]){
+        if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.placeholder=t[key];}
+        else{el.innerHTML=t[key];}
+      }
+    });
+    var badge=document.querySelector('.pc.feat');
+    if(badge&&t.badge_popular){badge.setAttribute('data-badge',t.badge_popular);}
+    document.documentElement.lang=lang;
+  }
+
+  document.querySelectorAll('.lang-switcher button').forEach(function(btn){
+    btn.addEventListener('click',function(){setLanguage(this.getAttribute('data-lang'));});
+  });
+
+  setLanguage(currentLang);
+})();
+</script>
+
+<script>
+const navbar=document.getElementById('navbar');
+const sections=document.querySelectorAll('[data-nav]');
+function updateNav(){
+  const ty=window.scrollY+navbar.offsetHeight+10;
+  let mode='dark';
+  sections.forEach(function(s){const t=s.offsetTop,b=t+s.offsetHeight;if(ty>=t&&ty<b)mode=s.dataset.nav;});
+  navbar.classList.remove('dark-mode','light-mode');
+  navbar.classList.add(mode+'-mode');
+}
+window.addEventListener('scroll',updateNav,{passive:true});
+window.addEventListener('resize',updateNav,{passive:true});
+updateNav();
+const obs=new IntersectionObserver(function(e){
+  e.forEach(function(x){
+    if(x.isIntersecting){
+      x.target.classList.add('visible');
+      obs.unobserve(x.target);
+    }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>

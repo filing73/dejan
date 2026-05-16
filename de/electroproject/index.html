@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Electrical Website Design Demo | D&L Project56</title>
+        <meta name="description" content="Electrical Website Demo von D&L Project56. Festpreis ab €850, Lieferung in 5 Tagen.">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://dlproject.io/de/electroproject/">
+        <meta property="og:title" content="Electrical & Plumbing Website Demo | D&L Project56">
+        <meta property="og:description" content="See an electrical and plumbing subcontractor website demo built to generate inquiries from project managers and contractors.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://dlproject.io/electroproject/">
+        <meta property="og:image" content="https://dlproject56.com/wp-content/uploads/2026/03/i41uwyzmwhm.jpg">
+        <meta property="og:image:alt" content="Electrical and plumbing website demo by D&L Project56">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Electrical & Plumbing Website Demo",
+            "serviceType": "Electrical and plumbing website design",
+            "url": "https://dlproject.io/electroproject/",
+            "areaServed": ["Malta", "EU"],
+            "provider": {
+                "@type": "Organization",
+                "name": "D&L Project56",
+                "url": "https://dlproject.io"
+            }
+        }
+        </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0a1628;
+            --gold: #d4af37;
+            --cream: #faf8f3;
+            --slate: #64748b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.7;
+            background: var(--cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        /* Language Switcher - Sticky Header */
+        .lang-header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .lang-header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-button {
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .lang-header.scrolled .lang-button {
+            color: var(--navy);
+        }
+
+        .lang-button:hover {
+            color: var(--gold);
+        }
+
+        .lang-button::after {
+            content: '▼';
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-dropdown.active .lang-button::after {
+            transform: rotate(180deg);
+        }
+
+        .lang-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 0;
+            background: var(--white);
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .lang-dropdown.active .lang-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(10, 22, 40, 0.08);
+        }
+
+        .lang-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .lang-menu a:hover {
+            background: var(--cream);
+            color: var(--gold);
+            padding-left: 2rem;
+        }
+
+        .lang-menu a.active {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide:nth-child(1) {
+            background-image: url('https://dlproject56.com/wp-content/uploads/2026/03/i41uwyzmwhm.jpg');
+        }
+
+        .hero-slide:nth-child(2) {
+            background-image: url('https://dlproject56.com/wp-content/uploads/2026/03/59unzhwybig.jpg');
+        }
+
+        .hero-slide:nth-child(3) {
+            background-image: url('https://dlproject56.com/wp-content/uploads/2026/03/68d6617b-8844-413b-9ee6-c36a683895e8-rotated.jpg');
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(165deg, 
+                rgba(30, 64, 175, 0.92) 0%, 
+                rgba(10, 22, 40, 0.88) 50%,
+                rgba(30, 64, 175, 0.90) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+            z-index: 2;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--cream);
+            z-index: 2;
+            padding: 3rem 2rem;
+            max-width: 1100px;
+            animation: fadeIn 1.2s ease-out;
+            position: relative;
+        }
+
+        .logo-container {
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            width: 220px;
+            height: auto;
+            margin: 0 auto;
+            filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.4));
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            margin-bottom: 4rem;
+            color: rgba(250, 248, 243, 0.85);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        .hero .divider {
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+            margin: 3rem auto;
+        }
+
+        .hero .services-list {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .service-badge {
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(250, 248, 243, 0.7);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .service-badge::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        .service-badge:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--gold);
+            padding: 1.1rem 3rem;
+            border: 1px solid var(--gold);
+            font-weight: 400;
+            font-size: 0.9rem;
+            text-decoration: none;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.25);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background: var(--white);
+            border-bottom: 1px solid rgba(10, 22, 40, 0.08);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            color: var(--navy);
+            font-weight: 400;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--slate);
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 5rem;
+            color: var(--navy);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 2rem auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .services-grid-two {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 4rem 3rem;
+            box-shadow: 0 2px 24px rgba(10, 22, 40, 0.04);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(10, 22, 40, 0.08);
+            border-top-color: var(--gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            font-weight: 400;
+        }
+
+        .service-card p {
+            color: var(--slate);
+            line-height: 1.8;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Why Us Section */
+        .why-us {
+            padding: 8rem 2rem;
+            background: var(--cream);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            box-shadow: 0 2px 16px rgba(10, 22, 40, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            box-shadow: 0 8px 32px rgba(10, 22, 40, 0.06);
+        }
+
+        .why-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .why-card p {
+            color: var(--slate);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Clients Section */
+        .clients {
+            padding: 8rem 2rem;
+            background: var(--white);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .client-card {
+            background: var(--cream);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--navy);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .client-card:hover {
+            background: var(--white);
+            border-color: var(--gold);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 2rem;
+            background: linear-gradient(165deg, #f8f9fa 0%, var(--cream) 100%);
+        }
+
+        .contact-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-intro {
+            font-size: 1.15rem;
+            margin-bottom: 4rem;
+            color: var(--slate);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            box-shadow: 0 2px 16px rgba(10, 22, 40, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 8px 32px rgba(10, 22, 40, 0.06);
+        }
+
+        .contact-card h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            opacity: 0.7;
+        }
+
+        .contact-card p {
+            color: var(--slate);
+            font-weight: 300;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: #25D366;
+            color: white;
+            padding: 1.1rem 2.75rem;
+            font-weight: 400;
+            text-decoration: none;
+            margin-top: 4rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #e9ecef;
+            color: var(--navy);
+            padding: 4rem 2rem 2rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(10, 22, 40, 0.1);
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-contact p {
+            margin: 0.75rem 0;
+            color: var(--slate);
+            font-weight: 300;
+        }
+
+        .footer-contact a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-contact a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: var(--slate);
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin: 0.5rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .lang-header {
+                padding: 1rem 1.5rem;
+            }
+
+            .lang-button {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            .hero {
+                min-height: 95vh;
+            }
+            
+            .logo {
+                width: 120px;
+            }
+
+            .services, .contact {
+                padding: 5rem 1.5rem;
+            }
+
+            .service-card {
+                padding: 3rem 2rem;
+            }
+
+            .hero .services-list {
+                gap: 1.5rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                margin-bottom: 3rem;
+            }
+        }
+    
+.lang-sw-nav{display:flex;align-items:center;gap:2px;margin-left:20px;}
+.lang-sw-nav a{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:4px 7px;border-radius:2px;transition:all .2s;}
+#navbar.light-mode .lang-sw-nav a{color:rgba(42,31,29,0.35);}
+#navbar.dark-mode .lang-sw-nav a{color:rgba(245,240,232,0.35);}
+#navbar.light-mode .lang-sw-nav a:hover,#navbar.light-mode .lang-sw-nav a.active{color:var(--rose);}
+#navbar.dark-mode .lang-sw-nav a:hover,#navbar.dark-mode .lang-sw-nav a.active{color:var(--rose-light);}
+.lang-sw-nav .sep{color:rgba(200,115,106,0.25);font-size:9px;}
+</style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            
+            slides[0].classList.add('active');
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            setInterval(nextSlide, 5000);
+
+            // Language Dropdown
+            const langDropdown = document.getElementById('langDropdown');
+            const langButton = document.getElementById('langButton');
+            const langHeader = document.getElementById('langHeader');
+
+            langButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('active');
+            });
+
+            // Scroll detection for background change
+            let lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll > 100) {
+                    langHeader.classList.add('scrolled');
+                } else {
+                    langHeader.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="lang-header" id="langHeader">
+        <div class="lang-dropdown" id="langDropdown">
+            <button class="lang-button" id="langButton">Language</button>
+            <div class="lang-menu">
+                <a href="en.html">English</a>
+                <a href="de.html">Deutsch</a>
+                <a href="yu.html">YU</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-carousel">
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+        </div>
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="https://dlproject56.com/wp-content/uploads/2026/03/12f2ef01-2110-4ae1-921c-5b3b3afcd616.png" alt="ElectroProject56 logo" class="logo" fetchpriority="high">
+            </div>
+            <h1>Strom.<br><em>Präzision.</em> Vertrauen.</h1>
+            <div class="divider"></div>
+            <p class="tagline">Electrical & Plumbing Installation Services for Construction Projects in Germany and the European Union</p>
+            <div class="services-list">
+                <span class="service-badge">Electrical Installations</span>
+                <span class="service-badge">Plumbing Services</span>
+            </div>
+            <a href="#contact" class="cta-button">Start Your Project</a>
+            <p style="margin-top:1rem;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;">EU registered · Fast replies · WhatsApp and email available</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Subcontracting Services for Construction Projects</h2>
+                <p>ElectroProject56 works as a subcontractor partner for construction companies, renovation contractors, and project managers across Germany and the European Union. We provide reliable electrical and plumbing installation services for residential and commercial construction projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid services-grid-two">
+                <div class="service-card">
+                    <h3>Electrical Installations</h3>
+                    <p>Complete electrical systems for residential and commercial construction projects. Wiring, lighting installations, and electrical infrastructure. We ensure safety and efficiency on every job.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Plumbing Installations</h3>
+                    <p>Professional plumbing installations for construction and renovation projects. Bathrooms, kitchens, heating systems — we handle it all with precision and reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Work With Us</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Reliable Teams</h3>
+                    <p>Experienced subcontractor teams that deliver consistent quality on construction and renovation projects.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Construction Experience</h3>
+                    <p>Proven track record working on residential and commercial construction projects across Europe.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Flexible Availability</h3>
+                    <p>Available for projects throughout Germany and the European Union with flexible scheduling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Work With Section -->
+    <section class="clients">
+        <div class="container">
+            <h2 class="section-title">Who We Work With</h2>
+            <div class="clients-grid">
+                <div class="client-card">Construction Companies</div>
+                <div class="client-card">Renovation Contractors</div>
+                <div class="client-card">Project Managers</div>
+                <div class="client-card">Property Developers</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="contact-intro">Ready to start your project? Contact us for fast replies, clear scope and reliable subcontractor availability.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <h4>Email</h4>
+                    <a href="mailto:info@electroproject56.com">info@electroproject56.com</a>
+                </div>
+                <div class="contact-card">
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/35677922436">+356 77 922 436</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Service Area</h4>
+                    <p>Germany & European Union</p>
+                </div>
+            </div>
+
+            <a href="https://wa.me/35677922436" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                Contact Us on WhatsApp
+            </a>
+            <p style="margin-top:1rem;"><a href="mailto:info@electroproject56.com" style="color:#d4af37;text-decoration:none;">Get Your Website</a> &nbsp;·&nbsp; <a href="https://dlproject.io/mechanic/" style="color:#d4af37;text-decoration:none;">Mechanic Demo</a> &nbsp;·&nbsp; <a href="https://dlproject.io/lawyer/" style="color:#d4af37;text-decoration:none;">Lawyer Demo</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+  <p>Webdesign von <a href="/de/">D&amp;L Project56</a> &nbsp;·&nbsp; Malta &amp; EU &nbsp;·&nbsp; © 2026</p>
+  <p style="margin-top:10px;"><a href="/de/massage/">Massage Demo</a> &nbsp;·&nbsp; <a href="/de/dentist/">Zahnarzt Demo</a></p>
+</footer>
+</body>
+</html>

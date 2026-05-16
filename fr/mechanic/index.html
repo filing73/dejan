@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Démo Site Mechanic | D&L Project56</title>
+<meta name="description" content="Démo de site mechanic par D&L Project56. Prix fixe dès €850, livraison en 5 jours.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dlproject.io/fr/mechanic/">
+<meta property="og:title" content="Mechanic Website Design Demo | D&L Project56">
+<meta property="og:description" content="See a mechanic website demo designed to turn local visitors into calls, inquiries and repeat customers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dlproject.io/mechanic/">
+<meta property="og:image" content="https://dlproject56.com/wp-content/uploads/2026/02/onnjoff-oku.jpg">
+<meta property="og:image:alt" content="Mechanic website design demo by D&L Project56">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Mechanic Website Design Demo",
+  "serviceType": "Mechanic website design",
+  "url": "https://dlproject.io/mechanic/",
+  "areaServed": ["Malta", "EU"],
+  "provider": {
+    "@type": "Organization",
+    "name": "D&L Project56",
+    "url": "https://dlproject.io"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#e85d0a;--orange-light:#ff8240;
+  --steel:#0f1318;--steel2:#151b22;--steel3:#1d2530;
+  --silver:#8a9aaa;--light:#f0f4f8;--text:#f0f4f8;
+  --border:rgba(232,93,10,0.2);--max:1140px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--steel);color:var(--text);overflow-x:hidden;}
+
+#navbar{position:fixed;top:0;width:100%;z-index:9999;padding:16px 0;transition:all .3s ease;}
+#navbar.dark-mode{background:rgba(15,19,24,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:12px 0;}
+#navbar.light-mode{background:rgba(240,244,248,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,0.1);padding:12px 0;}
+.nav-wrap{max-width:var(--max);margin:auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:color .3s;}
+#navbar.dark-mode .nav-logo{color:var(--orange);}
+#navbar.light-mode .nav-logo{color:var(--steel);}
+.nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;text-decoration:none;margin-left:24px;transition:color .3s;}
+#navbar.dark-mode .nav-links a{color:rgba(240,244,248,0.5);}
+#navbar.light-mode .nav-links a{color:rgba(15,19,24,0.5);}
+.nav-links a:hover{color:var(--orange)!important;}
+.nav-cta{padding:9px 20px;background:var(--orange);color:#fff!important;font-weight:700!important;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:background .3s;}
+.nav-cta:hover{background:var(--orange-light);}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.35);}
+.hero-accent{position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--orange);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,93,10,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(232,93,10,0.03) 1px,transparent 1px);background-size:40px 40px;}
+.hero-inner{max-width:var(--max);margin:auto;width:100%;padding:120px 40px 80px;position:relative;z-index:2;}
+.hero-tag{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:6px;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:24px;animation:fadeUp .6s ease both;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(60px,10vw,130px);font-weight:800;line-height:0.9;text-transform:uppercase;letter-spacing:-1px;color:var(--text);margin-bottom:24px;animation:fadeUp .6s .1s ease both;}
+.hero h1 span{color:var(--orange);display:block;}
+.hero-desc{font-size:16px;color:var(--silver);max-width:480px;line-height:1.6;font-weight:400;margin-bottom:44px;animation:fadeUp .6s .2s ease both;}
+.hero-btns{display:flex;gap:14px;animation:fadeUp .6s .3s ease both;}
+.btn-or{display:inline-block;padding:15px 36px;background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:3px;text-transform:uppercase;text-decoration:none;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:background .3s;}
+.btn-or:hover{background:var(--orange-light);}
+.btn-or-ol{display:inline-block;padding:14px 36px;border:1px solid rgba(240,244,248,0.2);color:rgba(240,244,248,0.7);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;text-decoration:none;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .3s;}
+.btn-or-ol:hover{border-color:var(--orange);color:var(--orange);}
+.hero-proof{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin-top:18px;line-height:1.8;}
+.hero-proof a{color:var(--orange);text-decoration:none;}
+.hero-proof a:hover{text-decoration:underline;}
+.hero-stats{display:flex;gap:40px;margin-top:60px;animation:fadeUp .6s .4s ease both;}
+.h-stat{border-left:2px solid var(--orange);padding-left:16px;}
+.h-stat-n{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;color:var(--text);line-height:1;}
+.h-stat-l{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--silver);}
+
+.sec-steel{background:var(--steel2);padding:100px 32px;}
+.sec-steel3{background:var(--steel3);padding:100px 32px;}
+.sec-light{background:var(--light);padding:100px 32px;}
+.inner{max-width:var(--max);margin:auto;}
+.s-tag{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:6px;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:12px;}
+.s-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:800;text-transform:uppercase;line-height:0.95;letter-spacing:-0.5px;margin-bottom:52px;}
+.s-title.dk{color:var(--text);}
+.s-title.lt{color:var(--steel);}
+.s-title span{color:var(--orange);}
+
+/* SERVICES */
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.sv{background:var(--steel2);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s;}
+.sv::after{content:'';position:absolute;top:0;right:0;width:0;height:2px;background:var(--orange);transition:width .4s ease;}
+.sv:hover{background:#1a2330;}
+.sv:hover::after{width:100%;}
+.sv-icon{font-size:30px;margin-bottom:18px;display:block;}
+.sv h3{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text);margin-bottom:10px;}
+.sv p{font-size:13px;color:var(--silver);line-height:1.6;}
+
+/* GALLERY */
+.mech-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:280px 280px;gap:6px;}
+.mg{overflow:hidden;}
+.mg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.8) saturate(0.7);transition:all .5s ease;}
+.mg:hover img{filter:brightness(1) saturate(1);transform:scale(1.03);}
+.mg.span2{grid-column:span 2;}
+
+/* PRICING */
+.price-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.pcard{background:var(--steel2);border:1px solid rgba(255,255,255,0.06);padding:36px 28px;position:relative;transition:border-color .3s,transform .3s;}
+.pcard:hover{border-color:var(--orange);transform:translateY(-3px);}
+.pcard.feat{border-color:var(--orange);}
+.pcard.feat::before{content:'BEST VALUE';position:absolute;top:0;left:0;background:var(--orange);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;padding:4px 16px;}
+.pc-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:16px;}
+.pcard h3{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.pc-amt{font-family:'Barlow Condensed',sans-serif;font-size:54px;font-weight:800;line-height:1;margin-bottom:24px;color:var(--text);}
+.pc-amt sup{font-size:22px;vertical-align:super;}
+.pc-ul{list-style:none;margin-bottom:24px;}
+.pc-ul li{font-size:13px;color:var(--silver);padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;gap:8px;}
+.pc-ul li::before{content:'›';color:var(--orange);font-size:16px;font-weight:700;}
+.btn-m{display:block;text-align:center;padding:13px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s;}
+.btn-m.ol{border:1px solid rgba(255,255,255,0.15);color:var(--silver);}
+.btn-m.ol:hover{border-color:var(--orange);color:var(--orange);}
+.btn-m.sl{background:var(--orange);color:#fff;}
+.btn-m.sl:hover{background:var(--orange-light);}
+
+.cta{background:var(--steel);padding:110px 32px;text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--orange),transparent);}
+.cta h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:800;text-transform:uppercase;line-height:0.95;color:var(--text);margin-bottom:16px;}
+.cta h2 span{color:var(--orange);}
+.cta p{font-size:15px;color:var(--silver);max-width:440px;margin:0 auto 44px;line-height:1.7;}
+.cta-email{font-family:'Barlow Condensed',sans-serif;font-size:18px;color:var(--orange);display:block;margin-top:24px;text-decoration:none;letter-spacing:2px;opacity:0.7;}
+.cta-email:hover{opacity:1;}
+
+footer{background:var(--steel);border-top:1px solid var(--border);padding:28px;text-align:center;}
+footer p{font-size:11px;letter-spacing:1px;color:rgba(240,244,248,0.2);}
+footer a{color:var(--orange);text-decoration:none;opacity:0.6;}
+footer a:hover{opacity:1;}
+
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;text-decoration:none;color:rgba(240,244,248,0.4);margin-bottom:32px;transition:color .3s;}
+.back-link:hover{color:var(--orange);}
+.back-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+
+@media(max-width:900px){
+  .svcs,.price-row{grid-template-columns:1fr;}
+  .mech-gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .mg.span2{grid-column:span 1;}
+  .mg{height:200px;}
+  .hero-stats{flex-wrap:wrap;gap:24px;}
+}
+@media(max-width:600px){.nav-links .hm{display:none;}}
+
+.lang-sw-nav{display:flex;align-items:center;gap:2px;margin-left:20px;}
+.lang-sw-nav a{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:4px 7px;border-radius:2px;transition:all .2s;}
+#navbar.light-mode .lang-sw-nav a{color:rgba(42,31,29,0.35);}
+#navbar.dark-mode .lang-sw-nav a{color:rgba(245,240,232,0.35);}
+#navbar.light-mode .lang-sw-nav a:hover,#navbar.light-mode .lang-sw-nav a.active{color:var(--rose);}
+#navbar.dark-mode .lang-sw-nav a:hover,#navbar.dark-mode .lang-sw-nav a.active{color:var(--rose-light);}
+.lang-sw-nav .sep{color:rgba(200,115,106,0.25);font-size:9px;}
+</style>
+</head>
+<body>
+
+<header id="navbar" class="light-mode">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/fr/">D&L Project56</a>
+    <nav class="nav-links">
+      <a href="/fr/" class="hm">← Toutes les démos</a>
+      <a href="#services" class="hm">Services</a>
+      <a href="#pricing" class="hm">Tarifs</a>
+      <a href="mailto:web@dlproject56.com?subject=Mechanic%20Website" class="nav-cta">Demander un site</a>
+      <div class="lang-sw-nav">
+        <a href="/mechanic/">EN</a>
+        <span class="sep">|</span>
+        <a href="/de/mechanic/">DE</a>
+        <span class="sep">|</span>
+        <a href="/fr/mechanic/" class="active">FR</a>
+        <span class="sep">|</span>
+        <a href="/mt/mechanic/">MT</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" data-nav="dark">
+  <img class="hero-img" src="https://dlproject56.com/wp-content/uploads/2026/02/onnjoff-oku.jpg" alt="Mechanic website demo hero image with workshop bay" fetchpriority="high">
+  <div class="hero-accent"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <a href="/" class="back-link"><svg viewBox="0 0 24 24"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg> All Demos</a>
+    <span class="hero-tag">Garage · Démo</span>
+    <h1>We Fix<br><span>Cars Right.</span></h1>
+    <p class="hero-desc">A professional, no-nonsense website that builds trust fast — and gets customers to call, book and come back.</p>
+    <div class="hero-btns">
+      <a class="btn-or" href="mailto:web@dlproject56.com?subject=Mechanic%20Website">Start Your Project</a>
+      <a class="btn-or-ol" href="#services">See What's Inside</a>
+    </div>
+    <p class="hero-proof">EU registered · Fixed pricing from €850 · 5-day delivery · <a href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20mechanic%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="mailto:web@dlproject56.com?subject=Mechanic%20Website%20Inquiry">Contact Us</a></p>
+    <div class="hero-stats">
+      <div class="h-stat"><div class="h-stat-n">5</div><div class="h-stat-l">Days Delivery</div></div>
+      <div class="h-stat"><div class="h-stat-n">€850</div><div class="h-stat-l">Starting From</div></div>
+      <div class="h-stat"><div class="h-stat-n">100%</div><div class="h-stat-l">Mobile First</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-steel" data-nav="dark" id="services">
+  <div class="inner">
+    <span class="s-tag reveal">Services</span>
+    <h2 class="s-title dk reveal">What We<br><span>Do Best.</span></h2>
+    <div class="svcs">
+      <div class="sv reveal"><span class="sv-icon">🔧</span><h3>Full Service</h3><p>Engine diagnostics, oil changes, brake service and general maintenance. One shop for everything.</p></div>
+      <div class="sv reveal"><span class="sv-icon">🛞</span><h3>Tyres & Wheels</h3><p>Fitting, balancing, alignment and seasonal changeovers. All major brands available.</p></div>
+      <div class="sv reveal"><span class="sv-icon">⚡</span><h3>Electrical</h3><p>Battery testing, alternator replacement and full electrical diagnostics with modern equipment.</p></div>
+      <div class="sv reveal"><span class="sv-icon">🚗</span><h3>Body Work</h3><p>Dent removal, paint correction and minor collision repairs. Factory-level finish guaranteed.</p></div>
+      <div class="sv reveal"><span class="sv-icon">🔍</span><h3>Diagnostics</h3><p>OBD scanning and full computer diagnostics. We find the problem before we fix it.</p></div>
+      <div class="sv reveal"><span class="sv-icon">📋</span><h3>MOT / Roadworthiness</h3><p>Annual inspections, pre-check service and documentation. No surprises on test day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-steel3" data-nav="dark" id="gallery">
+  <div class="inner">
+    <span class="s-tag reveal">Workshop</span>
+    <h2 class="s-title dk reveal">Built for<br><span>Serious Work.</span></h2>
+    <div class="mech-gallery reveal">
+      <div class="mg span2"><img src="https://dlproject56.com/wp-content/uploads/2026/02/khf58h0htbc.jpg" alt="Mechanic workshop gallery image" loading="lazy"></div>
+      <div class="mg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/qzh-ugjkn8g.jpg" alt="Mechanic service bay gallery image" loading="lazy"></div>
+      <div class="mg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/n2_oybgscdq.jpg" alt="Mechanic tools and diagnostics gallery image" loading="lazy"></div>
+      <div class="mg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/onnjoff-oku.jpg" alt="Mechanic garage gallery image" loading="lazy"></div>
+      <div class="mg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/pt6xj91wytw.jpg" alt="Mechanic car service gallery image" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-light" data-nav="light" id="pricing">
+  <div class="inner">
+    <span class="s-tag reveal">Pricing</span>
+    <h2 class="s-title lt reveal">Straight Price.<br><span style="color:var(--orange)">No Bullshit.</span></h2>
+    <div class="price-row">
+      <div class="pcard reveal"><span class="pc-tag">Starter</span><h3>Essential</h3><div class="pc-amt"><sup>€</sup>850</div><ul class="pc-ul"><li>1-page website</li><li>Services + Gallery + Contact</li><li>Mobile-first design</li><li>5-day delivery</li></ul><a class="btn-m ol" href="mailto:web@dlproject56.com?subject=Essential%20-%20Mechanic">Start Your Project</a></div>
+      <div class="pcard feat reveal"><span class="pc-tag">Most Popular</span><h3>Professional</h3><div class="pc-amt"><sup>€</sup>1050</div><ul class="pc-ul"><li>Up to 5 pages</li><li>Services + Pricing + Gallery</li><li>Basic SEO setup</li><li>Google Maps embed</li><li>5-day delivery</li></ul><a class="btn-m sl" href="mailto:web@dlproject56.com?subject=Professional%20-%20Mechanic">Start Your Project</a></div>
+      <div class="pcard reveal"><span class="pc-tag">Premium</span><h3>Complete</h3><div class="pc-amt"><sup>€</sup>1250</div><ul class="pc-ul"><li>Up to 8 pages</li><li>Booking link integration</li><li>1 round of revisions</li><li>Priority delivery</li></ul><a class="btn-m ol" href="mailto:web@dlproject56.com?subject=Complete%20-%20Mechanic">Start Your Project</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" data-nav="dark">
+  <div class="inner">
+    <h2 class="reveal">Ready to get your<br>shop <span>online?</span></h2>
+    <p class="reveal">Prix fixe dès €850, périmètre clair, site garage en ligne en 5 jours.</p>
+    <a class="btn-or reveal" href="mailto:web@dlproject56.com?subject=Mechanic%20Website%20Order">Get Your Website</a>
+    <a class="cta-email reveal" href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20mechanic%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp: +356 77 922 436</a>
+    <a class="cta-email reveal" href="mailto:web@dlproject56.com">web@dlproject56.com</a>
+  </div>
+</section>
+
+<footer>
+  <p>Web Design par <a href="/fr/">D&amp;L Project56</a> &nbsp;·&nbsp; Malta &amp; EU &nbsp;·&nbsp; © 2026</p>
+  <p style="margin-top:10px;"><a href="/fr/massage/">Démo Massage</a> &nbsp;·&nbsp; <a href="/fr/dentist/">Démo Dentiste</a></p>
+</footer>
+
+<script>
+const nb=document.getElementById('navbar');
+const secs=document.querySelectorAll('[data-nav]');
+function upNav(){const ty=window.scrollY+nb.offsetHeight+10;let m='dark';secs.forEach(s=>{const t=s.offsetTop,b=t+s.offsetHeight;if(ty>=t&&ty<b)m=s.dataset.nav;});nb.className=m+'-mode';}
+window.addEventListener('scroll',upNav,{passive:true});window.addEventListener('resize',upNav,{passive:true});upNav();
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

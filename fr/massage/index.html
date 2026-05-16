@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Démo Site Massage | D&L Project56</title>
+<meta name="description" content="Démo de site massage par D&L Project56. Prix fixe dès €850, livraison en 5 jours.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dlproject.io/fr/massage/">
+<meta property="og:title" content="Massage Website Design Demo | D&L Project56">
+<meta property="og:description" content="See a massage and wellness website demo designed to build trust, show treatments and convert visitors into booked clients.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dlproject.io/massage/">
+<meta property="og:image" content="https://dlproject56.com/wp-content/uploads/2026/02/lyicbm-7zfa.jpg">
+<meta property="og:image:alt" content="Massage and wellness website design demo by D&L Project56">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Massage Website Design Demo",
+  "serviceType": "Massage and wellness website design",
+  "url": "https://dlproject.io/massage/",
+  "areaServed": ["Malta", "EU"],
+  "provider": {
+    "@type": "Organization",
+    "name": "D&L Project56",
+    "url": "https://dlproject.io"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#7a9e7e;--sage-light:#a8c5ab;--sage-pale:#f2f7f2;
+  --stone:#3d3530;--warm-white:#fdfaf6;--warm-off:#f7f3ee;
+  --text:#3d3530;--muted:#8a8178;--border:#ddd8d0;--max:1100px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Lato',sans-serif;background:var(--warm-white);color:var(--text);overflow-x:hidden;}
+
+#navbar{position:fixed;top:0;width:100%;z-index:9999;padding:20px 0;transition:all .4s ease;}
+#navbar.light-mode{background:rgba(253,250,246,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 0;}
+#navbar.dark-mode{background:rgba(61,53,48,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(122,158,126,0.2);padding:14px 0;}
+.nav-wrap{max-width:var(--max);margin:auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'Gilda Display',serif;font-size:18px;letter-spacing:2px;text-decoration:none;transition:color .3s;}
+#navbar.light-mode .nav-logo{color:var(--stone);}
+#navbar.dark-mode  .nav-logo{color:var(--sage-light);}
+.nav-links a{font-size:11px;font-weight:300;letter-spacing:3px;text-transform:uppercase;text-decoration:none;margin-left:24px;transition:color .3s;position:relative;}
+#navbar.light-mode .nav-links a{color:var(--muted);}
+#navbar.dark-mode  .nav-links a{color:rgba(253,250,246,0.55);}
+.nav-links a:hover{color:var(--sage)!important;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--sage);transition:width .3s;}
+.nav-links a:hover::after{width:100%;}
+.nav-book{padding:9px 20px;border:1px solid var(--sage);color:var(--sage)!important;border-radius:24px;font-weight:400!important;transition:all .3s;}
+.nav-book:hover{background:var(--sage);color:#fff!important;}
+.nav-book::after{display:none!important;}
+
+/* HERO — centered serene */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(61,53,48,0.45) 0%,rgba(61,53,48,0.6) 100%);}
+.hero-inner{position:relative;z-index:2;padding:120px 40px 80px;max-width:700px;}
+.hero-leaf{font-size:28px;margin-bottom:24px;opacity:0.7;animation:fadeIn .8s ease both;}
+.hero-tag{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--sage-light);display:block;margin-bottom:28px;animation:fadeUp .7s .1s ease both;}
+.hero h1{font-family:'Gilda Display',serif;font-size:clamp(44px,7vw,84px);font-weight:400;line-height:1.1;color:#fff;margin-bottom:20px;animation:fadeUp .7s .2s ease both;}
+.hero-desc{font-size:16px;color:rgba(255,255,255,0.65);font-weight:300;line-height:1.8;max-width:480px;margin:0 auto 44px;animation:fadeUp .7s .3s ease both;}
+.hero-btns{display:flex;gap:16px;justify-content:center;animation:fadeUp .7s .4s ease both;}
+.btn-sage{display:inline-block;padding:15px 36px;background:var(--sage);color:#fff;font-size:11px;font-weight:400;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border-radius:28px;transition:all .3s;}
+.btn-sage:hover{background:var(--sage-light);transform:translateY(-2px);}
+.btn-sage-ol{display:inline-block;padding:14px 36px;border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);font-size:11px;font-weight:300;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border-radius:28px;transition:all .3s;}
+.btn-sage-ol:hover{border-color:var(--sage-light);color:var(--sage-light);}
+.hero-proof{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:18px;line-height:1.8;}
+.hero-proof a{color:var(--sage-light);text-decoration:none;}
+.hero-proof a:hover{text-decoration:underline;}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.3;animation:fadeIn 1.5s 1s ease both;}
+.hero-scroll span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#fff;}
+.s-bar{width:1px;height:36px;background:linear-gradient(to bottom,#fff,transparent);animation:sp 2s infinite;}
+
+/* SERVICES */
+.sec-off{background:var(--warm-off);padding:100px 40px;}
+.sec-white{background:var(--warm-white);padding:100px 40px;}
+.sec-sage{background:var(--stone);padding:100px 40px;}
+.sec-pale{background:var(--sage-pale);padding:100px 40px;}
+.inner{max-width:var(--max);margin:auto;}
+.s-tag{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:14px;}
+.s-title{font-family:'Gilda Display',serif;font-size:clamp(32px,4.5vw,54px);font-weight:400;line-height:1.15;margin-bottom:52px;}
+.s-title.lt{color:var(--stone);}
+.s-title.dk{color:var(--warm-white);}
+
+/* treatments */
+.treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.treat{background:var(--warm-white);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.treat:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(122,158,126,0.12);}
+.treat-img{height:220px;overflow:hidden;}
+.treat-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.treat:hover .treat-img img{transform:scale(1.04);}
+.treat-body{padding:28px 24px;}
+.treat-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);margin-bottom:10px;display:block;}
+.treat h3{font-family:'Gilda Display',serif;font-size:22px;font-weight:400;margin-bottom:8px;}
+.treat p{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;}
+.treat-duration{font-size:11px;color:var(--sage);margin-top:14px;display:block;letter-spacing:1px;}
+
+/* gallery soft */
+.wellness-gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;height:360px;}
+.wg{overflow:hidden;border-radius:6px;}
+.wg img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .4s;}
+.wg:hover img{transform:scale(1.04);filter:brightness(1.05);}
+.wg.tall{grid-row:span 1;grid-column:span 2;}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.pcard{background:rgba(122,158,126,0.06);border:1px solid var(--border);border-radius:16px;padding:36px 28px;position:relative;transition:transform .3s,box-shadow .3s;}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(122,158,126,0.12);}
+.pcard.feat{border-color:var(--sage);background:rgba(122,158,126,0.1);}
+.pcard.feat::before{content:'MOST POPULAR';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--sage);color:#fff;font-size:9px;font-weight:400;letter-spacing:2px;padding:5px 16px;border-radius:0 0 8px 8px;}
+.pc-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:16px;}
+.pcard h3{font-family:'Gilda Display',serif;font-size:24px;font-weight:400;margin-bottom:8px;}
+.pc-amt{font-family:'Gilda Display',serif;font-size:52px;font-weight:400;line-height:1;margin-bottom:24px;}
+.pc-amt sup{font-size:22px;vertical-align:super;}
+.pc-ul{list-style:none;margin-bottom:24px;}
+.pc-ul li{font-size:13px;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;font-weight:300;}
+.pc-ul li::before{content:'·';color:var(--sage);font-size:18px;}
+.btn-w{display:block;text-align:center;padding:13px;font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:8px;transition:all .3s;}
+.btn-w.ol{border:1px solid var(--border);color:var(--text);}
+.btn-w.ol:hover{border-color:var(--sage);color:var(--sage);}
+.btn-w.sl{background:var(--sage);color:#fff;}
+.btn-w.sl:hover{background:var(--sage-light);}
+
+.cta{background:var(--stone);padding:110px 40px;text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(122,158,126,0.12) 0%,transparent 70%);}
+.cta h2{font-family:'Gilda Display',serif;font-size:clamp(32px,5vw,56px);font-weight:400;color:var(--warm-white);margin-bottom:16px;}
+.cta p{font-size:15px;color:rgba(253,250,246,0.4);max-width:440px;margin:0 auto 44px;line-height:1.8;font-weight:300;}
+.cta-email{font-family:'Gilda Display',serif;font-size:16px;color:var(--sage-light);display:block;margin-top:24px;text-decoration:none;opacity:0.7;}
+.cta-email:hover{opacity:1;}
+
+footer{background:var(--stone);border-top:1px solid rgba(122,158,126,0.1);padding:28px;text-align:center;}
+footer p{font-size:11px;letter-spacing:1px;color:rgba(253,250,246,0.2);}
+footer a{color:var(--sage-light);text-decoration:none;opacity:0.6;}
+footer a:hover{opacity:1;}
+
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:300;letter-spacing:3px;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,0.4);margin-bottom:36px;transition:color .3s;position:relative;z-index:2;}
+.back-link:hover{color:var(--sage-light);}
+.back-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes sp{0%,100%{opacity:0.3;}50%{opacity:0.8;}}
+
+@media(max-width:1024px){
+  .price-grid{grid-template-columns:1fr;}
+  .nav-wrap,.hero-inner,.sec-off,.sec-white,.sec-sage,.sec-pale,.cta{padding-left:20px;padding-right:20px;}
+}
+@media(max-width:900px){
+  .treat-grid,.price-grid{grid-template-columns:1fr;}
+  .wellness-gallery{grid-template-columns:1fr 1fr;height:auto;}
+  .wg{height:200px;}
+  .wg.tall{grid-column:span 1;}
+  .hero-btns{flex-direction:column;align-items:center;}
+}
+@media(max-width:600px){.nav-links .hm{display:none;}}
+@media(max-width:480px){
+  .hero h1{font-size:clamp(30px,9vw,84px);}
+  .nav-wrap{padding:0 16px;}
+}
+
+.lang-sw-nav{display:flex;align-items:center;gap:2px;margin-left:20px;}
+.lang-sw-nav a{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:4px 7px;border-radius:2px;transition:all .2s;}
+#navbar.light-mode .lang-sw-nav a{color:rgba(42,31,29,0.35);}
+#navbar.dark-mode .lang-sw-nav a{color:rgba(245,240,232,0.35);}
+#navbar.light-mode .lang-sw-nav a:hover,#navbar.light-mode .lang-sw-nav a.active{color:var(--rose);}
+#navbar.dark-mode .lang-sw-nav a:hover,#navbar.dark-mode .lang-sw-nav a.active{color:var(--rose-light);}
+.lang-sw-nav .sep{color:rgba(200,115,106,0.25);font-size:9px;}
+</style>
+</head>
+<body>
+
+<header id="navbar" class="light-mode">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/fr/">D&L Project56</a>
+    <nav class="nav-links">
+      <a href="/fr/" class="hm">← Toutes les démos</a>
+      <a href="#services" class="hm">Services</a>
+      <a href="#pricing" class="hm">Tarifs</a>
+      <a href="mailto:web@dlproject56.com?subject=Massage%20Website" class="nav-cta">Demander un site</a>
+      <div class="lang-sw-nav">
+        <a href="/massage/">EN</a>
+        <span class="sep">|</span>
+        <a href="/de/massage/">DE</a>
+        <span class="sep">|</span>
+        <a href="/fr/massage/" class="active">FR</a>
+        <span class="sep">|</span>
+        <a href="/mt/massage/">MT</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" data-nav="dark">
+  <img class="hero-img" src="https://dlproject56.com/wp-content/uploads/2026/02/lyicbm-7zfa.jpg" alt="Massage website demo hero image with wellness treatment room" fetchpriority="high">
+  <div class="hero-ov"></div>
+  <div class="hero-inner">
+    <a href="/" class="back-link"><svg viewBox="0 0 24 24"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg> All Demos</a>
+    <span class="hero-leaf">🪷</span>
+    <span class="hero-tag">Massage · Démo</span>
+    <h1>Se Ressourcer.<br><em>Se Détendre.</em> Renaître.</h1>
+    <p class="hero-desc">A calm, beautifully designed website that reflects the quality of your treatments and brings new clients to your door.</p>
+    <div class="hero-btns">
+      <a class="btn-sage" href="mailto:web@dlproject56.com?subject=Massage%20Website%20Order">Start Your Project</a>
+      <a class="btn-sage-ol" href="#treatments">See What's Inside</a>
+    </div>
+    <p class="hero-proof">EU registered · Fixed pricing from €850 · 5-day delivery · <a href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20massage%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="mailto:web@dlproject56.com?subject=Massage%20Website%20Inquiry">Contact Us</a></p>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="s-bar"></div></div>
+</section>
+
+<section class="sec-off" data-nav="light" id="treatments">
+  <div class="inner">
+    <span class="s-tag reveal">Treatments</span>
+    <h2 class="s-title lt reveal">Therapies designed<br>for your wellbeing.</h2>
+    <div class="treat-grid">
+      <div class="treat reveal">
+        <div class="treat-img"><img src="https://dlproject56.com/wp-content/uploads/2026/02/3agv2viczrm.jpg" alt="Swedish massage treatment image for wellness website demo" loading="lazy"></div>
+        <div class="treat-body"><span class="treat-tag">Signature</span><h3>Swedish Massage</h3><p>The classic full-body treatment. Deep relaxation, improved circulation, total stress relief.</p><span class="treat-duration">60 / 90 min</span></div>
+      </div>
+      <div class="treat reveal">
+        <div class="treat-img"><img src="https://dlproject56.com/wp-content/uploads/2026/02/o6nntgfqcm0.jpg" alt="Deep tissue massage treatment image for wellness website demo" loading="lazy"></div>
+        <div class="treat-body"><span class="treat-tag">Therapeutic</span><h3>Deep Tissue</h3><p>Targeted pressure on chronic tension areas. Ideal for athletes and active professionals.</p><span class="treat-duration">60 / 90 min</span></div>
+      </div>
+      <div class="treat reveal">
+        <div class="treat-img"><img src="https://dlproject56.com/wp-content/uploads/2026/02/gb9qmyn9ut8.jpg" alt="Hot stone massage treatment image for wellness website demo" loading="lazy"></div>
+        <div class="treat-body"><span class="treat-tag">Ritual</span><h3>Hot Stone</h3><p>Warm volcanic stones melt away tension. A deeply restorative experience from start to finish.</p><span class="treat-duration">90 min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-white" data-nav="light" id="gallery">
+  <div class="inner">
+    <span class="s-tag reveal">The Space</span>
+    <h2 class="s-title lt reveal">A sanctuary<br>to call your own.</h2>
+    <div class="wellness-gallery reveal">
+      <div class="wg tall"><img src="https://dlproject56.com/wp-content/uploads/2026/02/lyicbm-7zfa.jpg" alt="Wellness studio gallery image" loading="lazy"></div>
+      <div class="wg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/3agv2viczrm.jpg" alt="Massage treatment gallery image" loading="lazy"></div>
+      <div class="wg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/zbzydbon7fg.jpg" alt="Wellness room detail gallery image" loading="lazy"></div>
+      <div class="wg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/o6nntgfqcm0.jpg" alt="Massage therapist gallery image" loading="lazy"></div>
+      <div class="wg"><img src="https://dlproject56.com/wp-content/uploads/2026/02/gb9qmyn9ut8.jpg" alt="Hot stone wellness gallery image" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pale" data-nav="light" id="pricing">
+  <div class="inner">
+    <span class="s-tag reveal">Pricing</span>
+    <h2 class="s-title lt reveal">Invest in yourself.<br>Your website is ready in 5 days.</h2>
+    <div class="price-grid">
+      <div class="pcard reveal"><span class="pc-tag">Starter</span><h3>Essential</h3><div class="pc-amt"><sup>€</sup>850</div><ul class="pc-ul"><li>1-page website</li><li>Treatments + Gallery + Contact</li><li>Mobile-first design</li><li>5-day delivery</li></ul><a class="btn-w ol" href="mailto:web@dlproject56.com?subject=Essential%20-%20Massage">Start Your Project</a></div>
+      <div class="pcard feat reveal"><span class="pc-tag">Most Popular</span><h3>Professional</h3><div class="pc-amt"><sup>€</sup>1050</div><ul class="pc-ul"><li>Up to 5 pages</li><li>Treatments + Pricing + Gallery</li><li>Basic SEO setup</li><li>Booking link integration</li><li>5-day delivery</li></ul><a class="btn-w sl" href="mailto:web@dlproject56.com?subject=Professional%20-%20Massage">Start Your Project</a></div>
+      <div class="pcard reveal"><span class="pc-tag">Premium</span><h3>Complete</h3><div class="pc-amt"><sup>€</sup>1250</div><ul class="pc-ul"><li>Up to 8 pages</li><li>Gift voucher section</li><li>1 round of revisions</li><li>Priority delivery</li></ul><a class="btn-w ol" href="mailto:web@dlproject56.com?subject=Complete%20-%20Massage">Start Your Project</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" data-nav="dark">
+  <div class="inner">
+    <h2 class="reveal">Ready to bring more<br>clients to your practice?</h2>
+    <p class="reveal">Prix fixe dès €850, périmètre clair, site massage en ligne en 5 jours.</p>
+    <a class="btn-sage reveal" href="mailto:web@dlproject56.com?subject=Massage%20Website%20Order">Get Your Website</a>
+    <a class="cta-email reveal" href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20massage%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp: +356 77 922 436</a>
+    <a class="cta-email reveal" href="mailto:web@dlproject56.com">web@dlproject56.com</a>
+  </div>
+</section>
+
+<footer>
+  <p>Web Design par <a href="/fr/">D&amp;L Project56</a> &nbsp;·&nbsp; Malta &amp; EU &nbsp;·&nbsp; © 2026</p>
+  <p style="margin-top:10px;"><a href="/fr/massage/">Démo Massage</a> &nbsp;·&nbsp; <a href="/fr/dentist/">Démo Dentiste</a></p>
+</footer>
+
+<script>
+const nb=document.getElementById('navbar');
+const secs=document.querySelectorAll('[data-nav]');
+function upNav(){const ty=window.scrollY+nb.offsetHeight+10;let m='dark';secs.forEach(s=>{const t=s.offsetTop,b=t+s.offsetHeight;if(ty>=t&&ty<b)m=s.dataset.nav;});nb.className=m+'-mode';}
+window.addEventListener('scroll',upNav,{passive:true});window.addEventListener('resize',upNav,{passive:true});upNav();
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

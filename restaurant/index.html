@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Website Design Demo | D&L Project56 Malta & EU</title>
+<meta name="description" content="Restaurant website design demo by D&L Project56. Showcase menus, ambience and bookings with fixed pricing from €850 and 5-day delivery across Malta and the EU.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dlproject.io/restaurant/">
+<meta property="og:title" content="Restaurant Website Design Demo | D&L Project56">
+<meta property="og:description" content="See a restaurant website demo built to drive bookings, show your menu and present your space with clarity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dlproject.io/restaurant/">
+<meta property="og:image" content="https://dlproject56.com/wp-content/uploads/2026/02/swepcc0rm0u.jpg">
+<meta property="og:image:alt" content="Restaurant website design demo by D&L Project56">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Restaurant Website Design Demo",
+  "serviceType": "Restaurant website design",
+  "url": "https://dlproject.io/restaurant/",
+  "areaServed": ["Malta", "EU"],
+  "provider": {
+    "@type": "Organization",
+    "name": "D&L Project56",
+    "url": "https://dlproject.io"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c9a84c;--gold-light:#e8c97a;
+  --dark:#09090b;--dark2:#111113;--dark3:#181818;
+  --cream:#f5f0e8;--cream2:#faf8f4;
+  --text:#1a1a1a;--muted:#6b7280;--border:#e5e0d8;--max:1140px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:var(--cream);overflow-x:hidden;}
+
+#navbar{position:fixed;top:0;width:100%;z-index:9999;padding:24px 0;transition:all .4s ease;}
+#navbar.dark-mode{background:rgba(9,9,11,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,168,76,0.15);padding:14px 0;}
+#navbar.light-mode{background:rgba(250,248,244,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 0;}
+.nav-wrap{max-width:var(--max);margin:auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:4px;text-transform:uppercase;text-decoration:none;transition:color .3s;}
+#navbar.dark-mode .nav-logo{color:var(--gold);}
+#navbar.light-mode .nav-logo{color:var(--text);}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase;text-decoration:none;margin-left:28px;transition:color .3s;position:relative;}
+#navbar.dark-mode .nav-links a{color:rgba(245,240,232,0.55);}
+#navbar.light-mode .nav-links a{color:rgba(26,26,26,0.55);}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover::after{width:100%;}
+.nav-links a:hover{color:var(--gold)!important;}
+.nav-res{padding:10px 22px;border:1px solid var(--gold);color:var(--gold)!important;border-radius:1px;font-weight:400!important;transition:all .3s;}
+.nav-res:hover{background:var(--gold);color:var(--dark)!important;}
+.nav-res::after{display:none!important;}
+
+/* HERO — full immersive */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(9,9,11,0.5) 0%,rgba(9,9,11,0.65) 100%);}
+.hero-inner{position:relative;z-index:2;padding:120px 40px 80px;max-width:800px;}
+.hero-divider{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:32px;animation:fadeUp .8s ease both;}
+.hero-div-line{width:40px;height:1px;background:rgba(201,168,76,0.5);}
+.hero-div-gem{color:var(--gold);font-size:10px;}
+.hero-tag{font-size:10px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,8vw,100px);font-weight:300;line-height:1.0;color:#fff;margin-bottom:20px;animation:fadeUp .8s .1s ease both;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-quote{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;font-weight:300;color:rgba(245,240,232,0.6);margin-bottom:48px;animation:fadeUp .8s .2s ease both;}
+.hero-btns{display:flex;gap:16px;justify-content:center;animation:fadeUp .8s .3s ease both;}
+.btn-gold-solid{display:inline-block;padding:16px 40px;background:var(--gold);color:var(--dark);font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .3s;}
+.btn-gold-solid:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,168,76,0.3);}
+.btn-gold-ol{display:inline-block;padding:15px 40px;border:1px solid rgba(245,240,232,0.3);color:rgba(245,240,232,0.8);font-size:11px;font-weight:300;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .3s;}
+.btn-gold-ol:hover{border-color:var(--gold);color:var(--gold);}
+.hero-proof{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,232,0.55);margin-top:18px;line-height:1.8;}
+.hero-proof a{color:var(--gold);text-decoration:none;}
+.hero-proof a:hover{text-decoration:underline;}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.35;animation:fadeIn 1.5s 1s ease both;}
+.hero-scroll span{font-size:9px;letter-spacing:3px;text-transform:uppercase;}
+.s-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sp 2s infinite;}
+
+/* MENU — light cream */
+.sec-cream{background:var(--cream2);padding:100px 40px;}
+.sec-dark{background:var(--dark2);padding:100px 40px;}
+.sec-dk3{background:var(--dark3);padding:100px 40px;}
+.inner{max-width:var(--max);margin:auto;}
+.s-tag{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px;}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,60px);font-weight:300;line-height:1.08;margin-bottom:52px;}
+.s-title.lt{color:var(--text);}
+.s-title.dk{color:var(--cream);}
+.s-title em{font-style:italic;color:var(--gold);}
+
+/* menu sections */
+.menu-cols{display:grid;grid-template-columns:1fr 1px 1fr;gap:48px;}
+.menu-divider{background:linear-gradient(to bottom,transparent,var(--border),transparent);}
+.menu-col h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:32px;text-align:center;}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--border);}
+.menu-item:last-child{border-bottom:none;}
+.mi-left h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;margin-bottom:4px;}
+.mi-left p{font-size:12px;color:var(--muted);font-style:italic;}
+.mi-price{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:var(--gold);}
+
+/* gallery — masonry feel */
+.rest-gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:220px 220px;gap:8px;}
+.rg{overflow:hidden;}
+.rg img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s;}
+.rg:hover img{transform:scale(1.04);filter:brightness(1.05);}
+.rg1{grid-column:span 5;}
+.rg2{grid-column:span 4;}
+.rg3{grid-column:span 3;grid-row:span 2;}
+.rg4{grid-column:span 4;}
+.rg5{grid-column:span 5;}
+
+/* PRICING */
+.pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.pcard{background:rgba(245,240,232,0.04);border:1px solid rgba(201,168,76,0.12);border-radius:2px;padding:40px 28px;position:relative;transition:border-color .3s,transform .3s;}
+.pcard:hover{border-color:rgba(201,168,76,0.4);transform:translateY(-4px);}
+.pcard.feat{border-color:var(--gold);}
+.pcard.feat::before{content:'MOST POPULAR';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:9px;font-weight:500;letter-spacing:2px;padding:5px 16px;}
+.pc-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px;}
+.pcard h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--cream);margin-bottom:8px;}
+.pc-amt{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;color:var(--cream);line-height:1;margin-bottom:28px;}
+.pc-amt sup{font-size:22px;vertical-align:super;}
+.pc-ul{list-style:none;margin-bottom:28px;}
+.pc-ul li{font-size:13px;color:rgba(245,240,232,0.5);padding:8px 0;border-bottom:1px solid rgba(245,240,232,0.07);display:flex;align-items:center;gap:10px;}
+.pc-ul li::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+.btn-r{display:block;text-align:center;padding:13px;font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .3s;}
+.btn-r.ol{border:1px solid rgba(245,240,232,0.15);color:rgba(245,240,232,0.5);}
+.btn-r.ol:hover{border-color:var(--gold);color:var(--gold);}
+.btn-r.sl{background:var(--gold);color:var(--dark);}
+.btn-r.sl:hover{background:var(--gold-light);}
+
+.cta{background:var(--dark);padding:120px 40px;text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(201,168,76,0.07) 0%,transparent 65%);}
+.cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:#fff;margin-bottom:16px;}
+.cta h2 em{font-style:italic;color:var(--gold);}
+.cta p{font-size:15px;color:rgba(245,240,232,0.4);max-width:460px;margin:0 auto 48px;line-height:1.8;font-weight:300;}
+.cta-email{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold);display:block;margin-top:24px;text-decoration:none;opacity:0.7;font-style:italic;}
+.cta-email:hover{opacity:1;}
+
+footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.08);padding:28px;text-align:center;}
+footer p{font-size:11px;letter-spacing:1px;color:rgba(245,240,232,0.18);}
+footer a{color:var(--gold);text-decoration:none;opacity:0.6;}
+footer a:hover{opacity:1;}
+
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:rgba(245,240,232,0.4);margin-bottom:36px;transition:color .3s;position:relative;z-index:2;}
+.back-link:hover{color:var(--gold);}
+.back-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes sp{0%,100%{opacity:0.3;}50%{opacity:0.9;}}
+
+@media(max-width:1024px){
+  .pr-grid{grid-template-columns:1fr;}
+  .nav-wrap,.hero-inner,.sec-cream,.sec-dark,.sec-dk3,.cta{padding-left:20px;padding-right:20px;}
+}
+@media(max-width:900px){
+  .menu-cols{grid-template-columns:1fr;}
+  .menu-divider{display:none;}
+  .rest-gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .rg1,.rg2,.rg3,.rg4,.rg5{grid-column:span 1;grid-row:span 1;height:200px;}
+  .pr-grid{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;align-items:center;}
+}
+@media(max-width:600px){.nav-links .hm{display:none;}}
+.nav-res{white-space:nowrap;}
+@media(max-width:480px){
+  .nav-wrap{padding:0 16px;}
+  .nav-logo{font-size:13px;letter-spacing:1px;}
+  .nav-res{font-size:10px;letter-spacing:1px;padding:8px 12px;}
+}
+
+.lang-sw-nav{display:flex;align-items:center;gap:2px;margin-left:20px;}
+.lang-sw-nav a{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:4px 7px;border-radius:2px;transition:all .2s;}
+#navbar.light-mode .lang-sw-nav a{color:rgba(42,31,29,0.35);}
+#navbar.dark-mode .lang-sw-nav a{color:rgba(245,240,232,0.35);}
+#navbar.light-mode .lang-sw-nav a:hover,#navbar.light-mode .lang-sw-nav a.active{color:var(--rose);}
+#navbar.dark-mode .lang-sw-nav a:hover,#navbar.dark-mode .lang-sw-nav a.active{color:var(--rose-light);}
+.lang-sw-nav .sep{color:rgba(200,115,106,0.25);font-size:9px;}
+</style>
+</head>
+<body>
+
+<header id="navbar" class="dark-mode">
+  <div class="nav-wrap">
+    <a class="nav-logo" href="/">D&L Project56</a>
+    <nav class="nav-links">
+      <a href="/" class="hm">← All Demos</a>
+      <a href="#menu" class="hm">Menu</a>
+      <a href="#pricing" class="hm">Pricing</a>
+      <a href="mailto:web@dlproject56.com?subject=Restaurant%20Website" class="nav-res">Get Your Website</a>
+    <div class="lang-sw-nav">
+        <a href="/restaurant/" class="active">EN</a>
+        <span class="sep">|</span>
+        <a href="/de/restaurant/">DE</a>
+        <span class="sep">|</span>
+        <a href="/fr/restaurant/">FR</a>
+        <span class="sep">|</span>
+        <a href="/mt/restaurant/">MT</a>
+      </div>
+  </nav>
+  </div>
+</header>
+
+<section class="hero" data-nav="dark">
+  <img class="hero-img" src="https://dlproject56.com/wp-content/uploads/2026/02/swepcc0rm0u.jpg" alt="Restaurant website demo hero image with refined dining interior" fetchpriority="high">
+  <div class="hero-ov"></div>
+  <div class="hero-inner">
+    <a href="/" class="back-link"><svg viewBox="0 0 24 24"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg> All Demos</a>
+    <div class="hero-divider"><div class="hero-div-line"></div><span class="hero-div-gem">✦</span><span class="hero-tag">Restaurant · Demo</span><span class="hero-div-gem">✦</span><div class="hero-div-line"></div></div>
+    <h1>Where Every<br>Meal Becomes<br>a <em>Memory.</em></h1>
+    <p class="hero-quote">"Great food. Beautiful presentation. An experience."</p>
+    <div class="hero-btns">
+      <a class="btn-gold-solid" href="mailto:web@dlproject56.com?subject=Restaurant%20Website%20Order">Start Your Project</a>
+      <a class="btn-gold-ol" href="#menu">Explore the Demo</a>
+    </div>
+    <p class="hero-proof">EU registered · Fixed pricing from €850 · 5-day delivery · <a href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20restaurant%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="mailto:web@dlproject56.com?subject=Restaurant%20Website%20Inquiry">Contact Us</a></p>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="s-line"></div></div>
+</section>
+
+<section class="sec-cream" data-nav="light" id="menu">
+  <div class="inner">
+    <span class="s-tag reveal">The Menu</span>
+    <h2 class="s-title lt reveal">Crafted with<br><em>intention.</em></h2>
+    <div class="menu-cols reveal">
+      <div class="menu-col">
+        <h3>Starters</h3>
+        <div class="menu-item"><div class="mi-left"><h4>Burrata</h4><p>Heirloom tomato, basil oil, sea salt</p></div><span class="mi-price">€14</span></div>
+        <div class="menu-item"><div class="mi-left"><h4>Tuna Tartare</h4><p>Avocado, sesame, citrus dressing</p></div><span class="mi-price">€18</span></div>
+        <div class="menu-item"><div class="mi-left"><h4>Soup of the Day</h4><p>Market vegetables, house bread</p></div><span class="mi-price">€9</span></div>
+        <div class="menu-item"><div class="mi-left"><h4>Charcuterie Board</h4><p>Cured meats, seasonal pickles, mustard</p></div><span class="mi-price">€22</span></div>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-col">
+        <h3>Mains</h3>
+        <div class="menu-item"><div class="mi-left"><h4>Sea Bass</h4><p>Lemon beurre blanc, capers, fennel</p></div><span class="mi-price">€32</span></div>
+        <div class="menu-item"><div class="mi-left"><h4>Beef Tenderloin</h4><p>Truffle jus, roasted potato, asparagus</p></div><span class="mi-price">€44</span></div>
+        <div class="menu-item"><div class="mi-left"><h4>Linguine</h4><p>Lobster, cherry tomato, white wine</p></div><span class="mi-price">€28</span></div>
+        <div class="menu-item"><div class="mi-left"><h4>Risotto</h4><p>Wild mushroom, aged parmesan, truffle</p></div><span class="mi-price">€24</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-dk3" data-nav="dark" id="gallery">
+  <div class="inner">
+    <span class="s-tag reveal">Gallery</span>
+    <h2 class="s-title dk reveal">The ambience<br>speaks <em>first.</em></h2>
+    <div class="rest-gallery reveal">
+      <div class="rg rg1"><img src="https://dlproject56.com/wp-content/uploads/2026/02/3raxudp3pvs.jpg" alt="Restaurant dining room gallery image" loading="lazy"></div>
+      <div class="rg rg2"><img src="https://dlproject56.com/wp-content/uploads/2026/02/zgrexhl8er0.jpg" alt="Restaurant table setting gallery image" loading="lazy"></div>
+      <div class="rg rg3"><img src="https://dlproject56.com/wp-content/uploads/2026/02/o49urfalsii.jpg" alt="Restaurant plated dish gallery image" loading="lazy"></div>
+      <div class="rg rg4"><img src="https://dlproject56.com/wp-content/uploads/2026/02/swepcc0rm0u.jpg" alt="Restaurant interior gallery image" loading="lazy"></div>
+      <div class="rg rg5"><img src="https://dlproject56.com/wp-content/uploads/2026/02/3raxudp3pvs.jpg" alt="Restaurant ambience gallery image" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-dark" data-nav="dark" id="pricing">
+  <div class="inner">
+    <span class="s-tag reveal">Pricing</span>
+    <h2 class="s-title dk reveal">One investment.<br><em>Lasting</em> impression.</h2>
+    <div class="pr-grid">
+      <div class="pcard reveal"><span class="pc-lbl">Starter</span><h3>Essential</h3><div class="pc-amt"><sup>€</sup>850</div><ul class="pc-ul"><li>1-page website</li><li>Menu + Gallery + Contact</li><li>Mobile-first design</li><li>5-day delivery</li></ul><a class="btn-r ol" href="mailto:web@dlproject56.com?subject=Essential%20-%20Restaurant">Start Your Project</a></div>
+      <div class="pcard feat reveal"><span class="pc-lbl">Most Popular</span><h3>Professional</h3><div class="pc-amt"><sup>€</sup>1050</div><ul class="pc-ul"><li>Up to 5 pages</li><li>Menu + Pricing + Gallery</li><li>Basic SEO setup</li><li>Reservation link</li><li>5-day delivery</li></ul><a class="btn-r sl" href="mailto:web@dlproject56.com?subject=Professional%20-%20Restaurant">Start Your Project</a></div>
+      <div class="pcard reveal"><span class="pc-lbl">Premium</span><h3>Complete</h3><div class="pc-amt"><sup>€</sup>1250</div><ul class="pc-ul"><li>Up to 8 pages</li><li>Online booking integration</li><li>1 round of revisions</li><li>Priority delivery</li></ul><a class="btn-r ol" href="mailto:web@dlproject56.com?subject=Complete%20-%20Restaurant">Start Your Project</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" data-nav="dark">
+  <div class="inner">
+    <h2 class="reveal">Ready to fill your<br>tables every <em>night</em>?</h2>
+    <p class="reveal">Fixed pricing from €850, clear scope and 5-day delivery. Send your restaurant name, logo and photos and we handle the build for you.</p>
+    <a class="btn-gold-solid reveal" href="mailto:web@dlproject56.com?subject=Restaurant%20Website%20Order">Get Your Website</a>
+    <a class="cta-email reveal" href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20restaurant%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer">WhatsApp: +356 77 922 436</a>
+    <a class="cta-email reveal" href="mailto:web@dlproject56.com">web@dlproject56.com</a>
+  </div>
+</section>
+
+<footer>
+  <p>Web Design by <a href="/">D&amp;L Project56</a> &nbsp;·&nbsp; Malta &amp; EU &nbsp;·&nbsp; © 2025</p>
+  <p style="margin-top:10px;"><a href="/bakery/">Bakery Demo</a> &nbsp;·&nbsp; <a href="/massage/">Massage Demo</a></p>
+</footer>
+
+<script>
+const nb=document.getElementById('navbar');
+const secs=document.querySelectorAll('[data-nav]');
+function upNav(){const ty=window.scrollY+nb.offsetHeight+10;let m='dark';secs.forEach(s=>{const t=s.offsetTop,b=t+s.offsetHeight;if(ty>=t&&ty<b)m=s.dataset.nav;});nb.className=m+'-mode';}
+window.addEventListener('scroll',upNav,{passive:true});window.addEventListener('resize',upNav,{passive:true});upNav();
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
