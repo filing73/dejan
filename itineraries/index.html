@@ -4,32 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1d5e82">
-
+  
   <!-- SEO Meta Tags -->
-  <title>Malta Travel Planning & Local Assistance | D&L Project56</title>
-  <meta name="description" content="Plan your Malta stay with practical help — accommodation, transfers, itineraries, and direct travel assistance. Clear, simple, and reliable.">
-  <link rel="canonical" href="https://dlproject56.com/">
-  <link rel="alternate" hreflang="en" href="https://dlproject56.com/">
-  <link rel="alternate" hreflang="fr" href="https://dlproject56.com/fr/">
-  <link rel="alternate" hreflang="de" href="https://dlproject56.com/de/">
-  <link rel="alternate" hreflang="it" href="https://dlproject56.com/it/">
-  <link rel="alternate" hreflang="x-default" href="https://dlproject56.com/">
-
+  <title>Malta Itineraries & Trip Planning | D&L Project56</title>
+  <meta name="description" content="Plan your Malta trip without wasting time. Practical itinerary support that helps you see more and enjoy better without overplanning.">
+  <link rel="canonical" href="https://dlproject56.com/itineraries/">
+  <link rel="alternate" hreflang="en" href="https://dlproject56.com/itineraries/">
+  <link rel="alternate" hreflang="fr" href="https://dlproject56.com/fr/itineraries/">
+  <link rel="alternate" hreflang="de" href="https://dlproject56.com/de/itineraries/">
+  <link rel="alternate" hreflang="it" href="https://dlproject56.com/it/itineraries/">
+  <link rel="alternate" hreflang="x-default" href="https://dlproject56.com/itineraries/">
+  
   <!-- Open Graph Tags -->
-  <meta property="og:title" content="Malta Travel Planning & Local Assistance | D&L Project56">
-  <meta property="og:description" content="Plan your Malta stay with practical help — accommodation, transfers, itineraries, and direct travel assistance. Clear, simple, and reliable.">
+  <meta property="og:title" content="Malta Itineraries & Trip Planning | D&L Project56">
+  <meta property="og:description" content="Plan your Malta trip without wasting time. Practical itinerary support that helps you see more and enjoy better without overplanning.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dlproject56.com/">
+  <meta property="og:url" content="https://dlproject56.com/itineraries/">
   <meta property="og:image" content="https://dlproject56.com/images/malta-blue-lagoon-boats.webp">
-
+  
   <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Malta Travel Planning & Local Assistance | D&L Project56">
-  <meta name="twitter:description" content="Plan your Malta stay with practical help — accommodation, transfers, itineraries, and direct travel assistance.">
+  <meta name="twitter:title" content="Malta Itineraries & Trip Planning | D&L Project56">
+  <meta name="twitter:description" content="Plan your Malta trip without wasting time. Practical itinerary support that helps you see more and enjoy better without overplanning.">
   <meta name="twitter:image" content="https://dlproject56.com/images/malta-blue-lagoon-boats.webp">
-
+  
+  <!--
+  Final page URL: https://dlproject56.com/itineraries/
+  Title tag: Malta Itineraries & Trip Planning | D&L Project56
+  Meta description: Plan your Malta trip without wasting time. Practical itinerary support that helps you see more and enjoy better without overplanning.
+  Main keyword: Malta itineraries
+  Secondary keyword: Malta trip planning
+  -->
+  
   <link rel="stylesheet" href="/assets/css/global.css">
-
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -108,13 +116,6 @@
     .float-btn.whatsapp {
       background: linear-gradient(135deg, #25d366, #1fa855);
       color: #ffffff;
-    }
-
-    .float-btn.home {
-      background: var(--surface-strong);
-      color: var(--blue-deep);
-      font-size: 20px;
-      border: 1px solid var(--line);
     }
 
     .float-btn:hover {
@@ -203,9 +204,6 @@
       gap: 12px;
       padding: 7px 12px;
       border-radius: 999px;
-      overflow-x: auto;
-      white-space: nowrap;
-      scrollbar-width: none;
 
       background: rgba(255, 255, 255, 0.14);
       backdrop-filter: blur(10px);
@@ -234,10 +232,6 @@
 
     .lang-switcher a.active {
       color: #d4af37;
-    }
-
-    .lang-switcher::-webkit-scrollbar {
-      display: none;
     }
 
     .lang-sep {
@@ -314,6 +308,23 @@
 
     .hero-inner {
       max-width: 620px;
+    }
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+      padding: clamp(40px, 6vw, 70px);
+      color: #ffffff;
     }
 
     .hero-label {
@@ -439,43 +450,30 @@
       color: var(--muted);
     }
 
-    /* Services Grid */
-    .services-grid {
+    /* What This Helps Section */
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 28px;
       margin-top: 48px;
     }
 
-    .service-card {
+    .feature-card {
       padding: 32px;
       background: var(--surface-strong);
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
       transition: all 240ms ease;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
     }
 
-    .service-card:hover {
+    .feature-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-md);
       border-color: var(--line-strong);
     }
 
-    .service-image {
-      width: 100%;
-      height: 240px;
-      background-size: cover;
-      background-position: center;
-      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-      margin: -32px -32px 20px -32px;
-    }
-
-    .service-icon {
+    .feature-icon {
       width: 52px;
       height: 52px;
       border-radius: var(--radius-sm);
@@ -486,34 +484,17 @@
       color: var(--blue-deep);
     }
 
-    .service-card h3 {
+    .feature-card h3 {
       font-size: 1.22rem;
       font-weight: 600;
       color: var(--ink);
       margin-bottom: 10px;
     }
 
-    .service-card p {
+    .feature-card p {
       font-size: 1rem;
       line-height: 1.65;
       color: var(--muted);
-      flex-grow: 1;
-      margin-bottom: 16px;
-    }
-
-    .service-link {
-      color: var(--blue-deep);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap 0.2s ease;
-    }
-
-    .service-link:hover {
-      gap: 10px;
     }
 
     /* How It Works */
@@ -670,64 +651,6 @@
       font-size: 1.02rem;
       line-height: 1.7;
       color: var(--muted);
-    }
-
-    /* Reviews Section */
-    .review-rating-info {
-      text-align: center;
-      font-size: 0.88rem;
-      color: var(--blue-deep);
-      font-weight: 500;
-      margin-bottom: 32px;
-      margin-top: 12px;
-      opacity: 0.75;
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-      margin-top: 32px;
-    }
-
-    .review-card {
-      background: var(--surface-strong);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      box-shadow: var(--shadow-sm);
-      transition: all 240ms ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .review-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--line-strong);
-    }
-
-    .review-stars {
-      font-size: 1.2rem;
-      color: #ffc107;
-      margin-bottom: 16px;
-      letter-spacing: 2px;
-    }
-
-    .review-quote {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--ink);
-      flex-grow: 1;
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-
-    .review-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--blue-deep);
-      margin: 0;
     }
 
     /* CTA Block */
@@ -1010,25 +933,43 @@
       color: rgba(255, 255, 255, 0.55);
     }
 
-    /* ===== MOBILE FIXES ===== */
+    .internal-link {
+      color: var(--blue-deep);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid var(--blue-deep);
+    }
 
-    /* Header mobile fix - hide CTA, reflow layout */
-    @media (max-width: 768px) {
+    /* ===== PAGE TOP OFFSET ===== */
+    body.has-fixed-header .hero-content {
+      padding-top: 160px;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 900px) {
       .header {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        gap: 10px;
+        width: calc(100% - 24px);
+        padding: 12px 14px;
+        gap: 12px;
       }
 
       .header-center {
         justify-content: flex-end;
-        padding: 0;
-        min-width: 0;
+      }
+
+      .lang-switcher {
+        padding: 7px 10px;
+        gap: 8px;
+      }
+
+      .lang-switcher a {
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
       }
 
       .header-cta {
-        display: none;
+        padding: 10px 16px;
+        font-size: 0.86rem;
       }
 
       .hero {
@@ -1040,184 +981,97 @@
         padding: 138px 0 70px;
       }
 
+      .floating-nav {
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .float-btn {
+        width: 52px;
+        height: 52px;
+      }
+
       .why-grid {
         grid-template-columns: 1fr;
       }
 
-      .reviews-grid {
+      .steps-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
       }
 
       .image-break {
-        height: 380px;
+        height: 360px;
+        margin: 60px auto;
       }
 
       .image-break-caption {
-        font-size: 1rem;
         bottom: 24px;
         left: 24px;
-      }
-
-      .footer-row-1 {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        text-align: center;
-      }
-
-      .footer-col-left,
-      .footer-col-center,
-      .footer-col-right {
-        text-align: center;
-      }
-
-      .footer-nav {
-        align-items: center;
-      }
-
-      .footer-social {
-        justify-content: center;
-      }
-
-      .footer-legal {
-        gap: 14px;
-      }
-
-      .footer-payments {
-        gap: 10px;
-      }
-
-      .footer-email {
-        word-break: break-word;
-      }
-
-      .floating-nav {
-        bottom: 16px;
-        right: 16px;
-      }
-
-      .float-btn {
-        width: 56px;
-        height: 56px;
+        font-size: 1rem;
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 680px) {
       .header {
-        width: calc(100% - 16px);
-        padding: 10px 12px;
-        gap: 10px;
-        top: 12px;
+        top: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-radius: 24px;
       }
 
-      .logo {
-        font-size: 0.95rem;
-      }
-
-      .lang-switcher {
-        padding: 6px 8px;
-      }
-
-      .lang-switcher a {
-        font-size: 0.65rem;
+      .header-center {
+        order: 3;
+        width: 100%;
+        justify-content: center;
       }
 
       .header-cta {
-        padding: 8px 14px;
-        font-size: 0.78rem;
+        margin-left: auto;
+      }
+
+      .hero {
+        min-height: 620px;
       }
 
       .hero-content {
-        padding: 120px 16px 60px;
+        padding: 150px 0 60px;
       }
 
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .btn {
-        padding: 14px 24px;
-        font-size: 0.9rem;
+      .hero-inner {
+        max-width: 100%;
       }
 
       .hero-cta {
         flex-direction: column;
-        gap: 10px;
       }
 
       .btn {
         width: 100%;
       }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .service-card {
-        padding: 24px;
-      }
-
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .step-card {
-        padding: 32px 20px 24px;
-      }
-
-      .step-card::before {
-        left: 20px;
-      }
-
-      .reviews-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .image-break {
-        height: 280px;
-        margin: 60px auto;
+    }
       }
 
       .image-break-caption {
-        font-size: 0.9rem;
-        bottom: 16px;
-        left: 16px;
-      }
-
-      .scenario {
-        padding: 32px 20px;
-      }
-
-      .cta-block {
-        padding: 40px 20px;
-        margin: 60px 0;
-      }
-
-      .cta-block h2 {
-        font-size: 1.8rem;
-      }
-
-      .cta-block p {
+        bottom: 24px;
+        left: 24px;
         font-size: 1rem;
       }
+    }
 
-      .footer-nav,
-      .footer-legal {
-        gap: 12px;
-        font-size: 0.85rem;
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
       }
     }
   </style>
 </head>
-
 <body>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar progress-light"></div>
 
   <!-- Floating WhatsApp Button -->
   <div class="floating-nav">
@@ -1232,13 +1086,13 @@
 
     <div class="header-center">
             <div class="lang-switcher" aria-label="Language switcher">
-        <a href="/" class="active">EN</a>
+        <a href="/itineraries/" class="active">EN</a>
         <span class="lang-sep">|</span>
-        <a href="/de/">DE</a>
+        <a href="/de/itineraries/">DE</a>
         <span class="lang-sep">|</span>
-        <a href="/it/">IT</a>
+        <a href="/it/itineraries/">IT</a>
         <span class="lang-sep">|</span>
-        <a href="/fr/">FR</a>
+        <a href="/fr/itineraries/">FR</a>
       </div>
     </div>
 
@@ -1246,73 +1100,83 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero" role="img" aria-label="Crystal clear lagoon in Malta - turquoise waters and Mediterranean beauty" style="background-image: url('../images/crystal-clear-lagoon-malta.webp');">
+  <section class="hero" role="img" aria-label="Blue Lagoon in Malta with traditional boats and crystal clear water" style="background-image: url('../images/malta-blue-lagoon-boats.webp');">
     <div class="hero-content">
       <div class="hero-inner">
         <div class="hero-label">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          Malta Travel Planning
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/></svg>
+          Malta Itineraries
         </div>
-        <h1>Plan your Malta stay — without wasting time or money</h1>
-        <p>We help you choose the right place, avoid mistakes, and plan your stay clearly — so you don't waste time or money.</p>
+        <h1>Plan your Malta trip without wasting time</h1>
+        <p>Practical itinerary support that helps you see more, enjoy better, and avoid the planning overwhelm.</p>
         <div class="hero-cta">
-          <a href="https://wa.me/35677922436" class="btn btn-primary">Start on WhatsApp</a>
-          <a href="#services" class="btn btn-secondary">Explore services</a>
+          <a href="https://wa.me/35677922436" class="btn btn-primary">Send your trip details</a>
+          <a href="/" class="btn btn-secondary">Back to homepage</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What You Get -->
-  <section class="section" id="services">
+  <!-- What This Helps With -->
+  <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Our Services</span>
-        <h2 class="section-title">What you actually get</h2>
-        <p class="section-text">Real help for every part of your Malta trip — from choosing where to stay to knowing what to do while you're here.</p>
+        <span class="section-label">What This Helps With</span>
+        <h2 class="section-title">Better planning without the random guesswork</h2>
+        <p class="section-text">Most people try to plan Malta from random blog posts and end up wasting time. We help you organize your days based on what actually works for your trip length and interests.</p>
       </div>
 
-      <div class="services-grid">
-        <a href="/accommodation" class="service-card">
-          <div class="service-image" style="background-image: url('../images/modern-bedroom-luxury-apartment.webp');"></div>
-          <div class="service-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
           </div>
-          <h3>Accommodation</h3>
-          <p>Find the right place, not just listings. We help you choose based on your trip style, budget, and location preferences.</p>
-          <span class="service-link">Explore service →</span>
-        </a>
+          <h3>Know what's worth visiting</h3>
+          <p>Not every spot in Malta deserves the same time. We help you focus on what actually matches your trip style and skip what doesn't fit.</p>
+        </div>
 
-        <a href="/transfers" class="service-card">
-          <div class="service-image" style="background-image: url('../images/coastal-road-seaside-europe.webp');"></div>
-          <div class="service-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle><path d="M12 1v6m0 6v6"></path><path d="M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24"></path><path d="M1 12h6m6 0h6"></path><path d="M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path></svg>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
           </div>
-          <h3>Transfers</h3>
-          <p>Organize your transport from the airport to your stay, and move around Malta without confusion or stress.</p>
-          <span class="service-link">Explore service →</span>
-        </a>
+          <h3>Organize days better</h3>
+          <p>A good Malta itinerary balances sightseeing, relaxation, food, and practical timing. We help structure your days so they flow well.</p>
+        </div>
 
-        <a href="/itineraries" class="service-card">
-          <div class="service-image" style="background-image: url('../images/malta-blue-lagoon-boats.webp');"></div>
-          <div class="service-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
           </div>
-          <h3>Itineraries</h3>
-          <p>Plan your days realistically. Get practical suggestions for what to see and do based on how you actually travel.</p>
-          <span class="service-link">Explore service →</span>
-        </a>
+          <h3>Balance sightseeing and relaxing</h3>
+          <p>Malta has beaches, history, food, and scenery. We help you mix them without overpacking your schedule or feeling rushed.</p>
+        </div>
 
-        <a href="/support" class="service-card">
-          <div class="service-image" style="background-image: url('../images/restaurant-terrace-sea-view-malta.webp');"></div>
-          <div class="service-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
           </div>
-          <h3>Travel Assistance</h3>
-          <p>Direct help before and during your stay. Questions about areas, changes to plans, or last-minute decisions — we're here.</p>
-          <span class="service-link">Explore service →</span>
-        </a>
+          <h3>Avoid missing key spots</h3>
+          <p>Short stays in Malta mean limited time. We make sure you don't overlook places that fit your interests and are worth the visit.</p>
+        </div>
       </div>
+
+      <p style="margin-top: 32px; font-size: 1.02rem; line-height: 1.7; color: var(--muted); max-width: 720px; margin-left: auto; margin-right: auto; text-align: center;">We can also help you with <a href="/accommodation" class="internal-link">accommodation in Malta</a> and coordinate <a href="/transfers" class="internal-link">airport transfers</a> to complete your trip planning.</p>
     </div>
   </section>
 
@@ -1320,111 +1184,73 @@
   <section class="section" style="background: #fafbfc;">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Simple Process</span>
-        <h2 class="section-title">How it works</h2>
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">Four simple steps to a practical Malta plan</h2>
       </div>
 
       <div class="steps-grid">
         <div class="step-card">
-          <h3>Tell us your plan</h3>
-          <p>Send us a message about when you're coming, what you need, and what kind of trip you're planning.</p>
+          <h3>Tell us your trip length</h3>
+          <p>Share how many days you'll be in Malta and what time of year you're visiting. This shapes the plan's pacing and focus.</p>
         </div>
 
         <div class="step-card">
-          <h3>Get clear guidance</h3>
-          <p>We respond with practical advice based on your situation. Real answers, not generic templates.</p>
+          <h3>Tell us what you like</h3>
+          <p>History, beaches, food, hiking, quiet spots, local culture — let us know what interests you and what doesn't.</p>
         </div>
 
         <div class="step-card">
-          <h3>Move forward</h3>
-          <p>You have what you need to book, plan, and move forward. If questions come up later, you know who to ask.</p>
+          <h3>Get a suggested plan</h3>
+          <p>We send you a structured itinerary with day-by-day suggestions, timing notes, and practical tips based on your preferences.</p>
+        </div>
+
+        <div class="step-card">
+          <h3>Adjust it simply</h3>
+          <p>If something doesn't fit or you want to change the order, we refine the plan quickly through WhatsApp until it works for you.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Image Break - Guide -->
-  <div class="image-break" style="background-image: url('../images/mdina-old-city-malta.webp');" role="img" aria-label="Mdina - historic old city of Malta with stone architecture">
-    <div class="image-break-caption">Malta's stories are written in stone and tradition</div>
+  <!-- Image Break -->
+  <div class="image-break" style="background-image: url('../images/mdina-old-city-malta.webp');" role="img" aria-label="Historic streets of Mdina old city in Malta">
+    <div class="image-break-caption">See more of Malta, without rushing through it</div>
   </div>
 
-  <!-- Why This Works -->
+  <!-- Why It Matters -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Why Choose Us</span>
-        <h2 class="section-title">More confidence, less stress</h2>
-        <p class="section-text">Real people, real answers, one message away.</p>
+        <span class="section-label">Why It Matters</span>
+        <h2 class="section-title">Better use of time, less stress</h2>
+        <p class="section-text">Malta is small but packed with options. A good plan helps you enjoy it without feeling overwhelmed or missing what matters to you.</p>
       </div>
 
       <div class="why-grid">
         <div class="why-item">
-          <h3>No guesswork</h3>
-          <p>Instead of hours scrolling forums or reading conflicting reviews, get clear answers based on local knowledge and your specific situation.</p>
+          <h3>No overplanning</h3>
+          <p>You don't need to visit everything. A focused plan that matches your pace and interests beats a jam-packed schedule every time.</p>
         </div>
 
         <div class="why-item">
-          <h3>No wasted time</h3>
-          <p>Quick responses. Practical guidance. You spend less time planning and more time enjoying your trip.</p>
+          <h3>Good for short stays</h3>
+          <p>Three or four days in Malta go fast. Smart itinerary planning ensures you hit the right spots without wasting half your time deciding what's next.</p>
         </div>
 
         <div class="why-item">
-          <h3>Local understanding</h3>
-          <p>We know Malta. We understand which areas fit different travelers, what works practically, and how to make things smooth.</p>
+          <h3>Mix sightseeing, sea, and food</h3>
+          <p>A balanced Malta trip blends history, beaches, local restaurants, and downtime. We help you weave these together without exhausting yourself.</p>
         </div>
 
         <div class="why-item">
-          <h3>One contact point</h3>
-          <p>Accommodation questions, transfer confusion, itinerary help, or last-minute changes — same person to reach. Simple.</p>
+          <h3>Practical timing and flow</h3>
+          <p>Some spots are better in the morning, others in the afternoon. Good itinerary planning accounts for timing, distances, and energy levels.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Guest Feedback -->
-  <section class="section" style="background: #f8fafc;">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Guest Feedback</span>
-        <h2 class="section-title">Trusted by travelers</h2>
-        <p class="section-text">Real feedback from guests who used our help, planning, and travel support.</p>
-      </div>
-
-      <p class="review-rating-info">5.0 rating based on guest feedback</p>
-
-      <div class="reviews-grid">
-        <!-- Review 1 -->
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">"Authentic, caring, excellent communication! Thank you for listening to our needs and tailoring the trip to them."</p>
-          <p class="review-name">Nancy C</p>
-        </div>
-
-        <!-- Review 2 -->
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">"A great weekend getaway! Everything was really well prepared — a proper schedule, accurate translations, and even a welcome drink. Everything went smoothly, with great attention to detail."</p>
-          <p class="review-name">Tilen T</p>
-        </div>
-
-        <!-- Review 3 -->
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">"Excellent service and unforgettable trip! The agency organized everything perfectly, from flights and hotels to tours and local recommendations. The staff was helpful, reliable, and always available when needed."</p>
-          <p class="review-name">Dindoku</p>
-        </div>
-
-        <!-- Review 4 -->
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote">"My trip organized by D&L Project56 was flawless from start to finish. The team was attentive, organized, and always one step ahead."</p>
-          <p class="review-name">Jason B</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Real Example -->
+  <!-- Scenario Example -->
   <section class="section" style="background: #fafbfc;">
     <div class="container">
       <div class="section-header">
@@ -1434,33 +1260,27 @@
 
       <div class="scenario">
         <div class="scenario-content">
-          <h3>Couple, first time in Malta</h3>
-
+          <h3>Couple visiting Malta for 3 days</h3>
+          
           <div class="scenario-details">
-            <p>"We're coming for 4 days. Want a sea view, prefer a walkable area with restaurants, but we're confused about where to stay and how to get around from the airport."</p>
+            <p>"We have three full days in Malta. We like history and scenic spots but also want to relax by the sea. Not huge on museums, prefer outdoor exploration and good food."</p>
           </div>
 
           <div class="scenario-result">
-            <p><strong>What happens:</strong> We discuss whether Sliema or St. Julian's fits better based on their preferences. Suggest 2-3 apartment options with sea views, both walkable to cafes. Explain that airport transfer can be arranged or they can take a taxi. They pick one, we help coordinate the booking and transfer timing. They arrive confident, not confused.</p>
+            <p><strong>Our approach:</strong> We suggested a balanced 3-day plan. Day one focused on Valletta and the harbor area with lunch by the water. Day two covered Mdina, countryside views, and a sunset stop at Dingli Cliffs. Day three mixed a morning swim at Golden Bay with an afternoon exploring the Three Cities. We included restaurant suggestions near each area and realistic timing so they weren't rushing. They adjusted day two to add a winery visit, which fit easily into the flow. The plan gave them structure without rigidity, and they saw what mattered to them without stress.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Image Break - Contact -->
-  <div class="image-break" style="background-image: url('../images/luxury-rooftop-pool-sea-view.webp');" role="img" aria-label="Luxury rooftop pool with sea view in Malta - premium experience">
-    <div class="image-break-caption">Ready to experience Malta the right way?</div>
-  </div>
-
   <!-- CTA Block -->
   <div class="container">
     <div class="cta-block">
-      <h2>Ready to plan your Malta stay?</h2>
-      <p>Send us a message with what you need. Whether it's accommodation help, transfer planning, itinerary questions, or direct support — we'll take it from there.</p>
+      <h2>Want a simple Malta plan that actually works?</h2>
+      <p>Send us your trip dates and what you're interested in. We'll put together a practical itinerary you can follow or adjust.</p>
       <p class="cta-trust">Quick response. No commitment required.</p>
-      <a href="https://wa.me/35677922436" class="btn btn-primary">Message us on WhatsApp</a>
-      <p style="margin-top: 16px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.72); text-align: center;">Secure payments available — cards (including Amex), PayPal, Revolut, Wise & SEPA</p>
+      <a href="https://wa.me/35677922436" class="btn btn-primary">Send your trip details</a>
     </div>
   </div>
 
@@ -1479,7 +1299,7 @@
 
       <!-- CENTER: Company Info -->
       <div class="footer-col-center">
-        <p class="footer-company">D&L Project56 EOOD</p>
+        <p class="footer-company">D&amp;L Project56 EOOD</p>
         <p class="footer-vat">VAT: BG208418815</p>
       </div>
 
@@ -1487,16 +1307,16 @@
       <div class="footer-col-right">
         <p class="footer-follow">Follow us</p>
         <div class="footer-social">
-          <a href="https://instagram.com/dlproject56" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://instagram.com/dlproject56" target="_blank" aria-label="Instagram">
             <img src="/images/instagram.png" alt="Instagram">
           </a>
-          <a href="https://facebook.com/dlproject56" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a href="https://facebook.com/dlproject56" target="_blank" aria-label="Facebook">
             <img src="/images/facebook.png" alt="Facebook">
           </a>
-          <a href="https://tiktok.com/@dlproject56" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <a href="https://tiktok.com/@dlproject56" target="_blank" aria-label="TikTok">
             <img src="/images/tiktok.png" alt="TikTok">
           </a>
-          <a href="https://linkedin.com/in/dejan-maleckar-5517214b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/dejan-maleckar-5517214b/" target="_blank" aria-label="LinkedIn">
             <img src="/images/linkedin.png" alt="LinkedIn">
           </a>
         </div>
@@ -1510,7 +1330,7 @@
       <!-- Legal links -->
       <nav class="footer-legal">
         <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms & Conditions</a>
+        <a href="/terms">Terms &amp; Conditions</a>
         <a href="/faq">FAQ</a>
         <a href="/refund">Refund Policy</a>
       </nav>
@@ -1540,13 +1360,13 @@
 
     <!-- ROW 3: Bottom powered line (centered) -->
     <div class="footer-row-3">
-      <p><a href="https://web.dlproject56.com">Powered by web.dlproject56.com</a> • <span class="footer-copyright">&copy; 2026 D&L Project56</span></p>
+      <p><a href="https://web.dlproject56.com">Powered by web.dlproject56.com</a> &bull; <span class="footer-copyright">&copy; 2026 D&amp;L Project56</span></p>
 
       <!-- Google Review QR -->
       <div class="footer-review">
         <p class="review-title">Leave a quick review</p>
 
-        <a href="https://g.page/r/CafnmhBsLnNnEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google review QR">
+        <a href="https://g.page/r/CafnmhBsLnNnEAE/review" target="_blank" aria-label="Google review QR">
           <img src="/images/google-review-qr.png" alt="Google review QR">
         </a>
 
@@ -1562,13 +1382,13 @@
 
     window.addEventListener('scroll', () => {
       const currentScroll = window.pageYOffset;
-
+      
       if (currentScroll > 20) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-
+      
       lastScroll = currentScroll;
     }, { passive: true });
   </script>
@@ -1577,3 +1397,4 @@
 
 </body>
 </html>
+

@@ -1,0 +1,46 @@
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-switcher {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.lang-switcher a {
+  text-decoration: none;
+  color: rgba(15, 38, 51, 0.7);
+  transition: 0.2s ease;
+  font-weight: 600;
+}
+
+.lang-switcher a:hover {
+  color: var(--ink);
+}
+
+.lang-switcher a.active {
+  color: #d4af37;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 0%;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: width 0.15s ease, background 0.3s ease;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Light section */
+.progress-light {
+  background: rgba(16, 35, 50, 0.75);
+}
+
+/* Dark / image section */
+.progress-dark {
+  background: rgba(200, 205, 210, 0.25);
+}

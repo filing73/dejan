@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1d5e82">
+
+  <!-- SEO Meta Tags -->
+  <title>Privacy Policy | D&L Project56 Malta Travel</title>
+  <meta name="description" content="Privacy Policy for D&L Project56. Learn how we protect your personal data and use information responsibly.">
+  <link rel="canonical" href="https://dlproject56.com/privacy/">
+  <link rel="alternate" hreflang="en" href="https://dlproject56.com/privacy/">
+  <link rel="alternate" hreflang="fr" href="https://dlproject56.com/fr/privacy/">
+  <link rel="alternate" hreflang="de" href="https://dlproject56.com/de/privacy/">
+  <link rel="alternate" hreflang="it" href="https://dlproject56.com/it/privacy/">
+  <link rel="alternate" hreflang="x-default" href="https://dlproject56.com/privacy/">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Privacy Policy | D&L Project56">
+  <meta property="og:description" content="Privacy Policy for D&L Project56. Learn how we protect your personal data.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dlproject56.com/privacy/">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Privacy Policy | D&L Project56">
+  <meta name="twitter:description" content="Privacy Policy for D&L Project56.">
+
+  <link rel="stylesheet" href="/assets/css/global.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Inter:wght@400;500;600;700&display=swap');
+
+    :root {
+      --bg: #fafbfc;
+      --surface: rgba(255, 255, 255, 0.95);
+      --surface-strong: #ffffff;
+      --ink: #0f2633;
+      --ink-soft: #2d4a5a;
+      --muted: #5a7082;
+      --line: rgba(15, 38, 51, 0.08);
+      --line-strong: rgba(15, 38, 51, 0.14);
+      --blue: #2d7ba1;
+      --blue-deep: #1d5e82;
+      --blue-light: #e8f3f7;
+      --sand: #e8d4a6;
+      --green: #1f9d61;
+      --shadow-sm: 0 2px 8px rgba(15, 38, 51, 0.04);
+      --shadow-md: 0 8px 24px rgba(15, 38, 51, 0.08);
+      --shadow-lg: 0 16px 40px rgba(15, 38, 51, 0.12);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --serif: 'Newsreader', 'Georgia', serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Floating Navigation */
+    .floating-nav {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .float-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: none;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: all 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: var(--shadow-lg);
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    .float-btn.whatsapp {
+      background: linear-gradient(135deg, #25d366, #1fa855);
+      color: #ffffff;
+    }
+
+    .float-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 20px 48px rgba(15, 38, 51, 0.18);
+    }
+
+    .float-btn.whatsapp:hover {
+      background: #1b8d55;
+    }
+
+    /* ===== HEADER: TRUE GLASS - PREMIUM NAVIGATION ===== */
+    .header {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: min(1200px, calc(100% - 28px));
+      padding: 10px 16px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(22px) saturate(160%);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+
+      border: 1px solid rgba(255, 255, 255, 0.28);
+
+      box-shadow:
+        0 10px 28px rgba(15, 38, 51, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32);
+
+      transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(10, 28, 40, 0.38);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow:
+        0 12px 32px rgba(15, 38, 51, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .logo::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e8d4a6, #c9a64a);
+      box-shadow: 0 0 0 4px rgba(232, 212, 166, 0.14);
+    }
+
+    .header-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      min-width: 200px;
+      padding: 0 24px;
+    }
+
+    /* ===== LANGUAGE SWITCHER ===== */
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(255, 255, 255, 0.18);
+
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .lang-switcher a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.78);
+      transition: color 0.2s ease, opacity 0.2s ease;
+      font-weight: 700;
+      font-size: 0.80rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .lang-switcher a:hover {
+      color: #ffffff;
+    }
+
+    .lang-switcher a.active {
+      color: #d4af37;
+    }
+
+    .lang-sep {
+      color: rgba(255, 255, 255, 0.24);
+      font-size: 0.72rem;
+      user-select: none;
+    }
+
+    /* ===== HEADER CTA ===== */
+    .header-cta {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #1d5e82;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(15, 38, 51, 0.12);
+      transition: transform 0.2s ease, background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .header-cta:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* ===== LEGAL PAGE HERO ===== */
+    .legal-hero {
+      position: relative;
+      width: 100%;
+      min-height: 320px;
+      padding: 120px 0 60px;
+      background: linear-gradient(135deg, #f0f6f9 0%, #e8f3f7 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legal-hero-content {
+      width: min(1140px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .legal-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .legal-hero p {
+      font-size: 1.12rem;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    /* ===== LEGAL CONTENT ===== */
+    .legal-content {
+      width: min(900px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 80px 0;
+    }
+
+    .legal-section {
+      margin-bottom: 64px;
+    }
+
+    .legal-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .legal-section p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+    }
+
+    .legal-section ul {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      margin-left: 24px;
+      margin-bottom: 16px;
+    }
+
+    .legal-section li {
+      margin-bottom: 12px;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f2633;
+      color: rgba(255, 255, 255, 0.88);
+      padding: 28px 0 10px;
+      margin-top: 48px;
+      font-size: 0.9rem;
+    }
+
+    /* ROW 1: 3-column layout */
+    .footer-row-1 {
+      width: min(1140px, calc(100% - 24px));
+      margin: 0 auto 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      align-items: flex-start;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-col-left {
+      text-align: left;
+    }
+
+    .footer-col-center {
+      text-align: center;
+    }
+
+    .footer-col-right {
+      text-align: right;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.9rem;
+      transition: color 180ms ease;
+      line-height: 1.3;
+    }
+
+    .footer-nav a:hover {
+      color: #ffffff;
+    }
+
+    .footer-company {
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .footer-vat {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.62);
+      margin: 4px 0 0 0;
+      line-height: 1.3;
+    }
+
+    .footer-follow {
+      font-size: 0.85rem;
+      margin: 0 0 6px 0;
+      line-height: 1.3;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+      align-items: center;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-social img {
+      height: 20px;
+      width: auto;
+      opacity: 0.9;
+      transition: all 0.2s ease;
+    }
+
+    .footer-social img:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    .footer-email-label {
+      font-size: 0.85rem;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .footer-email {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.9rem;
+      transition: color 180ms ease;
+    }
+
+    .footer-email:hover {
+      color: #ffffff;
+    }
+
+    /* ROW 2: Legal links + Payment icons (centered) */
+    .footer-row-2 {
+      width: min(1140px, calc(100% - 24px));
+      margin: 0 auto 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+    }
+
+    .footer-legal {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 0 0 10px 0;
+      padding: 0;
+    }
+
+    .footer-legal a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.85rem;
+      transition: color 180ms ease;
+      line-height: 1.3;
+    }
+
+    .footer-legal a:hover {
+      color: #ffffff;
+    }
+
+    .footer-payments {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-payments a {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-payments img {
+      height: 24px;
+      width: auto;
+      opacity: 1;
+      transition: opacity 180ms ease;
+    }
+
+    .footer-payments a:hover img {
+      opacity: 1;
+    }
+
+    /* ROW 3: Bottom powered line */
+    .footer-row-3 {
+      width: min(1140px, calc(100% - 24px));
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    .footer-row-3 p {
+      margin: 0;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.62);
+      line-height: 1.3;
+    }
+
+    .footer-row-3 a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.62);
+      transition: color 180ms ease;
+    }
+
+    .footer-row-3 a:hover {
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .footer-copyright {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    /* Google Review QR */
+    .footer-review {
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .review-title {
+      font-size: 0.75rem;
+      margin-bottom: 4px;
+      opacity: 0.8;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .footer-review img {
+      width: 80px;
+      display: block;
+      margin: 0 auto;
+      opacity: 0.82;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-review img:hover {
+      opacity: 1;
+    }
+
+    .review-sub {
+      font-size: 0.68rem;
+      margin-top: 4px;
+      opacity: 0.55;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .header {
+        width: min(1200px, calc(100% - 20px));
+        padding: 8px 14px;
+        top: 10px;
+      }
+
+      .floating-nav {
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .float-btn {
+        width: 52px;
+        height: 52px;
+      }
+
+      .legal-hero {
+        padding: 100px 0 50px;
+      }
+
+      .legal-content {
+        padding: 60px 0;
+      }
+
+      .legal-section {
+        margin-bottom: 48px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header {
+        width: calc(100% - 14px);
+        padding: 8px 10px;
+        gap: 10px;
+      }
+
+      .header-center {
+        min-width: 100px;
+        padding: 0 12px;
+      }
+
+      .logo {
+        font-size: 0.9rem;
+        gap: 6px;
+      }
+
+      .header-cta {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+      }
+
+      .legal-hero {
+        padding: 80px 0 40px;
+      }
+
+      .legal-hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+      }
+
+      .legal-hero p {
+        font-size: 1rem;
+      }
+
+      .legal-content {
+        width: calc(100% - 24px);
+        padding: 40px 0;
+      }
+
+      .legal-section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+      }
+
+      .footer-nav,
+      .footer-legal {
+        gap: 12px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating WhatsApp Button -->
+  <div class="floating-nav">
+    <a href="https://wa.me/35677922436" class="float-btn whatsapp" aria-label="Contact on WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="/" class="logo">D&L Project56</a>
+    <div class="header-center">
+      <div class="lang-switcher">
+        <a href="#" class="active">EN</a>
+        <span class="lang-sep">|</span>
+        <a href="#">DE</a>
+        <span class="lang-sep">|</span>
+        <a href="#">IT</a>
+        <span class="lang-sep">|</span>
+        <a href="#">FR</a>
+      </div>
+    </div>
+    <a href="https://wa.me/35677922436" class="header-cta">Contact Us</a>
+  </header>
+
+  <!-- Legal Hero -->
+  <section class="legal-hero">
+    <div class="legal-hero-content">
+      <h1>Privacy Policy</h1>
+      <p>We take your privacy seriously. This policy explains how we collect, use, and protect your personal data.</p>
+    </div>
+  </section>
+
+  <!-- Legal Content -->
+  <section class="legal-content">
+    <div class="legal-section">
+      <h2>Who We Are</h2>
+      <p>D&L Project56 EOOD (VAT: BG208418815) operates the D&L Project56 travel planning and assistance service. We help travelers plan their Malta stays through accommodation advice, transfer coordination, itinerary planning, and WhatsApp-based travel assistance.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>What Data We Collect</h2>
+      <p>When you use our services, we collect:</p>
+      <ul>
+        <li><strong>Contact information:</strong> Name, email address, phone number</li>
+        <li><strong>Travel details:</strong> Dates, preferences, budget, accessibility needs</li>
+        <li><strong>Communication data:</strong> Messages via WhatsApp, email, or contact forms</li>
+        <li><strong>Technical data:</strong> IP address, browser type, pages visited (through analytics)</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>How We Use Your Data</h2>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Provide travel planning assistance and recommendations</li>
+        <li>Respond to your inquiries and questions</li>
+        <li>Coordinate bookings with accommodation and transfer providers</li>
+        <li>Send updates about your planned stay (if requested)</li>
+        <li>Improve our service based on user feedback</li>
+        <li>Comply with legal and regulatory requirements</li>
+      </ul>
+      <p>We do not sell your personal data to third parties.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>WhatsApp & Email Communication</h2>
+      <p>When you contact us via WhatsApp or email, we receive your messages and store them to provide assistance. WhatsApp messages are subject to WhatsApp's own privacy policy. We recommend you review WhatsApp's terms if you have concerns about message encryption or data handling.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Cookies & Analytics</h2>
+      <p>Our website may use cookies and analytics tools (such as Google Analytics) to understand how visitors use our site. These tools help us improve the user experience. Most browsers allow you to control cookies through settings. We do not use cookies for marketing tracking purposes.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Data Sharing</h2>
+      <p>We may share your information with:</p>
+      <ul>
+        <li><strong>Accommodation providers, transfer companies, and tourism services:</strong> Only when necessary to complete your bookings or reservations</li>
+        <li><strong>Payment processors:</strong> If you use card payments (processed through secure third-party providers)</li>
+        <li><strong>Legal authorities:</strong> If required by law or court order</li>
+      </ul>
+      <p>We do not share your data with unrelated third parties for marketing purposes.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Data Retention</h2>
+      <p>We retain your personal data for as long as necessary to provide services and fulfill legal obligations. Typically, we keep communication records for 2 years after your trip concludes. You can request deletion of your data at any time, subject to legal retention requirements.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access your personal data</li>
+        <li>Correct inaccurate information</li>
+        <li>Request deletion of your data</li>
+        <li>Opt-out of communications</li>
+        <li>Request a copy of your data in a portable format</li>
+      </ul>
+      <p>To exercise these rights, contact us at privacy@dlproject56.com or via the WhatsApp number on our website.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>Contact for Privacy Questions</h2>
+      <p>If you have questions about how we handle your data, concerns about privacy, or wish to exercise your rights, please contact us:</p>
+      <p><strong>Email:</strong> privacy@dlproject56.com<br><strong>WhatsApp:</strong> +356 7792 2436</p>
+    </div>
+
+    <div class="legal-section">
+      <p style="font-size: 0.95rem; color: var(--muted); margin-top: 48px;"><em>Last updated: April 2026</em></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- ROW 1: 3-column layout -->
+    <div class="footer-row-1">
+      <!-- LEFT: Main Navigation -->
+      <div class="footer-col-left">
+        <nav class="footer-nav">
+          <a href="/">Home</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+
+      <!-- CENTER: Company Info -->
+      <div class="footer-col-center">
+        <p class="footer-company">D&amp;L Project56 EOOD</p>
+        <p class="footer-vat">VAT: BG208418815</p>
+      </div>
+
+      <!-- RIGHT: Social + Email -->
+      <div class="footer-col-right">
+        <p class="footer-follow">Follow us</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/dlproject56" target="_blank" aria-label="Instagram">
+            <img src="/images/instagram.png" alt="Instagram">
+          </a>
+          <a href="https://facebook.com/dlproject56" target="_blank" aria-label="Facebook">
+            <img src="/images/facebook.png" alt="Facebook">
+          </a>
+          <a href="https://tiktok.com/@dlproject56" target="_blank" aria-label="TikTok">
+            <img src="/images/tiktok.png" alt="TikTok">
+          </a>
+          <a href="https://linkedin.com/in/dejan-maleckar-5517214b/" target="_blank" aria-label="LinkedIn">
+            <img src="/images/linkedin.png" alt="LinkedIn">
+          </a>
+        </div>
+        <p class="footer-email-label">Email</p>
+        <a href="mailto:bookings@dlproject56.com" class="footer-email">bookings@dlproject56.com</a>
+      </div>
+    </div>
+
+    <!-- ROW 2: Legal links + Payment icons (centered) -->
+    <div class="footer-row-2">
+      <!-- Legal links -->
+      <nav class="footer-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms &amp; Conditions</a>
+        <a href="/faq">FAQ</a>
+        <a href="/refund">Refund Policy</a>
+      </nav>
+
+      <!-- Payment icons -->
+      <div class="footer-payments">
+        <a href="#" title="Visa">
+          <img src="/images/Visaelectron-Streamline-Svg-Logos.svg" alt="Visa">
+        </a>
+        <a href="#" title="Mastercard">
+          <img src="/images/Mastercard-Streamline-Svg-Logos.svg" alt="Mastercard">
+        </a>
+        <a href="#" title="American Express">
+          <img src="/images/Amex-Streamline-Svg-Logos.svg" alt="American Express">
+        </a>
+        <a href="#" title="PayPal">
+          <img src="/images/Paypal-Streamline-Svg-Logos.svg" alt="PayPal">
+        </a>
+        <a href="#" title="Revolut">
+          <img src="/images/Revolut-Icon-Logo.wine_.svg" alt="Revolut">
+        </a>
+        <a href="#" title="Stripe">
+          <img src="/images/Stripe-Streamline-Svg-Logos.svg" alt="Stripe">
+        </a>
+      </div>
+    </div>
+
+    <!-- ROW 3: Bottom powered line (centered) -->
+    <div class="footer-row-3">
+      <p><a href="https://web.dlproject56.com">Powered by web.dlproject56.com</a> &bull; <span class="footer-copyright">&copy; 2026 D&amp;L Project56</span></p>
+
+      <!-- Google Review QR -->
+      <div class="footer-review">
+        <p class="review-title">Leave a quick review</p>
+
+        <a href="https://g.page/r/CafnmhBsLnNnEAE/review" target="_blank" aria-label="Google review QR">
+          <img src="/images/google-review-qr.png" alt="Google review QR">
+        </a>
+
+        <p class="review-sub">It helps us grow</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    const header = document.querySelector('.header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    }, { passive: true });
+  </script>
+
+  <script src="/assets/js/global.js"></script>
+
+</body>
+</html>
+
