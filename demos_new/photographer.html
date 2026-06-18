@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photographer Studio – Demo | D&amp;L Project56</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0c0d10;
+      --bg2:      #13141a;
+      --bg3:      #1c1d24;
+      --gold:     #c9a24a;
+      --gold-lt:  #ddb96a;
+      --gold-dim: rgba(201,162,74,.14);
+      --text:     #f0ede8;
+      --muted:    rgba(240,237,232,.58);
+      --border:   rgba(240,237,232,.09);
+      --r:        14px;
+      --sh:       0 24px 72px rgba(0,0,0,.55);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: inline-block; vertical-align: middle; }
+
+    /* ── NAV ─────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 900;
+      background: rgba(12,13,16,.93);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 20px;
+      height: 60px; display: flex; align-items: center;
+      justify-content: space-between; gap: 16px;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 17px; font-weight: 600; color: var(--text);
+      white-space: nowrap;
+    }
+    .nav-brand img { width: 28px; height: 28px; border-radius: 7px; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .demo-badge {
+      background: var(--gold); color: #0c0d10;
+      font-size: 10px; font-weight: 700; letter-spacing: .13em;
+      text-transform: uppercase; padding: 3px 8px; border-radius: 4px;
+    }
+    .lang-switcher { display: flex; gap: 2px; }
+    .lang-btn {
+      background: transparent; border: 1px solid var(--border);
+      color: var(--muted); font-family: 'DM Sans', sans-serif;
+      font-size: 12px; font-weight: 500; padding: 4px 8px;
+      border-radius: 6px; cursor: pointer; transition: all .18s;
+    }
+    .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .lang-btn.active {
+      background: var(--gold); border-color: var(--gold);
+      color: #0c0d10; font-weight: 700;
+    }
+
+    /* ── HERO ────────────────────────────────── */
+    .hero {
+      min-height: 88vh; display: flex; align-items: center;
+      justify-content: center; text-align: center;
+      padding: 100px 20px 72px;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% -5%,
+          rgba(201,162,74,.13) 0%, transparent 65%),
+        var(--bg);
+    }
+    .hero-inner { max-width: 720px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+    }
+    .hero-eyebrow img { width: 15px; height: 15px; }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(36px, 6.5vw, 72px);
+      font-weight: 700; line-height: 1.08; margin-bottom: 22px;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px); color: var(--muted);
+      max-width: 540px; margin: 0 auto 38px; line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+    }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: #0c0d10;
+      font-weight: 700; font-size: 15px;
+      padding: 13px 26px; border-radius: var(--r);
+      transition: transform .18s, background .18s;
+    }
+    .btn-gold:hover { transform: translateY(-2px); background: var(--gold-lt); }
+    .btn-gold img { width: 17px; height: 17px; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--text);
+      font-weight: 600; font-size: 15px;
+      padding: 13px 26px; border-radius: var(--r);
+      border: 1px solid var(--border); transition: all .18s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll {
+      margin-top: 56px; color: var(--muted);
+      font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    }
+
+    /* ── SHARED SECTION ──────────────────────── */
+    .sec { padding: 80px 20px; max-width: 1160px; margin: 0 auto; }
+    .sec-wrap { background: var(--bg2); }
+    .label {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    }
+    .sec-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 700; line-height: 1.18; margin-bottom: 14px;
+    }
+    .sec-sub {
+      color: var(--muted); font-size: 16px;
+      max-width: 540px; margin-bottom: 44px; line-height: 1.7;
+    }
+
+    /* ── FEATURE GRID ────────────────────────── */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .feat-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 26px 22px;
+      transition: border-color .2s;
+    }
+    .feat-card:hover { border-color: rgba(201,162,74,.3); }
+    .feat-icon {
+      width: 42px; height: 42px; background: var(--gold-dim);
+      border-radius: 11px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 14px;
+    }
+    .feat-icon img { width: 20px; height: 20px; }
+    .feat-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 17px; font-weight: 600; margin-bottom: 7px;
+    }
+    .feat-desc { color: var(--muted); font-size: 13.5px; line-height: 1.65; }
+
+    /* ── STEPS ───────────────────────────────── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .step-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 24px 20px;
+    }
+    .step-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 38px; font-weight: 700;
+      color: rgba(201,162,74,.2); line-height: 1; margin-bottom: 10px;
+    }
+    .step-title { font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+    .step-desc { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+    /* ── PACKAGE BUILDER ─────────────────────── */
+    .tool-wrap { background: var(--bg); padding: 80px 20px; }
+    .tool-inner { max-width: 860px; margin: 0 auto; }
+    .tool-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px; box-shadow: var(--sh);
+    }
+    .field-label {
+      display: block; font-size: 11px; font-weight: 700;
+      letter-spacing: .11em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+
+    /* Event type radio pills */
+    .radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
+    .radio-pill {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--bg3); border: 1px solid var(--border);
+      padding: 11px 18px; border-radius: var(--r); cursor: pointer;
+      font-size: 14px; transition: all .18s; user-select: none;
+    }
+    .radio-pill input[type="radio"] { display: none; }
+    .radio-pill img { width: 16px; height: 16px; }
+    .radio-pill.on {
+      background: var(--gold-dim); border-color: var(--gold);
+      color: var(--gold); font-weight: 600;
+    }
+    .pill-desc {
+      display: flex; flex-direction: column;
+    }
+    .pill-desc small {
+      font-size: 11px; color: var(--muted); line-height: 1.2;
+      font-weight: 400;
+    }
+    .radio-pill.on .pill-desc small { color: rgba(201,162,74,.7); }
+
+    /* Hours slider */
+    .hours-row {
+      display: flex; align-items: center; gap: 16px; margin-top: 4px;
+    }
+    input[type="range"] {
+      flex: 1; -webkit-appearance: none; appearance: none;
+      height: 4px; border-radius: 4px;
+      background: var(--border); outline: none; cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--gold); cursor: pointer;
+      box-shadow: 0 0 0 3px rgba(201,162,74,.2);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--gold); cursor: pointer; border: none;
+    }
+    .hours-val {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px; font-weight: 700; color: var(--gold);
+      min-width: 56px; text-align: right;
+    }
+
+    /* Add-on checkboxes */
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .addon-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 16px 18px;
+      cursor: pointer; transition: all .18s; user-select: none;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .addon-card input[type="checkbox"] { display: none; }
+    .addon-check {
+      width: 20px; height: 20px; flex: 0 0 20px;
+      border: 1.5px solid var(--border); border-radius: 6px;
+      margin-top: 2px; display: flex; align-items: center;
+      justify-content: center; transition: all .18s;
+    }
+    .addon-check img { width: 12px; height: 12px; opacity: 0; }
+    .addon-card.on {
+      border-color: var(--gold); background: var(--gold-dim);
+    }
+    .addon-card.on .addon-check {
+      background: var(--gold); border-color: var(--gold);
+    }
+    .addon-card.on .addon-check img { opacity: 1; }
+    .addon-body { flex: 1; }
+    .addon-title { font-weight: 600; font-size: 14px; }
+    .addon-price {
+      font-size: 12px; color: var(--gold); font-weight: 600; margin-top: 2px;
+    }
+    .addon-desc { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+    .addon-icon { width: 18px; height: 18px; }
+
+    .tool-divider { height: 1px; background: var(--border); margin: 28px 0; }
+    .tool-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+    /* Result */
+    .result-box {
+      background: linear-gradient(135deg,
+        rgba(201,162,74,.12), rgba(201,162,74,.04));
+      border: 1px solid rgba(201,162,74,.28);
+      border-radius: var(--r); padding: 26px 30px;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 18px;
+    }
+    .result-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 4px;
+    }
+    .result-price {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 46px; font-weight: 700; color: var(--gold); line-height: 1;
+    }
+    .result-breakdown { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .result-cta { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .btn-date {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: #0c0d10;
+      font-weight: 700; font-size: 15px;
+      padding: 13px 26px; border-radius: var(--r);
+      transition: transform .18s, background .18s;
+    }
+    .btn-date:hover { transform: translateY(-2px); background: var(--gold-lt); }
+    .btn-date img { width: 17px; height: 17px; }
+    .tool-footnote {
+      font-size: 12px; color: var(--muted);
+      text-align: center; margin-top: 18px;
+    }
+
+    /* ── TESTIMONIALS ────────────────────────── */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 18px;
+    }
+    .testi-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 26px 22px;
+    }
+    .stars { display: flex; gap: 4px; margin-bottom: 14px; }
+    .stars img { width: 15px; height: 15px; }
+    .testi-text {
+      font-size: 14px; line-height: 1.7; color: var(--muted);
+      font-style: italic; margin-bottom: 16px;
+    }
+    .testi-name { font-weight: 600; font-size: 14px; }
+    .testi-role { color: var(--muted); font-size: 12px; }
+
+    /* ── FOOTER DEMOBAR ──────────────────────── */
+    .footer-bar {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 20px;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 14px;
+    }
+    .footer-note { font-size: 13px; color: var(--muted); }
+    .footer-note strong { color: var(--text); }
+    .footer-cta-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--gold); color: #0c0d10;
+      font-weight: 700; font-size: 13px;
+      padding: 9px 18px; border-radius: 8px;
+      transition: background .18s;
+    }
+    .footer-cta-btn:hover { background: var(--gold-lt); }
+
+    /* ── WHATSAPP ────────────────────────────── */
+    .wa-btn {
+      position: fixed; bottom: 24px; right: 24px; z-index: 800;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25d366; color: #fff;
+      font-weight: 700; font-size: 14px;
+      padding: 12px 20px; border-radius: 999px;
+      box-shadow: 0 8px 28px rgba(37,211,102,.32);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .wa-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(37,211,102,.42);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 640px) {
+      .tool-card { padding: 22px 16px; }
+      .tool-row { grid-template-columns: 1fr; }
+      .result-box { flex-direction: column; }
+      .result-cta { align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .nav-brand .brand-text { display: none; }
+      .lang-btn { padding: 3px 6px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="img/logo.webp" alt="D&amp;L Project56">
+      <span class="brand-text">D&amp;L Project56</span>
+    </a>
+    <div class="nav-right">
+      <span class="demo-badge" data-t="demo_tag">DEMO</span>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="mt">MT</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <img src="img/camera.webp" alt="">
+      <span data-t="hero_eyebrow">Photography &amp; Events Studio</span>
+    </div>
+    <h1>
+      <span data-t="hero_h1a">Your day, booked</span><br>
+      <em data-t="hero_h1b">before someone else takes the slot.</em>
+    </h1>
+    <p class="hero-sub" data-t="hero_sub">Weddings, portraits, corporate events — we capture what matters. Build your perfect package in seconds and lock in your date today.</p>
+    <div class="hero-ctas">
+      <a href="#builder" class="btn-gold">
+        <img src="img/sparkle.webp" alt="">
+        <span data-t="hero_cta1">Build your package</span>
+      </a>
+      <a href="#services" class="btn-ghost" data-t="hero_cta2">View services</a>
+    </div>
+    <p class="hero-scroll" data-t="hero_scroll">↓ scroll to explore</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="sec-wrap" id="services">
+  <div class="sec">
+    <p class="label" data-t="feat_label">What we offer</p>
+    <h2 class="sec-title" data-t="feat_title">Every shot tells your story</h2>
+    <p class="sec-sub" data-t="feat_sub">From intimate portraits to grand weddings — professional photography that preserves your most important moments.</p>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon"><img src="img/ring.webp" alt=""></div>
+        <h3 class="feat-title" data-t="f1_title">Wedding Photography</h3>
+        <p class="feat-desc" data-t="f1_desc">Full-day coverage, from morning preparations to the last dance. Timeless, documentary-style storytelling.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><img src="img/portrait.webp" alt=""></div>
+        <h3 class="feat-title" data-t="f2_title">Portrait Sessions</h3>
+        <p class="feat-desc" data-t="f2_desc">Family, maternity, personal branding — we create images that feel natural, warm, and uniquely you.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><img src="img/briefcase.webp" alt=""></div>
+        <h3 class="feat-title" data-t="f3_title">Corporate &amp; Events</h3>
+        <p class="feat-desc" data-t="f3_desc">Conferences, product launches, team shoots — polished imagery that elevates your brand.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><img src="img/drone.webp" alt=""></div>
+        <h3 class="feat-title" data-t="f4_title">Drone &amp; Aerial</h3>
+        <p class="feat-desc" data-t="f4_desc">Licensed drone operators for stunning aerial shots — perfect for venues, real estate, and outdoor events.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how">
+  <p class="label" data-t="how_label">Simple process</p>
+  <h2 class="sec-title" data-t="how_title">From booking to final gallery</h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h3 class="step-title" data-t="s1_title">Build your package</h3>
+      <p class="step-desc" data-t="s1_desc">Use the package builder below — pick your event type, duration, and add-ons. See the price live.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h3 class="step-title" data-t="s2_title">Check your date</h3>
+      <p class="step-desc" data-t="s2_desc">Lock in your date before it's taken. We hold confirmed bookings with a small deposit.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h3 class="step-title" data-t="s3_title">Receive your gallery</h3>
+      <p class="step-desc" data-t="s3_desc">Edited, high-resolution images delivered to your private gallery within 2–3 weeks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGE BUILDER -->
+<div class="tool-wrap" id="builder">
+  <div class="tool-inner">
+    <p class="label" style="text-align:center;margin-bottom:8px" data-t="tool_label">Package Builder</p>
+    <h2 class="sec-title" style="text-align:center;margin-bottom:8px" data-t="tool_title">Build your perfect package</h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto 36px" data-t="tool_sub">Choose your event, hours, and add-ons — your total updates live. No sign-up needed.</p>
+
+    <div class="tool-card">
+      <!-- Event type -->
+      <label class="field-label" data-t="fl_event">Event type</label>
+      <div class="radio-group" id="event-group">
+        <label class="radio-pill on">
+          <input type="radio" name="event" value="wedding" checked>
+          <img src="img/ring.webp" alt="">
+          <span class="pill-desc">
+            <span data-t="ev_wedding">Wedding</span>
+            <small data-t="ev_wedding_rate">from €200/hr</small>
+          </span>
+        </label>
+        <label class="radio-pill">
+          <input type="radio" name="event" value="portrait">
+          <img src="img/portrait.webp" alt="">
+          <span class="pill-desc">
+            <span data-t="ev_portrait">Portrait</span>
+            <small data-t="ev_portrait_rate">from €120/hr</small>
+          </span>
+        </label>
+        <label class="radio-pill">
+          <input type="radio" name="event" value="business">
+          <img src="img/briefcase.webp" alt="">
+          <span class="pill-desc">
+            <span data-t="ev_business">Corporate</span>
+            <small data-t="ev_business_rate">from €150/hr</small>
+          </span>
+        </label>
+      </div>
+
+      <div class="tool-divider"></div>
+
+      <!-- Hours -->
+      <label class="field-label" for="hours-slider" data-t="fl_hours">Coverage duration</label>
+      <div class="hours-row">
+        <input id="hours-slider" type="range" min="1" max="12" value="4" step="1">
+        <div class="hours-val"><span id="hours-display">4</span><span style="font-size:16px;color:var(--muted)" data-t="hrs_unit">h</span></div>
+      </div>
+
+      <div class="tool-divider"></div>
+
+      <!-- Add-ons -->
+      <label class="field-label" data-t="fl_addons">Add-ons</label>
+      <div class="addons-grid">
+        <label class="addon-card" id="ao-photographer">
+          <input type="checkbox" value="photographer">
+          <div class="addon-check"><img src="img/check.webp" alt=""></div>
+          <div class="addon-body">
+            <div style="display:flex;align-items:center;gap:8px">
+              <img class="addon-icon" src="img/users.webp" alt="">
+              <span class="addon-title" data-t="ao1_title">Second Photographer</span>
+            </div>
+            <p class="addon-price" data-t="ao1_price">+€300</p>
+            <p class="addon-desc" data-t="ao1_desc">A second pair of eyes for simultaneous angles and candid moments.</p>
+          </div>
+        </label>
+        <label class="addon-card" id="ao-album">
+          <input type="checkbox" value="album">
+          <div class="addon-check"><img src="img/check.webp" alt=""></div>
+          <div class="addon-body">
+            <div style="display:flex;align-items:center;gap:8px">
+              <img class="addon-icon" src="img/album.webp" alt="">
+              <span class="addon-title" data-t="ao2_title">Printed Album</span>
+            </div>
+            <p class="addon-price" data-t="ao2_price">+€250</p>
+            <p class="addon-desc" data-t="ao2_desc">30-page lay-flat album, museum-quality print, linen cover.</p>
+          </div>
+        </label>
+        <label class="addon-card" id="ao-drone">
+          <input type="checkbox" value="drone">
+          <div class="addon-check"><img src="img/check.webp" alt=""></div>
+          <div class="addon-body">
+            <div style="display:flex;align-items:center;gap:8px">
+              <img class="addon-icon" src="img/drone.webp" alt="">
+              <span class="addon-title" data-t="ao3_title">Drone Aerial Shots</span>
+            </div>
+            <p class="addon-price" data-t="ao3_price">+€350</p>
+            <p class="addon-desc" data-t="ao3_desc">Licensed drone operator for breathtaking aerial footage and stills.</p>
+          </div>
+        </label>
+      </div>
+
+      <div class="tool-divider"></div>
+
+      <!-- Result -->
+      <div class="result-box">
+        <div>
+          <p class="result-label" data-t="res_label">Package total</p>
+          <p class="result-price" id="result-price">€800</p>
+          <p class="result-breakdown" id="result-breakdown"></p>
+        </div>
+        <div class="result-cta">
+          <a href="#" class="btn-date">
+            <img src="img/calendar.webp" alt="" style="width:17px;height:17px">
+            <span data-t="res_cta">Check my date</span>
+          </a>
+          <p style="font-size:11px;color:var(--muted);text-align:right" data-t="res_disclaimer">Estimate only · Final quote sent after consultation</p>
+        </div>
+      </div>
+
+      <p class="tool-footnote" data-t="tool_note">Built by D&amp;L Project56 · This is a live demo — connect your booking calendar to go live.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="sec-wrap">
+  <div class="sec">
+    <p class="label" data-t="testi_label">Client stories</p>
+    <h2 class="sec-title" data-t="testi_title">Memories worth every pixel</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">
+          <img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★">
+        </div>
+        <p class="testi-text" data-t="t1_text">"We added the drone and the second photographer — best decision we made. The aerial shots of our venue were breathtaking."</p>
+        <p class="testi-name" data-t="t1_name">Sophie &amp; Marco</p>
+        <p class="testi-role" data-t="t1_role">Wedding, Mdina</p>
+      </div>
+      <div class="testi-card">
+        <div class="stars">
+          <img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★">
+        </div>
+        <p class="testi-text" data-t="t2_text">"Used the package builder to price a corporate headshot day. Simple, transparent, no surprises at checkout. Very professional."</p>
+        <p class="testi-name" data-t="t2_name">David L.</p>
+        <p class="testi-role" data-t="t2_role">Corporate Shoot, Valletta</p>
+      </div>
+      <div class="testi-card">
+        <div class="stars">
+          <img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★">
+        </div>
+        <p class="testi-text" data-t="t3_text">"Our family portrait session was magical. The printed album arrived and every single person who sees it asks who the photographer was."</p>
+        <p class="testi-name" data-t="t3_name">Chiara M.</p>
+        <p class="testi-role" data-t="t3_role">Family Portrait, Gozo</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER DEMOBAR -->
+<footer class="footer-bar">
+  <div class="footer-inner">
+    <p class="footer-note">
+      <strong data-t="foot_built">Built by D&amp;L Project56</strong>
+      <span> — </span>
+      <span data-t="foot_tag">we build websites that work as hard as you do.</span>
+    </p>
+    <a href="https://dlproject56.com" class="footer-cta-btn" target="_blank" rel="noopener" data-t="foot_cta">Get your website →</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP STICKY -->
+<a href="https://wa.me/35699123456" class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+  💬 <span data-t="wa_label">WhatsApp</span>
+</a>
+
+<script>
+/* =========================================================
+   I18N
+   ========================================================= */
+const I18N = {
+  en: {
+    demo_tag:     'DEMO',
+    hero_eyebrow: 'Photography & Events Studio',
+    hero_h1a:     'Your day, booked',
+    hero_h1b:     'before someone else takes the slot.',
+    hero_sub:     'Weddings, portraits, corporate events — we capture what matters. Build your perfect package in seconds and lock in your date today.',
+    hero_cta1:    'Build your package',
+    hero_cta2:    'View services',
+    hero_scroll:  '↓ scroll to explore',
+    feat_label:   'What we offer',
+    feat_title:   'Every shot tells your story',
+    feat_sub:     'From intimate portraits to grand weddings — professional photography that preserves your most important moments.',
+    f1_title: 'Wedding Photography',   f1_desc: 'Full-day coverage, from morning preparations to the last dance. Timeless, documentary-style storytelling.',
+    f2_title: 'Portrait Sessions',     f2_desc: 'Family, maternity, personal branding — we create images that feel natural, warm, and uniquely you.',
+    f3_title: 'Corporate & Events',    f3_desc: 'Conferences, product launches, team shoots — polished imagery that elevates your brand.',
+    f4_title: 'Drone & Aerial',        f4_desc: 'Licensed drone operators for stunning aerial shots — perfect for venues, real estate, and outdoor events.',
+    how_label:  'Simple process',
+    how_title:  'From booking to final gallery',
+    s1_title: 'Build your package',      s1_desc: 'Use the package builder below — pick your event type, duration, and add-ons. See the price live.',
+    s2_title: 'Check your date',         s2_desc: 'Lock in your date before it\'s taken. We hold confirmed bookings with a small deposit.',
+    s3_title: 'Receive your gallery',    s3_desc: 'Edited, high-resolution images delivered to your private gallery within 2–3 weeks.',
+    tool_label: 'Package Builder',
+    tool_title: 'Build your perfect package',
+    tool_sub:   'Choose your event, hours, and add-ons — your total updates live. No sign-up needed.',
+    fl_event: 'Event type', fl_hours: 'Coverage duration', fl_addons: 'Add-ons',
+    ev_wedding: 'Wedding',   ev_wedding_rate: 'from €200/hr',
+    ev_portrait: 'Portrait', ev_portrait_rate: 'from €120/hr',
+    ev_business: 'Corporate', ev_business_rate: 'from €150/hr',
+    hrs_unit: 'h',
+    ao1_title: 'Second Photographer', ao1_price: '+€300', ao1_desc: 'A second pair of eyes for simultaneous angles and candid moments.',
+    ao2_title: 'Printed Album',       ao2_price: '+€250', ao2_desc: '30-page lay-flat album, museum-quality print, linen cover.',
+    ao3_title: 'Drone Aerial Shots',  ao3_price: '+€350', ao3_desc: 'Licensed drone operator for breathtaking aerial footage and stills.',
+    res_label:      'Package total',
+    res_cta:        'Check my date',
+    res_disclaimer: 'Estimate only · Final quote sent after consultation',
+    tool_note:      'Built by D&L Project56 · This is a live demo — connect your booking calendar to go live.',
+    testi_label: 'Client stories',
+    testi_title: 'Memories worth every pixel',
+    t1_text: '"We added the drone and the second photographer — best decision we made. The aerial shots of our venue were breathtaking."',
+    t1_name: 'Sophie & Marco', t1_role: 'Wedding, Mdina',
+    t2_text: '"Used the package builder to price a corporate headshot day. Simple, transparent, no surprises at checkout."',
+    t2_name: 'David L.', t2_role: 'Corporate Shoot, Valletta',
+    t3_text: '"Our family portrait session was magical. The printed album arrived and every single person who sees it asks who the photographer was."',
+    t3_name: 'Chiara M.', t3_role: 'Family Portrait, Gozo',
+    foot_built: 'Built by D&L Project56',
+    foot_tag:   'we build websites that work as hard as you do.',
+    foot_cta:   'Get your website →',
+    wa_label:   'WhatsApp',
+    breakdown_base: 'Base',
+    breakdown_addons: 'Add-ons',
+  },
+  de: {
+    demo_tag:     'DEMO',
+    hero_eyebrow: 'Fotografie- & Eventstudio',
+    hero_h1a:     'Ihr Tag, gebucht',
+    hero_h1b:     'bevor jemand anderes den Slot nimmt.',
+    hero_sub:     'Hochzeiten, Portraits, Firmenevents — wir halten fest, was zählt. Stellen Sie Ihr Paket in Sekunden zusammen und sichern Sie Ihr Datum.',
+    hero_cta1:    'Paket zusammenstellen',
+    hero_cta2:    'Leistungen ansehen',
+    hero_scroll:  '↓ nach unten scrollen',
+    feat_label:   'Unser Angebot',
+    feat_title:   'Jedes Bild erzählt Ihre Geschichte',
+    feat_sub:     'Von intimen Portraits bis zu großen Hochzeiten — Profi-Fotografie, die Ihre wichtigsten Momente bewahrt.',
+    f1_title: 'Hochzeitsfotografie',    f1_desc: 'Ganztagesbegleitung — vom Morgen bis zum letzten Tanz. Zeitlose, dokumentarische Erzählweise.',
+    f2_title: 'Portraitsessions',       f2_desc: 'Familie, Schwangerschaft, Personal Branding — natürlich, warm und einzigartig.',
+    f3_title: 'Business & Events',      f3_desc: 'Konferenzen, Produktlaunches, Teamfotos — polierte Bilder, die Ihre Marke stärken.',
+    f4_title: 'Drohne & Luftaufnahmen', f4_desc: 'Lizenzierte Drohnen-Operatoren für beeindruckende Luftaufnahmen.',
+    how_label:  'Einfacher Ablauf',
+    how_title:  'Von der Buchung zur fertigen Galerie',
+    s1_title: 'Paket zusammenstellen',   s1_desc: 'Nutzen Sie den Paket-Builder — Eventtyp, Dauer und Add-ons auswählen.',
+    s2_title: 'Datum prüfen',            s2_desc: 'Sichern Sie Ihr Datum. Bestätigte Buchungen halten wir mit einer kleinen Anzahlung.',
+    s3_title: 'Galerie empfangen',       s3_desc: 'Bearbeitete Hochauflösungsbilder in Ihrer privaten Galerie innerhalb von 2–3 Wochen.',
+    tool_label: 'Paket-Builder',
+    tool_title: 'Stellen Sie Ihr Paket zusammen',
+    tool_sub:   'Event, Stunden und Add-ons auswählen — Preis aktualisiert sich sofort.',
+    fl_event: 'Eventtyp', fl_hours: 'Shooting-Dauer', fl_addons: 'Erweiterungen',
+    ev_wedding: 'Hochzeit',    ev_wedding_rate: 'ab 200€/Std.',
+    ev_portrait: 'Portrait',   ev_portrait_rate: 'ab 120€/Std.',
+    ev_business: 'Business',   ev_business_rate: 'ab 150€/Std.',
+    hrs_unit: 'Std.',
+    ao1_title: 'Zweiter Fotograf',    ao1_price: '+€300', ao1_desc: 'Gleichzeitige Perspektiven und ungestellte Momente.',
+    ao2_title: 'Gedrucktes Album',    ao2_price: '+€250', ao2_desc: '30-seitiges Lay-flat-Album, Museumsqualität, Leinenbezug.',
+    ao3_title: 'Drohnen-Luftbilder', ao3_price: '+€350', ao3_desc: 'Lizenzierter Drohnen-Operator für spektakuläre Luftaufnahmen.',
+    res_label:      'Pakettotal',
+    res_cta:        'Datum prüfen',
+    res_disclaimer: 'Schätzung · Endangebot nach Beratung',
+    tool_note:      'Erstellt von D&L Project56 · Live-Demo — Buchungskalender anschließen.',
+    testi_label: 'Kundenerlebnisse',
+    testi_title: 'Erinnerungen, die jedes Pixel wert sind',
+    t1_text: '"Drohne und zweiter Fotograf — die beste Entscheidung. Die Luftaufnahmen unseres Veranstaltungsortes waren atemberaubend."',
+    t1_name: 'Sophie & Marco', t1_role: 'Hochzeit, Mdina',
+    t2_text: '"Den Paket-Builder für einen Firmen-Shooting-Tag genutzt. Einfach, transparent, keine Überraschungen."',
+    t2_name: 'David L.', t2_role: 'Business-Shooting, Valletta',
+    t3_text: '"Unsere Familiensession war magisch. Das gedruckte Album begeistert jeden, der es sieht."',
+    t3_name: 'Chiara M.', t3_role: 'Familienportrait, Gozo',
+    foot_built: 'Erstellt von D&L Project56',
+    foot_tag:   'wir bauen Websites, die so hart arbeiten wie Sie.',
+    foot_cta:   'Ihre Website →',
+    wa_label:   'WhatsApp',
+    breakdown_base: 'Basis',
+    breakdown_addons: 'Extras',
+  },
+  fr: {
+    demo_tag:     'DÉMO',
+    hero_eyebrow: 'Studio Photo & Événements',
+    hero_h1a:     'Votre jour, réservé',
+    hero_h1b:     'avant que quelqu\'un d\'autre prenne le créneau.',
+    hero_sub:     'Mariages, portraits, événements corporate — nous capturons ce qui compte. Composez votre package en secondes et sécurisez votre date.',
+    hero_cta1:    'Composer mon package',
+    hero_cta2:    'Voir les services',
+    hero_scroll:  '↓ défiler pour explorer',
+    feat_label:   'Ce que nous proposons',
+    feat_title:   'Chaque cliché raconte votre histoire',
+    feat_sub:     'Des portraits intimes aux grands mariages — photographie professionnelle qui préserve vos moments les plus importants.',
+    f1_title: 'Photographie de mariage',  f1_desc: 'Couverture toute la journée — des préparatifs au dernier slow. Style documentaire intemporel.',
+    f2_title: 'Sessions portraits',       f2_desc: 'Famille, maternité, personal branding — des images naturelles, chaleureuses et uniques.',
+    f3_title: 'Corporate & Événements',   f3_desc: 'Conférences, lancements produit, photos d\'équipe — des images soignées qui valorisent votre marque.',
+    f4_title: 'Drone & Aérien',           f4_desc: 'Pilotes certifiés pour des prises de vue aériennes époustouflantes.',
+    how_label:  'Processus simple',
+    how_title:  'De la réservation à la galerie finale',
+    s1_title: 'Composez votre package',   s1_desc: 'Utilisez le configurateur — choisissez le type d\'événement, la durée et les options.',
+    s2_title: 'Vérifiez votre date',      s2_desc: 'Bloquez votre date avant qu\'elle soit prise. Réservations confirmées avec un acompte.',
+    s3_title: 'Recevez votre galerie',    s3_desc: 'Photos haute résolution retouchées, livrées dans votre galerie privée sous 2–3 semaines.',
+    tool_label: 'Configurateur de package',
+    tool_title: 'Composez votre package idéal',
+    tool_sub:   'Choisissez l\'événement, les heures et les options — le total se met à jour en direct.',
+    fl_event: 'Type d\'événement', fl_hours: 'Durée de couverture', fl_addons: 'Options',
+    ev_wedding: 'Mariage',     ev_wedding_rate: 'dès 200€/h',
+    ev_portrait: 'Portrait',   ev_portrait_rate: 'dès 120€/h',
+    ev_business: 'Corporate',  ev_business_rate: 'dès 150€/h',
+    hrs_unit: 'h',
+    ao1_title: 'Deuxième photographe', ao1_price: '+€300', ao1_desc: 'Angles simultanés et moments spontanés capturés.',
+    ao2_title: 'Album imprimé',        ao2_price: '+€250', ao2_desc: 'Album lay-flat 30 pages, impression qualité musée, couverture lin.',
+    ao3_title: 'Prises de vue drone',  ao3_price: '+€350', ao3_desc: 'Pilote certifié pour des vues aériennes à couper le souffle.',
+    res_label:      'Total du package',
+    res_cta:        'Vérifier ma date',
+    res_disclaimer: 'Estimation · Devis final envoyé après consultation',
+    tool_note:      'Créé par D&L Project56 · Démo live — connectez votre calendrier de réservation.',
+    testi_label: 'Témoignages clients',
+    testi_title: 'Des souvenirs qui valent chaque pixel',
+    t1_text: '"Nous avons ajouté le drone et le deuxième photographe — meilleure décision. Les photos aériennes de notre lieu étaient époustouflantes."',
+    t1_name: 'Sophie & Marco', t1_role: 'Mariage, Mdina',
+    t2_text: '"Utilisé le configurateur pour un shooting corporate. Simple, transparent, sans surprise à la facturation."',
+    t2_name: 'David L.', t2_role: 'Shooting corporate, Valletta',
+    t3_text: '"Notre session portrait de famille était magique. L\'album imprimé impressionne tous ceux qui le voient."',
+    t3_name: 'Chiara M.', t3_role: 'Portrait famille, Gozo',
+    foot_built: 'Créé par D&L Project56',
+    foot_tag:   'nous créons des sites qui travaillent aussi dur que vous.',
+    foot_cta:   'Votre site web →',
+    wa_label:   'WhatsApp',
+    breakdown_base: 'Base',
+    breakdown_addons: 'Options',
+  },
+  mt: {
+    demo_tag:     'DEMO',
+    hero_eyebrow: 'Studio tal-Fotografia u Avvenimenti',
+    hero_h1a:     'Il-jum tiegħek, imħotob',
+    hero_h1b:     'qabel xi ħaddieħor jieħu l-post.',
+    hero_sub:     'Tieġi, portretti, avvenimenti korporattivi — niksbu dak li jgħodd. Ibni l-pakkett perfett fi ftit sekondi u ssikura d-data tiegħek illum.',
+    hero_cta1:    'Ibni l-pakkett tiegħek',
+    hero_cta2:    'Ara s-servizzi',
+    hero_scroll:  '↓ skrollja l-isfel',
+    feat_label:   'Dak li noffru',
+    feat_title:   'Kull ritratt jirrakkonta l-istorja tiegħek',
+    feat_sub:     'Mill-portretti intimi sat-tieġi kbira — fotografia professjonali li tippreserva l-mumenti l-aktar importanti tiegħek.',
+    f1_title: 'Fotografia tat-Tieġ',    f1_desc: 'Kopertura tal-ġurnata kollha — mill-preparazzjonijiet sad-daqqa tal-aħħar.',
+    f2_title: 'Sessjonijiet ta\' Ritratt', f2_desc: 'Familja, maternità, branding personali — ritratti naturali, sħan u uniċi.',
+    f3_title: 'Korporattiv u Avvenimenti', f3_desc: 'Konferenzi, lançi ta\' prodotti, ritratti tat-tim — immaġini professjonali.',
+    f4_title: 'Drone u Aerjali',         f4_desc: 'Operaturi drone liċenzjati għal ritratti aerjali spettakolari.',
+    how_label:  'Proċess sempliċi',
+    how_title:  'Mill-bbukkjar sal-gallerija finali',
+    s1_title: 'Ibni l-pakkett tiegħek',    s1_desc: 'Uża l-bini tal-pakkett hawn taħt — agħżel it-tip, id-durata u l-add-ons.',
+    s2_title: 'Iċċekkja d-data tiegħek',   s2_desc: 'Issikura d-data tiegħek qabel ma tinħtieħ. Nbagħtu konferma b\'depożitu żgħir.',
+    s3_title: 'Irċievi l-gallerija tiegħek', s3_desc: 'Ritratti editjati f\'resoluzzjoni għolja fil-gallerija privata tiegħek fi 2–3 ġimgħat.',
+    tool_label: 'Bini tal-Pakkett',
+    tool_title: 'Ibni l-pakkett perfett tiegħek',
+    tool_sub:   'Agħżel l-avveniment, is-sigħat u l-add-ons — it-total jaġġorna live.',
+    fl_event: 'Tip ta\' avveniment', fl_hours: 'Durata tal-kopertura', fl_addons: 'Żidiet',
+    ev_wedding: 'Tieġ',       ev_wedding_rate: 'minn €200/s.',
+    ev_portrait: 'Ritratt',   ev_portrait_rate: 'minn €120/s.',
+    ev_business: 'Korporattiv', ev_business_rate: 'minn €150/s.',
+    hrs_unit: 's.',
+    ao1_title: 'Fotograf Tieni',       ao1_price: '+€300', ao1_desc: 'Perspettivi simultanji u mumenti naturali.',
+    ao2_title: 'Album Stampat',        ao2_price: '+€250', ao2_desc: 'Album lay-flat 30 paġna, kwalità ta\' mużew, qoxra tal-linen.',
+    ao3_title: 'Ritratti b\'Drone',    ao3_price: '+€350', ao3_desc: 'Operatur drone liċenzjat għal ritratti aerjali.',
+    res_label:      'Total tal-pakkett',
+    res_cta:        'Iċċekkja d-data tiegħi',
+    res_disclaimer: 'Stima biss · Kwotazzjon finali mibgħut wara konsultazzjoni',
+    tool_note:      'Magħmul minn D&L Project56 · Demo live — qabbad il-kalendarju tal-bbukkjar.',
+    testi_label: 'Stejjer tal-klijenti',
+    testi_title: 'Memorji li jiswa kull pixel',
+    t1_text: '"Żidna d-drone u t-tieni fotografu — l-aħjar deċiżjoni. Ir-ritratti aerjali tal-post tagħna kienu spettakolari."',
+    t1_name: 'Sophie & Marco', t1_role: 'Tieġ, Mdina',
+    t2_text: '"Użajt il-bini tal-pakkett għal jum ta\' ritratti korporattivi. Sempliċi, trasparenti, ebda sorpriżi."',
+    t2_name: 'David L.', t2_role: 'Ritratti Korporattivi, Valletta',
+    t3_text: '"Is-sessjoni tal-portrait tal-familja tagħna kienet maġika. L-album stampat impressjona lil kulħadd."',
+    t3_name: 'Chiara M.', t3_role: 'Portrait tal-Familja, Għawdex',
+    foot_built: 'Magħmul minn D&L Project56',
+    foot_tag:   'nibnu siti li jaħdmu daqskemm int.',
+    foot_cta:   'Ikseb is-sit tiegħek →',
+    wa_label:   'WhatsApp',
+    breakdown_base: 'Bażi',
+    breakdown_addons: 'Żidiet',
+  }
+};
+
+/* =========================================================
+   LANG SWITCH
+   ========================================================= */
+let lang = 'en';
+
+function applyLang(l) {
+  lang = l;
+  const d = I18N[l] || I18N.en;
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const k = el.getAttribute('data-t');
+    if (d[k] != null) el.textContent = d[k];
+  });
+  document.documentElement.lang = l;
+  calcPackage();
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyLang(btn.dataset.lang);
+  });
+});
+
+/* =========================================================
+   RADIO PILLS (event type)
+   ========================================================= */
+document.querySelectorAll('#event-group .radio-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('#event-group .radio-pill').forEach(p => p.classList.remove('on'));
+    pill.querySelector('input').checked = true;
+    pill.classList.add('on');
+    calcPackage();
+  });
+});
+
+/* =========================================================
+   ADDON CARDS (checkboxes)
+   ========================================================= */
+document.querySelectorAll('.addon-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const cb = card.querySelector('input[type="checkbox"]');
+    cb.checked = !cb.checked;
+    card.classList.toggle('on', cb.checked);
+    calcPackage();
+  });
+});
+
+/* =========================================================
+   HOURS SLIDER
+   ========================================================= */
+const slider = document.getElementById('hours-slider');
+const hoursDisplay = document.getElementById('hours-display');
+slider.addEventListener('input', () => {
+  hoursDisplay.textContent = slider.value;
+  calcPackage();
+});
+
+/* =========================================================
+   PACKAGE CALCULATOR
+   ========================================================= */
+function calcPackage() {
+  const eventType = document.querySelector('input[name="event"]:checked')?.value || 'wedding';
+  const hours     = parseInt(slider.value) || 4;
+  const d         = I18N[lang] || I18N.en;
+
+  const hourlyRate = { wedding: 200, portrait: 120, business: 150 }[eventType] ?? 150;
+  const baseTotal  = hourlyRate * hours;
+
+  const addonPrices = { photographer: 300, album: 250, drone: 350 };
+  let addonTotal = 0;
+  const addonLabels = [];
+
+  document.querySelectorAll('.addon-card input[type="checkbox"]').forEach(cb => {
+    if (cb.checked) {
+      addonTotal += addonPrices[cb.value] ?? 0;
+      addonLabels.push(cb.value);
+    }
+  });
+
+  const total = baseTotal + addonTotal;
+
+  document.getElementById('result-price').textContent = `€${total.toLocaleString()}`;
+
+  let breakdown = `${d.breakdown_base}: €${baseTotal}`;
+  if (addonTotal > 0) breakdown += ` · ${d.breakdown_addons}: +€${addonTotal}`;
+  document.getElementById('result-breakdown').textContent = breakdown;
+}
+
+calcPackage();
+</script>
+</body>
+</html>

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleaning Service – Demo | D&amp;L Project56</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0c0d10;
+      --bg2:      #13141a;
+      --bg3:      #1c1d24;
+      --gold:     #c9a24a;
+      --gold-lt:  #ddb96a;
+      --gold-dim: rgba(201,162,74,.14);
+      --text:     #f0ede8;
+      --muted:    rgba(240,237,232,.58);
+      --border:   rgba(240,237,232,.09);
+      --r:        14px;
+      --sh:       0 24px 72px rgba(0,0,0,.55);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: inline-block; vertical-align: middle; }
+
+    /* ── NAV ─────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 900;
+      background: rgba(12,13,16,.93);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 20px;
+      height: 60px; display: flex; align-items: center;
+      justify-content: space-between; gap: 16px;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 17px; font-weight: 600; color: var(--text);
+      white-space: nowrap;
+    }
+    .nav-brand img { width: 28px; height: 28px; border-radius: 7px; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .demo-badge {
+      background: var(--gold); color: #0c0d10;
+      font-size: 10px; font-weight: 700; letter-spacing: .13em;
+      text-transform: uppercase; padding: 3px 8px; border-radius: 4px;
+    }
+    .lang-switcher { display: flex; gap: 2px; }
+    .lang-btn {
+      background: transparent; border: 1px solid var(--border);
+      color: var(--muted); font-family: 'DM Sans', sans-serif;
+      font-size: 12px; font-weight: 500; padding: 4px 8px;
+      border-radius: 6px; cursor: pointer; transition: all .18s;
+    }
+    .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .lang-btn.active {
+      background: var(--gold); border-color: var(--gold);
+      color: #0c0d10; font-weight: 700;
+    }
+
+    /* ── HERO ────────────────────────────────── */
+    .hero {
+      min-height: 88vh; display: flex; align-items: center;
+      justify-content: center; text-align: center;
+      padding: 100px 20px 72px;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% -5%,
+          rgba(201,162,74,.13) 0%, transparent 65%),
+        var(--bg);
+    }
+    .hero-inner { max-width: 720px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+    }
+    .hero-eyebrow img { width: 15px; height: 15px; }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(36px, 6.5vw, 72px);
+      font-weight: 700; line-height: 1.08; margin-bottom: 22px;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px); color: var(--muted);
+      max-width: 540px; margin: 0 auto 38px; line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+    }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: #0c0d10;
+      font-weight: 700; font-size: 15px;
+      padding: 13px 26px; border-radius: var(--r);
+      transition: transform .18s, background .18s;
+    }
+    .btn-gold:hover { transform: translateY(-2px); background: var(--gold-lt); }
+    .btn-gold img { width: 17px; height: 17px; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--text);
+      font-weight: 600; font-size: 15px;
+      padding: 13px 26px; border-radius: var(--r);
+      border: 1px solid var(--border); transition: all .18s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll {
+      margin-top: 56px; color: var(--muted);
+      font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+    }
+
+    /* ── SHARED SECTION ──────────────────────── */
+    .sec { padding: 80px 20px; max-width: 1160px; margin: 0 auto; }
+    .sec-wrap { background: var(--bg2); }
+    .sec-wrap .sec { max-width: 1160px; margin: 0 auto; }
+    .label {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    }
+    .sec-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 700; line-height: 1.18; margin-bottom: 14px;
+    }
+    .sec-sub {
+      color: var(--muted); font-size: 16px;
+      max-width: 540px; margin-bottom: 44px; line-height: 1.7;
+    }
+
+    /* ── FEATURE GRID ────────────────────────── */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .feat-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 26px 22px;
+      transition: border-color .2s;
+    }
+    .feat-card:hover { border-color: rgba(201,162,74,.3); }
+    .feat-icon {
+      width: 42px; height: 42px; background: var(--gold-dim);
+      border-radius: 11px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 14px;
+    }
+    .feat-icon img { width: 20px; height: 20px; }
+    .feat-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 17px; font-weight: 600; margin-bottom: 7px;
+    }
+    .feat-desc { color: var(--muted); font-size: 13.5px; line-height: 1.65; }
+
+    /* ── STEPS ───────────────────────────────── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .step-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 24px 20px;
+    }
+    .step-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 38px; font-weight: 700;
+      color: rgba(201,162,74,.2); line-height: 1; margin-bottom: 10px;
+    }
+    .step-title { font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+    .step-desc { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+    /* ── QUOTE TOOL ──────────────────────────── */
+    .tool-wrap { background: var(--bg); padding: 80px 20px; }
+    .tool-inner { max-width: 800px; margin: 0 auto; }
+    .tool-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px; box-shadow: var(--sh);
+    }
+    .field-label {
+      display: block; font-size: 11px; font-weight: 700;
+      letter-spacing: .11em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+    .radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
+    .radio-pill {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--bg3); border: 1px solid var(--border);
+      padding: 10px 16px; border-radius: 999px; cursor: pointer;
+      font-size: 14px; transition: all .18s; user-select: none;
+    }
+    .radio-pill input[type="radio"] { display: none; }
+    .radio-pill img { width: 15px; height: 15px; }
+    .radio-pill.on {
+      background: var(--gold-dim); border-color: var(--gold);
+      color: var(--gold); font-weight: 600;
+    }
+    .tool-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 22px; margin-top: 24px;
+    }
+    .field-input, .field-select {
+      width: 100%; background: var(--bg3); border: 1px solid var(--border);
+      color: var(--text); font-family: 'DM Sans', sans-serif;
+      font-size: 15px; padding: 12px 14px; border-radius: 10px;
+      appearance: none; -webkit-appearance: none;
+      outline: none; transition: border-color .18s;
+    }
+    .field-input:focus, .field-select:focus { border-color: var(--gold); }
+    .tool-divider { height: 1px; background: var(--border); margin: 28px 0; }
+    .result-box {
+      background: linear-gradient(135deg,
+        rgba(201,162,74,.12), rgba(201,162,74,.04));
+      border: 1px solid rgba(201,162,74,.28);
+      border-radius: var(--r); padding: 26px 30px;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 18px;
+    }
+    .result-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 4px;
+    }
+    .result-price {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 46px; font-weight: 700; color: var(--gold); line-height: 1;
+    }
+    .result-note { font-size: 12px; color: var(--muted); margin-top: 5px; }
+    .result-cta { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .tool-footnote {
+      font-size: 12px; color: var(--muted);
+      text-align: center; margin-top: 18px;
+    }
+
+    /* ── TESTIMONIALS ────────────────────────── */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 18px;
+    }
+    .testi-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 26px 22px;
+    }
+    .stars { display: flex; gap: 4px; margin-bottom: 14px; }
+    .stars img { width: 15px; height: 15px; }
+    .testi-text {
+      font-size: 14px; line-height: 1.7; color: var(--muted);
+      font-style: italic; margin-bottom: 16px;
+    }
+    .testi-name { font-weight: 600; font-size: 14px; }
+    .testi-role { color: var(--muted); font-size: 12px; }
+
+    /* ── FOOTER DEMOBAR ──────────────────────── */
+    .footer-bar {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 20px;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 14px;
+    }
+    .footer-note { font-size: 13px; color: var(--muted); }
+    .footer-note strong { color: var(--text); }
+    .footer-cta-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--gold); color: #0c0d10;
+      font-weight: 700; font-size: 13px;
+      padding: 9px 18px; border-radius: 8px;
+      transition: background .18s;
+    }
+    .footer-cta-btn:hover { background: var(--gold-lt); }
+
+    /* ── WHATSAPP ────────────────────────────── */
+    .wa-btn {
+      position: fixed; bottom: 24px; right: 24px; z-index: 800;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25d366; color: #fff;
+      font-weight: 700; font-size: 14px;
+      padding: 12px 20px; border-radius: 999px;
+      box-shadow: 0 8px 28px rgba(37,211,102,.32);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .wa-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(37,211,102,.42);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 640px) {
+      .tool-card { padding: 22px 16px; }
+      .tool-row { grid-template-columns: 1fr; }
+      .result-box { flex-direction: column; }
+      .result-cta { align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .nav-brand .brand-text { display: none; }
+      .lang-btn { padding: 3px 6px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="img/logo.webp" alt="D&amp;L Project56">
+      <span class="brand-text">D&amp;L Project56</span>
+    </a>
+    <div class="nav-right">
+      <span class="demo-badge" data-t="demo_tag">DEMO</span>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="mt">MT</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <img src="img/sparkle.webp" alt="">
+      <span data-t="hero_eyebrow">Professional Cleaning Service</span>
+    </div>
+    <h1>
+      <span data-t="hero_h1a">A spotless place,</span><br>
+      <em data-t="hero_h1b">booked in 60 seconds.</em>
+    </h1>
+    <p class="hero-sub" data-t="hero_sub">From apartments to offices — our certified team leaves every corner gleaming. Flexible schedules, eco products, trusted professionals.</p>
+    <div class="hero-ctas">
+      <a href="#quote" class="btn-gold">
+        <img src="img/calculator.webp" alt="">
+        <span data-t="hero_cta1">Get instant quote</span>
+      </a>
+      <a href="#how" class="btn-ghost" data-t="hero_cta2">How it works</a>
+    </div>
+    <p class="hero-scroll" data-t="hero_scroll">↓ scroll to explore</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="sec-wrap">
+  <div class="sec" id="features">
+    <p class="label" data-t="feat_label">Why choose us</p>
+    <h2 class="sec-title" data-t="feat_title">Cleaning done right, every time</h2>
+    <p class="sec-sub" data-t="feat_sub">Certified, insured, and always on time — we take the hassle out of keeping your space pristine.</p>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon"><img src="img/shield.webp" alt=""></div>
+        <h3 class="feat-title" data-t="f1_title">Vetted &amp; Insured</h3>
+        <p class="feat-desc" data-t="f1_desc">Every cleaner is background-checked, trained, and fully insured for your peace of mind.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><img src="img/leaf.webp" alt=""></div>
+        <h3 class="feat-title" data-t="f2_title">Eco Products</h3>
+        <p class="feat-desc" data-t="f2_desc">We use only certified eco-friendly products — safe for children, pets, and the planet.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><img src="img/clock.webp" alt=""></div>
+        <h3 class="feat-title" data-t="f3_title">Flexible Scheduling</h3>
+        <p class="feat-desc" data-t="f3_desc">Book any slot that works — mornings, evenings, weekends. We fit around your life.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><img src="img/star-gold.webp" alt=""></div>
+        <h3 class="feat-title" data-t="f4_title">Satisfaction Guarantee</h3>
+        <p class="feat-desc" data-t="f4_desc">Not happy? We come back and re-clean for free. No fuss, no questions — just results.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how">
+  <p class="label" data-t="how_label">Simple process</p>
+  <h2 class="sec-title" data-t="how_title">Book in three easy steps</h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h3 class="step-title" data-t="s1_title">Get your quote</h3>
+      <p class="step-desc" data-t="s1_desc">Use the instant calculator below — pick property type, size, and frequency to see your price live.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h3 class="step-title" data-t="s2_title">Pick a time</h3>
+      <p class="step-desc" data-t="s2_desc">Choose a date and slot that suits you. Same-day availability in most areas.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h3 class="step-title" data-t="s3_title">We clean, you relax</h3>
+      <p class="step-desc" data-t="s3_desc">Your vetted cleaner arrives on time. You return to a spotless, fresh-smelling space.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE TOOL -->
+<div class="tool-wrap" id="quote">
+  <div class="tool-inner">
+    <p class="label" style="text-align:center;margin-bottom:8px" data-t="tool_label">Instant Price Calculator</p>
+    <h2 class="sec-title" style="text-align:center;margin-bottom:8px" data-t="tool_title">Get your cleaning quote</h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto 36px" data-t="tool_sub">Adjust the options and watch the price update live — no sign-up required.</p>
+
+    <div class="tool-card">
+      <!-- Property type -->
+      <label class="field-label" data-t="fl_prop">Property type</label>
+      <div class="radio-group" id="prop-group">
+        <label class="radio-pill on">
+          <input type="radio" name="prop" value="apartment" checked>
+          <img src="img/building.webp" alt="">
+          <span data-t="p_apt">Apartment</span>
+        </label>
+        <label class="radio-pill">
+          <input type="radio" name="prop" value="house">
+          <img src="img/house.webp" alt="">
+          <span data-t="p_house">House</span>
+        </label>
+        <label class="radio-pill">
+          <input type="radio" name="prop" value="office">
+          <img src="img/office.webp" alt="">
+          <span data-t="p_office">Office</span>
+        </label>
+      </div>
+
+      <div class="tool-row">
+        <!-- Size -->
+        <div>
+          <label class="field-label" for="size-in" data-t="fl_size">Size (m²)</label>
+          <input id="size-in" type="number" class="field-input" value="60" min="10" max="500" step="5">
+        </div>
+        <!-- Frequency -->
+        <div>
+          <label class="field-label" for="freq-sel" data-t="fl_freq">Frequency</label>
+          <select id="freq-sel" class="field-select">
+            <option value="once"     data-t="fr_once">One-off</option>
+            <option value="weekly"   data-t="fr_weekly">Weekly (−20%)</option>
+            <option value="biweekly" data-t="fr_bi">Bi-weekly (−10%)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="tool-divider"></div>
+
+      <!-- Result -->
+      <div class="result-box">
+        <div>
+          <p class="result-label" data-t="res_label">Estimated price per visit</p>
+          <p class="result-price" id="result-price">€74</p>
+          <p class="result-note" id="result-note"></p>
+        </div>
+        <div class="result-cta">
+          <a href="#" class="btn-gold">
+            <img src="img/calendar.webp" alt="" style="width:16px;height:16px">
+            <span data-t="res_cta">Book this clean</span>
+          </a>
+          <p style="font-size:11px;color:var(--muted);text-align:right" data-t="res_disclaimer">Estimate only · Final price confirmed at booking</p>
+        </div>
+      </div>
+
+      <p class="tool-footnote" data-t="tool_note">Built by D&amp;L Project56 · This is a live demo — connect your booking system to go live.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="sec-wrap">
+  <div class="sec">
+    <p class="label" data-t="testi_label">What clients say</p>
+    <h2 class="sec-title" data-t="testi_title">Trusted by hundreds of households</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">
+          <img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★">
+        </div>
+        <p class="testi-text" data-t="t1_text">"Booked Monday, cleaned Tuesday. Absolutely spotless — even the windows. I'm never going back to doing it myself."</p>
+        <p class="testi-name" data-t="t1_name">Maria G.</p>
+        <p class="testi-role" data-t="t1_role">Apartment, Valletta</p>
+      </div>
+      <div class="testi-card">
+        <div class="stars">
+          <img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★">
+        </div>
+        <p class="testi-text" data-t="t2_text">"Weekly office clean. The team is reliable, discreet, and always smiling. Highly recommended."</p>
+        <p class="testi-name" data-t="t2_name">Thomas R.</p>
+        <p class="testi-role" data-t="t2_role">Office, Sliema</p>
+      </div>
+      <div class="testi-card">
+        <div class="stars">
+          <img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★"><img src="img/star-gold.webp" alt="★">
+        </div>
+        <p class="testi-text" data-t="t3_text">"Eco products, professional attitude, competitive price. The instant quote tool made it so easy to decide."</p>
+        <p class="testi-name" data-t="t3_name">Claire B.</p>
+        <p class="testi-role" data-t="t3_role">House, St Julian's</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER DEMOBAR -->
+<footer class="footer-bar">
+  <div class="footer-inner">
+    <p class="footer-note">
+      <strong data-t="foot_built">Built by D&amp;L Project56</strong>
+      <span> — </span>
+      <span data-t="foot_tag">we build websites that work as hard as you do.</span>
+    </p>
+    <a href="https://dlproject56.com" class="footer-cta-btn" target="_blank" rel="noopener" data-t="foot_cta">Get your website →</a>
+  </div>
+</footer>
+
+<!-- WHATSAPP STICKY -->
+<a href="https://wa.me/35699123456" class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+  💬 <span data-t="wa_label">WhatsApp</span>
+</a>
+
+<script>
+/* =========================================================
+   I18N
+   ========================================================= */
+const I18N = {
+  en: {
+    demo_tag:     'DEMO',
+    hero_eyebrow: 'Professional Cleaning Service',
+    hero_h1a:     'A spotless place,',
+    hero_h1b:     'booked in 60 seconds.',
+    hero_sub:     'From apartments to offices — our certified team leaves every corner gleaming. Flexible schedules, eco products, trusted professionals.',
+    hero_cta1:    'Get instant quote',
+    hero_cta2:    'How it works',
+    hero_scroll:  '↓ scroll to explore',
+    feat_label:   'Why choose us',
+    feat_title:   'Cleaning done right, every time',
+    feat_sub:     'Certified, insured, and always on time — we take the hassle out of keeping your space pristine.',
+    f1_title: 'Vetted & Insured',     f1_desc: 'Every cleaner is background-checked, trained, and fully insured for your peace of mind.',
+    f2_title: 'Eco Products',         f2_desc: 'We use only certified eco-friendly products — safe for children, pets, and the planet.',
+    f3_title: 'Flexible Scheduling',  f3_desc: 'Book any slot that works — mornings, evenings, weekends. We fit around your life.',
+    f4_title: 'Satisfaction Guarantee', f4_desc: 'Not happy? We come back and re-clean for free. No fuss, no questions — just results.',
+    how_label:  'Simple process',
+    how_title:  'Book in three easy steps',
+    s1_title: 'Get your quote',   s1_desc: 'Use the instant calculator below — pick property type, size, and frequency to see your price live.',
+    s2_title: 'Pick a time',      s2_desc: 'Choose a date and slot that suits you. Same-day availability in most areas.',
+    s3_title: 'We clean, you relax', s3_desc: 'Your vetted cleaner arrives on time. You return to a spotless, fresh-smelling space.',
+    tool_label: 'Instant Price Calculator',
+    tool_title: 'Get your cleaning quote',
+    tool_sub:   'Adjust the options and watch the price update live — no sign-up required.',
+    fl_prop: 'Property type', fl_size: 'Size (m²)', fl_freq: 'Frequency',
+    p_apt: 'Apartment', p_house: 'House', p_office: 'Office',
+    fr_once: 'One-off', fr_weekly: 'Weekly (−20%)', fr_bi: 'Bi-weekly (−10%)',
+    res_label:      'Estimated price per visit',
+    res_cta:        'Book this clean',
+    res_disclaimer: 'Estimate only · Final price confirmed at booking',
+    tool_note:      'Built by D&L Project56 · This is a live demo — connect your booking system to go live.',
+    testi_label: 'What clients say',
+    testi_title: 'Trusted by hundreds of households',
+    t1_text: '"Booked Monday, cleaned Tuesday. Absolutely spotless — even the windows. I\'m never going back to doing it myself."',
+    t1_name: 'Maria G.', t1_role: 'Apartment, Valletta',
+    t2_text: '"Weekly office clean. The team is reliable, discreet, and always smiling. Highly recommended."',
+    t2_name: 'Thomas R.', t2_role: 'Office, Sliema',
+    t3_text: '"Eco products, professional attitude, competitive price. The instant quote tool made it so easy to decide."',
+    t3_name: 'Claire B.', t3_role: 'House, St Julian\'s',
+    foot_built: 'Built by D&L Project56',
+    foot_tag:   'we build websites that work as hard as you do.',
+    foot_cta:   'Get your website →',
+    wa_label:   'WhatsApp',
+    save_pfx: 'Save', per_visit: '/visit',
+  },
+  de: {
+    demo_tag:     'DEMO',
+    hero_eyebrow: 'Professioneller Reinigungsservice',
+    hero_h1a:     'Makellos sauber,',
+    hero_h1b:     'in 60 Sekunden gebucht.',
+    hero_sub:     'Von Wohnungen bis Büros — unser zertifiziertes Team hinterlässt jeden Winkel glänzend. Flexible Zeiten, Öko-Produkte, vertrauenswürdige Profis.',
+    hero_cta1:    'Sofortangebot',
+    hero_cta2:    'So funktioniert es',
+    hero_scroll:  '↓ nach unten scrollen',
+    feat_label:   'Warum wir',
+    feat_title:   'Sauberkeit, die überzeugt',
+    feat_sub:     'Zertifiziert, versichert und pünktlich — wir nehmen Ihnen die Mühe ab.',
+    f1_title: 'Geprüft & Versichert',    f1_desc: 'Alle Reinigungskräfte werden überprüft, geschult und sind vollständig versichert.',
+    f2_title: 'Öko-Produkte',            f2_desc: 'Nur zertifizierte umweltfreundliche Produkte — sicher für Kinder, Haustiere und Natur.',
+    f3_title: 'Flexible Terminplanung',  f3_desc: 'Buchen Sie jeden Slot — morgens, abends, am Wochenende. Wir passen uns an.',
+    f4_title: 'Zufriedenheitsgarantie',  f4_desc: 'Nicht zufrieden? Wir kommen kostenlos zurück. Keine Fragen, kein Aufwand.',
+    how_label:  'Einfacher Ablauf',
+    how_title:  'In drei Schritten buchen',
+    s1_title: 'Angebot erhalten',         s1_desc: 'Nutzen Sie den Kalkulator — Typ, Größe und Häufigkeit auswählen.',
+    s2_title: 'Zeit wählen',              s2_desc: 'Datum und Uhrzeit auswählen. Gleichtagesverfügbarkeit in den meisten Gebieten.',
+    s3_title: 'Wir reinigen, Sie entspannen', s3_desc: 'Ihr geprüfter Reiniger kommt pünktlich. Sie kommen in ein makelloses Zuhause.',
+    tool_label: 'Sofortpreiskalkulator',
+    tool_title: 'Reinigungsangebot berechnen',
+    tool_sub:   'Passen Sie die Optionen an — der Preis aktualisiert sich sofort.',
+    fl_prop: 'Objektart', fl_size: 'Fläche (m²)', fl_freq: 'Häufigkeit',
+    p_apt: 'Wohnung', p_house: 'Haus', p_office: 'Büro',
+    fr_once: 'Einmalig', fr_weekly: 'Wöchentlich (−20%)', fr_bi: 'Zweiwöchentlich (−10%)',
+    res_label:      'Geschätzter Preis pro Besuch',
+    res_cta:        'Jetzt buchen',
+    res_disclaimer: 'Schätzung · Endpreis wird bei der Buchung bestätigt',
+    tool_note:      'Erstellt von D&L Project56 · Dies ist eine Live-Demo.',
+    testi_label: 'Kundenmeinungen',
+    testi_title: 'Von Hunderten Haushalten vertraut',
+    t1_text: '"Montag gebucht, Dienstag gereinigt. Absolut makellos — sogar die Fenster. Ich mache es nie wieder selbst."',
+    t1_name: 'Maria G.', t1_role: 'Wohnung, Valletta',
+    t2_text: '"Wöchentliche Büroreinigung. Das Team ist zuverlässig, diskret und immer freundlich."',
+    t2_name: 'Thomas R.', t2_role: 'Büro, Sliema',
+    t3_text: '"Öko-Produkte, Professionalität und guter Preis. Das Kalkulator-Tool hat die Entscheidung leicht gemacht."',
+    t3_name: 'Claire B.', t3_role: 'Haus, St. Julian\'s',
+    foot_built: 'Erstellt von D&L Project56',
+    foot_tag:   'wir bauen Websites, die so hart arbeiten wie Sie.',
+    foot_cta:   'Ihre Website →',
+    wa_label:   'WhatsApp',
+    save_pfx: 'Sparen Sie', per_visit: '/Besuch',
+  },
+  fr: {
+    demo_tag:     'DÉMO',
+    hero_eyebrow: 'Service de nettoyage professionnel',
+    hero_h1a:     'Un espace impeccable,',
+    hero_h1b:     'réservé en 60 secondes.',
+    hero_sub:     'Des appartements aux bureaux — notre équipe certifiée laisse chaque recoin brillant. Horaires flexibles, produits éco, professionnels de confiance.',
+    hero_cta1:    'Obtenir un devis',
+    hero_cta2:    'Comment ça marche',
+    hero_scroll:  '↓ défiler pour explorer',
+    feat_label:   'Pourquoi nous',
+    feat_title:   'Le nettoyage bien fait, à chaque fois',
+    feat_sub:     'Certifiés, assurés et toujours à l\'heure — nous gérons tout pour garder votre espace impeccable.',
+    f1_title: 'Vérifiés & Assurés',     f1_desc: 'Tous nos agents sont contrôlés, formés et pleinement assurés pour votre tranquillité.',
+    f2_title: 'Produits Éco',            f2_desc: 'Uniquement des produits certifiés écologiques — sûrs pour les enfants et les animaux.',
+    f3_title: 'Horaires Flexibles',      f3_desc: 'Réservez le créneau qui vous convient — matin, soir, week-end. Nous nous adaptons.',
+    f4_title: 'Garantie Satisfaction',   f4_desc: 'Pas satisfait ? Nous revenons corriger gratuitement. Sans question, sans tracas.',
+    how_label:  'Processus simple',
+    how_title:  'Réservez en trois étapes faciles',
+    s1_title: 'Obtenez votre devis',     s1_desc: 'Utilisez le calculateur — choisissez le type, la surface et la fréquence.',
+    s2_title: 'Choisissez un créneau',   s2_desc: 'Sélectionnez une date et un horaire. Disponibilité le jour même dans la plupart des zones.',
+    s3_title: 'On nettoie, vous vous reposez', s3_desc: 'Votre agent arrive à l\'heure. Vous rentrez dans un espace impeccable.',
+    tool_label: 'Calculateur de prix instantané',
+    tool_title: 'Calculez votre devis nettoyage',
+    tool_sub:   'Ajustez les options et regardez le prix évoluer en direct.',
+    fl_prop: 'Type de bien', fl_size: 'Surface (m²)', fl_freq: 'Fréquence',
+    p_apt: 'Appartement', p_house: 'Maison', p_office: 'Bureau',
+    fr_once: 'Ponctuel', fr_weekly: 'Hebdomadaire (−20%)', fr_bi: 'Bimensuel (−10%)',
+    res_label:      'Prix estimé par visite',
+    res_cta:        'Réserver ce nettoyage',
+    res_disclaimer: 'Estimation · Prix final confirmé à la réservation',
+    tool_note:      'Créé par D&L Project56 · Ceci est une démo live.',
+    testi_label: 'Avis clients',
+    testi_title: 'La confiance de centaines de foyers',
+    t1_text: '"Réservé lundi, nettoyé mardi. Absolument impeccable — même les vitres. Je ne le ferai plus jamais moi-même."',
+    t1_name: 'Maria G.', t1_role: 'Appartement, Valletta',
+    t2_text: '"Nettoyage hebdomadaire pour notre bureau. Fiable, discret, toujours souriant. Très recommandé."',
+    t2_name: 'Thomas R.', t2_role: 'Bureau, Sliema',
+    t3_text: '"Produits éco, attitude pro, prix compétitif. L\'outil de devis instantané a rendu la décision facile."',
+    t3_name: 'Claire B.', t3_role: 'Maison, St Julian\'s',
+    foot_built: 'Créé par D&L Project56',
+    foot_tag:   'nous créons des sites qui travaillent aussi dur que vous.',
+    foot_cta:   'Votre site web →',
+    wa_label:   'WhatsApp',
+    save_pfx: 'Économisez', per_visit: '/visite',
+  },
+  mt: {
+    demo_tag:     'DEMO',
+    hero_eyebrow: 'Servizz Professjonali ta\' Tindif',
+    hero_h1a:     'Post indaf u ġmielu,',
+    hero_h1b:     'imħotob f\'60 sekonda.',
+    hero_sub:     'Mill-appartamenti sal-uffiċċji — it-tim tagħna ċertifikat iħalli kull rokna jleqq. Skedi flessibbli, prodotti eko, professjonisti affidabbli.',
+    hero_cta1:    'Ikseb prezz immedjat',
+    hero_cta2:    'Kif jaħdem',
+    hero_scroll:  '↓ skrollja l-isfel',
+    feat_label:   'Għaliex aħna',
+    feat_title:   'Tindif magħmul tajjeb, kull darba',
+    feat_sub:     'Ċertifikati, assigurati u dejjem fil-ħin — aħna nieħdu l-inkwiet mill-idejk.',
+    f1_title: 'Ivverifikati u Assigurati',  f1_desc: 'L-agents kollha jiġu vverifikati, imħarrġa u assigurati.',
+    f2_title: 'Prodotti Eko',               f2_desc: 'Biss prodotti eko ċertifikati — siguri għat-tfal, l-annimali u l-pjaneta.',
+    f3_title: 'Skedi Flessibbli',           f3_desc: 'Ibbukkja l-ħin li jaqbillek — filgħodu, filgħaxija, il-weekend.',
+    f4_title: 'Garanzija ta\' Sodisfazzjon', f4_desc: 'Mhux sodisfatt? Nerġgħu niġu u nindfu b\'xejn. Ebda mistoqsija.',
+    how_label:  'Proċess sempliċi',
+    how_title:  'Ibbukkja fi tliet passi faċli',
+    s1_title: 'Ikseb il-kwotazzjon',           s1_desc: 'Uża l-kalkulator — agħżel it-tip, id-daqs u l-frekwenza.',
+    s2_title: 'Agħżel il-ħin',                 s2_desc: 'Agħżel data u slot. Disponibbiltà fl-istess jum f\'ħafna żoni.',
+    s3_title: 'Aħna nnaddfu, int toqgħod rilassat', s3_desc: 'L-agent tiegħek jiġi fil-ħin. Int tiġi d-dar f\'post indaf.',
+    tool_label: 'Kalkulator tal-Prezz Immedjat',
+    tool_title: 'Ikseb il-kwotazzjon tat-tindif',
+    tool_sub:   'Aġġusta l-għażliet u ara l-prezz jinbidel live.',
+    fl_prop: 'Tip ta\' proprjetà', fl_size: 'Daqs (m²)', fl_freq: 'Frekwenza',
+    p_apt: 'Appartament', p_house: 'Dar', p_office: 'Uffiċċju',
+    fr_once: 'Darba waħda', fr_weekly: 'Kull ġimgħa (−20%)', fr_bi: 'Kull ġimagħtejn (−10%)',
+    res_label:      'Prezz stmat kull żjara',
+    res_cta:        'Ibbukkja dan it-tindif',
+    res_disclaimer: 'Stima biss · Prezz finali kkonfermat fil-bbukkjar',
+    tool_note:      'Magħmul minn D&L Project56 · Din hija demo live.',
+    testi_label: 'X\'jgħidu l-klijenti',
+    testi_title: 'Fdati minn mijiet ta\' familji',
+    t1_text: '"Ibbukkajna t-Tnejn, inħaslet it-Tlieta. Perfettament indafa — saħansitra t-twieqi."',
+    t1_name: 'Maria G.', t1_role: 'Appartament, Valletta',
+    t2_text: '"Tindif kull ġimgħa fl-uffiċċju tagħna. It-tim huwa affidabbli, diskretu u bit-tbissima."',
+    t2_name: 'Thomas R.', t2_role: 'Uffiċċju, Sliema',
+    t3_text: '"Prodotti eko, attitudni professjonali u prezz kompetittiv. L-għodda tal-kwotazzjon għamlet id-deċiżjoni faċli."',
+    t3_name: 'Claire B.', t3_role: 'Dar, St Julian\'s',
+    foot_built: 'Magħmul minn D&L Project56',
+    foot_tag:   'nibnu siti li jaħdmu daqskemm int.',
+    foot_cta:   'Ikseb is-sit tiegħek →',
+    wa_label:   'WhatsApp',
+    save_pfx: 'Tiffranka', per_visit: '/żjara',
+  }
+};
+
+/* =========================================================
+   LANG SWITCH
+   ========================================================= */
+let lang = 'en';
+
+function applyLang(l) {
+  lang = l;
+  const d = I18N[l] || I18N.en;
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const k = el.getAttribute('data-t');
+    if (d[k] != null) el.textContent = d[k];
+  });
+  document.documentElement.lang = l;
+  calcQuote();
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyLang(btn.dataset.lang);
+  });
+});
+
+/* =========================================================
+   RADIO PILLS
+   ========================================================= */
+document.querySelectorAll('.radio-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const grpName = pill.querySelector('input').name;
+    document.querySelectorAll(`.radio-pill input[name="${grpName}"]`)
+      .forEach(r => r.closest('.radio-pill').classList.remove('on'));
+    pill.querySelector('input').checked = true;
+    pill.classList.add('on');
+    calcQuote();
+  });
+});
+
+document.getElementById('size-in').addEventListener('input', calcQuote);
+document.getElementById('freq-sel').addEventListener('change', calcQuote);
+
+/* =========================================================
+   QUOTE CALCULATOR
+   ========================================================= */
+function calcQuote() {
+  const prop  = document.querySelector('input[name="prop"]:checked')?.value || 'apartment';
+  const size  = Math.max(10, parseInt(document.getElementById('size-in').value) || 60);
+  const freq  = document.getElementById('freq-sel').value;
+  const d     = I18N[lang] || I18N.en;
+
+  const base    = { apartment: 45, house: 65, office: 58 }[prop] ?? 45;
+  const rate    = 0.42;          // €/m²
+  const full    = base + size * rate;
+  const disc    = { once: 0, weekly: 0.20, biweekly: 0.10 }[freq] ?? 0;
+  const price   = Math.round(full * (1 - disc));
+  const saving  = Math.round(full * disc);
+
+  document.getElementById('result-price').textContent = `€${price}`;
+
+  let note = '';
+  if (disc > 0) note = `${d.save_pfx} €${saving}${d.per_visit}`;
+  document.getElementById('result-note').textContent = note;
+}
+
+calcQuote();
+</script>
+</body>
+</html>
