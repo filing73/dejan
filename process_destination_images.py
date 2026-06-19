@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-dlproject56.com — Destination Image Processor
-Run this script locally on Windows to prepare source photos for production.
+dlproject56.com — Flat Destination Image Processor
+
+Selects the best source image for each required destination,
+backs up any existing output files, converts to WebP, and
+writes a flat image set + report.
 
 Requirements:
     pip install Pillow
@@ -12,29 +15,24 @@ Usage:
 
 import os
 import sys
-import json
-import csv
-import hashlib
+import shutil
 import unicodedata
 import re
 from pathlib import Path
 from datetime import datetime
-from collections import defaultdict
 
-# ── Verify Pillow ─────────────────────────────────────────────────────────────
 try:
     from PIL import Image
 except ImportError:
-    print("ERROR: Pillow is not installed.")
-    print("       Run:  pip install Pillow")
+    print("ERROR: Pillow is not installed.  Run:  pip install Pillow")
     sys.exit(1)
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# CONFIGURATION
+# PATHS
 # ═══════════════════════════════════════════════════════════════════════════════
 
 SOURCE_DIR = Path(r"H:\DL_AI_WORK\02_ACTIVE_PROJECTS\DLPROJECT56\Duplicat za rodju")
-WORKSPACE  = Path(r"H:\DL_AI_WORK\02_ACTIVE_PROJECTS\DLPROJECT56\01_DLPROJECT56_COM_glavni sajt")
+WORKSPACE  = Path(r"C:\Users\dejan\My Drive\01_D&L_PROJECT56\01_WEBSITE\ACTIVE_SITES\dlproject56-main")
 OUTPUT_DIR = WORKSPACE / "images" / "destinations"
 
 WEBP_QUALITY = 80
@@ -42,149 +40,132 @@ MAX_WIDTH    = 1600
 IMAGE_EXTS   = {".jpg", ".jpeg", ".png", ".webp"}
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# FOLDER NAME MAPPINGS
+# TARGET DEFINITIONS
+#
+# path_kw   — at least one must appear somewhere in the source file's path
+#             (slugified: lowercase, accents stripped, non-ascii removed)
+# prio_kw   — score +10 per match in the filename stem; used to prefer
+#             the most representative shot when multiple candidates exist
+# exclude   — list of output filenames whose chosen source must not be reused
+#             (prevents santorini.webp and santorini-oia-sunset-view.webp
+#             pointing to the same source file)
 # ═══════════════════════════════════════════════════════════════════════════════
 
-# Source top-level folder → canonical country slug
-COUNTRY_MAP = {
-    "01_malta":  "malta",
-    "02_grece":  "greece",
-    "02_greece": "greece",
-    "03_italy":  "italy",
-    "04_spain":  "spain",
-}
-
-# Source sub-folder names → canonical output slug
-AREA_MAP = {
-    # Greece
-    "santorini": "santorini",
-
-    # Italy — destinations
-    "sicily":   "sicily",
-    "sicilia":  "sicily",
-    "rome":     "rome",
-    "roma":     "rome",
-    "venice":   "venice",
-    "venezia":  "venice",
-
-    # Sicily — areas
-    "agrigento":          "agrigento",
-    "cefalù":             "cefalu",
-    "cefalu":             "cefalu",
-    "cefalú":             "cefalu",
-    "mondello":           "mondello",
-    "palermo":            "palermo",
-    "san vito lo capo":   "san-vito-lo-capo",
-    "san_vito_lo_capo":   "san-vito-lo-capo",
-    "san-vito-lo-capo":   "san-vito-lo-capo",
-    "sanvitolocapo":      "san-vito-lo-capo",
-    "siracusa":           "siracusa",
-    "syracuse":           "siracusa",
-    "taormina":           "taormina",
-
-    # Spain
-    "ibiza":     "ibiza",
-    "mallorca":  "mallorca",
-    "majorca":   "mallorca",
-    "barcelona": "barcelona",
-    "barsa":     "barcelona",
-}
-
-# Output folder tree (used to pre-create directories)
-OUTPUT_TREE = {
-    "malta": {},
-    "greece": {
-        "santorini": {},
+TARGETS = [
+    {
+        "output":  "malta.webp",
+        "path_kw": ["malta"],
+        "prio_kw": ["blue", "lagoon", "valletta", "coast", "sea", "cliff",
+                    "harbour", "harbor", "mdina", "comino"],
+        "exclude": [],
     },
-    "italy": {
-        "sicily": {
-            "agrigento":       {},
-            "cefalu":          {},
-            "mondello":        {},
-            "palermo":         {},
-            "san-vito-lo-capo": {},
-            "siracusa":        {},
-            "taormina":        {},
-        },
-        "rome":   {},
-        "venice": {},
+    {
+        "output":  "santorini.webp",
+        "path_kw": ["santorini"],
+        "prio_kw": ["caldera", "white", "oia", "fira", "dome", "blue", "building", "village"],
+        "exclude": [],
     },
-    "spain": {
-        "ibiza":     {},
-        "mallorca":  {},
-        "barcelona": {},
+    {
+        "output":  "santorini-oia-sunset-view.webp",
+        "path_kw": ["santorini"],
+        "prio_kw": ["oia", "sunset", "view", "caldera", "evening", "dusk", "golden"],
+        "exclude": ["santorini.webp"],   # must differ from the santorini hero
     },
-}
+    {
+        "output":  "sicily.webp",
+        "path_kw": ["sicily", "sicilia", "taormina", "cefalu", "cefal",
+                    "mondello", "palermo", "sanvito", "san-vito", "san_vito",
+                    "siracusa", "agrigento"],
+        "prio_kw": ["taormina", "cefalu", "sanvito", "coast", "sea", "beach",
+                    "greek", "temple", "theatre", "theater"],
+        "exclude": [],
+    },
+    {
+        "output":  "ibiza.webp",
+        "path_kw": ["ibiza"],
+        "prio_kw": ["beach", "coast", "cala", "bay", "sea", "sunset", "water"],
+        "exclude": [],
+    },
+    {
+        "output":  "rome.webp",
+        "path_kw": ["rome", "roma"],
+        "prio_kw": ["colosseum", "coliseum", "forum", "vatican", "trevi",
+                    "pantheon", "piazza", "navona", "landmark"],
+        "exclude": [],
+    },
+    {
+        "output":  "venice.webp",
+        "path_kw": ["venice", "venezia"],
+        "prio_kw": ["canal", "gondola", "rialto", "grand", "bridge",
+                    "san marco", "sanmarco", "lagoon"],
+        "exclude": [],
+    },
+    {
+        "output":  "mallorca.webp",
+        "path_kw": ["mallorca", "majorca"],
+        "prio_kw": ["beach", "coast", "cala", "bay", "sea", "water", "cliff"],
+        "exclude": [],
+    },
+    {
+        "output":  "barcelona.webp",
+        "path_kw": ["barcelona"],
+        "prio_kw": ["sagrada", "familia", "gaudi", "park", "guell",
+                    "gothic", "city", "barceloneta", "rambla"],
+        "exclude": [],
+    },
+]
 
-# Alt text per destination key
-ALT_TEXT = {
-    "malta":                          "Coastal landscape and historic architecture in Malta",
-    "greece-santorini":               "Whitewashed buildings and caldera views in Santorini, Greece",
-    "italy-rome":                     "Historic monuments and city streets in Rome, Italy",
-    "italy-venice":                   "Grand Canal and gondolas in Venice, Italy",
-    "italy-sicily":                   "Coastline and landscape in Sicily, Italy",
-    "italy-sicily-agrigento":         "Ancient Greek temples in the Valley of the Temples, Agrigento, Sicily",
-    "italy-sicily-cefalu":            "Sandy beach and Norman cathedral in Cefalù, Sicily",
-    "italy-sicily-mondello":          "Turquoise water and sandy beach in Mondello, Sicily",
-    "italy-sicily-palermo":           "Street market and historic buildings in Palermo, Sicily",
-    "italy-sicily-san-vito-lo-capo":  "Clear turquoise water and white sand beach in San Vito Lo Capo, Sicily",
-    "italy-sicily-siracusa":          "Ancient Greek theatre and harbour in Siracusa, Sicily",
-    "italy-sicily-taormina":          "Greek theatre with sea views in Taormina, Sicily",
-    "spain-ibiza":                    "Coastal scenery and beach in Ibiza, Spain",
-    "spain-mallorca":                 "Beach and turquoise coastline in Mallorca, Spain",
-    "spain-barcelona":                "Gaudí architecture and city views in Barcelona, Spain",
-}
-
-# Destination keys eligible for a hero image (first image per key = hero)
-HERO_KEYS = {
-    "malta",
-    "greece-santorini",
-    "italy-rome",
-    "italy-venice",
-    "italy-sicily",
-    "spain-mallorca",
-    "spain-ibiza",
-    "spain-barcelona",
-}
+REQUIRED_OUTPUTS = [t["output"] for t in TARGETS]
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # HELPERS
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def slugify(text: str) -> str:
-    text = unicodedata.normalize("NFKD", text)
+def slug(text: str) -> str:
+    """Lowercase, strip accents, keep only a-z0-9 and spaces/hyphens."""
+    text = unicodedata.normalize("NFKD", str(text))
     text = text.encode("ascii", "ignore").decode("ascii")
-    text = text.lower()
-    text = re.sub(r"[^a-z0-9]+", "-", text)
-    return text.strip("-")
+    return text.lower()
 
 
-def map_folder(name: str) -> str:
-    key = name.strip().lower()
-    if key in AREA_MAP:
-        return AREA_MAP[key]
-    stripped = slugify(name)
-    if stripped in AREA_MAP:
-        return AREA_MAP[stripped]
-    spaced = key.replace("_", " ").replace("-", " ")
-    if spaced in AREA_MAP:
-        return AREA_MAP[spaced]
-    return stripped
+def path_slug(p: Path) -> str:
+    """All parts of a path joined and slugified — used for keyword matching."""
+    return " ".join(slug(part) for part in p.parts)
 
 
-def file_md5(path: Path) -> str:
-    h = hashlib.md5()
-    with open(path, "rb") as f:
-        for chunk in iter(lambda: f.read(65536), b""):
-            h.update(chunk)
-    return h.hexdigest()
+def score(img_path: Path, path_kw: list, prio_kw: list) -> tuple:
+    """
+    Return (matches: bool, keyword_score: int, file_size: int).
+    A candidate must match at least one path_kw to be eligible.
+    """
+    full = path_slug(img_path)
+    if not any(kw in full for kw in path_kw):
+        return False, 0, 0
+    name = slug(img_path.stem)
+    kw_score = sum(10 for kw in prio_kw if kw in name)
+    return True, kw_score, img_path.stat().st_size
 
 
-def process_image(src: Path, dst: Path):
-    """Load, resize, convert to WebP (metadata stripped), save. Returns (w, h, orig_kb, out_kb)."""
+def collect_images(source_dir: Path) -> list:
+    """Recursively collect all image files from source_dir."""
+    found = []
+    for root, dirs, files in os.walk(source_dir):
+        dirs[:] = sorted(d for d in dirs if not d.startswith("."))
+        for fname in sorted(files):
+            if Path(fname).suffix.lower() in IMAGE_EXTS:
+                found.append(Path(root) / fname)
+    return found
+
+
+def convert(src: Path, dst: Path) -> tuple:
+    """
+    Open src, resize to MAX_WIDTH (preserving ratio), strip metadata,
+    save as WebP at WEBP_QUALITY. Returns (width, height, orig_kb, out_kb).
+    """
     orig_kb = src.stat().st_size // 1024
     img = Image.open(src)
 
+    # Normalise colour mode
     if img.mode == "P":
         img = img.convert("RGBA")
     if img.mode == "RGBA":
@@ -194,6 +175,7 @@ def process_image(src: Path, dst: Path):
     elif img.mode != "RGB":
         img = img.convert("RGB")
 
+    # Resize if needed
     if img.width > MAX_WIDTH:
         new_h = int(img.height * MAX_WIDTH / img.width)
         img = img.resize((MAX_WIDTH, new_h), Image.LANCZOS)
@@ -205,148 +187,18 @@ def process_image(src: Path, dst: Path):
     return w, h, orig_kb, out_kb
 
 
-def classify_path(rel_parts: list) -> tuple:
-    """Map source folder path components to (country, dest, area) slugs."""
-    if not rel_parts:
-        return "unknown", None, None
-    country = COUNTRY_MAP.get(rel_parts[0].lower(), slugify(rel_parts[0]))
-    dest = map_folder(rel_parts[1]) if len(rel_parts) >= 2 else None
-    area = map_folder(rel_parts[2]) if len(rel_parts) >= 3 else None
-    return country, dest, area
-
-
-def dest_key(country, dest, area) -> str:
-    parts = [country]
-    if dest:
-        parts.append(dest)
-    if area:
-        parts.append(area)
-    return "-".join(parts)
-
-
-def build_filename(country, dest, area, n: int) -> str:
-    return dest_key(country, dest, area) + f"-{n:02d}.webp"
-
-
-def output_rel_path(country, dest, area) -> Path:
-    p = Path(country)
-    if dest:
-        p = p / dest
-    if area:
-        p = p / area
-    return p
-
-
-def get_alt(country, dest, area) -> str:
-    return ALT_TEXT.get(dest_key(country, dest, area), f"Travel photo — {country.title()}")
-
-
-def get_use(dk: str, n: int) -> str:
-    if n == 1 and dk in HERO_KEYS:
-        return "hero"
-    if n <= 3:
-        return "card"
-    return "gallery"
-
-
 # ═══════════════════════════════════════════════════════════════════════════════
-# FOLDER TREE CREATION
+# REPORT WRITER
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def create_output_tree():
-    def walk(node, base):
-        for name, children in node.items():
-            folder = base / name
-            folder.mkdir(parents=True, exist_ok=True)
-            if children:
-                walk(children, folder)
-    walk(OUTPUT_TREE, OUTPUT_DIR)
-    print(f"  Output tree created under {OUTPUT_DIR}\n")
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# SOURCE COLLECTION
-# ═══════════════════════════════════════════════════════════════════════════════
-
-def collect_source(source_dir: Path):
-    images = []
-    empty_folders = []
-
-    def recurse(folder: Path, rel_parts: list):
-        try:
-            entries = sorted(folder.iterdir(), key=lambda p: (p.is_file(), p.name.lower()))
-        except PermissionError:
-            return
-        imgs    = [e for e in entries if e.is_file() and e.suffix.lower() in IMAGE_EXTS]
-        subdirs = [e for e in entries if e.is_dir() and not e.name.startswith(".")]
-        if not imgs and not subdirs:
-            empty_folders.append(str(folder))
-            return
-        for img_path in imgs:
-            country, dest, area = classify_path(rel_parts)
-            images.append((img_path, country, dest, area))
-        for sub in subdirs:
-            recurse(sub, rel_parts + [sub.name])
-
-    for top in sorted(source_dir.iterdir()):
-        if top.is_dir() and not top.name.startswith("."):
-            recurse(top, [top.name])
-
-    return images, empty_folders
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# OUTPUT FILE WRITERS
-# ═══════════════════════════════════════════════════════════════════════════════
-
-CSV_FIELDS = [
-    "source_path", "output_path", "country", "destination", "area",
-    "filename", "alt_text", "suggested_use",
-    "width", "height", "original_size_kb", "output_size_kb", "duplicate_of",
-]
-
-
-def write_csv(rows: list, path: Path):
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=CSV_FIELDS)
-        w.writeheader()
-        w.writerows(rows)
-    print(f"  Written: {path.name}")
-
-
-def write_json(rows: list, path: Path):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(rows, f, indent=2, ensure_ascii=False)
-    print(f"  Written: {path.name}")
-
-
-def write_report(path: Path, rows, duplicates, empty_folders, failed,
-                 total_source, total_processed):
-    # Hero map
-    hero_map = {}
-    for r in rows:
-        if r.get("suggested_use") == "hero":
-            dk = r["country"]
-            if r["destination"]:
-                dk += "/" + r["destination"]
-            if r["area"]:
-                dk += "/" + r["area"]
-            hero_map[dk] = r["filename"]
-
-    # Images by destination
-    by_dest = defaultdict(list)
-    for r in rows:
-        if r.get("duplicate_of") or not r.get("output_path"):
-            continue
-        dk = r["country"]
-        if r["destination"]:
-            dk += "/" + r["destination"]
-        if r["area"]:
-            dk += "/" + r["area"]
-        by_dest[dk].append(r["filename"])
+def write_report(path: Path, results: list, backup_dir, ts: str):
+    created    = [r for r in results if r["status"] == "OK" and not r["overwritten"]]
+    overwritten = [r for r in results if r["status"] == "OK" and r["overwritten"]]
+    missing    = [r for r in results if r["status"] == "MISSING"]
+    failed     = [r for r in results if r["status"] not in ("OK", "MISSING")]
 
     lines = [
-        "# dlproject56.com — Image Processing Report",
+        "# dlproject56.com — Destination Image Flat Report",
         "",
         f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
         "",
@@ -354,96 +206,84 @@ def write_report(path: Path, rows, duplicates, empty_folders, failed,
         "",
         "## Summary",
         "",
-        "| Metric | Count |",
+        "| Metric | Value |",
         "|--------|-------|",
-        f"| Source images found | {total_source} |",
-        f"| Successfully processed | {total_processed} |",
-        f"| Duplicate files skipped | {len(duplicates)} |",
-        f"| Empty folders | {len(empty_folders)} |",
+        f"| Required output files | {len(REQUIRED_OUTPUTS)} |",
+        f"| Files created (new) | {len(created)} |",
+        f"| Files overwritten | {len(overwritten)} |",
+        f"| Backups created | {len(overwritten)} |",
+        f"| Missing source categories | {len(missing)} |",
         f"| Failed | {len(failed)} |",
+        f"| HTML/CSS/JS edited | No |",
+        f"| Server files touched | No |",
+        f"| Source images deleted | No |",
         "",
         "---",
         "",
-        "## Final Folder Structure",
+        "## Files Created or Updated",
         "",
-        "```",
-        "images/destinations/",
-        "  malta/",
-        "  greece/",
-        "    santorini/",
-        "  italy/",
-        "    sicily/",
-        "      agrigento/",
-        "      cefalu/",
-        "      mondello/",
-        "      palermo/",
-        "      san-vito-lo-capo/",
-        "      siracusa/",
-        "      taormina/",
-        "    rome/",
-        "    venice/",
-        "  spain/",
-        "    ibiza/",
-        "    mallorca/",
-        "    barcelona/",
-        "```",
-        "",
-        "---",
-        "",
-        "## Processed Images by Destination",
-        "",
+        "| Output file | Source image used | Original size | Final size | Dimensions | Status |",
+        "|-------------|-------------------|---------------|------------|------------|--------|",
     ]
 
-    for dk in sorted(by_dest):
-        files = by_dest[dk]
-        lines += [f"### {dk}", "", f"Count: {len(files)}", ""]
-        for fn in files:
-            lines.append(f"- `{fn}`")
+    for r in results:
+        if r["status"] == "OK":
+            verb = "overwritten" if r["overwritten"] else "new"
+            lines.append(
+                f"| `{r['output']}` | `{r['source']}` "
+                f"| {r['orig_kb']} KB | {r['out_kb']} KB "
+                f"| {r['width']}×{r['height']} | {verb} |"
+            )
+        elif r["status"] == "MISSING":
+            lines.append(
+                f"| `{r['output']}` | *(no source found)* | — | — | — | MISSING |"
+            )
+        else:
+            lines.append(
+                f"| `{r['output']}` | `{r.get('source','')}` | — | — | — | FAILED |"
+            )
+
+    lines += ["", "---", "", "## Backups", ""]
+    if backup_dir:
+        lines.append(f"Backup folder: `{backup_dir}`")
         lines.append("")
-
-    lines += [
-        "---",
-        "",
-        "## Recommended Hero Images",
-        "",
-        "| Destination page | Hero filename |",
-        "|------------------|---------------|",
-    ]
-    for page_key in [
-        "malta", "greece/santorini", "italy/rome", "italy/venice",
-        "italy/sicily", "spain/mallorca", "spain/ibiza", "spain/barcelona",
-    ]:
-        hero_fn = hero_map.get(page_key, "*(no image processed)*")
-        lines.append(f"| /{page_key}/ | `{hero_fn}` |")
-
-    lines += ["", "---", "", "## Duplicate Files Skipped", ""]
-    if duplicates:
-        lines += ["| Source file | Duplicate of |", "|-------------|--------------|"]
-        for d in duplicates:
-            lines.append(f"| `{d['source']}` | `{d['duplicate_of']}` |")
+        lines.append("| Backed-up file |")
+        lines.append("|----------------|")
+        for r in overwritten:
+            lines.append(f"| `{r['output']}` |")
     else:
-        lines.append("*(none)*")
+        lines.append("*(no existing files were present — no backup needed)*")
 
-    lines += ["", "---", "", "## Empty Folders", ""]
-    if empty_folders:
-        for ef in empty_folders:
-            lines.append(f"- `{ef}`")
+    lines += ["", "---", "", "## Missing Source Categories", ""]
+    if missing:
+        for r in missing:
+            lines.append(f"- `{r['output']}` — no matching source images found")
     else:
-        lines.append("*(none)*")
+        lines.append("*(none — all destinations had source images)*")
 
     lines += ["", "---", "", "## Failed Files", ""]
     if failed:
-        lines += ["| File | Error |", "|------|-------|"]
-        for fi in failed:
-            lines.append(f"| `{fi['file']}` | {fi['error']} |")
+        for r in failed:
+            lines.append(f"- `{r['output']}`: {r['status']}")
     else:
         lines.append("*(none)*")
 
-    lines.append("")
+    lines += [
+        "",
+        "---",
+        "",
+        "## Confirmation",
+        "",
+        "- HTML files: **not edited**",
+        "- CSS files: **not edited**",
+        "- JS files: **not edited**",
+        "- Server files: **not touched**",
+        "- Source images: **not deleted or modified**",
+        "",
+    ]
 
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
-    print(f"  Written: {path.name}")
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -452,123 +292,133 @@ def write_report(path: Path, rows, duplicates, empty_folders, failed,
 
 def main():
     print()
-    print("=" * 64)
-    print("  dlproject56.com — Destination Image Processor")
-    print("=" * 64)
+    print("=" * 66)
+    print("  dlproject56.com — Flat Destination Image Processor")
+    print("=" * 66)
     print(f"  Source    : {SOURCE_DIR}")
-    print(f"  Workspace : {WORKSPACE}")
     print(f"  Output    : {OUTPUT_DIR}")
     print(f"  Started   : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print()
 
+    # ── Validate paths ────────────────────────────────────────────────────────
     if not SOURCE_DIR.exists():
         print(f"ERROR: Source folder not found:\n  {SOURCE_DIR}")
         sys.exit(1)
-
     if not WORKSPACE.exists():
-        print(f"ERROR: Workspace folder not found:\n  {WORKSPACE}")
+        print(f"ERROR: Workspace not found:\n  {WORKSPACE}")
         sys.exit(1)
 
-    print("Creating output folder structure …")
-    create_output_tree()
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    # ── Backup existing output files ──────────────────────────────────────────
+    existing = [OUTPUT_DIR / name for name in REQUIRED_OUTPUTS
+                if (OUTPUT_DIR / name).exists()]
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_dir = None
+    if existing:
+        backup_dir = OUTPUT_DIR / f"_backup_{ts}"
+        backup_dir.mkdir()
+        for f in existing:
+            shutil.copy2(f, backup_dir / f.name)
+        print(f"  Backed up {len(existing)} existing file(s) →  {backup_dir.name}/")
+        for f in existing:
+            print(f"    {f.name}")
+        print()
+
+    # ── Scan source ───────────────────────────────────────────────────────────
     print("Scanning source images …")
-    source_images, empty_folders = collect_source(SOURCE_DIR)
-    print(f"  Found {len(source_images)} image file(s).")
-    if empty_folders:
-        print(f"  {len(empty_folders)} empty folder(s) detected.")
-    print()
+    all_images = collect_images(SOURCE_DIR)
+    print(f"  {len(all_images)} image file(s) found.\n")
 
-    rows       = []
-    duplicates = []
-    failed     = []
-    hash_seen  = {}
-    counters   = defaultdict(int)
+    if not all_images:
+        print("ERROR: No source images found. Check SOURCE_DIR path.")
+        sys.exit(1)
 
-    for src_path, country, dest, area in source_images:
-        rel_src = str(src_path.relative_to(SOURCE_DIR))
+    # ── Process each target ───────────────────────────────────────────────────
+    used_sources: dict[str, Path] = {}   # output_name → chosen source Path
+    results = []
 
-        # Hash / duplicate check
+    for tgt in TARGETS:
+        out_name = tgt["output"]
+        excluded = {used_sources[k] for k in tgt["exclude"] if k in used_sources}
+
+        candidates = []
+        for img in all_images:
+            if img in excluded:
+                continue
+            ok, kw_score, fsize = score(img, tgt["path_kw"], tgt["prio_kw"])
+            if ok:
+                candidates.append((kw_score, fsize, img))
+
+        if not candidates:
+            print(f"  [MISSING] {out_name}")
+            results.append({"output": out_name, "status": "MISSING", "source": None,
+                            "orig_kb": None, "out_kb": None, "width": None,
+                            "height": None, "overwritten": False})
+            continue
+
+        # Highest keyword score wins; largest file breaks ties
+        candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
+        best = candidates[0][2]
+        was_over = (OUTPUT_DIR / out_name).exists()
+
         try:
-            h = file_md5(src_path)
+            w, h, orig_kb, out_kb = convert(best, OUTPUT_DIR / out_name)
         except Exception as e:
-            failed.append({"file": rel_src, "error": str(e)})
+            print(f"  [FAIL]    {out_name}: {e}")
+            results.append({"output": out_name, "status": str(e),
+                            "source": str(best.relative_to(SOURCE_DIR)),
+                            "orig_kb": None, "out_kb": None,
+                            "width": None, "height": None, "overwritten": was_over})
             continue
 
-        if h in hash_seen:
-            first_fn = hash_seen[h]
-            print(f"  [SKIP DUP] {rel_src}  →  {first_fn}")
-            duplicates.append({"source": rel_src, "duplicate_of": first_fn})
-            rows.append({
-                "source_path": rel_src, "output_path": "", "country": country,
-                "destination": dest or "", "area": area or "", "filename": "",
-                "alt_text": "", "suggested_use": "duplicate",
-                "width": "", "height": "",
-                "original_size_kb": src_path.stat().st_size // 1024,
-                "output_size_kb": "", "duplicate_of": first_fn,
-            })
-            continue
+        used_sources[out_name] = best
+        rel_src = str(best.relative_to(SOURCE_DIR))
+        verb = "overwritten" if was_over else "new      "
+        print(f"  [OK] {out_name:<42} [{verb}]")
+        print(f"       {orig_kb:>5} KB → {out_kb:>5} KB   {w}×{h}")
+        print(f"       ← {rel_src}")
+        results.append({"output": out_name, "status": "OK", "source": rel_src,
+                        "orig_kb": orig_kb, "out_kb": out_kb,
+                        "width": w, "height": h, "overwritten": was_over})
 
-        # Build output path
-        dk = dest_key(country, dest, area)
-        counters[dk] += 1
-        n        = counters[dk]
-        filename = build_filename(country, dest, area, n)
-        out_path = OUTPUT_DIR / output_rel_path(country, dest, area) / filename
-
-        # Process
-        try:
-            w, h, orig_kb, out_kb = process_image(src_path, out_path)
-        except Exception as e:
-            failed.append({"file": rel_src, "error": str(e)})
-            print(f"  [FAIL] {rel_src}: {e}")
-            continue
-
-        hash_seen[h] = filename
-        use = get_use(dk, n)
-        alt = get_alt(country, dest, area)
-        rel_out = str(out_path.relative_to(WORKSPACE)).replace("\\", "/")
-
-        rows.append({
-            "source_path": rel_src, "output_path": rel_out,
-            "country": country, "destination": dest or "", "area": area or "",
-            "filename": filename, "alt_text": alt, "suggested_use": use,
-            "width": w, "height": h,
-            "original_size_kb": orig_kb, "output_size_kb": out_kb,
-            "duplicate_of": "",
-        })
-
-        tag = f"{orig_kb}KB → {out_kb}KB  ({w}×{h})  [{use}]"
-        print(f"  [OK] {filename}  —  {tag}")
-
-    total_source    = len(source_images)
-    total_processed = sum(1 for r in rows if r["suggested_use"] != "duplicate" and r.get("output_path"))
-
+    # ── Write report ──────────────────────────────────────────────────────────
     print()
-    print("Writing output files …")
-    write_csv(rows,  WORKSPACE / "image-map.csv")
-    write_json(rows, WORKSPACE / "image-map.json")
-    write_report(
-        path=WORKSPACE / "processing-report.md",
-        rows=rows, duplicates=duplicates, empty_folders=empty_folders,
-        failed=failed, total_source=total_source, total_processed=total_processed,
-    )
+    report_path = WORKSPACE / "destination-image-flat-report.md"
+    write_report(report_path, results, backup_dir, ts)
+    print(f"  Written: destination-image-flat-report.md")
 
+    # ── Final directory listing ───────────────────────────────────────────────
     print()
-    print("=" * 64)
-    print("  DONE")
-    print(f"  Source images scanned : {total_source}")
-    print(f"  Processed             : {total_processed}")
-    print(f"  Duplicates skipped    : {len(duplicates)}")
-    print(f"  Empty folders         : {len(empty_folders)}")
-    print(f"  Failed                : {len(failed)}")
+    print("Final contents of images/destinations/:")
+    webp_files = sorted(f for f in OUTPUT_DIR.iterdir()
+                        if f.is_file() and f.suffix == ".webp")
+    for f in webp_files:
+        marker = " ✓" if f.name in REQUIRED_OUTPUTS else "  "
+        print(f"  {marker} {f.name:<48} {f.stat().st_size // 1024:>5} KB")
+
+    # ── Required file confirmation ────────────────────────────────────────────
     print()
-    print(f"  Output → {WORKSPACE}")
-    print(f"    image-map.csv")
-    print(f"    image-map.json")
-    print(f"    processing-report.md")
-    print(f"    images\\destinations\\  (all WebP files)")
-    print("=" * 64)
+    print("Required file check:")
+    all_present = True
+    for name in REQUIRED_OUTPUTS:
+        present = (OUTPUT_DIR / name).exists()
+        mark = "OK" if present else "MISSING"
+        print(f"  [{mark}] {name}")
+        if not present:
+            all_present = False
+
+    ok_count = sum(1 for r in results if r["status"] == "OK")
+    missing  = [r["output"] for r in results if r["status"] == "MISSING"]
+    print()
+    print("=" * 66)
+    print(f"  Processed  : {ok_count} / {len(TARGETS)}")
+    if missing:
+        print(f"  MISSING    : {', '.join(missing)}")
+    if backup_dir:
+        print(f"  Backup     : {backup_dir}")
+    print(f"  Report     : {report_path}")
+    print("=" * 66)
     print()
 
 
