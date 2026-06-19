@@ -20,3 +20,30 @@ refund-index.html
 send_booking.php
 terms-index.html
 vendor/
+
+# ── Backups & archives (TASK_024 additions) ──────────
+backups/
+_local_archive/
+_ARCHIVE_BACKUPS/
+_backup_*/
+*.rar
+*.zip
+
+# ── Raw / unprocessed image source folders ────────────
+Duplicat za rodju/
+raw_images/
+**/RAW/
+
+# ── images/ whitelist: only destinations subfolder ───
+images/*
+!images/destinations/
+!images/destinations/**
+
+# ── OS / Google Drive / editor cruft ─────────────────
+Thumbs.db
+desktop.ini
+.DS_Store
+*.gdoc
+*.gsheet
+*.gslides
+~$*
