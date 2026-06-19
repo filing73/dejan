@@ -39,8 +39,8 @@ except ImportError:
 # CONFIGURATION — edit paths if needed
 # ═══════════════════════════════════════════════════════════════════════════════
 
-SOURCE_DIR  = Path(r"C:\Users\dejan\Desktop\Duplicat za rodju")
-WORKSPACE   = Path(r"C:\Users\dejan\My Drive\01_D&L_PROJECT56\01_WEBSITE\ACTIVE_SITES\dlproject56-main")
+SOURCE_DIR  = Path(r"H:\DL_AI_WORK\02_ACTIVE_PROJECTS\DLPROJECT56\Duplicat za rodju")
+WORKSPACE   = Path(r"H:\DL_AI_WORK\02_ACTIVE_PROJECTS\DLPROJECT56\dlproject56-main")
 OUTPUT_DIR  = WORKSPACE / "images" / "destinations"
 
 WEBP_QUALITY   = 80
