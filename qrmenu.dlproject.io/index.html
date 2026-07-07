@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurelia — Smart QR Menu Demo | D&L Project</title>
+<meta name="description" content="Aurelia — a premium Smart QR Menu demo by D&L Project. Fine Mediterranean dining menu with prices, allergens, calorie estimates, dietary filters, a meal calculator and Lina, an AI menu assistant.">
+<link rel="canonical" href="https://qrmenu.dlproject.io/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qrmenu.dlproject.io/">
+<meta property="og:title" content="Aurelia — Smart QR Menu Demo | D&L Project">
+<meta property="og:description" content="A premium Smart QR Menu: dish photography, allergens, calorie estimates, dietary filters, a meal calculator and Lina, an AI menu assistant.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<!-- GA4: paste gtag.js snippet here when provided -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a1220;
+  --navy-2:#0f1a2c;
+  --navy-3:#132239;
+  --ivory:#f6f1e6;
+  --ivory-2:#ede4cf;
+  --gold:#c9a75f;
+  --gold-bright:#e3c78a;
+  --olive:#7a8460;
+  --ink:#161b22;
+  --muted-dark:rgba(246,241,230,.68);
+  --muted-light:#6d6455;
+  --line-dark:rgba(201,167,95,.28);
+  --line-light:#ded2ac;
+  --ok:#5c7a5e;
+  --danger:#9c5b45;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--ivory);color:var(--ink);line-height:1.6;
+  background-image:radial-gradient(ellipse at 50% 0%, #faf6ea 0%, var(--ivory) 60%)}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif}
+button,input{font-family:'Jost',sans-serif}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;background:var(--navy);color:var(--ivory);overflow:hidden}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.42}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(170deg,rgba(10,18,32,.55) 0%,rgba(10,18,32,.9) 68%,var(--navy) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:960px;margin:0 auto;padding:72px 22px 58px;text-align:center}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-bright);font-weight:600}
+.hero .eyebrow::before,.hero .eyebrow::after{content:"";width:36px;height:1px;background:var(--gold);opacity:.8}
+.hero h1{font-style:italic;font-weight:600;font-size:clamp(3.6rem,15vw,7.4rem);line-height:.98;letter-spacing:.01em;margin-top:18px;
+  color:var(--ivory);text-shadow:0 4px 40px rgba(0,0,0,.4)}
+.hero .sub{font-size:clamp(.82rem,2.4vw,1rem);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-bright);margin-top:12px;font-weight:500}
+.hero .rule{width:64px;height:1px;background:var(--gold);margin:22px auto 0;opacity:.7}
+.hero p{margin:22px auto 0;max-width:34em;font-size:1rem;color:var(--muted-dark);font-weight:300}
+.hero .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:center;font-size:.8rem;color:rgba(246,241,230,.6);letter-spacing:.03em}
+.hero .meta span{display:inline-flex;align-items:center;gap:8px}
+.hero .dot{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.hero-cta{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{font-weight:600;font-size:.86rem;letter-spacing:.04em;padding:15px 30px;border-radius:2px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none}
+.btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#241c0c}
+.btn-gold:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.btn-outline{border:1px solid rgba(246,241,230,.4);color:var(--ivory);background:transparent}
+.btn-outline:hover{background:rgba(246,241,230,.08);border-color:var(--gold)}
+
+/* ---------- FILTER BAR ---------- */
+.bar{position:sticky;top:0;z-index:40;background:rgba(246,241,230,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-light)}
+.bar-inner{max-width:1000px;margin:0 auto;padding:13px 18px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.bar-inner::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--navy);color:var(--navy);background:transparent;padding:9px 19px;border-radius:2px;font-weight:500;font-size:.8rem;letter-spacing:.03em;cursor:pointer;transition:all .18s}
+.chip.active,.chip:hover{background:var(--navy);color:var(--gold-bright);border-color:var(--navy)}
+
+/* ---------- MENU ---------- */
+main{max-width:1000px;margin:0 auto;padding:24px 18px 100px}
+.section{margin-top:64px}
+.section:first-of-type{margin-top:40px}
+.section-head{text-align:center;margin-bottom:36px}
+.section-head .tag{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--olive);font-weight:600}
+.section-head h2{font-style:italic;font-weight:600;font-size:clamp(2rem,6vw,2.85rem);color:var(--navy);margin-top:6px}
+.section-head .flourish{width:70px;height:1px;background:var(--gold);margin:16px auto 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:36px 24px}
+
+/* --- dish cards --- */
+.dish{display:flex;flex-direction:column;transition:transform .2s}
+.dish:hover{transform:translateY(-4px)}
+.ph{position:relative;aspect-ratio:4/3.1;border-radius:4px;overflow:hidden;
+  box-shadow:0 20px 40px -14px rgba(10,18,32,.4), 0 4px 14px rgba(10,18,32,.14);background:var(--navy-2)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s;filter:saturate(1.04) contrast(1.03)}
+.dish:hover .ph img{transform:scale(1.045)}
+.ph::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,rgba(10,18,32,.5) 0%,transparent 46%);}
+.ph .fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-style:italic;font-size:3rem;color:rgba(246,241,230,.35);font-family:'Cormorant Garamond',serif}
+.badges{position:absolute;top:12px;left:12px;z-index:3;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.badge{font-size:.63rem;font-weight:700;letter-spacing:.1em;padding:5px 10px;color:#fff;text-transform:uppercase;background:rgba(10,18,32,.72);backdrop-filter:blur(3px);border:1px solid rgba(246,241,230,.2)}
+.badge.v{color:#d8e6d4}
+.badge.vg{color:#e6e2c9}
+.badge.gf{color:var(--gold-bright)}
+.kcal-stamp{position:absolute;bottom:12px;right:12px;z-index:3;background:rgba(10,18,32,.78);color:var(--gold-bright);border:1px solid rgba(246,241,230,.18);border-radius:2px;padding:5px 11px;font-size:.7rem;font-weight:600;letter-spacing:.03em}
+
+.body{padding:18px 2px 0}
+.namerow{display:flex;align-items:baseline;gap:8px}
+.namerow h3{font-weight:600;font-size:1.32rem;color:var(--navy);flex-shrink:1}
+.namerow .leader{flex:1;border-bottom:1px dotted var(--line-light);transform:translateY(-5px);min-width:14px}
+.namerow .price{font-weight:600;font-style:italic;color:var(--gold);white-space:nowrap;font-size:1.15rem;font-family:'Cormorant Garamond',serif}
+.desc{font-size:.87rem;color:var(--muted-light);margin-top:7px;font-weight:300;line-height:1.6}
+.alg{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px;align-items:center}
+.a{width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--gold-bright);font-size:.63rem;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:default}
+.a.none{background:transparent;border:1px dashed var(--line-light);color:var(--muted-light);width:auto;padding:0 10px;border-radius:2px;font-size:.66rem;height:24px}
+
+/* drinks */
+.drinks{background:#fffdf8;border:1px solid var(--line-light);border-radius:4px;padding:30px 28px;box-shadow:0 8px 26px rgba(10,18,32,.06)}
+.drinks .d{display:flex;align-items:baseline;gap:10px;padding:12px 0;font-size:.95rem}
+.drinks .d+.d{border-top:1px dashed var(--line-light)}
+.drinks .d .n{font-weight:500}
+.drinks .d em{color:var(--muted-light);font-style:normal;font-size:.78rem;display:block;font-weight:300;margin-top:2px}
+.drinks .leader{flex:1;border-bottom:1px dotted var(--line-light);transform:translateY(-5px)}
+.drinks .p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;color:var(--gold);white-space:nowrap;font-size:1.05rem}
+
+/* legend */
+.legend{margin-top:64px;background:var(--navy);color:rgba(246,241,230,.85);border-radius:4px;padding:30px 28px 26px;position:relative}
+.legend::before{content:"";position:absolute;top:0;left:28px;right:28px;height:1px;background:var(--gold);opacity:.5}
+.legend h3{font-style:italic;font-weight:600;font-size:1.3rem;color:var(--ivory);margin:10px 0 16px}
+.legend .items{display:flex;flex-wrap:wrap;gap:11px 20px;font-size:.82rem}
+.legend .items span{display:inline-flex;align-items:center;gap:8px}
+.legend .a{background:rgba(246,241,230,.12);color:var(--gold-bright)}
+.legend p{margin-top:18px;font-size:.78rem;color:rgba(246,241,230,.55);font-weight:300;line-height:1.7}
+
+/* ---------- MEAL CALCULATOR ---------- */
+.addbtn{margin-top:14px;width:100%;border:1px solid var(--navy);background:transparent;color:var(--navy);font-weight:600;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;padding:11px 0;border-radius:2px;cursor:pointer;transition:all .15s}
+.addbtn:hover{background:var(--navy);color:var(--gold-bright)}
+.addbtn.in{background:var(--olive);border-color:var(--olive);color:#fff}
+.tray{position:fixed;left:16px;bottom:18px;z-index:90;display:none;align-items:center;gap:14px;background:var(--navy);color:var(--ivory);border-radius:2px;padding:13px 22px;box-shadow:0 12px 30px rgba(10,18,32,.4);cursor:pointer;border:1px solid var(--gold);font-family:'Jost',sans-serif}
+.tray.show{display:flex}
+.tray .cnt{background:var(--gold);color:#241c0c;font-weight:700;border-radius:50%;min-width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:.8rem;padding:0 6px}
+.tray .t-k{font-weight:500;font-size:.86rem}
+.tray .t-p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;color:var(--gold-bright);font-size:1.05rem}
+.mealp{position:fixed;left:16px;bottom:84px;z-index:95;width:min(400px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 130px));background:#fffdf8;border-radius:4px;box-shadow:0 24px 60px rgba(10,18,32,.32);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line-light)}
+.mealp.open{display:flex}
+.mealp-head{background:var(--navy);color:var(--ivory);padding:16px 18px;display:flex;align-items:center;justify-content:space-between}
+.mealp-head h4{font-style:italic;font-weight:600;font-size:1.12rem}
+.mealp-head .x{background:none;border:none;color:var(--ivory);font-size:1.3rem;cursor:pointer;line-height:1}
+.mealp-list{flex:1;overflow-y:auto;padding:15px 18px}
+.mi{display:flex;align-items:baseline;gap:9px;padding:10px 0;border-bottom:1px dashed var(--line-light);font-size:.89rem}
+.mi .n{font-weight:500}
+.mi em{font-style:normal;color:var(--muted-light);font-size:.75rem;display:block;font-weight:300;margin-top:2px}
+.mi .leader{flex:1;border-bottom:1px dotted var(--line-light);transform:translateY(-5px)}
+.mi .p{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;color:var(--gold);white-space:nowrap}
+.mi .rm{border:none;background:none;color:var(--danger);font-size:1.05rem;cursor:pointer;padding:0 2px;line-height:1}
+.mealp-sum{border-top:1px solid var(--line-light);padding:15px 18px 17px;background:var(--ivory-2)}
+.sumrow{display:flex;justify-content:space-between;font-size:.9rem;padding:3px 0}
+.sumrow strong{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--navy)}
+.kbar{margin-top:10px;height:6px;border-radius:3px;background:#e2d6b8;overflow:hidden}
+.kbar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--olive),var(--gold));transition:width .3s}
+.kbar-note{margin-top:6px;font-size:.7rem;color:var(--muted-light)}
+.meal-alg{margin-top:13px;font-size:.78rem;color:var(--muted-light)}
+.meal-alg .alg{margin-top:6px}
+.meal-warn{margin-top:12px;background:rgba(156,91,69,.1);border:1px solid rgba(156,91,69,.35);border-radius:2px;padding:9px 11px;font-size:.72rem;color:#7a4433;line-height:1.6}
+.mealp-empty{padding:34px 18px;text-align:center;color:var(--muted-light);font-size:.88rem;font-weight:300}
+@media (max-width:560px){.tray{left:12px;bottom:14px;padding:12px 16px;gap:9px;font-size:.85rem}.lina-btn{bottom:14px;right:12px;padding:13px 20px 13px 16px;font-size:.88rem}.lina-btn svg{width:22px;height:22px}}
+
+/* ---------- SALES CTA ---------- */
+.demo-cta{background:var(--navy);color:var(--ivory);margin-top:76px;position:relative}
+.demo-cta::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);opacity:.5}
+.demo-cta-inner{max-width:760px;margin:0 auto;padding:64px 22px 58px;text-align:center}
+.demo-tag{display:inline-block;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-bright);font-weight:600;border:1px solid rgba(201,167,95,.45);border-radius:2px;padding:7px 18px}
+.demo-cta h2{font-style:italic;font-weight:600;font-size:clamp(1.9rem,6vw,2.7rem);margin-top:20px}
+.demo-cta p{margin:18px auto 0;max-width:40em;font-size:.97rem;color:var(--muted-dark);font-weight:300;line-height:1.75}
+.demo-offer{margin:26px auto 0;max-width:40em;border:1px solid rgba(201,167,95,.35);border-radius:4px;padding:18px 22px;font-size:.9rem;color:var(--ivory);background:rgba(201,167,95,.06)}
+.demo-offer strong{color:var(--gold-bright);font-weight:600}
+.demo-btns{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+footer{padding:30px 18px 130px;text-align:center;font-size:.78rem;color:var(--muted-light);line-height:2.1}
+footer a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line-light)}
+footer a:hover{border-color:var(--gold)}
+footer .fname{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--navy)}
+
+/* ---------- LINA WIDGET ---------- */
+.lina-btn{position:fixed;right:18px;bottom:18px;z-index:90;display:flex;align-items:center;gap:11px;border:1px solid var(--gold);cursor:pointer;
+  background:var(--navy);color:var(--ivory);border-radius:2px;padding:15px 26px 15px 18px;font-weight:600;font-size:.92rem;letter-spacing:.02em;
+  box-shadow:0 12px 30px rgba(10,18,32,.4);transition:transform .15s}
+.lina-btn:hover{transform:translateY(-2px)}
+.lina-btn svg{width:26px;height:26px}
+.lina{position:fixed;right:16px;bottom:90px;z-index:95;width:min(380px,calc(100vw - 32px));max-height:min(600px,calc(100vh - 120px));background:#fffdf8;border-radius:4px;box-shadow:0 24px 60px rgba(10,18,32,.32);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line-light)}
+.lina.open{display:flex}
+.lina-head{background:var(--navy);color:var(--ivory);padding:17px 18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--gold)}
+.lina-head .av{width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-style:italic;font-size:1.1rem}
+.lina-head h4{font-size:1rem;font-weight:500;font-family:'Jost',sans-serif;letter-spacing:.02em}
+.lina-head p{font-size:.72rem;opacity:.7;margin-top:1px}
+.lina-head .x{margin-left:auto;background:none;border:none;color:var(--ivory);font-size:1.3rem;cursor:pointer;line-height:1}
+.lina-log{flex:1;overflow-y:auto;padding:16px;background:var(--ivory);display:flex;flex-direction:column;gap:10px}
+.msg{max-width:85%;padding:11px 14px;border-radius:2px;font-size:.87rem;white-space:pre-line;line-height:1.55}
+.msg.bot{background:#fff;border:1px solid var(--line-light);align-self:flex-start;color:var(--ink)}
+.msg.user{background:var(--navy);color:var(--ivory);align-self:flex-end}
+.qq{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 12px;background:var(--ivory)}
+.qq button{border:1px solid var(--navy);color:var(--navy);background:#fff;border-radius:2px;padding:7px 13px;font-size:.76rem;font-weight:500;cursor:pointer;transition:all .15s}
+.qq button:hover{background:var(--navy);color:var(--gold-bright)}
+.lina-in{display:flex;gap:8px;padding:13px 14px;border-top:1px solid var(--line-light);background:#fff}
+.lina-in input{flex:1;border:1px solid var(--line-light);border-radius:2px;padding:11px 15px;font-size:.87rem;outline:none;background:var(--ivory)}
+.lina-in input:focus{border-color:var(--gold)}
+.lina-in button{width:42px;height:42px;border-radius:2px;border:none;background:var(--navy);color:var(--gold-bright);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lina-in button:disabled{opacity:.5;cursor:default}
+.lina-foot{text-align:center;font-size:.66rem;padding:8px;background:#fff;color:var(--muted-light);letter-spacing:.06em;border-top:1px solid var(--line-light)}
+.lina-foot a{color:var(--navy);font-weight:600;text-decoration:underline}
+.typing{display:inline-flex;gap:4px;padding:2px 0}
+.typing i{width:5px;height:5px;border-radius:50%;background:var(--muted-light);display:inline-block;animation:blink 1.2s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.2s}
+.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:560px){
+  .grid{grid-template-columns:1fr 1fr;gap:26px 14px}
+  .namerow h3{font-size:1.02rem}
+  .namerow .price{font-size:1rem}
+  .desc{font-size:.8rem}
+  .hero-inner{padding:56px 18px 46px}
+}
+@media (max-width:400px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=72" alt="" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-inner">
+    <div class="eyebrow">Smart QR Menu · scan &amp; browse at the table</div>
+    <h1>Aurelia</h1>
+    <div class="sub">Fine Mediterranean Dining</div>
+    <div class="rule"></div>
+    <p>A digital menu built for a refined table: full dish photography, allergen guidance, calorie estimates, dietary filters and Lina, our AI menu assistant, ready to answer any question in seconds.</p>
+    <div class="meta">
+      <span><i class="dot"></i>Open daily 18:00–23:30</span>
+      <span><i class="dot"></i>Harbourfront, Valletta</span>
+      <span><i class="dot"></i>Prices in EUR, VAT included</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20Smart%20QR%20Menu%20for%20my%20restaurant." target="_blank" rel="noopener">Build this for my restaurant</a>
+      <button class="btn btn-outline" id="heroAskLina" type="button">Ask Lina</button>
+    </div>
+  </div>
+</header>
+
+<nav class="bar" aria-label="Dietary filters">
+  <div class="bar-inner" id="filters">
+    <button class="chip active" data-f="all" type="button">All dishes</button>
+    <button class="chip" data-f="v" type="button">Vegan</button>
+    <button class="chip" data-f="vg" type="button">Vegetarian</button>
+    <button class="chip" data-f="gf" type="button">Gluten-free</button>
+    <button class="chip" data-f="light" type="button">Under 500 kcal</button>
+  </div>
+</nav>
+
+<main>
+  <div id="menu"></div>
+
+  <section class="section">
+    <div class="section-head">
+      <div class="tag">To drink</div>
+      <h2>Drinks</h2>
+      <div class="flourish"></div>
+    </div>
+    <div class="drinks">
+      <div class="d"><span class="n">House lemonade — rosemary &amp; citrus<em>Fresh pressed, 400 ml</em></span><span class="leader"></span><span class="p">€5.50</span></div>
+      <div class="d"><span class="n">Aurelia signature Aperitivo<em>Bittersweet, orange peel, sparkling</em></span><span class="leader"></span><span class="p">€9.00</span></div>
+      <div class="d"><span class="n">Assyrtiko, Santorini<em>Glass 150 ml · white · contains sulphites</em></span><span class="leader"></span><span class="p">€8.50</span></div>
+      <div class="d"><span class="n">Etna Rosso DOC<em>Glass 150 ml · red · contains sulphites</em></span><span class="leader"></span><span class="p">€9.50</span></div>
+      <div class="d"><span class="n">Espresso / Cappuccino<em>Cappuccino contains milk</em></span><span class="leader"></span><span class="p">€2.80 / €4.00</span></div>
+      <div class="d"><span class="n">Still / sparkling water<em>750 ml</em></span><span class="leader"></span><span class="p">€4.50</span></div>
+    </div>
+  </section>
+
+  <section class="legend" id="allergens">
+    <h3>Allergen key — EU Regulation 1169/2011</h3>
+    <div class="items" id="legend-items"></div>
+    <p>Calorie values are kitchen estimates for guidance only. Our kitchen handles all listed allergens, so traces are possible even in dishes without a named allergen — please confirm with staff before ordering, especially for severe allergies.</p>
+  </section>
+</main>
+
+<section class="demo-cta">
+  <div class="demo-cta-inner">
+    <div class="demo-tag">This is a demo experience</div>
+    <h2>A smarter QR menu for restaurants, cafés and hotel dining.</h2>
+    <p>Send us photos or a PDF of your current menu. We turn it into a premium QR menu with AI recommendations, allergen guidance, calorie estimates and multilingual support.</p>
+    <div class="demo-offer">Website + Smart QR Menu + Lina AI from <strong>€500 setup</strong>. First 3 months included, then from <strong>€29/month</strong>.</div>
+    <div class="demo-btns">
+      <a class="btn btn-gold" href="https://wa.me/35677922436?text=Hello%2C%20I%20want%20a%20Smart%20QR%20Menu%20for%20my%20restaurant." target="_blank" rel="noopener">Message us on WhatsApp</a>
+      <a class="btn btn-outline" href="https://dlproject.io/" target="_blank" rel="noopener">Visit D&amp;L Project</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fname">Aurelia</span> — fictional restaurant created as a product demo.<br>
+  Demo by <a href="https://dlproject.io/" target="_blank" rel="noopener">D&amp;L Project</a> ·
+  <a href="https://dlproject.io/legal/privacy.html" target="_blank" rel="noopener">Privacy</a> ·
+  <a href="https://dlproject.io/legal/terms.html" target="_blank" rel="noopener">Terms</a> ·
+  <a href="https://dlproject.io/" target="_blank" rel="noopener">All demos</a>
+</footer>
+
+<button class="tray" id="tray" aria-label="Open your meal" type="button">
+  <span class="cnt" id="trayCnt">0</span>
+  <span class="t-k" id="trayKcal">0 kcal</span>
+  <span class="t-p" id="trayPrice">€0.00</span>
+</button>
+
+<div class="mealp" id="mealp" role="dialog" aria-label="Your meal">
+  <div class="mealp-head"><h4>Your meal</h4><button class="x" id="mealX" aria-label="Close" type="button">×</button></div>
+  <div class="mealp-list" id="mealList"></div>
+  <div class="mealp-sum" id="mealSum"></div>
+</div>
+
+<button class="lina-btn" id="linaBtn" aria-label="Ask Lina — menu assistant" type="button">
+  <svg viewBox="0 0 30 30" fill="none">
+    <rect x="4" y="6" width="22" height="13" rx="6" stroke="#c9a75f" stroke-width="2.4"/>
+    <path d="M8 19 L6 24" stroke="#c9a75f" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M6.5 24 L13 24" stroke="#c9a75f" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="12" cy="12.5" r="1.3" fill="#f6f1e6"/>
+    <circle cx="18" cy="12.5" r="1.3" fill="#f6f1e6"/>
+  </svg>
+  <span>Ask Lina</span>
+</button>
+
+<div class="lina" id="lina" role="dialog" aria-label="Lina menu assistant">
+  <div class="lina-head">
+    <div class="av">L</div>
+    <div><h4>Lina — menu assistant</h4><p>Allergens · calories · vegan · online</p></div>
+    <button class="x" id="linaX" aria-label="Close" type="button">×</button>
+  </div>
+  <div class="lina-log" id="linaLog"></div>
+  <div class="qq" id="linaQQ">
+    <button data-q="Which dishes are vegan?" type="button">Vegan dishes</button>
+    <button data-q="Show gluten-free options" type="button">Gluten-free</button>
+    <button data-q="What can I eat under 500 kcal?" type="button">Under 500 kcal</button>
+    <button data-q="I have a nut allergy" type="button">Nut allergy</button>
+    <button data-q="What allergens are in the seafood risotto?" type="button">Seafood risotto allergens</button>
+    <button data-q="What wine pairs with the sea bass?" type="button">Sea bass wine pairing</button>
+  </div>
+  <div class="lina-in">
+    <input id="linaInput" type="text" placeholder="Type your question…" autocomplete="off">
+    <button id="linaSend" aria-label="Send" type="button"><svg width="17" height="17" viewBox="0 0 24 24" fill="#e3c78a"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></button>
+  </div>
+  <div class="lina-foot"><a href="https://dlproject.io" target="_blank" rel="noopener">LINA BY D&amp;L PROJECT</a></div>
+</div>
+
+<script>
+'use strict';
+
+const ALLERGENS = {
+  G:"Gluten", D:"Dairy / milk", E:"Eggs", F:"Fish", C:"Crustaceans",
+  M:"Molluscs", N:"Nuts", S:"Sulphites", Se:"Sesame", Cy:"Celery", So:"Soy"
+};
+
+const MENU = [
+ {sec:"Starters", tag:"To begin", items:[
+  {name:"Heirloom Tomato & Burrata", desc:"Heirloom tomatoes, creamy burrata, basil oil, aged balsamic.", price:14.5, kcal:360, alg:["D"], vg:true, gf:true,
+   img:"https://images.unsplash.com/photo-1595587870672-c79b47875c6a?auto=format&fit=crop&w=900&q=74"},
+  {name:"Charred Octopus", desc:"Slow-braised octopus, smoked paprika, crushed potato, olive oil.", price:18.0, kcal:410, alg:["M"], gf:true,
+   img:"https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=900&q=74"},
+  {name:"Garden Mezze Bowl", desc:"Hummus, roasted vegetables, quinoa, pomegranate, tahini dressing.", price:12.5, kcal:430, alg:["Se"], v:true, gf:true,
+   img:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=74"}
+ ]},
+ {sec:"Pasta & Risotto", tag:"Hand-made, daily", items:[
+  {name:"Seafood Risotto", desc:"Carnaroli rice, prawns, mussels and calamari, saffron, white wine.", price:24.0, kcal:640, alg:["C","M","F","S"], gf:true,
+   img:"https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=900&q=74"},
+  {name:"Truffle Tagliatelle", desc:"Hand-rolled egg tagliatelle, black truffle, aged parmesan, brown butter.", price:22.0, kcal:720, alg:["G","D","E"],
+   img:"https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=74"},
+  {name:"Wild Mushroom Risotto", desc:"Porcini and chestnut mushrooms, thyme, parmesan, white wine.", price:19.5, kcal:590, alg:["D","S"], vg:true, gf:true,
+   img:"https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=900&q=74"}
+ ]},
+ {sec:"Seafood & Grill", tag:"Over open fire", items:[
+  {name:"Grilled Sea Bass", desc:"Whole sea bass, lemon, capers, extra-virgin olive oil, charred fennel.", price:29.0, kcal:480, alg:["F"], gf:true,
+   img:"https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=900&q=74"},
+  {name:"Aged Ribeye 300g", desc:"Grain-fed ribeye, rosemary potatoes, green peppercorn sauce.", price:34.0, kcal:920, alg:["D"], gf:true,
+   img:"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=74"},
+  {name:"Grilled Prawns", desc:"Charred king prawns, garlic, chilli, lemon, extra-virgin olive oil.", price:26.0, kcal:390, alg:["C"], gf:true,
+   img:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=74"}
+ ]},
+ {sec:"Desserts", tag:"Something sweet", items:[
+  {name:"Dark Chocolate Fondant", desc:"70% dark chocolate cake, warm centre, vanilla gelato.", price:9.5, kcal:560, alg:["G","D","E"], vg:true,
+   img:"https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=74"},
+  {name:"Vanilla Panna Cotta", desc:"Madagascar vanilla, macerated berries, almond tuile.", price:8.5, kcal:420, alg:["D","N"], vg:true,
+   img:"https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=74"}
+ ]}
+];
+
+/* ---------- render menu ---------- */
+const menuEl = document.getElementById('menu');
+MENU.forEach(sec=>{
+  const s=document.createElement('section'); s.className='section';
+  s.innerHTML=`<div class="section-head"><div class="tag">${sec.tag}</div><h2>${sec.sec}</h2><div class="flourish"></div></div>`;
+  const g=document.createElement('div'); g.className='grid';
+  sec.items.forEach(d=>{
+    const tags=[d.v?'v':'',d.vg?'vg':'',d.gf?'gf':'',d.kcal<500?'light':''].filter(Boolean).join(' ');
+    const card=document.createElement('article');
+    card.className='dish'; card.dataset.tags=tags||'none';
+    card.innerHTML=`
+      <div class="ph">
+        <img src="${d.img}" alt="${d.name}" loading="lazy"
+             onerror="this.style.display='none';this.parentElement.querySelector('.fallback').style.display='flex'">
+        <div class="fallback">${d.name.charAt(0)}</div>
+        <div class="badges">
+          ${d.v?'<span class="badge v">Vegan</span>':''}
+          ${d.vg?'<span class="badge vg">Vegetarian</span>':''}
+          ${d.gf?'<span class="badge gf">Gluten-free</span>':''}
+        </div>
+        <span class="kcal-stamp">${d.kcal} kcal</span>
+      </div>
+      <div class="body">
+        <div class="namerow"><h3>${d.name}</h3><span class="leader"></span><span class="price">€${d.price.toFixed(2)}</span></div>
+        <p class="desc">${d.desc}</p>
+        <div class="alg">${d.alg.length?d.alg.map(a=>`<span class="a" title="${ALLERGENS[a]}">${a}</span>`).join(''):'<span class="a none">No major allergens</span>'}</div>
+        <button class="addbtn" data-dish="${d.name}" type="button">+ Add to my meal</button>
+      </div>`;
+    g.appendChild(card);
+  });
+  s.appendChild(g); menuEl.appendChild(s);
+});
+document.getElementById('legend-items').innerHTML =
+  Object.entries(ALLERGENS).map(([k,v])=>`<span><span class="a">${k}</span>${v}</span>`).join('');
+
+/* ---------- filters ---------- */
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b)return;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  b.classList.add('active');
+  const f=b.dataset.f;
+  document.querySelectorAll('.dish').forEach(card=>{
+    card.style.display = (f==='all'||card.dataset.tags.split(' ').includes(f)) ? '' : 'none';
+  });
+});
+
+/* ---------- meal calculator ---------- */
+const DAILY=2000;
+const flat = MENU.flatMap(s=>s.items);
+let meal=[];
+const trayEl=document.getElementById('tray'), mealpEl=document.getElementById('mealp'),
+      mealList=document.getElementById('mealList'), mealSum=document.getElementById('mealSum');
+
+function mealTotals(){
+  return meal.reduce((t,d)=>({kcal:t.kcal+d.kcal,price:t.price+d.price}),{kcal:0,price:0});
+}
+function renderMeal(){
+  const {kcal,price}=mealTotals();
+  document.getElementById('trayCnt').textContent=meal.length;
+  document.getElementById('trayKcal').textContent=`${kcal} kcal`;
+  document.getElementById('trayPrice').textContent=`€${price.toFixed(2)}`;
+  trayEl.classList.toggle('show',meal.length>0);
+  if(!meal.length){mealpEl.classList.remove('open')}
+
+  document.querySelectorAll('.addbtn').forEach(b=>{
+    const inMeal=meal.some(d=>d.name===b.dataset.dish);
+    b.classList.toggle('in',inMeal);
+    b.textContent=inMeal?'✓ In your meal':'+ Add to my meal';
+  });
+
+  if(!meal.length){
+    mealList.innerHTML='<div class="mealp-empty">Add dishes from the menu to see calories, price and allergens for your whole meal.</div>';
+    mealSum.innerHTML='';
+    return;
+  }
+  mealList.innerHTML=meal.map((d,i)=>`
+    <div class="mi">
+      <span class="n">${d.name}<em>${d.kcal} kcal · ${d.alg.length?d.alg.join(' '):'no major allergens'}</em></span>
+      <span class="leader"></span>
+      <span class="p">€${d.price.toFixed(2)}</span>
+      <button class="rm" data-i="${i}" aria-label="Remove ${d.name}" type="button">✕</button>
+    </div>`).join('');
+  const pct=Math.min(100,Math.round(kcal/DAILY*100));
+  const mAlg=[...new Set(meal.flatMap(d=>d.alg))];
+  const warn = mAlg.length
+    ? `<div class="meal-warn">Contains allergens: ${mAlg.map(a=>ALLERGENS[a]).join(', ')}. Please confirm with restaurant staff before ordering, especially for severe allergies, because traces are possible in a shared kitchen.</div>`
+    : '';
+  mealSum.innerHTML=`
+    <div class="sumrow"><span>Total calories</span><strong>${kcal} kcal</strong></div>
+    <div class="sumrow"><span>Total price</span><strong>€${price.toFixed(2)}</strong></div>
+    <div class="kbar"><i style="width:${pct}%"></i></div>
+    <div class="kbar-note">${pct}% of a 2,000 kcal reference daily intake</div>
+    <div class="meal-alg">Combined allergens:
+      <div class="alg">${mAlg.length?mAlg.map(a=>`<span class="a" title="${ALLERGENS[a]}">${a}</span>`).join(''):'<span class="a none">No major allergens</span>'}</div>
+    </div>
+    ${warn}`;
+}
+menuEl.addEventListener('click',e=>{
+  const b=e.target.closest('.addbtn'); if(!b)return;
+  const name=b.dataset.dish, i=meal.findIndex(d=>d.name===name);
+  if(i>-1)meal.splice(i,1); else meal.push(flat.find(d=>d.name===name));
+  renderMeal();
+});
+trayEl.onclick=()=>{mealpEl.classList.toggle('open')};
+document.getElementById('mealX').onclick=()=>mealpEl.classList.remove('open');
+mealList.addEventListener('click',e=>{
+  const b=e.target.closest('.rm'); if(!b)return;
+  meal.splice(+b.dataset.i,1); renderMeal();
+});
+renderMeal();
+
+/* ---------- Lina: local fallback brain ---------- */
+const algNames = a => a.length ? a.map(x=>ALLERGENS[x]).join(', ') : 'no major allergens';
+const list = arr => arr.map(d=>`• ${d.name} — €${d.price.toFixed(2)} (${d.kcal} kcal)`).join('\n');
+const SAFETY_NOTE = 'Please confirm with restaurant staff before ordering, especially for severe allergies, because traces are possible in a shared kitchen.';
+
+function linaAnswer(q){
+  const t=q.toLowerCase();
+
+  if(/wine|pair/.test(t) && /sea ?bass/.test(t)){
+    return `The Grilled Sea Bass pairs beautifully with our Assyrtiko from Santorini (€8.50/glass) — its mineral, citrus-driven acidity complements the charred fennel and lemon. A dry Vermentino would work just as well if you'd prefer.`;
+  }
+  if(/allerg|contain/.test(t) && /seafood risotto|risotto/.test(t)){
+    const d = flat.find(x=>x.name==='Seafood Risotto');
+    return `${d.name} contains: ${algNames(d.alg)} (crustaceans, molluscs, fish, sulphites).\n${d.kcal} kcal · €${d.price.toFixed(2)}. It is gluten-free.\n\n${SAFETY_NOTE}`;
+  }
+
+  if(/my meal|my order|selected|so far|total/.test(t)){
+    if(!meal.length)return `You haven't added anything yet — tap "+ Add to my meal" on any dish and I'll track calories, price and allergens for the whole meal.`;
+    const {kcal,price}=mealTotals();
+    const mAlg=[...new Set(meal.flatMap(d=>d.alg))];
+    return `Your meal so far:\n${list(meal)}\n\nTotal: ${kcal} kcal · €${price.toFixed(2)} (${Math.round(kcal/DAILY*100)}% of a 2,000 kcal reference day)\nCombined allergens: ${mAlg.length?mAlg.map(a=>ALLERGENS[a]).join(', '):'no major allergens'}.${mAlg.length?'\n\n'+SAFETY_NOTE:''}`;
+  }
+  if(/under\s*900|900\s*kcal/.test(t)){
+    const sorted = flat.slice().sort((a,b)=>a.kcal-b.kcal);
+    let combo=[], total=0;
+    for(const d of sorted){ if(total+d.kcal<=900){combo.push(d); total+=d.kcal;} }
+    return combo.length
+      ? `A meal under 900 kcal could be:\n${list(combo)}\n\nTotal: ${total} kcal. Add these to the meal calculator to confirm the exact total and allergens.`
+      : `Most combinations run above 900 kcal — try the ${sorted[0].name} (${sorted[0].kcal} kcal) on its own to stay well under that limit.`;
+  }
+  if(/mediterranean.*light|light.*mediterranean/.test(t)){
+    const r=flat.filter(d=>d.kcal<500);
+    return `For something Mediterranean but light, I'd recommend:\n${list(r)}\n\nAll are under 500 kcal and lean on olive oil, citrus and fresh seafood or vegetables.`;
+  }
+  if(/lightest|lightest main|lowest calorie/.test(t)){
+    const mains = flat.filter(d=>d.kcal>=350);
+    const lightest = mains.slice().sort((a,b)=>a.kcal-b.kcal)[0];
+    return `Our lightest main course is the ${lightest.name} at ${lightest.kcal} kcal — €${lightest.price.toFixed(2)}.`;
+  }
+
+  const exact = flat.find(d=>t.includes(d.name.toLowerCase()));
+  const byWord = flat.find(d=>d.name.toLowerCase().split(' ').some(w=>w.length>4&&t.includes(w)));
+  const dish = exact||byWord;
+
+  if(dish && /allerg|contain|what.*in|ingredient|safe/.test(t))
+    return `${dish.name} contains: ${algNames(dish.alg)}.\n${dish.kcal} kcal · €${dish.price.toFixed(2)}${dish.gf?'\nIt is gluten-free.':''}${dish.v?'\nIt is vegan.':dish.vg?'\nIt is vegetarian.':''}\n\n${SAFETY_NOTE}`;
+  if(dish) return `${dish.name} — €${dish.price.toFixed(2)}\n${dish.desc}\n${dish.kcal} kcal (estimate) · Allergens: ${algNames(dish.alg)}`;
+
+  if(/vegan/.test(t)){const r=flat.filter(d=>d.v);return `Our vegan dishes:\n${list(r)}`}
+  if(/vegetarian|veggie/.test(t)){const r=flat.filter(d=>d.v||d.vg);return `Vegetarian-friendly dishes:\n${list(r)}`}
+  if(/gluten|celiac|coeliac/.test(t)){const r=flat.filter(d=>d.gf);return `Gluten-free dishes:\n${list(r)}\n\nPlease still mention coeliac disease to your waiter — we take extra care in the kitchen, though traces are possible.`}
+  if(/nut allerg|nuts|peanut/.test(t)){const r=flat.filter(d=>d.alg.includes('N'));return (r.length?`These dishes contain nuts by recipe:\n${list(r)}\n\nEverything else is nut-free by recipe, but`:'No dish on our current menu contains nuts by recipe, but')+` traces are still possible in a shared kitchen. ${SAFETY_NOTE}`}
+  if(/lactose|dairy|milk/.test(t)){const r=flat.filter(d=>!d.alg.includes('D'));return `Dairy-free dishes:\n${list(r)}\n\n${SAFETY_NOTE}`}
+  if(/fish|shellfish|seafood allerg|crustacean|mollusc/.test(t)){const r=flat.filter(d=>d.alg.includes('F')||d.alg.includes('C')||d.alg.includes('M'));return `These dishes contain fish, crustaceans or molluscs:\n${list(r)}\n\n${SAFETY_NOTE}`}
+  if(/kcal|calor|light|diet|under\s*\d+/.test(t)){const m=t.match(/under\s*(\d+)/);const cap=m?+m[1]:500;const r=flat.filter(d=>d.kcal<cap);const srt=flat.slice().sort((a,b)=>a.kcal-b.kcal)[0];return (r.length?`Dishes under ${cap} kcal:\n${list(r)}`:`Nothing under ${cap} kcal today — the lightest dish is ${srt.name} at ${srt.kcal} kcal.`)+`\n\nCalorie values are kitchen estimates for guidance, not exact figures.`}
+  if(/recommend|suggest|best|popular|hungry/.test(t))return `Guest favourites right now:\n${list([flat[3],flat[6],flat[7]])}\n\nTell me if you have any allergy or preference and I'll narrow it down.`;
+  if(/hello|hi|hey|ciao|bok|zdravo/.test(t))return `Good evening. I'm Lina, Aurelia's menu assistant — ask me about allergens, calories, vegan or gluten-free options, or wine pairings.`;
+  if(/wine|drink|beer|coffee|pair/.test(t))return `A few pairings: Assyrtiko (Santorini) with seafood, Etna Rosso with red meat, and our signature Aperitivo before the meal. Full drinks list is in the Drinks section below.`;
+  if(/open|hours|time/.test(t))return `We're open daily from 18:00 to 23:30, on the harbourfront in Valletta.`;
+  if(/where|location|address|find you/.test(t))return `You'll find us on the harbourfront in Valletta. For directions or a table, please reach out via the WhatsApp link in the "Build this for my restaurant" section, or ask a member of staff.`;
+  if(/book|reserv|table|contact/.test(t))return `For bookings or availability, please contact the restaurant directly or use the WhatsApp link on this page — I don't have access to live table availability.`;
+  if(/medical|severe|anaphyla|doctor|prescri/.test(t))return `I can share what's listed on the menu, but for medical decisions and severe allergies, please speak with restaurant staff directly before ordering. ${SAFETY_NOTE}`;
+  if(/exact|precise|accurate.*calor/.test(t))return `Calorie figures shown are kitchen estimates meant as guidance, not laboratory-precise values. For strict dietary needs, please check with staff.`;
+
+  return `I can help with allergens, calories, vegan, vegetarian or gluten-free options, wine pairings, or any specific dish — try "What's in the Truffle Tagliatelle?" or use one of the quick questions above.`;
+}
+
+/* ---------- Lina: backend + widget wiring ---------- */
+const LINA_ENDPOINT = 'https://qrmenu.dlproject.io/ai/api/chat';
+let linaHistory = [];
+
+async function linaSendMessage(q){
+  const controller = new AbortController();
+  const timeout = setTimeout(()=>controller.abort(), 8000);
+  try{
+    const res = await fetch(LINA_ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({ message:q, history:linaHistory }),
+      signal:controller.signal
+    });
+    clearTimeout(timeout);
+    if(!res.ok) throw new Error('bad status');
+    const data = await res.json();
+    const reply = data && (data.reply || data.answer);
+    if(!reply) throw new Error('empty reply');
+    return reply;
+  }catch(err){
+    clearTimeout(timeout);
+    return linaAnswer(q);
+  }
+}
+
+const lina=document.getElementById('lina'), log=document.getElementById('linaLog'), input=document.getElementById('linaInput'), sendBtn=document.getElementById('linaSend');
+
+function addMsg(txt,who){
+  const m=document.createElement('div');
+  m.className='msg '+who;
+  m.textContent=txt;
+  log.appendChild(m);
+  log.scrollTop=log.scrollHeight;
+  return m;
+}
+function addTyping(){
+  const m=document.createElement('div');
+  m.className='msg bot';
+  m.innerHTML='<span class="typing"><i></i><i></i><i></i></span>';
+  log.appendChild(m);
+  log.scrollTop=log.scrollHeight;
+  return m;
+}
+
+async function ask(q){
+  if(!q) return;
+  addMsg(q,'user');
+  linaHistory.push({ role:'user', content:q });
+  input.disabled = true;
+  sendBtn.disabled = true;
+  const typingEl = addTyping();
+  try{
+    const reply = await linaSendMessage(q);
+    typingEl.remove();
+    addMsg(reply,'bot');
+    linaHistory.push({ role:'assistant', content:reply });
+  }catch(err){
+    typingEl.remove();
+    const fallback = linaAnswer(q);
+    addMsg(fallback,'bot');
+    linaHistory.push({ role:'assistant', content:fallback });
+  }finally{
+    input.disabled = false;
+    sendBtn.disabled = false;
+    input.focus();
+  }
+}
+
+function openLina(){
+  lina.classList.add('open');
+  if(!log.children.length){
+    addMsg("Good evening, I'm Lina — Aurelia's menu assistant. Ask me about allergens, calories, vegan or gluten-free dishes, or wine pairings. You can write in any language.", 'bot');
+  }
+}
+document.getElementById('linaBtn').onclick=()=>{ lina.classList.contains('open') ? lina.classList.remove('open') : openLina(); };
+document.getElementById('heroAskLina').onclick=openLina;
+document.getElementById('linaX').onclick=()=>lina.classList.remove('open');
+document.getElementById('linaQQ').addEventListener('click',e=>{const b=e.target.closest('button');if(b)ask(b.dataset.q)});
+sendBtn.onclick=()=>{const v=input.value.trim(); if(v){ask(v);input.value='';}};
+input.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=input.value.trim(); if(v){ask(v);input.value='';}}});
+</script>
+</body>
+</html>
