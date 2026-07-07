@@ -179,7 +179,7 @@ footer .fname{font-family:'Cormorant Garamond',serif;font-style:italic;font-size
 }
 </style>
 </head>
-<body>
+<body data-ai-context="Azure House Valletta — fictional boutique hotel demo. You are Lina, the reception assistant. Answer only about Wi-Fi, check-in/out, breakfast, parking, house rules, pets, transfers, local tips, direct booking. Never quote live prices or availability. Demo by D&L Project.">
 
 <header class="hero">
   <div class="hero-img">
@@ -451,7 +451,7 @@ function linaAnswer(q){
 }
 
 /* ---------- Lina: backend + widget wiring ---------- */
-const LINA_ENDPOINT = 'https://qrmenu.dlproject.io/ai/api/chat';
+const LINA_ENDPOINT = '/ai-proxy.php';
 let linaHistory = [];
 
 async function linaSendMessage(q){
@@ -461,7 +461,14 @@ async function linaSendMessage(q){
     const res = await fetch(LINA_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: q, history: linaHistory }),
+      body: JSON.stringify({
+        message: q,
+        history: linaHistory,
+        page_url: location.href,
+        page_title: document.title,
+        page_context: (document.body.dataset.aiContext || document.querySelector('meta[name="description"]')?.getAttribute('content') || ''),
+        session_id: ''
+      }),
       signal: controller.signal
     });
     clearTimeout(timeout);
