@@ -130,7 +130,7 @@ var LINA = { mode: 'demo', endpoint: '/ai-proxy.php' };
         for (var i = 0; i < items.length; i++) {
           var r = items[i].getBoundingClientRect(), dy = my - (r.top + r.height / 2);
           var f = Math.max(-1, Math.min(1, dy / 80));
-          items[i].style.transform = 'rotate(180deg) translateX(' + (-f * 2).toFixed(2) + 'px)';
+          items[i].style.transform = 'translateY(' + (f * 2).toFixed(2) + 'px)';
         }
       });
     });
