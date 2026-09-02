@@ -252,15 +252,30 @@ dialog .btn{margin-top:22px}
   padding:15px 8px;background:none;border:0;border-right:1px solid var(--line-soft);
 }
 .sticky>:last-child{border-right:0}
-.sticky .lina-m{padding-inline:16px;white-space:nowrap}
 
-/* ---------- Лина ---------- */
+/* ---------- Lina (brend: pilula, živa linija) ---------- */
+.lina-svg{width:46px;height:28px;display:block;flex:0 0 auto}
+.lina-line{stroke-dasharray:100;animation:linaDraw 6.5s ease-in-out infinite}
+.lina-dots circle{opacity:0}
+.lina-dots circle:nth-child(1){animation:linaDot 6.5s infinite}
+.lina-dots circle:nth-child(2){animation:linaDot 6.5s .25s infinite}
+.lina-dots circle:nth-child(3){animation:linaDot 6.5s .5s infinite}
+@keyframes linaDraw{0%{stroke-dashoffset:100}30%{stroke-dashoffset:0}72%{stroke-dashoffset:0}95%{stroke-dashoffset:-100}100%{stroke-dashoffset:-100}}
+@keyframes linaDot{0%,32%{opacity:0}40%,64%{opacity:1}70%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.lina-line{animation:none;stroke-dashoffset:0}.lina-dots circle{animation:none;opacity:1}}
 .lina-fab{
   display:none;position:fixed;right:24px;bottom:24px;z-index:95;
-  align-items:center;gap:10px;background:var(--navy);color:var(--cream);border:0;border-radius:2px;
-  padding:13px 18px;font-family:var(--sans);font-size:13.5px;letter-spacing:.04em;
+  align-items:center;gap:10px;background:var(--navy);color:var(--cream);border:1px solid var(--navy);border-radius:999px;
+  height:52px;padding:0 22px 0 14px;font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:.06em;
+  box-shadow:0 10px 28px rgba(23,50,77,.22);transition:transform .18s var(--ease),box-shadow .18s var(--ease);
 }
+.lina-fab:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(23,50,77,.3)}
 @media (min-width:1024px){.lina-fab{display:inline-flex}}
+.sticky .lina-m{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding-inline:14px;white-space:nowrap;color:var(--navy)}
+.sticky .lina-m .lina-svg{width:34px;height:21px}
+.lina-brand{display:flex;align-items:center;gap:12px}
+.lina-av{display:inline-flex;align-items:center;justify-content:center;width:54px;height:34px;border:1px solid var(--navy);border-radius:999px;color:var(--navy);flex:0 0 auto}
+.lina-av .lina-svg{width:36px;height:22px}
 .lina{
   position:fixed;z-index:130;background:var(--cream);border:1px solid var(--navy);
   display:none;flex-direction:column;
@@ -270,7 +285,7 @@ dialog .btn{margin-top:22px}
 @media (max-width:1023px){
   .lina{top:auto;left:0;right:0;bottom:0;width:auto;height:min(78vh,620px);border-bottom:0}
 }
-.lina-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line-soft)}
+.lina-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line-soft)}
 .lina-top h2{font-family:var(--serif);font-weight:400;font-size:22px}
 .lina-top .sub{font-family:var(--sans);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-40);display:block}
 .lina-log{flex:1;overflow-y:auto;padding:18px 20px;display:flex;flex-direction:column;gap:12px}

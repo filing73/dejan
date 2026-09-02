@@ -200,36 +200,71 @@ var LINA = { mode: 'demo', endpoint: '/ai-proxy.php' };
       linaClose = d.getElementById('linaClose'), linaTrap = lina ? trap(lina) : null,
       linaLast = null, greeted = false;
 
-  var HELLO = 'Ја сам Лина, асистент канцеларије. Могу да вам кажем радно време, адресу, области рада и како да закажете разговор. Не дајем правне савете.';
-  var FALLBACK = 'За то је потребна консултација са адвокатом. Позовите или оставите број, јавићемо се.';
-  var RULES = [
-    { k: ['радно време', 'радно', 'кад', 'када', 'отворено', 'сати', 'сату'],
-      a: 'Радним данима 09–17 [ПОТВРДИТИ]. Ако не добијете позив, оставите поруку и јавићемо се.' },
-    { k: ['адреса', 'адреси', 'где', 'локациј', 'канцеларија', 'канцеларији', 'улица'],
-      a: 'Канцеларија је у Панчеву, Војводе Радомира Путника 7.' },
-    { k: ['области', 'област', 'чиме', 'кривич', 'малолет', 'одбран', 'бавите'],
-      a: 'Кривично право и одбрана, као и заступање малолетника. Списак стоји у делу 01 Области.' },
-    { k: ['заказ', 'термин', 'састанак', 'консултациј', 'договор', 'закажем'],
-      a: 'Позовите 060 503 30 52 или попуните форму у делу 04 Контакт, па договарамо термин.' },
-    { k: ['донети', 'документ', 'папир', 'понет', 'донесем', 'потребно да'],
-      a: 'Понесите личну карту, сва решења и позиве које сте примили, кратак преглед догађаја и питања која имате.' },
-    { k: ['цена', 'цену', 'колико', 'кошта', 'хонорар', 'плаћањ', 'тариф', 'наплаћ'],
-      a: 'Цену и ток поступка адвокат договара на консултацији. Позовите 060 503 30 52 или оставите број.' }
-  ];
+  var HELLO = 'Здраво, ја сам Lina, дигитални асистент канцеларије. Могу да вам кажем радно време, адресу, области рада, шта донети и како да закажете разговор. Правне савете не дајем, то ради адвокат.';
+  var TEL = '060 503 30 52';
+  var RADNO = 'Радним данима 09–17 [ПОТВРДИТИ]';
 
   function norm(s) {
-    s = s.toLowerCase();
-    return s.replace(/[žšč]/g, function (c) { return { 'ž': 'z', 'š': 's', 'č': 'c' }[c]; })
-            .replace(/ć/g, 'c').replace(/đ/g, 'd');
+    s = toLat(String(s || '')).toLowerCase();
+    s = s.replace(/[žšč]/g, function (c) { return { 'ž': 'z', 'š': 's', 'č': 'c' }[c]; }).replace(/ć/g, 'c').replace(/đ/g, 'd');
+    return ' ' + s.replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim() + ' ';
   }
-  function hit(q, kw) { return q.indexOf(norm(kw)) > -1 || q.indexOf(norm(toLat(kw))) > -1; }
+  function sada() {
+    try {
+      return new Intl.DateTimeFormat('sr-Latn', { timeZone: 'Europe/Belgrade', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
+    } catch (e) { var t = new Date(); return ('0' + t.getHours()).slice(-2) + ':' + ('0' + t.getMinutes()).slice(-2); }
+  }
+  /* Намере: редослед = приоритет при изједначеном скору. p = регекси, a = одговор (стринг или функција), call = дугме Позови */
+  var INTENTS = [
+    { id: 'hitno', p: [/hitno/, /uhaps/, /pritvor/, /policij/, /saslusanj/, /privedn/, /zadrzan/],
+      a: 'У хитним ситуацијама позовите одмах ' + TEL + '. Ако се не јави, пошаљите СМС и јавићемо се у најкраћем року.', call: true },
+    { id: 'vreme', p: [/koliko je sati/, /koliko ima sati/, /koje je vreme/, /koji je dan/, /koji je datum/, /koliko je sada/],
+      a: function () { return 'Сада је ' + sada() + '. Канцеларија ради радним данима 09–17 [ПОТВРДИТИ].'; } },
+    { id: 'radno', p: [/radno vreme/, /radno/, /kad radi/, /kada radi/, /radite li/, /radi li/, /do kad/, /do koliko/, /od koliko/, /otvoren/, /kad ste tu/, /vikend/, /subot/, /nedelj/],
+      a: RADNO + '. Ако не добијете позив, оставите поруку и јавићемо се.' },
+    { id: 'adresa', p: [/adres/, /gde se nalaz/, /gde ste/, /gde je kancelarij/, /lokacij/, /kancelarij/, /ulic/, /kako da dod/, /kako do vas/, /parking/],
+      a: 'Канцеларија је у Панчеву, Војводе Радомира Путника 7. Линк за мапу стоји у делу 04 Контакт.' },
+    { id: 'cena', p: [/koliko kosta/, /koliko je cena/, /kolika je cena/, /cen[aeu] /, /cenovnik/, /kosta/, /honorar/, /tarif/, /plac/, /naplac/, /koliko novca/, /skupo/, /jeftin/, /besplatn/],
+      a: 'Цену и ток поступка адвокат договара на консултацији, у складу са адвокатском тарифом. Позовите ' + TEL + ' или оставите број.' },
+    { id: 'zakaz', p: [/zakaz/, /termin/, /sastanak/, /konsultacij/, /dogovor/, /javiti se/, /kako da vas kontaktir/, /prijem/],
+      a: 'Позовите ' + TEL + ' или попуните форму у делу 04 Контакт, па договарамо термин који вам одговара.' },
+    { id: 'doneti', p: [/donet/, /dones/, /ponet/, /pones/, /dokument/, /papir/, /sta mi treba/, /sta treba da/, /sta da nosim/],
+      a: 'Понесите личну карту, сва решења, позиве и документа које сте примили, кратак хронолошки преглед догађаја и питања која имате.' },
+    { id: 'kontakt', p: [/telefon/, /broj telefona/, /mejl/, /mail/, /kontakt/, /kako da pozovem/, /viber/, /whatsapp/],
+      a: 'Телефон: ' + TEL + '. Мејл: advokat.bdjakovic@gmail.com. Најбрже је позивом.' , call: true },
+    { id: 'oblasti', p: [/oblast/, /cime se bav/, /bavite/, /bavi se/, /krivic/, /malolet/, /odbran/, /zastup/, /krivicn/, /prekrsaj/],
+      a: 'Области рада су кривично право и одбрана, као и заступање малолетника. Списак стоји у делу 01 Области.' },
+    { id: 'druge', p: [/razvod/, /brak/, /aliment/, /nasled/, /ostavin/, /ugovor/, /nekretnin/, /stan /, /firm/, /radni spor/, /otkaz/, /dug /, /kredit/, /saobracaj/],
+      a: 'Наведене области рада су кривично право и заступање малолетника. За ово питање најбоље је да позовете ' + TEL + ', адвокат ће вам рећи да ли може да помогне или да вас упути.', call: true },
+    { id: 'pravni', p: [/da li mogu/, /mogu li/, /sta da radim/, /moj slucaj/, /tuzb/, /kazn/, / sud /, /presud/, /zalb/, /optuz/, /prijav/, /svedok/, /dokaz/, /rok /, /rok za/],
+      a: 'Не могу да процењујем ваш случај, то ради адвокат на консултацији. Могу да вам помогнем да је закажете: позовите ' + TEL + ' или оставите број у форми.', call: true },
+    { id: 'ko', p: [/ko si/, /sta si ti/, /jesi li robot/, /jesi li bot/, /jesi ti robot/, /jesi ti bot/, /zensko/, /musko/, /covek/, /kako se zoves/, /jesi li prav/, /jesi li ziv/, /ai /, /vestack/],
+      a: 'Ја сам Lina, дигитални асистент канцеларије, не особа. Помажем око радног времена, адресе, области рада и заказивања. За све остало ту је адвокат.' },
+    { id: 'hvala', p: [/hvala/, /fala/, /zahvalj/, /super/, /odlicno/, /ok /, /okej/, /vazi/],
+      a: 'Нема на чему. Ако вам још нешто треба, ту сам, а за разговор са адвокатом позовите ' + TEL + '.' },
+    { id: 'zdravo', p: [/zdravo/, /cao/, /dobar dan/, /dobro jutro/, /dobro vece/, /pozdrav/, /hej /, /hello/, /halo/, /ej /],
+      a: 'Здраво! Шта вас занима: радно време, адреса, области рада или како да закажете разговор?' },
+    { id: 'dovidjenja', p: [/dovidjenja/, /vidimo se/, /prijatno/, /zbogom/],
+      a: 'Пријатно! Канцеларија ради радним данима 09–17 [ПОТВРДИТИ], позив на ' + TEL + '.' }
+  ];
+  var FALLBACK1 = 'Нисам сигурна да сам разумела. Могу да одговорим на питања о радном времену, адреси, областима рада, шта донети и како да закажете разговор.';
+  var FALLBACK2 = 'Изгледа да је питање за адвоката. Позовите ' + TEL + ' или оставите број у форми, јавићемо се.';
+  var misses = 0;
 
   function answer(msg) {
-    var q = norm(msg);
-    for (var i = 0; i < RULES.length; i++)
-      for (var j = 0; j < RULES[i].k.length; j++)
-        if (hit(q, RULES[i].k[j])) return { text: RULES[i].a, call: false };
-    return { text: FALLBACK, call: true };
+    var q = norm(msg), best = null, bestScore = 0;
+    for (var i = 0; i < INTENTS.length; i++) {
+      var sc = 0;
+      for (var k = 0; k < INTENTS[i].p.length; k++) if (INTENTS[i].p[k].test(q)) sc++;
+      if (sc > bestScore) { bestScore = sc; best = INTENTS[i]; }
+    }
+    if (!best) {
+      misses++;
+      return misses >= 2 ? { text: FALLBACK2, call: true } : { text: FALLBACK1, call: false };
+    }
+    misses = 0;
+    var t = typeof best.a === 'function' ? best.a() : best.a;
+    return { text: t, call: !!best.call };
   }
 
   function bubble(txt, mine, withCall) {

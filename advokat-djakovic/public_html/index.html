@@ -20,7 +20,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/noto-serif-400.woff2?v=1" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/noto-serif-400i.woff2?v=1" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=2">
+<link rel="stylesheet" href="assets/css/site.css?v=3">
 <script>(function(){var d=document.documentElement,c=d.classList;c.remove('no-js');c.add('js');try{if(localStorage.getItem('pismo')==='lat'){c.add('lat');d.lang='sr-Latn'}}catch(e){}setTimeout(function(){c.add('ready')},1200)})();</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":["Attorney","LegalService"],"name":"Адвокат Бојана Ђаковић","url":"https://advokatdjakovic.rs/","telephone":"+381605033052","email":"advokat.bdjakovic@gmail.com","image":"https://advokatdjakovic.rs/assets/img/og.png","address":{"@type":"PostalAddress","streetAddress":"Војводе Радомира Путника 7","addressLocality":"Панчево","postalCode":"26000","addressCountry":"RS"},"areaServed":{"@type":"City","name":"Панчево"},"memberOf":{"@type":"Organization","name":"Адвокатска комора Војводине"},"sameAs":["https://www.linkedin.com/in/bojana-djakovic-686984206/"],"openingHours":"Mo-Fr 09:00-17:00","knowsAbout":["Кривично право","Заступање малолетника"]}
@@ -37,7 +37,7 @@
       <li><a href="#o-meni" data-sec="o-meni">О мени</a></li>
       <li><a href="#prvi-sastanak" data-sec="prvi-sastanak">Први састанак</a></li>
       <li><a href="#kontakt" data-sec="kontakt">Контакт</a></li>
-      <li><button type="button" data-lina-open>Лина</button></li>
+      <li><button type="button" data-lina-open>Lina</button></li>
     </ul>
     <div class="rail-foot">
       <button type="button" class="lang" data-lang-toggle aria-label="Промени писмо">Lat</button>
@@ -236,26 +236,26 @@
 <div class="sticky">
   <a href="tel:+381605033052">Позови</a>
   <a href="mailto:advokat.bdjakovic@gmail.com">Пиши</a>
-  <button type="button" class="lina-m" data-lina-open>Лина</button>
+  <button type="button" class="lina-m" data-lina-open><svg class="lina-svg" viewBox="0 0 52 32" fill="none" aria-hidden="true"><path class="lina-line" pathLength="100" d="M2 26 H15 L19.5 21.5 M16 21.5 h20 a4.5 4.5 0 0 0 4.5 -4.5 v-5 a4.5 4.5 0 0 0 -4.5 -4.5 H16 a4.5 4.5 0 0 0 -4.5 4.5 v5 a4.5 4.5 0 0 0 4.5 4.5 M33 26 H50" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><g class="lina-dots" fill="currentColor"><circle cx="20" cy="14.5" r="1.6"/><circle cx="26" cy="14.5" r="1.6"/><circle cx="32" cy="14.5" r="1.6"/></g></svg><span>Lina</span></button>
 </div>
 
-<button type="button" class="lina-fab" data-lina-open>Лина · асистент канцеларије</button>
+<button type="button" class="lina-fab" data-lina-open aria-label="Отвори Lina асистента"><svg class="lina-svg" viewBox="0 0 52 32" fill="none" aria-hidden="true"><path class="lina-line" pathLength="100" d="M2 26 H15 L19.5 21.5 M16 21.5 h20 a4.5 4.5 0 0 0 4.5 -4.5 v-5 a4.5 4.5 0 0 0 -4.5 -4.5 H16 a4.5 4.5 0 0 0 -4.5 4.5 v5 a4.5 4.5 0 0 0 4.5 4.5 M33 26 H50" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><g class="lina-dots" fill="currentColor"><circle cx="20" cy="14.5" r="1.6"/><circle cx="26" cy="14.5" r="1.6"/><circle cx="32" cy="14.5" r="1.6"/></g></svg><span>Lina</span></button>
 
 <div class="lina" id="lina" data-open="0" role="dialog" aria-modal="false" aria-labelledby="linaH">
   <div class="lina-top">
-    <div><h2 id="linaH">Лина</h2><span class="sub">асистент канцеларије</span></div>
-    <button type="button" class="iconbtn" id="linaClose" aria-label="Затвори Лину">
+    <div class="lina-brand"><span class="lina-av"><svg class="lina-svg" viewBox="0 0 52 32" fill="none" aria-hidden="true"><path class="lina-line" pathLength="100" d="M2 26 H15 L19.5 21.5 M16 21.5 h20 a4.5 4.5 0 0 0 4.5 -4.5 v-5 a4.5 4.5 0 0 0 -4.5 -4.5 H16 a4.5 4.5 0 0 0 -4.5 4.5 v5 a4.5 4.5 0 0 0 4.5 4.5 M33 26 H50" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><g class="lina-dots" fill="currentColor"><circle cx="20" cy="14.5" r="1.6"/><circle cx="26" cy="14.5" r="1.6"/><circle cx="32" cy="14.5" r="1.6"/></g></svg></span><div><h2 id="linaH">Lina</h2><span class="sub">асистент канцеларије</span></div></div>
+    <button type="button" class="iconbtn" id="linaClose" aria-label="Затвори Lina">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17324D" stroke-width="1.4" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg>
     </button>
   </div>
   <div class="lina-log" id="linaLog" aria-live="polite"></div>
   <form class="lina-form" id="linaForm">
-    <label class="sr" for="linaIn">Питање за Лину</label>
+    <label class="sr" for="linaIn">Питање за Lina</label>
     <input type="text" id="linaIn" autocomplete="off" placeholder="Питајте нешто…" maxlength="300">
     <button type="submit">Пошаљи</button>
   </form>
 </div>
 
-<script src="assets/js/site.js?v=2" defer></script>
+<script src="assets/js/site.js?v=3" defer></script>
 </body>
 </html>
