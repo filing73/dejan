@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 212" role="img" aria-label="Теразије">
+  <g fill="none" stroke="#17324D" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="62" cy="27" r="15"/>
+    <path d="M62 42 V198"/>
+    <path d="M12 55 H178"/>
+    <path d="M137 55 L153 55 L145 68 Z"/>
+    <path d="M145 68 L112 124 H178 Z"/>
+    <path d="M112 124 A33 33 0 0 0 178 124"/>
+    <path d="M12 198 H124 A20 20 0 0 0 144 178"/>
+  </g>
+</svg>

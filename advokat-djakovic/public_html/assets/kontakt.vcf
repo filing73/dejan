@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Ђаковић;Бојана;;;
+FN:Бојана Ђаковић
+ORG:Адвокат Бојана Ђаковић
+TITLE:адвокат
+TEL;TYPE=CELL,VOICE:+381605033052
+EMAIL;TYPE=INTERNET,PREF:advokat.bdjakovic@gmail.com
+ADR;TYPE=WORK:;;Војводе Радомира Путника 7;Панчево;;26000;Србија
+URL:https://advokatdjakovic.rs
+NOTE:Адвокатска комора Војводине
+END:VCARD
