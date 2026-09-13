@@ -65,8 +65,8 @@ tr.p td.hrs{background:var(--paper)}
 <p class="sub">Nedelja 38 · Lejla plavo, ostali po bojama.</p>
 
 <div class="stats">
-  <div class="stat"><b>5</b><span>radnih dana</span></div>
-  <div class="stat"><b>40:45</b><span>sati ove nedelje</span></div>
+  <div class="stat"><b>6</b><span>radnih dana</span></div>
+  <div class="stat"><b>48:45</b><span>sati ove nedelje</span></div>
   <div class="stat next"><b id="next">—</b><span>sledeća smena</span></div>
 </div>
 
@@ -91,8 +91,8 @@ tr.p td.hrs{background:var(--paper)}
   <td class="off">slobodno</td>
   <td class="shift">14:15 – 22:15</td>
   <td class="shift">06:15 – 14:30</td>
-  <td class="off">slobodno</td>
-  <td class="hrs total">40 h 45 min</td>
+  <td class="shift">14:15 – 22:15</td>
+  <td class="hrs total">48 h 45 min</td>
 </tr>
 <tr class="p">
   <td class="name">Sanja</td>
@@ -113,8 +113,8 @@ tr.p td.hrs{background:var(--paper)}
   <td class="shift">07:00 – 15:00</td>
   <td class="shift">06:15 – 14:30</td>
   <td class="shift">14:15 – 22:15</td>
-  <td class="shift">14:15 – 22:15</td>
-  <td class="hrs">48:15</td>
+  <td class="off">slobodno</td>
+  <td class="hrs">40:15</td>
 </tr>
 <tr class="p three">
   <td class="name">Night shift</td>
@@ -156,7 +156,7 @@ tr.p td.hrs{background:var(--paper)}
   var ths=document.querySelectorAll('thead th');var col=-1;
   ths.forEach(function(th,i){if(th.dataset.d===iso){th.classList.add('today');col=i}});
   if(col>0)document.querySelectorAll('tbody tr').forEach(function(tr){tr.children[col].classList.add('today')});
-  var L=[['2026-09-14','06:15 – 14:30'],['2026-09-15','14:15 – 22:15'],['2026-09-16','06:15 – 14:30'],['2026-09-18','14:15 – 22:15'],['2026-09-19','06:15 – 14:30']];
+  var L=[['2026-09-14','06:15 – 14:30'],['2026-09-15','14:15 – 22:15'],['2026-09-16','06:15 – 14:30'],['2026-09-18','14:15 – 22:15'],['2026-09-19','06:15 – 14:30'],['2026-09-20','14:15 – 22:15']];
   var nm=['Ned','Pon','Uto','Sre','Čet','Pet','Sub'];
   var n=L.filter(function(x){return x[0]>=iso})[0];
   document.getElementById('next').textContent=n?nm[new Date(n[0]+'T12:00:00').getDay()]+' '+n[1]:'nedelja završena';
