@@ -1,0 +1,161 @@
+<title>Lejla Roster</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f3f5f9;--paper:#ffffff;--ink:#16213a;--muted:#5d6883;--line:#d9dfea;
+  --navy:#16305f;--navy-ink:#ffffff;--navy-soft:#dce5f7;
+  --c1:#0f766e;--c1s:#d7f0ec; --c2:#b45309;--c2s:#fbe9d0; --c3:#7e22ce;--c3s:#ecdcfb; --c4:#4d7c0f;--c4s:#e3f0cf;
+  --off:#eef1f6;--off-ink:#8d97ad;--today:#ffd166;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1424;--paper:#171f33;--ink:#eef2fa;--muted:#9aa6c2;--line:#2a3550;
+  --navy:#1f3f7a;--navy-soft:#22335c;
+  --c1s:#123c3a;--c2s:#4a2d0c;--c3s:#3a1a5a;--c4s:#263d10;--c1:#5eead4;--c2:#fbbf24;--c3:#d8b4fe;--c4:#bef264;
+  --off:#1c2438;--off-ink:#5f6b88;
+}}
+:root[data-theme="dark"]{
+  --bg:#0e1424;--paper:#171f33;--ink:#eef2fa;--muted:#9aa6c2;--line:#2a3550;
+  --navy:#1f3f7a;--navy-soft:#22335c;
+  --c1s:#123c3a;--c2s:#4a2d0c;--c3s:#3a1a5a;--c4s:#263d10;--c1:#5eead4;--c2:#fbbf24;--c3:#d8b4fe;--c4:#bef264;
+  --off:#1c2438;--off-ink:#5f6b88;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Barlow,system-ui,sans-serif;padding:20px 16px 40px;font-variant-numeric:tabular-nums}
+h1{font-family:"Barlow Semi Condensed",Barlow,sans-serif;font-weight:700;font-size:26px;margin:0;letter-spacing:.01em}
+.sub{color:var(--muted);font-size:14px;margin:4px 0 16px}
+.wrap{max-width:900px;margin:0 auto}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:720px}
+th,td{padding:10px 8px;text-align:center;border-bottom:1px solid var(--line);font-size:15px}
+th{font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+th small{display:block;font-weight:500;letter-spacing:0;text-transform:none;font-size:12px;margin-top:2px}
+th.today{color:var(--ink)}
+th.today small{background:var(--today);color:#16213a;border-radius:999px;padding:1px 8px;display:inline-block;margin-top:3px}
+td.name{text-align:left;font-weight:600;font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;white-space:nowrap;padding-left:12px;border-left:5px solid var(--acc)}
+tr.p{--acc:var(--c1);--soft:var(--c1s)}
+tr.p.two{--acc:var(--c2);--soft:var(--c2s)}
+tr.p.three{--acc:var(--c3);--soft:var(--c3s)}
+tr.p.four{--acc:var(--c4);--soft:var(--c4s)}
+tr.p td.shift{background:var(--soft);font-weight:500}
+tr.p td.off{background:var(--off);color:var(--off-ink);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+tr.lejla{--acc:var(--navy)}
+tr.lejla td{background:var(--navy);color:var(--navy-ink);font-weight:600;border-bottom-color:var(--navy)}
+tr.lejla td.name{border-left-color:var(--today);font-size:17px}
+tr.lejla td.off{background:var(--navy-soft);color:var(--muted);font-weight:500}
+td.today{box-shadow:inset 0 -3px 0 var(--today)}
+.hrs{color:var(--muted);font-size:13px;white-space:nowrap}
+tr.lejla .hrs{color:#c9d6f5}
+.note{font-size:11px;font-weight:400;opacity:.85;display:block;margin-top:2px}
+.fix{display:inline-block;background:var(--today);color:#16213a;font-size:10px;font-weight:700;padding:1px 5px;border-radius:4px;margin-left:4px;vertical-align:middle}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px;font-size:13px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;background:var(--sw);vertical-align:-1px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0}
+.stat{background:var(--navy);color:#fff;border-radius:10px;padding:12px 14px}
+.stat b{display:block;font-family:"Barlow Semi Condensed",sans-serif;font-size:26px;font-weight:700;line-height:1}
+.stat span{font-size:12px;opacity:.8;text-transform:uppercase;letter-spacing:.06em}
+.stat.next{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+.stat.next span{color:var(--muted)}
+.tip{font-size:12px;color:var(--muted);margin-top:10px}
+</style>
+<div class="wrap">
+<h1>Lejla · Roster 14–20/09/2026</h1>
+<p class="sub">Nedelja 38 · Lejla plavo, ostali po bojama.</p>
+
+<div class="stats">
+  <div class="stat"><b>5</b><span>radnih dana</span></div>
+  <div class="stat"><b>40:45</b><span>sati ove nedelje</span></div>
+  <div class="stat next"><b id="next">—</b><span>sledeća smena</span></div>
+</div>
+
+<div class="scroll"><table id="t">
+<thead><tr>
+  <th></th>
+  <th data-d="2026-09-14">Pon<small>14/09</small></th>
+  <th data-d="2026-09-15">Uto<small>15/09</small></th>
+  <th data-d="2026-09-16">Sre<small>16/09</small></th>
+  <th data-d="2026-09-17">Čet<small>17/09</small></th>
+  <th data-d="2026-09-18">Pet<small>18/09</small></th>
+  <th data-d="2026-09-19">Sub<small>19/09</small></th>
+  <th data-d="2026-09-20">Ned<small>20/09</small></th>
+  <th>Σ</th>
+</tr></thead>
+<tbody>
+<tr class="lejla">
+  <td class="name">Lejla</td>
+  <td class="shift">06:15 – 14:30</td>
+  <td class="shift">14:15 – 22:15<span class="fix">ISPRAVKA</span><span class="note">štampano 06:30</span></td>
+  <td class="shift">06:15 – 14:30</td>
+  <td class="off">slobodno</td>
+  <td class="shift">14:15 – 22:15</td>
+  <td class="shift">06:15 – 14:30</td>
+  <td class="off">slobodno</td>
+  <td class="hrs">40:45</td>
+</tr>
+<tr class="p">
+  <td class="name">Sanja</td>
+  <td class="off">slobodno</td>
+  <td class="shift">08:15 – 12:15<span class="note">reception support</span></td>
+  <td class="shift">14:15 – 22:15<span class="note">reception</span></td>
+  <td class="shift">14:30 – 22:15</td>
+  <td class="shift">09:00 – 13:00<span class="note">mgmt mtg &amp; reception</span></td>
+  <td class="off">slobodno</td>
+  <td class="shift">06:30 – 14:15<span class="note">reception</span></td>
+  <td class="hrs">31:30</td>
+</tr>
+<tr class="p two">
+  <td class="name">Mia</td>
+  <td class="shift">14:15 – 22:15</td>
+  <td class="shift">06:30 – 14:30</td>
+  <td class="off">slobodno</td>
+  <td class="shift">07:00 – 15:00</td>
+  <td class="shift">06:15 – 14:30</td>
+  <td class="shift">14:15 – 22:15</td>
+  <td class="shift">14:15 – 22:15</td>
+  <td class="hrs">48:15</td>
+</tr>
+<tr class="p three">
+  <td class="name">Night shift</td>
+  <td class="off">—</td>
+  <td class="shift">22:15 – 06:30</td>
+  <td class="shift">22:15 – 07:00</td>
+  <td class="off">—</td>
+  <td class="off">—</td>
+  <td class="off">—</td>
+  <td class="off">—</td>
+  <td class="hrs">17:00</td>
+</tr>
+<tr class="p four">
+  <td class="name">Alex</td>
+  <td class="shift">22:15 – 06:30</td>
+  <td class="off">slobodno</td>
+  <td class="off">slobodno</td>
+  <td class="shift">22:15 – 06:30</td>
+  <td class="shift">22:30 – 06:30</td>
+  <td class="shift">22:15 – 06:30</td>
+  <td class="shift">22:15 – 06:30</td>
+  <td class="hrs">41:00</td>
+</tr>
+</tbody></table></div>
+
+<div class="legend">
+  <span style="--sw:var(--navy)">Lejla</span>
+  <span style="--sw:var(--c1)">Sanja</span>
+  <span style="--sw:var(--c2)">Mia</span>
+  <span style="--sw:var(--c3)">Night shift</span>
+  <span style="--sw:var(--c4)">Alex</span>
+  <span style="--sw:var(--today)">današnji dan</span>
+</div>
+<p class="tip">Utorak: štampani roster ima 14:15–06:30, ručno ispravljeno na 22:15 (poslato Sanji 13/09).</p>
+</div>
+<script>
+(function(){
+  var d=new Date(),iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  var ths=document.querySelectorAll('thead th');var col=-1;
+  ths.forEach(function(th,i){if(th.dataset.d===iso){th.classList.add('today');col=i}});
+  if(col>0)document.querySelectorAll('tbody tr').forEach(function(tr){tr.children[col].classList.add('today')});
+  var L=[['2026-09-14','06:15 – 14:30'],['2026-09-15','14:15 – 22:15'],['2026-09-16','06:15 – 14:30'],['2026-09-18','14:15 – 22:15'],['2026-09-19','06:15 – 14:30']];
+  var nm=['Ned','Pon','Uto','Sre','Čet','Pet','Sub'];
+  var n=L.filter(function(x){return x[0]>=iso})[0];
+  document.getElementById('next').textContent=n?nm[new Date(n[0]+'T12:00:00').getDay()]+' '+n[1]:'nedelja završena';
+})();
+</script>
