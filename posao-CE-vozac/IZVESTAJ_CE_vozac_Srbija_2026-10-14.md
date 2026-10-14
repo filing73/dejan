@@ -160,3 +160,8 @@ Profi Nails, Teoma Transport, MMS Lazar Prevoz, Hras Transport, STS-Trans, Banca
 Ukupno poslato: 22 firme. Bez mejla (samo telefon): Tehnošped, Beslać, Grmeč, Drumkom, Sandex, Cargolux, Transportkomerc, Trans-Rapid, Mivex, Višković, Bugarinović, NLK (FB), Astra SB i Sani Group (forma/oglas).
 
 **Pravilo za buduća pisma:** HTML format sa klikabilnim linkovima: WhatsApp https://wa.me/381637105551 , Viber viber://chat?number=%2B381637105551 , SMS sms:+381637105551.
+
+### Odgovori
+| Datum | Firma / kontakt | Kanal | Sadržaj | Sledeći korak |
+|---|---|---|---|---|
+| 2026-10-14 | NEPOZNATA firma iz Vrčina, tel. +381 63 211 201 (ime firme nije rečeno; pretraga broja ništa ne daje) | poziv | Zainteresovani, uslov: da nađu mentora; brinu da se početnik ne zaglavi u uskoj ulici | Dejan šalje SMS/WA potvrdu interesovanja + pita ime firme; pratiti za 3–4 dana |
