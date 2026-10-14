@@ -153,3 +153,10 @@ Kontakt za prijave: maleckard@gmail.com, tel. +381 63 710 5551 / +381 63 191 500
 | 2026-10-14 | Yugologistics, Novi Sad | mejl + dopuna sa SRB brojevima | čeka odgovor |
 
 Nije poslato (nema javnog mejla): Astra SB (prijava preko Infostud oglasa), Sani Group (forma na sanigroup.rs/zaposlenje). Za telefonski poziv: Tehnošped 063/237-726, Profi Nails 013/420-694, Beslać 011/8487-136, STS-Trans 063/592-477.
+
+### Tura 2 (2026-10-14, isto pismo, SRB brojevi u potpisu), poslato sa maleckard@gmail.com:
+Profi Nails, Teoma Transport, MMS Lazar Prevoz, Hras Transport, STS-Trans, Bancarevo Trans, Jugotrans, ADAM Šped System, Balkan Logistic Cargo, Inter Line, Aman, Pal komerc 007, Sentatrans, Raj-Trans, Metal-Cinkara, ADR Protecta Aqua, Bura Šped, Mateo Trans, LTC Stanković. (19 firmi, svi "čeka odgovor"; adrese iz imenika, moguć bounce.)
+
+Ukupno poslato: 22 firme. Bez mejla (samo telefon): Tehnošped, Beslać, Grmeč, Drumkom, Sandex, Cargolux, Transportkomerc, Trans-Rapid, Mivex, Višković, Bugarinović, NLK (FB), Astra SB i Sani Group (forma/oglas).
+
+**Pravilo za buduća pisma:** HTML format sa klikabilnim linkovima: WhatsApp https://wa.me/381637105551 , Viber viber://chat?number=%2B381637105551 , SMS sms:+381637105551.
