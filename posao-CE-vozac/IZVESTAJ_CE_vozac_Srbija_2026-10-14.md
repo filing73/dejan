@@ -140,3 +140,16 @@ Fajlovi istraživanja po agentima (sirovi rezultati) sačuvani su u folderu `pos
 - Periodična obuka: 5 jednodnevnih seminara po 7 časova, u roku 5 godina, bez ispita; cena 7.800–9.900 RSD po seminaru. Jedan izvor kaže najviše 2 seminara u kalendarskoj godini, drugi da centri rade blokove od 5 dana. **NIJE POTVRĐENO** da li se po stečenim pravima kartica dobija odmah (pa seminari u 5 godina) ili tek posle seminara. Pitati ABS / CPC centar direktno. https://cpc.rs/poslovi/transportna-preduzeca/obuka-vozaca/obuke-za-periodicni-cpc/ , https://saobracajnekazne.rs/profesionalni-vozaci/cpc
 - Slovenački Code 95 je nebitan za srpsku karticu.
 - **Tahograf kartica vozača:** izdaje je ABS, ali se zahtev predaje u ekspozituri **Dunav osiguranja / Dunav auta** (ne u ABS-u). Ponesi ličnu/pasoš i vozačku na uvid + dokaz o uplati (taksa 430 RSD budžetu + izrada; uplatilac mora biti sam vozač). Rok izrade 7–15 dana po starijim izvorima. https://www.abs.gov.rs/rsl/izdavanje-tahografske-kartice
+
+## 9. EVIDENCIJA PRIJAVA (ažurirano 2026-10-14)
+
+Kontakt za prijave: maleckard@gmail.com, tel. +381 63 710 5551 / +381 63 191 5003 (ne koristiti malteški broj).
+
+| Datum | Firma | Kanal | Status |
+|---|---|---|---|
+| 2026-08-13 | Viapan Group (Mađarska, agencija) | mejl (dejanmaleckar@gmail.com) | odgovoren upitnik, bez nastavka |
+| 2026-10-14 | Tehno-Coop (HR + cc Ogranak Beograd) | mejl sa maleckard@gmail.com + dopuna sa SRB brojevima | čeka odgovor |
+| 2026-10-14 | Judo Trans, Čačak | mejl + dopuna sa SRB brojevima | čeka odgovor |
+| 2026-10-14 | Yugologistics, Novi Sad | mejl + dopuna sa SRB brojevima | čeka odgovor |
+
+Nije poslato (nema javnog mejla): Astra SB (prijava preko Infostud oglasa), Sani Group (forma na sanigroup.rs/zaposlenje). Za telefonski poziv: Tehnošped 063/237-726, Profi Nails 013/420-694, Beslać 011/8487-136, STS-Trans 063/592-477.
