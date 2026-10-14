@@ -165,3 +165,5 @@ Ukupno poslato: 22 firme. Bez mejla (samo telefon): Tehnošped, Beslać, Grmeč,
 | Datum | Firma / kontakt | Kanal | Sadržaj | Sledeći korak |
 |---|---|---|---|---|
 | 2026-10-14 | NEPOZNATA firma iz Vrčina, tel. +381 63 211 201 (ime firme nije rečeno; pretraga broja ništa ne daje) | poziv | Zainteresovani, uslov: da nađu mentora; brinu da se početnik ne zaglavi u uskoj ulici | Dejan šalje SMS/WA potvrdu interesovanja + pita ime firme; pratiti za 3–4 dana |
+| 2026-10-14 15:16 | **Judo Trans, Čačak** – Branko Simonović | mejl | "Pozovite na +381 62 270 656 whatsapp" | Dejan zove/piše na WhatsApp +381 62 270 656 |
+| 2026-10-14 | Sentatrans | bounce (domen sentatrans.rs ne postoji) | — | ponovo poslato na sentatransdoo@gmail.com |
