@@ -1,0 +1,35 @@
+# 01 Pančevo i Južni Banat - prevoznici (provera 2026-10-14)
+
+NAPOMENA O METODI: WebFetch i curl su bili blokirani (DNS/proxy 403), pa je rad urađen SAMO preko WebSearch sažetaka. Nijedan oglas nisam otvorio direktno; citati su iz sažetaka pretrage i treba ih potvrditi na izvoru. Telefoni/mejlovi su preuzeti iz tih sažetaka.
+
+## Odeljak A - tabela firmi
+Skraćenice: NP = NIJE POTVRĐENO.
+
+| # | Kompanija / matični br. | Sedište | Domaći/međ. | Početnici | Obuka/mentor | Code 95 | Šengen režim | Plata | Kontakt | Link + datum oglasa | Status | Prioritet |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | **Tehno-Coop d.o.o.** (osn. 2001; matični NP) | NP (ekipa oglasa: Subotica/Vojvodina; Pančevo navedeno kao mesto rada) | Domaći + međunarodni, špedicija, carinsko zastupanje | **DA** - "nije potrebno prethodno iskustvo u međunarodnom transportu" (po sažetku) | **DA** - obuka početnika uz iskusne mentore (po sažetku) | Traži se CPC/COD 95; podrška NP | NP (pominje se plaćanje po završenoj turi, bez 90/180) | Osnovna plata + po završenom krugu + podsticaj; iznos NP | ljudskiresursi@tehnocoop.co.rs; 064/8282750, 064/8282677; sajt https://tehnocoop.co.rs/ | https://poslovi.infostud.com/posao/vozac-teretnog-vozila-u-medjunarodnom-transportu/tehno-coop-doo/725198 ; objavljen 23.04.2026 (STAR OGLAS, ~174 dana; aktuelnost NP) | SAMOINICIJATIVNO (ima flotu, oglas verovatno istekao) | **4** - jedini nađen oglas koji eksplicitno prima CE bez međ. iskustva uz mentora; CPC im je uslov pa Code 95 treba rešiti |
+| 2 | **Tehnošped d.o.o. Pančevo** (matični NP; ranga se i "Tehnošped Plus doo Pančevo" u listi prevoznika 2022 - veza NP) | Pančevo | Cisterne, ADR, industrijski/medicinski gasovi (Messer Tehnogas), međunarodni | NE/NP - feb. 2026 oglas: "Potrebni su vozači sa iskustvom u međunarodnom transportu"; sept. 2026 oglas traži C+E + ADR bez navedenog iskustva | NP | NP (mart 2026: traži CPC) | NP | NP | 063/237-726, 069/1027707 (sept. oglas); 063/251-026 (mart oglas); sajt https://www.tehnosped.net/en/dangerous-goods | https://oglasihalo.co.rs/listing/tehnosped/ (14.09.2026, ~30 dana - svež); https://n1info.rs/biznis/ovonedeljni-oglasi-za-posao-16-3-2026/ (16.03.2026 STAR OGLAS); Infostud 20.02.2026 STAR OGLAS | AKTIVNO ZAPOŠLJAVA (sept. 2026, treba potvrditi) | **3** - lokalni (Pančevo), svež oglas, ali cisterne/ADR su zahtevniji za početnika; vredi pozvati i pitati za obuku/ADR |
+| 3 | **Profi Nails d.o.o.** (matični NP) | Pančevo (lokacija oglasa) | Međunarodni: kružna tura Silivri (Istanbul) - Pančevo, sopstveni šleperi (uvoz) | NP | NP | NP | NP ("terenski rad", kružna tura) | NP | NP | Infostud oglas 21.04.2026 (STAR OGLAS ~176 dana); pronađeno preko pretrage "Silivri Pančevo", tačan URL NP | NP (oglas verovatno istekao) | **2** - nije klasičan prevoznik (uvoznik, nabavlja šlepere); proveriti ozbiljnost; Turska = van Šengena, tj. korisno za dane |
+| 4 | **Transportkomerc-Pančevo d.o.o.** (posluje od 05.06.1996.; matični NP) | Pančevo, Oslobođenja 39 | Domaći + međunarodni (Zapadna Evropa), mešoviti tipovi vozila | NE - stari oglasi: uslov 1 godina iskustva | NP | NP | NP | NP | adresa Oslobođenja 39; tel. NP | https://www.companywall.rs/firma/transportkomerc-pancevo-doo-pancevo/MMh9NPZ0 ; https://www.beogradskioglasi.com/posao-ostalo/vozaci-e-kategorije-pancevo-mz (oglasi 2020/2022 - STAR OGLAS) | SAMOINICIJATIVNO (nema oglasa 2025/26) | **2** - lokalni i etabliran, ali ranije traže iskustvo; vredi samo kao samoinicijativni poziv |
+| 5 | **Cargolux d.o.o.** (matični NP) | Beograd (Meljak, Ibarski put 14) - van područja, blizu Pančeva | Međunarodni (Italija, Španija, Portugal) | NP ("C+E", iskustvo nije navedeno u sažetku) | NP | NP | NP (rute IT/ES/PT = Šengen, proveriti rotaciju) | 1.800-3.000 EUR (halooglasi sažetak, stalni radni odnos) | 062/1919019; +381 11 4 111 999; http://cargoluxdoo.com/ | Halooglasi, rok 16.10.2026 (ističe za 2 dana): "Vozač sa C+E kategorijom za međunarodni transport"; https://oglasihalo.co.rs/listing/cargolux-doo/ (mart 2026) | AKTIVNO ZAPOŠLJAVA | **3** - aktivan oglas sa objavljenom platom, ali iskustvo/obuka nepoznati; pozvati odmah zbog roka |
+| 6 | **Metal-Forma Kos d.o.o.** | Pančevo, Kudeljarski nasip Prva 122D | Transport mazuta/bitumena, vakuum cisterne (domaće, vezano za lokalnu industriju) | NP | NP | NP | NP | NP | odg. lice Nebojša Anđelković (ekapija) | https://www.ekapija.com/company/view?id=157443 ; bez oglasa | SAMOINICIJATIVNO | **2** - nišna cisterna firma u Pančevu, nema oglasa, verovatno traže ADR |
+| 7 | **Vesović d.o.o. Pančevo** | Pančevo | Drumski prevoz tereta (mikro preduzeće, lista 2022) | NP | NP | NP | NP | NP | NP | https://biznis.rs/vesti/srbija/kod-nas-skupo-gorivo-utice-na-poslovanje-drumskih-prevoznika/ (samo pomen u listi); nije verifikovano | SAMOINICIJATIVNO | **1** - samo ime sa liste, ništa više potvrđeno |
+
+Proverene bez rezultata za područje: Vršac, Kovin, Bela Crkva, Alibunar, Plandište, Opovo, Kovačica, Starčevo, Omoljica, Banatsko Novo Selo, Crepaja. Nije nađen nijedan konkretan prevoznik sa oglasom. Nađeni samo: Daibau imenik Kovin (https://www.daibau.rs/imenik/prevozi/kovin) i Prevoznici Srbija (https://prevoznicisrbija.rs/) - sadržaj nisam mogao da otvorim.
+
+Bilo koji NIS/Rafinerija/HIP Petrohemija oglas: NIJE NAĐEN. Pominje se NIS oglas za vozača teretnog vozila za opasne materije u Pančevu (Infostud), ali nije verifikovan; NIS je i dalje direktni poslodavac, ne tipičan prevoznik, i obično traži ADR/iskustvo.
+
+Isključeno kao nepodobno: Podrinje komerc, Bgtrans011, Nesa Trans, Brza voda (Beograd/van područja, rokovi istekli ili C kat. bez CE), Balkan Drive i "Nemačka" oglasi (posrednici, stari), Sentatrans (Senta, van područja).
+
+## Odeljak B - TOP 3
+1. **Tehno-Coop** - jedini oglas koji eksplicitno kaže bez iskustva u međ. transportu + obuka sa mentorima + osnovna plata i po turi; Pančevo naveden kao mesto rada. Pozvati i pitati: da li je oglas aktivan, da li pokrivaju Code 95 i kako vode dane (90/180).
+2. **Tehnošped (Pančevo)** - najsvežiji lokalni oglas (14.09.2026), 5 minuta od kuće; cisterne/ADR su teže za početnika ali pitati za obuku i ADR kurs.
+3. **Cargolux (Beograd)** - aktivan oglas sa platom 1.800-3.000 EUR, rok 16.10.2026; uslovi za iskustvo nepoznati, ali vredi jedan poziv.
+
+## Odeljak C - Ograničenja
+- WebFetch/curl blokirani; nijedan oglas nije otvoren i potvrđen na izvoru. Sve je iz sažetaka WebSearch alata (moguće netačnosti, posebno datum 23.04.2026 i citati Tehno-Coop oglasa).
+- Matični brojevi, APR podaci, sajt Tehnošpeda i Tehno-Coop-a (sedište) nisu proverani.
+- Šengen/90-180/rotacija: ni u jednom pronađenom oglasu nije potvrđen podatak; NP za sve firme. Pitati direktno.
+- Facebook/Instagram/TikTok/LinkedIn i Google Maps nisu pretraživani (alat ne podržava).
+- Mala područja Južnog Banata (Vršac, Bela Crkva, Kovin itd.) nisu dala nijednog prevoznika; verovatno postoje, ali se ne vide kroz ovaj alat. Preporuka: ručna pretraga APR po delatnosti 4941 u tim opštinama.
+- Tehnošped vs Tehnošped Plus: nije potvrđeno da je ista firma.
