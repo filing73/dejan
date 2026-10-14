@@ -132,3 +132,11 @@ Detaljno sa izvorima: `SENGEN_CODE95_2026-10-14.md` u istom folderu. Ključno:
 
 ---
 Fajlovi istraživanja po agentima (sirovi rezultati) sačuvani su u folderu `posao-CE-vozac/sirovo/`.
+
+## 8. DOPUNA 2026-10-14: Code 95 po osnovu STEČENIH PRAVA (C/CE iz 2001)
+
+- Vozači koji su C/CE stekli **do 30.12.2019.** imaju priznatu kvalifikaciju po stečenim pravima: **nema početne obuke od 140 časova i nema ispita**. Pravo se ne gubi i ne zastareva. Izvori: https://cpcdoo.rs/kvalifikaciona-kartica-vozaca-kako-je-dobiti-obnoviti-i-kolika-je-cena/ , https://office-ivanovic.rs/abs-sertifikata-kvalifikacione-kartice-vozaca/ , https://cpc.rs/cpc-sertifikat-o-strucnoj-kompetentnosti/
+- Kartica (SRB kvalifikaciona kartica) i upis koda 95 u dozvolu idu preko **Agencije za bezbednost saobraćaja (ABS)**; dokumenta: lična karta, vozačka dozvola, fotografija 25×35 mm, uplate (zahtev ~5.000 RSD + izrada; iznosi NP za 2026). https://autoskolapravo.com/cpc-sertifikat-i-kartica-profesionalnih-vozaca-u-amss-cmv/
+- Periodična obuka: 5 jednodnevnih seminara po 7 časova, u roku 5 godina, bez ispita; cena 7.800–9.900 RSD po seminaru. Jedan izvor kaže najviše 2 seminara u kalendarskoj godini, drugi da centri rade blokove od 5 dana. **NIJE POTVRĐENO** da li se po stečenim pravima kartica dobija odmah (pa seminari u 5 godina) ili tek posle seminara. Pitati ABS / CPC centar direktno. https://cpc.rs/poslovi/transportna-preduzeca/obuka-vozaca/obuke-za-periodicni-cpc/ , https://saobracajnekazne.rs/profesionalni-vozaci/cpc
+- Slovenački Code 95 je nebitan za srpsku karticu.
+- Istim odlaskom u ABS podneti i zahtev za **tahograf karticu vozača**.
