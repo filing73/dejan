@@ -168,3 +168,52 @@ Ukupno poslato: 22 firme. Bez mejla (samo telefon): Tehnošped, Beslać, Grmeč,
 | 2026-10-14 15:16 | **Judo Trans, Čačak** – Branko Simonović | mejl | "Pozovite na +381 62 270 656 whatsapp" | Dejan zove/piše na WhatsApp +381 62 270 656 |
 | 2026-10-14 | Sentatrans | bounce (domen sentatrans.rs ne postoji) | — | ponovo poslato na sentatransdoo@gmail.com |
 | 2026-10-14 15:52 | **Tehnošped d.o.o., Pančevo** (063/237-726, kontakt "Cile") | poziv | Dogovoren dolazak na razgovor 2026-10-15, Jabučki put 413a (pored Lejdi) | Dejan ide lično 15.10. |
+
+## 10. DOPUNA 2026-10-15 — treći krug (7 agenata, "šta smo propustili")
+
+Metod isti kao ranije (samo sažeci pretrage, mrežna blokada). Limit pretraga se delio između agenata, pa je svaki stao posle ~20 upita. Sve NP = NIJE POTVRĐENO. Sirovi fajlovi: `sirovo/21_*.md` do `27_*.md`.
+
+### 10A. Nove firme — PANČEVO i do 30 km (prioritet, domaći ili kratke ture)
+| Firma | Gde | Šta | Početnici | Kontakt | Izvor | Prio |
+|---|---|---|---|---|---|---|
+| **Marshall West** | Pančevo | domaći prevoz koksa (rafinerija → Niš/Loznica), C 110–120k, **E 240–320k RSD** | NP | NP (Infostud/Jooble oglas) | 27_social_k3 | **4** |
+| **Almex d.o.o.** | Pančevo, Jabučki put 82 | "vozač teških teretnih vozila i cisterne", domaći | NP | NP (Infostud oglas 19.08.2026) | 25_domace | **4** |
+| **NN Cvetković Autoprevoz** | Pančevo, Bavanišanski put 485A | srednje preduzeće (~798 mil RSD prihod), ima Infostud profil | NP | sa Infostud profila | 22_pancevo | **4** |
+| **Anđić International Transport** | Kačarevo, Radnička 44 | međunarodni | NP | 013/601-537, 013/603-290 | 22_pancevo | 3 |
+| **Saga d.o.o.** | Pančevo, Toze Markovića 27 | prevoz tereta | NP | 013/343-107, sagadoo@panet.rs | 22_pancevo | 3 |
+| **Kragović Transport** | Pančevo | prevoz tereta (mikro) | NP | 013/511-922, kragovic974@gmail.com | 22_pancevo | 3 |
+| **Petro Promet d.o.o.** | Beograd, radno mesto Pančevo | vozač teretnog vozila | NP | kontakt Zoran Radmanović (Jooble, maskiran) | 25_domace | 3 |
+| **Delta Transportni Sistem** | Nova Pazova | domaći, ponavljani oglasi "vozač C i E" (poslednji do 03.09.2026) | NP | 011/331-4329, office@dts.rs, posao.deltaholding.rs | 21_korporacije | **4** |
+| **Nelt Co** | Dobanovci | domaći kontejneri Rijeka→Srbija, kamion kući svaki dan; 140k RSD dom. / 1.400–2.000 EUR međ.; "Vozačka akademija" (C) | akademija = DA za C | 011/377-9100, 011/377-9131 | 21, 25 | **4** |
+| **MB Trans** | Inđija | prevoz | NP | 022/21-55-999, office@mbtrans.rs | 27_social_k3 | 3 |
+| **Stojanović Šped** | Smederevo | Srbija–Rumunija, E kat. 160–190k RSD (oglas 04.2026, star) | NP | NP | 22_pancevo | 3 |
+| **Vekoprom** | Zemun | redovno traži CE (oglasi 2019–2022) | NP | vekoprom@gmail.com | 22_pancevo | 2 |
+| **Srboexport Transport** | Obrenovac | forum (star): "primaju bez iskustva" | NP | 011/8726-200, srboexporttransport@trans.rs | 27_social_k3 | 3 |
+| **Kuehne+Nagel** | Ugrinovci | Jooble: C+E Beograd (~2 mes.) | NP | preko karijera sajta | 21_korporacije | 2 |
+
+### 10B. Nove firme — ostatak Srbije
+| Firma | Gde | Šta | Kontakt | Prio |
+|---|---|---|---|---|
+| **DP Zaliv** | Crvenka | cisterne/hladnjače, **jedini oglas koji pominje obuku bez iskustva** (stariji) | 025/731-808, office@zaliv.rs | **4** |
+| **Pik Hladnjača** | Novi Sad | CE, domaći + HR, oglas 08.10.2026, 150–200k RSD | 064/82-01-624 (star) | 3 |
+| **Momo Veselinović** | Kragujevac | SRB–SI ture 3–5 dana, 1.800–2.500 EUR, oglas 01.10.2026 | NP | 3 |
+| **Simsped** | Beograd | C+E 1.800–3.000 EUR, rok 16.10. | transport@simsped.com | 3 |
+| **TD Šped** | Beograd | Scania tandem, Bugarska/Turska, "iskustvo poželjno, ne obavezno" | NP | 3 |
+| **Kovačević Transport** | Futog | prevoznik, kontakt Jovan Kovačević | 021/895-339 | 2 |
+| **Still-Mix** | Novi Sad | CE | 021/4780-324, 063/534-259, stillmix@eunet.rs | 2 |
+| **Eurotrans** | Kraljevo | prevoz | 036/311-345, info@eurotrans.rs | 2 |
+| **Navigo** | Kragujevac | prevoz | office@navigo.rs | 2 |
+| Boško Popović PR | Beograd/Čačak | E kat. 220–290k, vikend slobodan | NP | 2 |
+| Ralu, S Vigon, Transporta, Quick Trans, Agencija Transfer | Beograd | međ., traže CPC/iskustvo | — | 1–2 |
+
+### 10C. Obuka + zaposlenje
+- **CPC doo, Beograd** (Zrenjaninski put 114b): po sajtu posle testa na simulatoru finansira početni CPC i nudi zaposlenje kod partnerskih prevoznika; 064/137-60-64, office@cpcdoo.rs, https://cpcdoo.rs/kako-postati-profesionalni-vozac/ — za tebe (stečena prava) relevantan samo kao posrednik ka prevoznicima.
+- **Pumed** (063/318-136, office@pumedtrans.com): obuka koju finansiraju prevoznici uz obavezu rada 36 meseci (opis star).
+- **NSZ Pančevo** 013/306-832: subvencija poslodavcu 230–336k RSD za zapošljavanje teže zapošljivih, važi do 30.11.2026 — argument za malu firmu (Vrčin, Tehnošped) da te prijavi.
+- Pluton Logistics navodi da se od 01.07.2026 za početni CPC polaže samo teorija (NP, proveriti u ABS).
+
+### 10D. Loša reputacija (forum CBC, nepotvrđeno)
+SNUPEX/BTU-Logistic ("crna lista", jedan anoniman post). Opšte upozorenje foruma: firme koje traže "depozit"/"fiktivne troškove" pri zapošljavanju.
+
+### 10E. Infostud prijave
+Dejanov Infostud nalog je profil firme (EOOD), ne može da se prijavljuje kao kandidat. Za Astra SB, Almex, Marshall West, NN Cvetković treba **privatni Infostud nalog** (maleckard@gmail.com), 5 minuta.
