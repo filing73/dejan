@@ -223,3 +223,9 @@ Kandidat trenutno nema stan, ali može da iznajmi garsonjeru u okolini Pančeva 
 | 2026-10-15 | **Simsped, Beograd** | poziv posle mejla | zvali Dejana, dali broj direktora | Dejan zove direktora 15.10. |
 | 2026-10-15 | Delta Transportni Sistem (Milica Blagojević, HR) | mejl | ODBIJENO: flota samo B kategorija, pozicije samo za B | izbačeno iz liste; agentov nalaz "C i E oglasi" bio pogrešan |
 | 2026-10-15 | Tehnošped, Pančevo (Cile) | uživo | uzeli podatke, bez odluke i bez informacija | čekati 3–4 dana, pa jedan poziv Ciletu |
+
+### Papiri
+| Datum | Šta | Status |
+|---|---|---|
+| 2026-10-15 | Tahograf kartica vozača (Dunav osiguranje) | PREDATO, rok izrade 7–15 dana |
+| 2026-10-15 | Kvalifikaciona kartica / CPC po stečenim pravima (Pančevački put) | predaje se 15.10. |
