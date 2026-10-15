@@ -217,3 +217,6 @@ SNUPEX/BTU-Logistic ("crna lista", jedan anoniman post). Opšte upozorenje forum
 
 ### 10E. Infostud prijave
 Dejanov Infostud nalog je profil firme (EOOD), ne može da se prijavljuje kao kandidat. Za Astra SB, Almex, Marshall West, NN Cvetković treba **privatni Infostud nalog** (maleckard@gmail.com), 5 minuta.
+
+## 11. KLJUČNO OGRANIČENJE (15.10.2026): kandidat nema stan — planira da živi u kamionu
+Posledice za izbor firme: (1) domaće "kući svako veče" ture NISU prednost; prednost su duge ture i firme sa placem gde vozač može da ostane u kabini između tura; (2) relacije van Šengena (Turska, Balkan) su kritične jer posle 90 dana nema gde da "čeka kod kuće"; (3) u EU je redovni nedeljni odmor od 45h u kabini zabranjen (Uredba 561/2006), kazne u DE/FR/BE 500–1.500 €; firme moraju da obezbede smeštaj ili povratak na bazu; (4) prioritet: Judo Trans (duge ture), Profi Nails/TD Šped/Cagri/BLC (Turska), Tehnošped/Vrčin/Anđić (lokalni plac).
