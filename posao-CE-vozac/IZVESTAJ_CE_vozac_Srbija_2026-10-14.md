@@ -228,4 +228,4 @@ Kandidat trenutno nema stan, ali može da iznajmi garsonjeru u okolini Pančeva 
 | Datum | Šta | Status |
 |---|---|---|
 | 2026-10-15 | Tahograf kartica vozača (Dunav osiguranje) | PREDATO, rok izrade 7–15 dana |
-| 2026-10-15 | Kvalifikaciona kartica / CPC po stečenim pravima (Pančevački put) | predaje se 15.10. |
+| 2026-10-15 | Sertifikat o stručnoj kompetentnosti + kvalifikaciona kartica vozača (CPC, stečena prava) — AMSS centar, Zrenjaninski put 114, Borča | PREDATO, zavedeno pod br. 10425/2026 (ABS potvrda). Pančevački put NE radi kartice. Preuzimanje otprilike prva nedelja novembra; pre toga pozvati 069 870 2412 ili 069 870 1657. PROVERITI da kartica pokriva i CE (na potvrdi kategorije ispisane kao "C,C1E,C1,C", bez CE). Kartica izdata bez seminara; periodična obuka ostaje obaveza u roku. |
