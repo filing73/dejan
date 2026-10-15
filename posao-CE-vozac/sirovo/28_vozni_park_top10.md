@@ -1,0 +1,20 @@
+# Vozni park check (semi-trailer tractors, CE) - searched 2026-10-15
+
+| # | Company | Fleet evidence | Verdict |
+|---|---|---|---|
+| 1 | Tehno-Coop (Beograd) | Own site: ~50 vehicles, ADR-equipped, international full/partial loads (https://tehnocoop.co.rs/). Job ads require E category + digital tachograph + CPC, ADR preferred (https://poslovi.infostud.com/posao/vozac-teretnog-vozila-u-medunarodnom-transportu/tehno-coop-doo/725198). No ad or page says "tegljač/poluprikolica". | UNCONFIRMED (E-cat requirement strongly suggests combos) |
+| 2 | Astra SB (Dobanovci) | CE driver ad: "55 tegljača i 75 poluprikolica" (cerada, container chassis, special trailers), Volvo E6 2015-2022 (https://poslovi.infostud.com/posao/vozac-ce-kategorije/astra-sb-doo/742327). Used-truck listing shows DAF XF / Iveco Stralis tractors (https://www.polovniautomobili.com/astra-sb). | SEMI-TRAILERS YES |
+| 3 | Tehnošped (Pančevo) | ADR page: all tanks and trucks certified, ADR classes 2,3,6,8,9 (https://tehnosped.com/index.php/transporti/adr-transport). Job ads seek "vozači C i E kategorije sa ADR-om" and tanker driver for international transport (infostud Pančevo listing). "Vozni park" page exists but its content was not retrievable. | UNCONFIRMED (likely tanker tractors; no explicit text) |
+| 4 | Beslać trans (Dobanovci) | Own site: fleet "mainly semi-trailers, solo trucks and small delivery vans", Euro 5/6 (https://beslactrans.com/en/home/). Conflict: a directory lists only ~17 small vehicles (pick-ups, vans, 1.2-10 t trucks) (https://www.klikdofirme.com/beslac-trans-doo-317.html). The infostud ad found is for a "Vozač C kategorije" (https://poslovi.infostud.com/posao/Vozac-C-kategorije/Beslac-trans-doo/641439). | YES (self-claim only; directory contradicts, so verify; C-cat ad suggests part of the fleet is rigid) |
+| 5 | Sani Group (Šabac) | Own site: "Flota od preko 100 kamiona sa poluprikolicama", mostly Volvo, Schmitz Cargobull trailers (cerada, Mulda, Mega 95-100 m3) (https://sanigroup.rs/medjunarodni-transport/). | SEMI-TRAILERS YES |
+| 6 | Profi Nails (Pančevo) | Wire/nails wholesaler (Novoseljanski put 139). No fleet info, no driver ad found; only trade data pointing to Turkish customs (https://www.companywall.rs/firma/profi-nails/MMhc60wY). | UNCONFIRMED |
+| 7 | Next Globe (Šimanovci) | Ads: CE drivers for international transport (Italy/Slovenia/Poland/Czechia), CPC training offered; no vehicle type stated (listings via https://rs.jooble.org/posao-voza%C4%8D-u-me%C4%91unarodnom-transportu). | UNCONFIRMED (CE-cat ads suggest combos) |
+| 8 | STS-Trans (Kanjiža) | Only directory entries (https://www.ekapija.com/en/company/view?id=52111, https://poslovi.infostud.com/poslodavac/sts-trans-d.o.o/10865); no fleet data. | UNCONFIRMED |
+| 9 | Grmeč Transport (Zemun) | Sole proprietor; ads for "Vozači C i E kategorije" for FMCG distribution in Serbia, refrigerated vehicles for Delhaize/Lidl (https://www.poslovi.rs/job/apr-grmec-transport/vozaci-c-i-e-kategorije-225212). Ad is old (~900+ days). E-cat suggests some trailers, type not stated. | UNCONFIRMED (distribution; may be hladnjača combos or rigid) |
+| 10 | Simsped / Simšped (Pančevo) | Own site: "70 Scania tegljača (šlepera) sa ADR", 70 cerada trailers, 15 mega, 15 refrigerated (https://www.simsped.com/o-nama/). Older version: 42 trucks. Note: search did not confirm the site is Pančevo-based. | SEMI-TRAILERS YES |
+| 11 | Cargolux (Srbija) | Only Halo Oglasi listing: C+E driver, international transport, 1.800-3.000 EUR, deadline 16.10.2026 (https://www.halooglasi.com/posao/ponuda-poslova-vozaci/beograd). No company page or fleet found. | UNCONFIRMED |
+
+Notes
+- Clear YES (concrete tegljač/poluprikolica text): Astra SB, Sani Group, Simsped; Beslać trans is a self-claim with a contradicting directory.
+- Rows 1, 3, 7, 9: they hire CE drivers, but a CE ad alone is not fleet proof. Ask directly before applying.
+- Tool limits: only search snippets were available (no page fetch), so company "vozni park" pages for Tehnošped, Tehno-Coop and Beslać were not read in full.

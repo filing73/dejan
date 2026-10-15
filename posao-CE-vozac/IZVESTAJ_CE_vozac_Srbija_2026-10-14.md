@@ -229,3 +229,24 @@ Kandidat trenutno nema stan, ali može da iznajmi garsonjeru u okolini Pančeva 
 |---|---|---|
 | 2026-10-15 | Tahograf kartica vozača (Dunav osiguranje) | PREDATO, rok izrade 7–15 dana |
 | 2026-10-15 | Sertifikat o stručnoj kompetentnosti + kvalifikaciona kartica vozača (CPC, stečena prava) — AMSS centar, Zrenjaninski put 114, Borča | PREDATO, zavedeno pod br. 10425/2026 (ABS potvrda). Pančevački put NE radi kartice. Preuzimanje otprilike prva nedelja novembra; pre toga pozvati 069 870 2412 ili 069 870 1657. PROVERITI da kartica pokriva i CE (na potvrdi kategorije ispisane kao "C,C1E,C1,C", bez CE). Kartica izdata bez seminara; periodična obuka ostaje obaveza u roku. |
+
+## 12. PROVERA VOZNOG PARKA TOP 10 (2026-10-15, posle greške sa Judo Transom)
+
+Pitanje: da li firma uopšte vozi tegljače sa poluprikolicama (CE), ili samo kombije/solo kamione. Detalji: `sirovo/28_vozni_park_top10.md`.
+
+| Firma | Flota | Verdikt |
+|---|---|---|
+| Astra SB | 55 tegljača + 75 poluprikolica, Volvo E6 | **CE DA** |
+| Sani Group | 100+ kamiona sa poluprikolicama, Volvo + Schmitz | **CE DA** |
+| Simsped | 70 Scania tegljača sa ADR, cerade/mega/hladnjače | **CE DA** |
+| Tehnošped | ADR cisterne, oglasi "C i E sa ADR-om" | verovatno DA (viđeno uživo 15.10) |
+| Tehno-Coop | ~50 vozila ADR, oglasi traže E | verovatno DA, NP |
+| Next Globe | CE oglasi za IT/SI/PL/CZ | verovatno DA, NP |
+| Beslać trans | sajt: "uglavnom poluprikolice"; imenik: 17 malih vozila do 10 t; oglas za C | **SUMNJIVO — pitati prvo "šta vozite"** |
+| Grmeč Transport | distribucija Delhaize/Lidl hladnjačama | **SUMNJIVO — verovatno solo kamioni**, samo rezerva |
+| Profi Nails | nema nikakvih podataka o floti | NP |
+| STS-Trans | samo imenici | NP |
+| Cargolux (SRB) | samo oglas, bez firme iza | NP |
+| Judo Trans | Ducato kombiji + Atego do 7,5 t | **CE NE — odbačen** |
+
+Pravilo od sada: pre stavljanja firme u TOP listu, proveriti vozni park, ne samo oglas.
