@@ -218,9 +218,5 @@ SNUPEX/BTU-Logistic ("crna lista", jedan anoniman post). Opšte upozorenje forum
 ### 10E. Infostud prijave
 Dejanov Infostud nalog je profil firme (EOOD), ne može da se prijavljuje kao kandidat. Za Astra SB, Almex, Marshall West, NN Cvetković treba **privatni Infostud nalog** (maleckard@gmail.com), 5 minuta.
 
-## 11. KLJUČNO OGRANIČENJE (15.10.2026): kandidat nema stan — planira da živi u kamionu
-Posledice za izbor firme: (1) domaće "kući svako veče" ture NISU prednost; prednost su duge ture i firme sa placem gde vozač može da ostane u kabini između tura; (2) relacije van Šengena (Turska, Balkan) su kritične jer posle 90 dana nema gde da "čeka kod kuće"; (3) u EU je redovni nedeljni odmor od 45h u kabini zabranjen (Uredba 561/2006), kazne u DE/FR/BE 500–1.500 €; firme moraju da obezbede smeštaj ili povratak na bazu; (4) prioritet: Judo Trans (duge ture), Profi Nails/TD Šped/Cagri/BLC (Turska), Tehnošped/Vrčin/Anđić (lokalni plac).
-
-### Tura 3 (2026-10-15, tekst "duge ture, bez čestog povratka kući", HTML sa klikabilnim WA/tel):
-Delta Transportni Sistem, Saga, Kragović, MB Trans, Srboexport, DP Zaliv, Simsped, Still-Mix, Eurotrans, Navigo, Vekoprom, Art Petrol, Scorpio Line, TID Trans, Knez Petrol, CPC doo (upit za partnere). 16 mejlova. **Ukupno poslato: 38 firmi.**
-Lista za pozive sa klikabilnim brojevima: `posao-CE-vozac/pozivi.html` (bez Tehnošpeda i Vrčina).
+## 11. ISPRAVKA (15.10.2026): smeštaj i horizont
+Kandidat trenutno nema stan, ali može da iznajmi garsonjeru u okolini Pančeva (150–250 €/mes). Horizont u Srbiji: 6–9 meseci radi sticanja iskustva, zatim EU (Gartner i slični). Posledice: (1) domaći posao je prihvatljiv kao ulaz, ali prioritet ostaje međunarodno C+E iskustvo jer EU poslodavci traže baš to; (2) Turska/Balkan relacije i dalje vredne (ne troše Šengen dane); (3) u EU je 45h nedeljni odmor u kabini zabranjen (Uredba 561/2006), relevantno tek za EU posao; (4) za EU prijavu posle 6–9 meseci treba: potvrda poslodavca o stažu, čist tahograf dosije, ADR, obnovljen Code 95.
