@@ -223,6 +223,7 @@ Kandidat trenutno nema stan, ali može da iznajmi garsonjeru u okolini Pančeva 
 | 2026-10-15 | **Simsped, Beograd** | poziv posle mejla | zvali Dejana, dali broj direktora | Dejan zove direktora 15.10. |
 | 2026-10-15 | Delta Transportni Sistem (Milica Blagojević, HR) | mejl | ODBIJENO: flota samo B kategorija, pozicije samo za B | izbačeno iz liste; agentov nalaz "C i E oglasi" bio pogrešan |
 | 2026-10-15 | Tehnošped, Pančevo (Cile) | uživo | uzeli podatke, bez odluke i bez informacija | čekati 3–4 dana, pa jedan poziv Ciletu |
+| 2026-10-19 10:05 | **ADAM Šped System d.o.o., Subotica** (verovatno; Dejan čuo "Alanšped") – Željko, +381 63 109 5147 | poziv (odgovor na mejl od 14.10. na adam@adamsped.co.rs) | dogovoren RAZGOVOR sledeće nedelje, kad se Dejan vraća iz Budimpešte | potvrditi naziv firme i tačan dan/adresu (Bikovački put 11?) |
 
 ### Papiri
 | Datum | Šta | Status |
