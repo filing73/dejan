@@ -223,7 +223,7 @@ Kandidat trenutno nema stan, ali može da iznajmi garsonjeru u okolini Pančeva 
 | 2026-10-15 | **Simsped, Beograd** | poziv posle mejla | zvali Dejana, dali broj direktora | Dejan zove direktora 15.10. |
 | 2026-10-15 | Delta Transportni Sistem (Milica Blagojević, HR) | mejl | ODBIJENO: flota samo B kategorija, pozicije samo za B | izbačeno iz liste; agentov nalaz "C i E oglasi" bio pogrešan |
 | 2026-10-15 | Tehnošped, Pančevo (Cile) | uživo | uzeli podatke, bez odluke i bez informacija | čekati 3–4 dana, pa jedan poziv Ciletu |
-| 2026-10-19 10:05 | **ADAM Šped System d.o.o., Subotica** (verovatno; Dejan čuo "Alanšped") – Željko, +381 63 109 5147 | poziv (odgovor na mejl od 14.10. na adam@adamsped.co.rs) | dogovoren RAZGOVOR sledeće nedelje, kad se Dejan vraća iz Budimpešte | potvrditi naziv firme i tačan dan/adresu (Bikovački put 11?) |
+| 2026-10-19 10:05 | **Firma iz Subotice, NAZIV NEPOTVRĐEN** (Dejan čuo "Alanšped"; kandidati: Drumkom d.o.o. – Infostud prijava istog jutra; ADAM Šped System – mejl 14.10.) – Željko, +381 63 109 5147 | poziv (odgovor na mejl od 14.10. na adam@adamsped.co.rs) | dogovoren RAZGOVOR sledeće nedelje, kad se Dejan vraća iz Budimpešte | potvrditi naziv firme i tačan dan/adresu (Bikovački put 11?) |
 
 ### Papiri
 | Datum | Šta | Status |
@@ -252,3 +252,7 @@ Pitanje: da li firma uopšte vozi tegljače sa poluprikolicama (CE), ili samo ko
 | Judo Trans | Ducato kombiji + Atego do 7,5 t | **CE NE — odbačen** |
 
 Pravilo od sada: pre stavljanja firme u TOP listu, proveriti vozni park, ne samo oglas.
+
+### Infostud prijave 2026-10-19 (Dejan sam, preko svog profila maleckard@gmail.com, 06:15–06:35)
+Bio Una d.o.o. (hladnjača, međ.) · Haza izgradnja d.o.o. (C i E) · Avi cargo d.o.o. · Quick Trans d.o.o. (međ. CE) · Ralu d.o.o. (međ.) · Drumkom d.o.o. (Subotica, međ. CE) · Špedtrans World d.o.o. (E) · Boško Popović PR (međ. E) · Grmeč Transport (C i E; flota verovatno solo/hladnjače).
+NEDOVRŠENO: Nikša – "Vozač teretnog vozila" (Infostud podsetnik 07:41).
