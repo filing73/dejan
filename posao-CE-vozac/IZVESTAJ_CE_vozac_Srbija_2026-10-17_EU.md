@@ -25,3 +25,12 @@ Ključne činjenice:
 - PL: Srbi nisu na listi pojednostavljenih "oświadczenie"; dozvola 1–4 meseca; većina traži 1 god. CE.
 
 **Zaključak:** EU direktno bez iskustva je trenutno slabo prohodno; potvrđuje prvobitni plan — 6–9 meseci CE staža u Srbiji, pa EU (SLO/SK/CZ kao prvi korak).
+
+## 2026-10-25 — Info od Aleksandra Džakule (Dominkovic Transporte GmbH, Personalrecruiter; Dejanov poznanik iz škole)
+Kontakt: ad@dominkovic-transporte.gmbh (tako na vizitkarti; proveriti domen, sajt je dominkovic-transporte.de), +49 15 733 876 093, +381 66 53 53 628 (Viber/WhatsApp). Neufeldstraße 11, 85232 Bergkirchen-Günding. Terminware, Kühl- i Tiefkühltransporte. Jobs: https://dominkovic-transporte.de/jobs/
+Njegove tvrdnje (NEPOTVRĐENE dok se ne provere):
+1. Tražiti firmu koja daje **4.700 € bruto** (razlog nije jasan: uslov za vizu ili tržišna plata? pitati).
+2. C/CE iz 2001 daje Code 95 po stečenim pravima, bez kursa i ispita; u DE ~600 € za 5 modula (35h Weiterbildung) i dobija se Fahrerqualifizierungsnachweis.
+3. Može se aktivnije tražiti u EU: HU (ali ne firme sa PAV testom), DE, Benelux.
+Provera (WebSearch 25.10): DE Besitzstand važi za C stečen pre 10.09.2009; za vozačke iz trećih zemalja SAMO ako je zemlja u Anlage 11 FeV I ekvivalencija obuhvata klasu C. Srbija JESTE u Anlage 11; da li obuhvata C/CE — NIJE potvrđeno. Raniji slovenački Code 95 (EU) je dodatni argument.
+Izvori: https://www.eu-bkf.de/de/fur-fahrer/besitzstand ; https://www.ihk.de/stuttgart/branchen/verkehrswirtschaft/sozialvorschriften-beschaeftigung/beschaeftigung/berufskraftfahrer-auslaendische-fahrerdokumente2-5765704 ; https://www.bussgeldkatalog.net/serbischen-fuehrerschein-umschreiben/
