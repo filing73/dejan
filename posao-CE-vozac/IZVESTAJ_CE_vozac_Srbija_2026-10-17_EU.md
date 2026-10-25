@@ -37,3 +37,6 @@ Izvori: https://www.eu-bkf.de/de/fur-fahrer/besitzstand ; https://www.ihk.de/stu
 **ISPRAVKA 25.10. — 4.700 € bruto JE uslov za vizu (Dejan/Aleksandar u pravu):** § 18 Abs. 2 Nr. 5 AufenthG — za prvi radni boravak kao Fachkraft (§§ 18a/18b) sa navršenih 45+ godina plata mora biti ≥ 55 % godišnje Beitragsbemessungsgrenze: 2026 ≈ 55.770 €/god ≈ **4.648 €/mes bruto**. Alternativa: dokaz o adekvatnoj starosnoj penziji (nekretnine/štednja/PIO staž; procena po slučaju). Izvor: https://www.visaguard.berlin/arbeitserlaubnis-workpermit-germany/altersgrenze-arbeitsvisum ; https://polen.diplo.de/resource/blob/2756238/cb70448bb95ce0442ec606033c4df948/belehrung-zur-mindestgehaltsschwelle-data.pdf
 OTVORENO: pravilo je vezano za §§ 18a/18b; da li važi i za Westbalkanregelung (§ 19c + § 26 Abs. 2 BeschV) — NIJE potvrđeno, pitati Aleksandra/ambasadu.
 Filter za DE/Benelux pretragu: firma mora ponuditi ugovor ≥ 4.700 € bruto.
+
+## Mađarska
+- 2026-10-25: u HU nema zaposlenja profesionalnog vozača bez PAV testa (Dejan). **PAV test zakazan pon 26.10.2026 u 10:30, Budimpešta.** Povratak preko Subotice → razgovor ADAM Šped uto 27.10.
