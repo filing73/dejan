@@ -40,3 +40,16 @@ Filter za DE/Benelux pretragu: firma mora ponuditi ugovor ≥ 4.700 € bruto.
 
 ## Mađarska
 - 2026-10-25: u HU nema zaposlenja profesionalnog vozača bez PAV testa (Dejan). **PAV test zakazan pon 26.10.2026 u 10:30, Budimpešta.** Povratak preko Subotice → razgovor ADAM Šped uto 27.10.
+
+## Scrape oglasa 2026-10-25 (6 Haiku agenata: SLO, SK+CZ, PL, RO+BG, DE ≥4.650 bruto, Baltik) — detalji `sirovo/32_*`–`37_*`
+**Rezultat: nijedan oglas ne prolazi "početnik + papiri za Srbe".** Samo snippeti, nijedna stranica otvorena.
+Najbolji tragovi:
+- SLO: Transport Purić d.o.o., Novo Mesto — CE autotransporter, 2.600–3.000 €, pon–pet; info@transporti-puric.si, +386 41 773 514 (početnici/papiri NP). Silos Prevozi (Vrhnika) — pomažu vizu/Code 95, ali 3 god. iskustva.
+- SK: posebna D viza za vozače iz trećih zemalja (do 5.000/2026; Srbija po stručnoj štampi). D.L.B. spol. s r.o. — frigo C+E, 2.200+ € bruto (https://dlb.sk/Kariera.htm).
+- CZ: oglasi "pro cizince / zaměstnanecká karta" (Jooble, TruckJobs) 50–75k CZK bruto, firme neimenovane.
+- DE: 0 oglasa ≥4.650 € bruto za Balkance (MK Trans Emden "ab 4.500"); Finne-Transport GmbH (Rastenberg) otvoren za treće zemlje, plata NP. 45+ prag verovatno važi i za Westbalkanregelung.
+- PL: samo agregatori; OLX Trzebinia (ture SRB/MNE/MKD/BiH, 12–15k PLN bruto, firma neimenovana).
+- RO/BG: nema imenovanih firmi za Srbe; BG dozvola 2–4 meseca, od jula 2026 samo online; pazi na nisku osnovicu + dnevnice, traži A1.
+- Baltik: traže 1 god. CE; Girteka LV (do ~3.224 € neto, ali napomena o migracionim pravilima); LT kvota 2026 popunjena 7.9.; Smart Enterprises limit <50 god.
+Usputno SRB (neprovereno, Infostud): **OPTIMAL TRANS, Dobanovci 3.300–3.600 €**; Euro Šped, Beograd 3.000–3.200 €; Drumkom oglas 22.10. (SRB/HU/SK, 180–230k RSD).
+**Zaključak:** EU direktno i dalje teško bez 1 god. CE; najrealnije: ADAM Šped (SRB) → posle 6–12 meseci SK/CZ/SLO.
