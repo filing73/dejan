@@ -256,3 +256,7 @@ Pravilo od sada: pre stavljanja firme u TOP listu, proveriti vozni park, ne samo
 ### Infostud prijave 2026-10-19 (Dejan sam, preko svog profila maleckard@gmail.com, 06:15–06:35)
 Bio Una d.o.o. (hladnjača, međ.) · Haza izgradnja d.o.o. (C i E) · Avi cargo d.o.o. · Quick Trans d.o.o. (međ. CE) · Ralu d.o.o. (međ.) · Drumkom d.o.o. (Subotica, međ. CE) · Špedtrans World d.o.o. (E) · Boško Popović PR (međ. E) · Grmeč Transport (C i E; flota verovatno solo/hladnjače).
 NEDOVRŠENO: Nikša – "Vozač teretnog vozila" (Infostud podsetnik 07:41).
+
+### Novi SRB tragovi 2026-10-25 (neposlato)
+- **Euro-Šped (Radovan Šijaković PR), Beograd** — ranije oglas "CE bez iskustva, plaćena obuka i putni troškovi" (star, ~546 dana); noviji (09.10.2026) 2.100–2.700 € neto, traže iskustvo, ali Jooble tekst: "iskustvo poželjno, ali nije presudno za motivisane". Kontakt (trazimvozaca, neprovereno): 060/30-29-560, vladimir.bjelic@euro-sped.rs. https://trazimvozaca.com/oglasi/ce-kategorija/posao-vozaca-bez-iskustva-euro-sped-beograd/
+- **OPTIMAL TRANS, Dobanovci** — CE međunarodni, 3.300–3.600 € za 22–24 radna dana, firma "verifikovana" na trazimvozaca; iskustvo NP. https://trazimvozaca.com/oglasi/
