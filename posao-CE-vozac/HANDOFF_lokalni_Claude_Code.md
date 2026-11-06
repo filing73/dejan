@@ -36,3 +36,6 @@ Preko MOG otvorenog Chrome-a (Claude in Chrome), gde sam ulogovan na Facebook, I
 - sirovo/40_srb_fb_ig.md — FB/IG/LinkedIn javno: skoro ništa indeksirano. Ručno proveriti: facebook.com/kamiondzija.rs (~86k), facebook.com/kamionisrbija037 (~30k), facebook.com/infotopvozaci, Instagram @trazimvozaca (062/96-46-520), LinkedIn rs.linkedin.com/jobs/truck-driver-jobs.
 - sirovo/41_srb_maps.md — prevoznici Pančevo/Beograd/J. Banat iz imenika (flota uglavnom NP).
 - sirovo/39_srb_ce.md — CE oglasi (ako postoji; agent je još radio).
+
+## Dodatni zadatak: CV na Infostud i Jooble
+Tekst je u posao-CE-vozac/CV_Dejan_Maleckar_vozac.md (SRB + EN). Preko Chrome-a, na mom Infostud (poslovi.infostud.com, privatni profil maleckard@gmail.com) i Jooble profilu: popuni polja tim tekstom. NE klikći "Sačuvaj"/"Objavi" — ja klikćem. Polja [mesec/godina] pitaj me pre upisa.
