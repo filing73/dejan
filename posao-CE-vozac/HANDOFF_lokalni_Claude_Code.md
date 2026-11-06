@@ -30,3 +30,9 @@ Preko MOG otvorenog Chrome-a (Claude in Chrome), gde sam ulogovan na Facebook, I
 - Bez agencija koje naplaćuju vozaču. Agencije označi "AGENCIJA".
 - Ne izmišljaj kontakte i podatke; ako nije potvrđeno, piši "NP".
 - Ako šalješ prijavu kasnije: HTML mejl sa klikabilnim linkovima (tel:, wa.me, viber://), sa maleckard@gmail.com.
+
+## Već urađeno u cloud sesiji 06.11 (samo javni web, bez logina) — NE ponavljati, nadogradi
+- sirovo/38_srb_c.md — C oglasi: C domaći uglavnom 100–145k RSD (ispod praga); iznad: Grmeč 150–300k, Drumkom 180–230k, Judo Trans 250–350k.
+- sirovo/40_srb_fb_ig.md — FB/IG/LinkedIn javno: skoro ništa indeksirano. Ručno proveriti: facebook.com/kamiondzija.rs (~86k), facebook.com/kamionisrbija037 (~30k), facebook.com/infotopvozaci, Instagram @trazimvozaca (062/96-46-520), LinkedIn rs.linkedin.com/jobs/truck-driver-jobs.
+- sirovo/41_srb_maps.md — prevoznici Pančevo/Beograd/J. Banat iz imenika (flota uglavnom NP).
+- sirovo/39_srb_ce.md — CE oglasi (ako postoji; agent je još radio).
