@@ -260,3 +260,8 @@ NEDOVRŠENO: Nikša – "Vozač teretnog vozila" (Infostud podsetnik 07:41).
 ### Novi SRB tragovi 2026-10-25 (neposlato)
 - **Euro-Šped (Radovan Šijaković PR), Beograd** — ranije oglas "CE bez iskustva, plaćena obuka i putni troškovi" (star, ~546 dana); noviji (09.10.2026) 2.100–2.700 € neto, traže iskustvo, ali Jooble tekst: "iskustvo poželjno, ali nije presudno za motivisane". Kontakt (trazimvozaca, neprovereno): 060/30-29-560, vladimir.bjelic@euro-sped.rs. https://trazimvozaca.com/oglasi/ce-kategorija/posao-vozaca-bez-iskustva-euro-sped-beograd/
 - **OPTIMAL TRANS, Dobanovci** — CE međunarodni, 3.300–3.600 € za 22–24 radna dana, firma "verifikovana" na trazimvozaca; iskustvo NP. https://trazimvozaca.com/oglasi/
+
+### Skeniranje tržišta 06.11.2026 (Haiku agenti, javni web) — `sirovo/38_*`–`41_*`
+Plate (neto, procena iz snippeta): C domaći 100–145k (većina ispod praga 150k); CE domaći 160–320k (tipično 200–300k); CE međ. 240–390k RSD / 1.800–3.300 €.
+Novi tragovi iznad praga (NEKONTAKTIRANI, kontakti NP): Todorović Company d.o.o. (CE, Italija, 240–360k, 05.11.2026); Balkan Expres, Zrenjanin (CE, HU/SK, 190–220k); Tišma, Beograd-Surčin (CE domaći, plata NP); DP Cargo, Subotica (CE, 1.750–2.100 €); Megga, Požega (CE). Nijedan imenovani ne potvrđuje "bez iskustva/obuka".
+Ručno proveriti (FB/IG): facebook.com/kamiondzija.rs, facebook.com/kamionisrbija037, facebook.com/infotopvozaci, Instagram @trazimvozaca (062/96-46-520).
