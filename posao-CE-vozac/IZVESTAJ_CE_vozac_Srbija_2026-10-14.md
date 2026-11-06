@@ -2,6 +2,7 @@
 
 **Datum provere svih podataka: 2026-10-14.**
 Kandidat: C (29.08.2001), CE (05.09.2001), slovenački Code 95 istekao, bez tahograf kartice, bez profesionalnog iskustva na šleperu, Pančevo.
+**DOPUNA 06.11.2026:** radno iskustvo na Malti (EU) — vozač KIPERA za firmu "Barbros" (trajanje NP) + 3–5 dana ŠLEPER za "Farenhiet"/Fahrenheit (naziv proveriti). Dokazi (ugovor, platne liste, FS3, preporuka) — PROVERITI šta postoji. Koristiti u CV-u i na razgovorima.
 
 ## 0. Kako čitati ovaj izveštaj (obavezno)
 
