@@ -5,7 +5,7 @@ Zovi me Dejan. Piši srpski latinicom, kratko. Ja radim sa telefona/laptopa.
 ## Kontekst
 - Tražim posao kao vozač C/CE u Srbiji (6–12 meseci staža), pa EU.
 - Ja: Dejan Malečkar, 53 god, Pančevo. C od 29.08.2001, CE od 05.09.2001. Nemam profesionalnog iskustva na šleperu (treba mentor/obuka).
-- Papiri: tahograf kartica G2 preuzeta (važi 16.10.2026–15.10.2031). CPC kartica po stečenim pravima gotova 06.11.2026 (zahtev ABS br. 10425/2026). Engleski B1–B2, nemački ne. PAV (HU) rađen.
+- Papiri: tahograf kartica G2 preuzeta (važi 16.10.2026–15.10.2031). CPC kartica po stečenim pravima gotova 06.11.2026 (zahtev ABS br. 10425/2026). Engleski B1–B2, nemački ne. PAV (HU) NIJE položen 26.10. — ne pominjati.
 - Kontakt za prijave: maleckard@gmail.com, +381 63 710 5551 (WhatsApp/Viber), +381 63 191 5003. NIKAD malteški broj.
 - Glavni trag: ADAM Šped System d.o.o., Bikovački put 11, Subotica (Željko +381 63 109 5147) — primaju bez iskustva.
 

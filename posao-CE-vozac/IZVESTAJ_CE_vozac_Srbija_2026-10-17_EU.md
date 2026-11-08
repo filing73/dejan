@@ -53,3 +53,5 @@ Najbolji tragovi:
 - Baltik: traže 1 god. CE; Girteka LV (do ~3.224 € neto, ali napomena o migracionim pravilima); LT kvota 2026 popunjena 7.9.; Smart Enterprises limit <50 god.
 Usputno SRB (neprovereno, Infostud): **OPTIMAL TRANS, Dobanovci 3.300–3.600 €**; Euro Šped, Beograd 3.000–3.200 €; Drumkom oglas 22.10. (SRB/HU/SK, 180–230k RSD).
 **Zaključak:** EU direktno i dalje teško bez 1 god. CE; najrealnije: ADAM Šped (SRB) → posle 6–12 meseci SK/CZ/SLO.
+
+- **26.10.2026: PAV test NIJE položen** (Dejan, 08.11). HU poslodavci (Gartner i dr.) za sada otpadaju. Ne pominjati PAV u CV-u i prijavama.
