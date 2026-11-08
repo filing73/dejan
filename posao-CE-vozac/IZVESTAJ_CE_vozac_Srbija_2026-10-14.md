@@ -266,3 +266,14 @@ NEDOVRŠENO: Nikša – "Vozač teretnog vozila" (Infostud podsetnik 07:41).
 Plate (neto, procena iz snippeta): C domaći 100–145k (većina ispod praga 150k); CE domaći 160–320k (tipično 200–300k); CE međ. 240–390k RSD / 1.800–3.300 €.
 Novi tragovi iznad praga (NEKONTAKTIRANI, kontakti NP): Todorović Company d.o.o. (CE, Italija, 240–360k, 05.11.2026); Balkan Expres, Zrenjanin (CE, HU/SK, 190–220k); Tišma, Beograd-Surčin (CE domaći, plata NP); DP Cargo, Subotica (CE, 1.750–2.100 €); Megga, Požega (CE). Nijedan imenovani ne potvrđuje "bez iskustva/obuka".
 Ručno proveriti (FB/IG): facebook.com/kamiondzija.rs, facebook.com/kamionisrbija037, facebook.com/infotopvozaci, Instagram @trazimvozaca (062/96-46-520).
+
+### Lokalni Chrome scan 08.11.2026 (Infostud + Jooble, 94 oglasa od 1.10.) — `sirovo/VOZAC_C_CE_OGLASI_2026-11-08.xlsx`
+Bez iskustva / obuka / mentor:
+- **Reining Transport** — CE međ., baze NL/DE/HU, 3.000–3.500 €, "bez iskustva (obučavamo)", Kod 95 i vizu plaćaju oni; **intervju u Čačku 21.11.** ← NAJJAČI TRAG (proveriti: zemlja ugovora, DE/NL prag 45+).
+- Kontinental Logistika, Subotica — CE, HU/HR/SLO, obuka za vozače bez iskustva, plata po dogovoru.
+- Grmeč Transport — C i E, domaći (Lidl/Delhaize), 150–300k, "iskustvo nije neophodno" (prijavljen 19.10).
+- Ira Trans, Surčin — B/C/E domaći, 150–300k ("već u kontaktu" — NP u evidenciji, pitati Dejana).
+- Tehno Coop — CE međ., obuka početnika (ranija prijava istekla → ponoviti).
+- MZS Group (Zemun/NS) — C domaći Coca-Cola, obuka obezbeđena; HBIS Smederevo — mentorstvo; Nelt Pančevo — C, obuke; Snaga mladosti (ispod praga); SMS Šped Čačak.
+Iskustvo nije uslov: Euro Šped (SRB–SLO 180–260k; SRB–IT 200–300k), ADAM-Sped (dnevnica 100 €), Cargo 034 Kragujevac (2.000–2.500 €), Afix Kraljevo.
+Iznad 150k ostali: Vmk Lepotić CE 235–320k, Minox šleper 160–240k, Speed Trans noćna 190–250k, Čimburović 190–240k. (Judo Trans isključen — Atego 7,5 t.)
