@@ -20,7 +20,7 @@ Period: [mesec/godina], kratko angažovanje
 
 ## Vozačke dozvole i dokumenta
 - Vozačka dozvola: B, C (od 29.08.2001), C1, CE (od 05.09.2001), C1E
-- CPC kartica / sertifikat o stručnoj kompetentnosti (Code 95): važeća, izdata 2026
+- CPC kartica / sertifikat o stručnoj kompetentnosti (Code 95): C1, C, C1E, CE — važi do 15.10.2031 (nacionalni i međunarodni prevoz)
 - Digitalna tahograf kartica vozača (G2): važi do 15.10.2031
 - Ranije: slovenački Code 95
 
@@ -50,7 +50,7 @@ Period: [mesec/godina], kratko angažovanje
 1. Tipper truck driver — Barbros, Malta ([month/year], approx. 2 weeks): quarry stone to asphalt plant; construction waste to landfill; bulk material from Valletta port to asphalt plant (Lija/Salina).
 2. Reefer tractor-trailer driver — Fahrenheit, Malta ([month/year], short assignment): coupling reefer trailers arriving by ferry; deliveries to Lidl stores across Malta in tight access areas.
 
-**Licences & documents:** B, C (since 29.08.2001), C1, CE (since 05.09.2001), C1E; Serbian CPC / Code 95 card (2026); G2 digital tachograph card (valid to 15.10.2031); previously held Slovenian Code 95.
+**Licences & documents:** B, C (since 29.08.2001), C1, CE (since 05.09.2001), C1E; Serbian CPC / Code 95 card for C1, C, C1E, CE (valid to 15.10.2031); G2 digital tachograph card (valid to 15.10.2031); previously held Slovenian Code 95.
 
 **Languages:** Serbian (native), English (B1–B2).
 
