@@ -283,3 +283,6 @@ Novi tragovi, NEKONTAKTIRANI: **Next Logistics, Pančevo** (CE RO-HU-SK, ture 3-
 Potvrda ADAM Šped (03.11): početna dnevnica 100 EUR, iskustvo nije uslov, konkurs@adamsped.co.rs. Tehno-Coop (08.10): novi broj 064 82 82 709.
 
 | 2026-11-09 | **Next Logistics, Pančevo** – Milan (063 113 51 41 / 063 271 907) | poziv (Dejan) | objasnio situaciju, Milan uzeo broj, "javiće se"; plata ~40.000 RSD po turi (ture 3–5 dana, RO-HU-SK) → Milan: vozači voze 5 tura/mes ≈ 200k RSD, iskusni 6. Firma (CompanyWall): NEXT LOGISTICS DOO, PIB 109453888, Ive Lole Ribara 58, Banatsko Novo Selo; vlasnici Milan Marjanović i Nikola Rošu; 11 zaposlenih; prihod ~127M RSD, dobit ~6,8M; bez poreskog duga i blokada; ima sudskih obaveštenja (NP). | ako ćuti, ponovni poziv ~12–13.11. |
+| 2026-11-09 (javio Dejan) | **ADAM Šped, Subotica** | razgovor | **ODBIJEN** — traže čisto uverenje iz kaznene evidencije (policija + sud); "kad očistiš, javi se". Dejan im se ne vraća. | ZATVORENO |
+
+**Napomena 09.11.2026:** Dejan ima stare osude (1996, 2012) koje se još vide u uverenju. Neke firme traže uverenje o nekažnjavanju (interno pravilo). Plan: izvaditi uverenje iz kaznene evidencije, pa 1h kod advokata (zakonska/sudska rehabilitacija). Do tada prioritet firme koje ne traže uverenje. Reining Transport Kft (HU): proveriti PAV i uverenje pre puta u Čačak.
