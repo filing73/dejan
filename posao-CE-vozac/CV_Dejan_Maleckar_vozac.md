@@ -36,7 +36,7 @@ Period: [mesec/godina], kratko angažovanje
 ## Kontakt
 - Telefon / Viber / WhatsApp: +381 63 710 5551
 - Drugi telefon: +381 63 191 5003
-- E-mail: maleckard@gmail.com
+- E-mail: dejan@dlproject.io
 
 ---
 
@@ -54,4 +54,4 @@ Period: [mesec/godina], kratko angažovanje
 
 **Languages:** Serbian (native), English (B1–B2).
 
-**Contact:** +381 63 710 5551 (also WhatsApp/Viber), +381 63 191 5003, maleckard@gmail.com
+**Contact:** +381 63 710 5551 (also WhatsApp/Viber), +381 63 191 5003, dejan@dlproject.io

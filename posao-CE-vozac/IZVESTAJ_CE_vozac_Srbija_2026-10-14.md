@@ -287,3 +287,5 @@ Potvrda ADAM Šped (03.11): početna dnevnica 100 EUR, iskustvo nije uslov, konk
 
 **Napomena 09.11.2026:** Dejan ima stare osude (1996, 2012) koje se još vide u uverenju. Neke firme traže uverenje o nekažnjavanju (interno pravilo). Plan: izvaditi uverenje iz kaznene evidencije, pa 1h kod advokata (zakonska/sudska rehabilitacija). Do tada prioritet firme koje ne traže uverenje. Reining Transport Kft (HU): proveriti PAV i uverenje pre puta u Čačak.
 | 2026-11-09 | Prijava na evidenciju NSZ (elektronski obrazac) | POPUNJENO (Dejan). Status: nezaposlen, odmah spreman za rad; socijalni status označen "bivši izvršioci krivičnih dela" (otvara NSZ programe/subvencije za teže zapošljive). Kontakt u obrascu: 063 191 5003, dejanmaleckar@gmail.com. **Filijala NIJE izabrana** — izabrati Pančevo pre slanja. Prilozi: lična karta + dokaz o školi. PDF sa JMBG se NE čuva u git-u. Korist: SLO dozvola traži prijavu na NSZ. |
+
+**10.11.2026: mejl u CV-u promenjen na dejan@dlproject.io** (Zoho, pristup u ovoj sesiji potvrđen). Ranije prijave (14–17.10) idu na maleckard@gmail.com — pratiti oba sandučeta.
