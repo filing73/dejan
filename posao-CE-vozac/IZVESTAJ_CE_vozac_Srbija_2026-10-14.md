@@ -1,3 +1,5 @@
+> **OD 12.11.2026: KANONSKA evidencija poziva i prijava je lokalni `VOZAC_POZIVI_EVIDENCIJA.csv` (Dejanov laptop / Drive), iz koje se prave tabela i stranica sa kontaktima. Ovaj izveštaj se više ne dopunjuje evidencijom poziva — ne koristiti kao izvor tekućeg stanja.**
+
 # Prvi posao C+E vozača u Srbiji — istraživanje poslodavaca
 
 **Datum provere svih podataka: 2026-10-14.**
